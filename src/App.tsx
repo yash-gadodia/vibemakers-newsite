@@ -12,6 +12,8 @@ import Parents from "./pages/Parents";
 import Programme from "./pages/Programme";
 import About from "./pages/About";
 import Contact from "./pages/Contact";
+import Blog from "./pages/Blog";
+import BlogPost from "./pages/BlogPost";
 import Login from "./pages/Login";
 import Admin from "./pages/Admin";
 import PrintFlyer from "./pages/PrintFlyer";
@@ -40,6 +42,8 @@ const App = () => (
             <Route path="/hackathon" element={<Hackathon />} />
             <Route path="/about" element={<About />} />
             <Route path="/contact" element={<Contact />} />
+            <Route path="/blog" element={<Blog />} />
+            <Route path="/blog/:slug" element={<BlogPost />} />
             <Route path="/login" element={<Login />} />
             <Route path="/admin" element={<Admin />} />
             <Route path="/print" element={<PrintFlyer />} />

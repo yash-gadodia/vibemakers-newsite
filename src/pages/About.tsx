@@ -1,6 +1,5 @@
 import { Helmet } from "react-helmet-async";
 import { Layout } from "@/components/layout/Layout";
-import { SectionHeader } from "@/components/ui/section-header";
 import { Reveal } from "@/components/ui/Reveal";
 import { RevealGroup } from "@/components/ui/RevealGroup";
 import aboutHero from "@/assets/about-hero.png";
@@ -20,14 +19,12 @@ const faculty = [
     role: "CEO & Founder, Dialogic Academy",
     credentials:
       "Founded Dialogic Academy in 2018 and grew it to 40+ school partnerships across Singapore — from Anglo-Chinese School and Pei Chun Public School at the primary level to Raffles Girls' School, Victoria Junior College, and National Junior College. Former national debating coach who led VJC to 7 Grand Finals and RGS to a Division 1 championship. Pei Song designs every Vibe Makers programme to develop 21st Century Competencies through hands-on, student-led problem solving.",
-    gradient: "from-primary to-accent",
     image: peiSongPhoto,
   },
   {
     name: "Yash Gadodia",
     role: "Head of Curriculum & Product",
     credentials: "Product builder and founding PM at Voltade, where he shipped AI-powered tools to 10,000+ users from zero. Yash designs the Vibe Makers curriculum — structuring each session around MOE's EdTech Masterplan 2030 principles (Find, Think, Apply, Create) and the V.I.B.E. methodology. He ensures students don't just use AI tools, but learn to prompt with intent, verify outputs critically, and iterate based on real user feedback.",
-    gradient: "from-primary to-accent",
     image: yashGadodiaPhoto,
   },
 ];
@@ -48,9 +45,9 @@ export default function About() {
       </Helmet>
 
       {/* Hero */}
-      <section className="relative section-padding overflow-hidden">
+      <section className="relative py-20 md:py-28 overflow-hidden bg-background">
         {/* Background Image */}
-        <div 
+        <div
           className="absolute inset-0 bg-cover bg-center bg-no-repeat"
           style={{ backgroundImage: `url(${aboutHero})` }}
           role="img"
@@ -58,26 +55,29 @@ export default function About() {
         />
         {/* Overlay for text readability */}
         <div className="absolute inset-0 bg-gradient-to-b from-background/80 via-background/70 to-background" />
-        
-        <div className="container mx-auto px-4 relative z-10">
+
+        <div className="mx-auto max-w-[1200px] px-6 md:px-14 relative z-10">
           <Reveal variant="up">
-            <SectionHeader
-              badge="About Us"
-              badgeVariant="outline"
-              title="Problem-Solving With AI — Not Just Coding"
-              description="Vibe Makers Academy teaches students to identify real problems, design solutions, and build working apps using AI tools. Aligned with MOE's 21st Century Competencies framework and EdTech Masterplan 2030."
-            />
+            <div>
+              <h1 className="font-display font-bold tracking-display leading-[1.02] text-5xl md:text-6xl lg:text-7xl mb-6">
+                Problem-Solving With AI — Not Just Coding
+              </h1>
+              <p className="max-w-2xl text-lg text-ink-2">
+                Vibe Makers Academy teaches students to identify real problems, design solutions, and build working apps using AI tools. Aligned with MOE's 21st Century Competencies framework and EdTech Masterplan 2030.
+              </p>
+            </div>
           </Reveal>
         </div>
       </section>
 
       {/* Story */}
-      <section className="section-padding" aria-labelledby="our-story">
-        <div className="container mx-auto px-4">
+      <section className="py-20 md:py-28 bg-background border-t border-border" aria-labelledby="our-story">
+        <div className="mx-auto max-w-[1200px] px-6 md:px-14">
           <Reveal variant="up">
             <div className="max-w-3xl mx-auto">
-              <h2 id="our-story" className="text-2xl font-display font-bold mb-6">Our Story</h2>
-              <div className="space-y-4 text-muted-foreground">
+              <span className="vm-sticker" style={{ transform: 'rotate(-2deg)' }}>● Our Story</span>
+              <h2 id="our-story" className="font-display font-bold tracking-display leading-[1.02] text-3xl md:text-4xl mb-6 mt-4">Our Story</h2>
+              <div className="space-y-4 text-ink-2">
                 <p>
                   Vibe Makers Academy is a programme by{" "}
                   <a href="https://dialogic.academy" target="_blank" rel="noopener noreferrer" className="text-primary font-semibold hover:underline">Dialogic Academy</a>{" "}
@@ -100,19 +100,22 @@ export default function About() {
       </section>
 
       {/* Values */}
-      <section className="section-padding bg-secondary/30" aria-labelledby="our-values">
-        <div className="container mx-auto px-4">
+      <section className="py-20 md:py-28 bg-bg-warm border-t border-border" aria-labelledby="our-values">
+        <div className="mx-auto max-w-[1200px] px-6 md:px-14">
           <Reveal variant="up">
-            <SectionHeader title="How We Teach" />
+            <div className="mb-12">
+              <span className="vm-sticker" style={{ transform: 'rotate(1deg)' }}>● How We Teach</span>
+              <h2 id="our-values" className="font-display font-bold tracking-display leading-[1.02] text-3xl md:text-4xl mt-4">How We Teach</h2>
+            </div>
           </Reveal>
-          <RevealGroup staggerMs={100} variant="up" className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 mt-12">
+          <RevealGroup staggerMs={100} variant="up" className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
             {values.map((v) => (
-              <article key={v.title} className="p-6 bg-card border border-border rounded-2xl text-center hover-lift">
-                <div className="w-16 h-16 rounded-2xl bg-primary/10 flex items-center justify-center mx-auto mb-4">
+              <article key={v.title} className="vm-card rounded-2xl border border-border bg-card p-6">
+                <div className="w-16 h-16 rounded-2xl bg-bg-warm-2 flex items-center justify-center mx-auto mb-4">
                   <span className="text-3xl">{v.emoji}</span>
                 </div>
-                <h3 className="font-semibold text-lg mb-2">{v.title}</h3>
-                <p className="text-sm text-muted-foreground">{v.description}</p>
+                <h3 className="font-display font-bold text-center mb-2">{v.title}</h3>
+                <p className="text-sm text-ink-2 text-center">{v.description}</p>
               </article>
             ))}
           </RevealGroup>
@@ -120,26 +123,27 @@ export default function About() {
       </section>
 
       {/* Faculty */}
-      <section className="section-padding" aria-labelledby="our-faculty">
-        <div className="container mx-auto px-4">
+      <section className="py-20 md:py-28 bg-background border-t border-border" aria-labelledby="our-faculty">
+        <div className="mx-auto max-w-[1200px] px-6 md:px-14">
           <Reveal variant="up">
-            <SectionHeader
-              title="Meet the Team"
-              description="Enrichment educators and product builders — combining Dialogic Academy's 6-year track record with hands-on AI product experience."
-            />
+            <div className="mb-12">
+              <span className="vm-sticker" style={{ transform: 'rotate(-1deg)' }}>● Meet the Team</span>
+              <h2 id="our-faculty" className="font-display font-bold tracking-display leading-[1.02] text-3xl md:text-4xl mt-4 mb-4">Meet the Team</h2>
+              <p className="text-ink-2 max-w-2xl">Enrichment educators and product builders — combining Dialogic Academy's 6-year track record with hands-on AI product experience.</p>
+            </div>
           </Reveal>
-          <RevealGroup staggerMs={120} variant="up" className="grid md:grid-cols-2 gap-8 mt-12 max-w-3xl mx-auto">
+          <RevealGroup staggerMs={120} variant="up" className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-3xl mx-auto">
             {faculty.map((member) => (
-              <article key={member.name} className="p-8 bg-card border border-border rounded-2xl hover-lift">
+              <article key={member.name} className="vm-card rounded-2xl border border-border bg-card p-6">
                 <img
                   src={member.image}
                   alt={`${member.name} headshot`}
-                  className="w-24 h-24 rounded-full mx-auto mb-6 object-cover object-top shadow-lg ring-4 ring-border"
+                  className="w-24 h-24 rounded-2xl mx-auto mb-6 object-cover object-top"
                   loading="lazy"
                 />
-                <h4 className="font-display font-bold text-xl text-center">{member.name}</h4>
-                <p className="text-sm text-primary font-semibold text-center mb-4">{member.role}</p>
-                <p className="text-sm text-muted-foreground text-center leading-relaxed">{member.credentials}</p>
+                <h4 className="font-display font-bold text-center">{member.name}</h4>
+                <p className="text-xs font-mono uppercase tracking-eyebrow text-ink-2 text-center mb-4 mt-2">{member.role}</p>
+                <p className="text-sm text-ink-2 text-center leading-relaxed">{member.credentials}</p>
               </article>
             ))}
           </RevealGroup>
@@ -152,22 +156,23 @@ export default function About() {
       </section>
 
       {/* MOE Alignment */}
-      <section className="section-padding bg-secondary/30" aria-labelledby="moe-alignment">
-        <div className="container mx-auto px-4">
+      <section className="py-20 md:py-28 bg-bg-warm border-t border-border" aria-labelledby="moe-alignment">
+        <div className="mx-auto max-w-[1200px] px-6 md:px-14">
           <Reveal variant="up">
-            <div className="max-w-4xl mx-auto">
-              <h2 id="moe-alignment" className="text-2xl md:text-3xl font-display font-bold mb-3 text-center">
+            <div className="max-w-4xl mx-auto mb-12">
+              <span className="vm-sticker" style={{ transform: 'rotate(2deg)' }}>● MOE Alignment</span>
+              <h2 id="moe-alignment" className="font-display font-bold tracking-display leading-[1.02] text-3xl md:text-4xl text-center mt-4 mb-6">
                 Aligned With Singapore's Education Direction
               </h2>
-              <p className="text-muted-foreground text-center mb-10 max-w-2xl mx-auto">
+              <p className="text-ink-2 text-center max-w-2xl mx-auto">
                 Every programme is designed around MOE's frameworks — not as a marketing claim, but as the foundation for how we structure learning outcomes.
               </p>
             </div>
           </Reveal>
 
-          <RevealGroup staggerMs={100} variant="up" className="grid md:grid-cols-3 gap-6 max-w-5xl mx-auto">
-            <div className="p-6 bg-card border border-border rounded-2xl">
-              <div className="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center mb-4">
+          <RevealGroup staggerMs={100} variant="up" className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-5xl mx-auto">
+            <div className="vm-card rounded-2xl border border-border bg-card p-6">
+              <div className="w-12 h-12 rounded-xl bg-bg-warm-2 flex items-center justify-center mb-4">
                 <span className="text-2xl">🎯</span>
               </div>
               <h3 className="font-display font-bold mb-2">
@@ -175,7 +180,7 @@ export default function About() {
                   21st Century Competencies
                 </a>
               </h3>
-              <p className="text-sm text-muted-foreground mb-3">
+              <p className="text-sm text-ink-2 mb-3">
                 Our V.I.B.E. cycle directly develops the three 21CC domains:
               </p>
               <ul className="space-y-2 text-sm">
@@ -194,8 +199,8 @@ export default function About() {
               </ul>
             </div>
 
-            <div className="p-6 bg-card border border-border rounded-2xl">
-              <div className="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center mb-4">
+            <div className="vm-card rounded-2xl border border-border bg-card p-6">
+              <div className="w-12 h-12 rounded-xl bg-bg-warm-2 flex items-center justify-center mb-4">
                 <span className="text-2xl">💻</span>
               </div>
               <h3 className="font-display font-bold mb-2">
@@ -203,7 +208,7 @@ export default function About() {
                   EdTech Masterplan 2030
                 </a>
               </h3>
-              <p className="text-sm text-muted-foreground mb-3">
+              <p className="text-sm text-ink-2 mb-3">
                 MOE's digital literacy framework — Find, Think, Apply, Create — maps directly to how our sessions work:
               </p>
               <ul className="space-y-2 text-sm">
@@ -226,14 +231,14 @@ export default function About() {
               </ul>
             </div>
 
-            <div className="p-6 bg-card border border-border rounded-2xl">
-              <div className="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center mb-4">
+            <div className="vm-card rounded-2xl border border-border bg-card p-6">
+              <div className="w-12 h-12 rounded-xl bg-bg-warm-2 flex items-center justify-center mb-4">
                 <span className="text-2xl">🛡️</span>
               </div>
               <h3 className="font-display font-bold mb-2">
                 Responsible AI for Students
               </h3>
-              <p className="text-sm text-muted-foreground mb-3">
+              <p className="text-sm text-ink-2 mb-3">
                 Following MOE's guidance on AI in education, we build responsible habits from day one:
               </p>
               <ul className="space-y-2 text-sm">
@@ -256,26 +261,26 @@ export default function About() {
       </section>
 
       {/* Track Record */}
-      <section className="section-padding bg-primary text-primary-foreground" aria-labelledby="track-record">
-        <div className="container mx-auto px-4">
+      <section className="py-20 md:py-28 bg-primary text-primary-foreground border-t border-border" aria-labelledby="track-record">
+        <div className="mx-auto max-w-[1200px] px-6 md:px-14">
           <Reveal variant="up">
             <div className="max-w-3xl mx-auto text-center">
-              <h2 id="track-record" className="text-2xl md:text-3xl font-display font-bold mb-6">Our Track Record</h2>
+              <h2 id="track-record" className="font-display font-bold tracking-display leading-[1.02] text-3xl md:text-4xl mb-12">Our Track Record</h2>
               <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
                 <div>
-                  <div className="text-3xl md:text-4xl font-bold mb-1">5,000+</div>
+                  <div className="text-3xl md:text-4xl font-display font-bold mb-2">5,000+</div>
                   <p className="text-sm opacity-80">Students taught since 2018</p>
                 </div>
                 <div>
-                  <div className="text-3xl md:text-4xl font-bold mb-1">40+</div>
+                  <div className="text-3xl md:text-4xl font-display font-bold mb-2">40+</div>
                   <p className="text-sm opacity-80">School partners (primary to JC)</p>
                 </div>
                 <div>
-                  <div className="text-3xl md:text-4xl font-bold mb-1">2018</div>
+                  <div className="text-3xl md:text-4xl font-display font-bold mb-2">2018</div>
                   <p className="text-sm opacity-80">Dialogic Academy founded</p>
                 </div>
                 <div>
-                  <div className="text-3xl md:text-4xl font-bold mb-1">7×</div>
+                  <div className="text-3xl md:text-4xl font-display font-bold mb-2">7×</div>
                   <p className="text-sm opacity-80">National debating Grand Finals</p>
                 </div>
               </div>

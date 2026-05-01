@@ -1,16 +1,13 @@
 import { useState } from "react";
 import { Helmet } from "react-helmet-async";
 import { Layout } from "@/components/layout/Layout";
-import { SectionHeader } from "@/components/ui/section-header";
-import { GButton } from "@/components/ui/grommet-button";
-import { GInput, GTextArea } from "@/components/ui/grommet-input";
-import { GCard, GCardContent } from "@/components/ui/grommet-card";
 import { Label } from "@/components/ui/label";
+import { Input } from "@/components/ui/input";
+import { Textarea } from "@/components/ui/textarea";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { supabase } from "@/integrations/supabase/client";
 import { useToast } from "@/hooks/use-toast";
 import { sendNotificationEmail } from "@/lib/sendNotification";
-import { Reveal } from "@/components/ui/Reveal";
 
 export default function Contact() {
   const { toast } = useToast();
@@ -21,7 +18,7 @@ export default function Contact() {
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     setLoading(true);
-    
+
     const formData = new FormData(e.currentTarget);
     const name = formData.get("name") as string;
     const email = formData.get("email") as string;
@@ -75,9 +72,9 @@ export default function Contact() {
     <Layout>
       <Helmet>
         <title>Contact Us | Vibemakers Academy Singapore</title>
-        <meta name="description" content="Get in touch with Vibemakers Academy. Enquiries for parents, students, and schools welcome. Email: human@vibemakers.dev" />
+        <meta name="description" content="Get in touch with Vibemakers Academy. Enquiries for parents, students, and schools welcome. Email: vibemakers@dialogic.academy" />
         <link rel="canonical" href="https://vibemakers.dev/contact" />
-        
+
         <meta property="og:title" content="Contact Vibemakers Academy" />
         <meta property="og:description" content="Have questions? We'd love to hear from you." />
         <meta property="og:type" content="website" />
@@ -93,7 +90,7 @@ export default function Contact() {
             "mainEntity": {
               "@type": "Organization",
               "name": "Vibemakers Academy",
-              "email": "human@vibemakers.dev",
+              "email": "vibemakers@dialogic.academy",
               "address": {
                 "@type": "PostalAddress",
                 "addressCountry": "SG",
@@ -104,119 +101,216 @@ export default function Contact() {
         </script>
       </Helmet>
 
-      <section className="section-padding">
-        <div className="container mx-auto px-4">
-          <Reveal variant="up">
-            <SectionHeader badge="Contact" title="Get in Touch" description="Have questions? We'd love to hear from you." />
-          </Reveal>
-
-          <div className="grid lg:grid-cols-3 gap-12 mt-12">
-            {/* Contact Info */}
-            <Reveal variant="left">
-              <aside className="space-y-6" aria-label="Contact information">
-                <GCard className="p-0">
-                  <div className="flex items-start gap-4 p-4">
-                    <span className="text-2xl" aria-hidden="true">📧</span>
-                    <div>
-                      <h4 className="font-semibold">Email</h4>
-                      <a href="mailto:human@vibemakers.dev" className="text-sm text-muted-foreground hover:text-primary transition-colors">
-                        human@vibemakers.dev
-                      </a>
-                    </div>
-                  </div>
-                </GCard>
-                <GCard className="p-0">
-                  <div className="flex items-start gap-4 p-4">
-                    <span className="text-2xl" aria-hidden="true">📍</span>
-                    <div>
-                      <h4 className="font-semibold">Location</h4>
-                      <p className="text-sm text-muted-foreground">Singapore</p>
-                    </div>
-                  </div>
-                </GCard>
-              </aside>
-            </Reveal>
-
-            {/* Single Form */}
-            <Reveal variant="right" delayMs={100} className="lg:col-span-2">
-              {submitted ? (
-                <GCard className="p-8 bg-primary/10 text-center">
-                  <GCardContent>
-                    <span className="text-5xl block mb-4" aria-hidden="true">✅</span>
-                    <h3 className="text-xl font-semibold mb-2">Thank you!</h3>
-                    <p className="text-muted-foreground">We'll get back to you within 2 business days.</p>
-                  </GCardContent>
-                </GCard>
-              ) : (
-                <GCard>
-                  <GCardContent className="p-6">
-                    <form onSubmit={handleSubmit} className="space-y-4">
-                      <div className="grid sm:grid-cols-2 gap-4">
-                        <div className="space-y-2">
-                          <Label htmlFor="name">Your Name</Label>
-                          <GInput id="name" name="name" required />
-                        </div>
-                        <div className="space-y-2">
-                          <Label htmlFor="email">Email</Label>
-                          <GInput id="email" name="email" type="email" required />
-                        </div>
-                      </div>
-
-                      <div className="space-y-2">
-                        <Label htmlFor="enquiry_type">I'm interested in...</Label>
-                        <Select 
-                          name="enquiry_type" 
-                          required 
-                          onValueChange={setEnquiryType}
-                        >
-                          <SelectTrigger id="enquiry_type">
-                            <SelectValue placeholder="Select..." />
-                          </SelectTrigger>
-                          <SelectContent>
-                            <SelectItem value="group">Group Sessions (for my child)</SelectItem>
-                            <SelectItem value="1-to-1">1-to-1 Coaching (for my child)</SelectItem>
-                            <SelectItem value="hackathon">Hackathon</SelectItem>
-                            <SelectItem value="school">School Partnership</SelectItem>
-                            <SelectItem value="organisation">Organisation / Corporate</SelectItem>
-                            <SelectItem value="other">Something else</SelectItem>
-                          </SelectContent>
-                        </Select>
-                      </div>
-
-                      {showOrgField && (
-                        <div className="space-y-2">
-                          <Label htmlFor="organisation">Organisation Name</Label>
-                          <GInput id="organisation" name="organisation" placeholder="Your school or company name" />
-                        </div>
-                      )}
-
-                      {showStudentFields && (
-                        <div className="grid sm:grid-cols-2 gap-4">
-                          <div className="space-y-2">
-                            <Label htmlFor="student_name">Student Name (optional)</Label>
-                            <GInput id="student_name" name="student_name" />
-                          </div>
-                          <div className="space-y-2">
-                            <Label htmlFor="student_age">Student Age (optional)</Label>
-                            <GInput id="student_age" name="student_age" placeholder="e.g., 14" />
-                          </div>
-                        </div>
-                      )}
-
-                      <div className="space-y-2">
-                        <Label htmlFor="message">Message (optional)</Label>
-                        <GTextArea id="message" name="message" placeholder="Tell us more about what you're looking for..." />
-                      </div>
-
-                      <GButton type="submit" className="w-full" disabled={loading}>
-                        {loading ? "Submitting..." : "Send Enquiry"}
-                      </GButton>
-                    </form>
-                  </GCardContent>
-                </GCard>
-              )}
-            </Reveal>
+      {/* Hero Section */}
+      <section className="bg-background py-20 md:py-28">
+        <div className="mx-auto max-w-[1200px] px-6 md:px-14">
+          <div className="mb-12 md:mb-16">
+            <span className="vm-sticker" style={{ transform: 'rotate(-3deg)' }}>
+              ● Get in Touch
+            </span>
           </div>
+          <h1 className="font-display font-bold tracking-display leading-[1.02] text-5xl md:text-6xl mb-6">
+            We'd love to hear from you.
+          </h1>
+          <p className="text-base text-ink-2 max-w-2xl leading-[1.6]">
+            Questions about our programmes? Interested in a partnership? Just want to chat? Pick your reason and send us a message.
+          </p>
+        </div>
+      </section>
+
+      {/* Contact Options */}
+      <section className="bg-bg-warm py-20 md:py-28">
+        <div className="mx-auto max-w-[1200px] px-6 md:px-14">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12">
+            {/* Email Card */}
+            <div className="vm-card rounded-2xl border border-border bg-card p-8">
+              <div className="mb-4 text-2xl">📧</div>
+              <p className="font-mono text-xs uppercase tracking-eyebrow text-ink-2 mb-3">Email</p>
+              <h3 className="font-display font-bold text-xl md:text-2xl mb-4 text-foreground">
+                vibemakers@dialogic.academy
+              </h3>
+              <a
+                href="mailto:vibemakers@dialogic.academy"
+                className="vm-btn inline-flex items-center gap-2 rounded-full bg-primary px-5 py-3 font-medium text-primary-foreground hover:bg-accent transition-colors"
+              >
+                Send an email
+                <span className="vm-arrow">→</span>
+              </a>
+            </div>
+
+            {/* WhatsApp Card */}
+            <div className="vm-card rounded-2xl border border-border bg-card p-8">
+              <div className="mb-4 text-2xl">💬</div>
+              <p className="font-mono text-xs uppercase tracking-eyebrow text-ink-2 mb-3">WhatsApp</p>
+              <h3 className="font-display font-bold text-xl md:text-2xl mb-4 text-foreground">
+                +65 8890 0368
+              </h3>
+              <a
+                href="https://wa.me/6588900368"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="vm-btn inline-flex items-center gap-2 rounded-full bg-primary px-5 py-3 font-medium text-primary-foreground hover:bg-accent transition-colors"
+              >
+                Message on WhatsApp
+                <span className="vm-arrow">→</span>
+              </a>
+            </div>
+
+            {/* Form Card */}
+            <div className="vm-card rounded-2xl border border-border bg-card p-8">
+              <div className="mb-4 text-2xl">✏️</div>
+              <p className="font-mono text-xs uppercase tracking-eyebrow text-ink-2 mb-3">Form</p>
+              <h3 className="font-display font-bold text-xl md:text-2xl mb-4 text-foreground">
+                Use the form below
+              </h3>
+              <p className="text-base text-ink-2">
+                Tell us what you need and we'll respond within 2 business days.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Form Section */}
+      <section className="bg-bg-warm py-20 md:py-28">
+        <div className="mx-auto max-w-[1200px] px-6 md:px-14">
+          {submitted ? (
+            <div className="vm-card rounded-2xl border border-border bg-card p-8 md:p-12 max-w-2xl mx-auto text-center">
+              <div className="mb-6 text-6xl">✅</div>
+              <h2 className="font-display font-bold text-4xl md:text-5xl mb-4 text-foreground">
+                Thank you!
+              </h2>
+              <p className="text-base text-ink-2 leading-[1.6]">
+                We've received your enquiry and will get back to you within 2 business days.
+              </p>
+            </div>
+          ) : (
+            <div className="vm-card rounded-2xl border border-border bg-card p-8 md:p-12 max-w-2xl mx-auto">
+              <form onSubmit={handleSubmit} className="space-y-6">
+                {/* Name and Email */}
+                <div className="grid sm:grid-cols-2 gap-6">
+                  <div className="space-y-2">
+                    <Label htmlFor="name" className="font-mono text-xs uppercase tracking-eyebrow text-ink-2">
+                      Your Name
+                    </Label>
+                    <Input
+                      id="name"
+                      name="name"
+                      required
+                      placeholder="Jane Doe"
+                      className="border-border bg-background text-foreground placeholder:text-muted-foreground"
+                    />
+                  </div>
+                  <div className="space-y-2">
+                    <Label htmlFor="email" className="font-mono text-xs uppercase tracking-eyebrow text-ink-2">
+                      Email
+                    </Label>
+                    <Input
+                      id="email"
+                      name="email"
+                      type="email"
+                      required
+                      placeholder="jane@example.com"
+                      className="border-border bg-background text-foreground placeholder:text-muted-foreground"
+                    />
+                  </div>
+                </div>
+
+                {/* Enquiry Type */}
+                <div className="space-y-2">
+                  <Label htmlFor="enquiry_type" className="font-mono text-xs uppercase tracking-eyebrow text-ink-2">
+                    I'm interested in...
+                  </Label>
+                  <Select
+                    name="enquiry_type"
+                    required
+                    onValueChange={setEnquiryType}
+                  >
+                    <SelectTrigger
+                      id="enquiry_type"
+                      className="border-border bg-background text-foreground"
+                    >
+                      <SelectValue placeholder="Select an option" />
+                    </SelectTrigger>
+                    <SelectContent>
+                      <SelectItem value="group">Group Sessions (for my child)</SelectItem>
+                      <SelectItem value="1-to-1">1-to-1 Coaching (for my child)</SelectItem>
+                      <SelectItem value="hackathon">Hackathon</SelectItem>
+                      <SelectItem value="school">School Partnership</SelectItem>
+                      <SelectItem value="organisation">Organisation / Corporate</SelectItem>
+                      <SelectItem value="other">Something else</SelectItem>
+                    </SelectContent>
+                  </Select>
+                </div>
+
+                {/* Organisation Field (Conditional) */}
+                {showOrgField && (
+                  <div className="space-y-2">
+                    <Label htmlFor="organisation" className="font-mono text-xs uppercase tracking-eyebrow text-ink-2">
+                      Organisation Name
+                    </Label>
+                    <Input
+                      id="organisation"
+                      name="organisation"
+                      placeholder="Your school or company name"
+                      className="border-border bg-background text-foreground placeholder:text-muted-foreground"
+                    />
+                  </div>
+                )}
+
+                {/* Student Fields (Conditional) */}
+                {showStudentFields && (
+                  <div className="grid sm:grid-cols-2 gap-6">
+                    <div className="space-y-2">
+                      <Label htmlFor="student_name" className="font-mono text-xs uppercase tracking-eyebrow text-ink-2">
+                        Student Name (optional)
+                      </Label>
+                      <Input
+                        id="student_name"
+                        name="student_name"
+                        placeholder="e.g., Alex"
+                        className="border-border bg-background text-foreground placeholder:text-muted-foreground"
+                      />
+                    </div>
+                    <div className="space-y-2">
+                      <Label htmlFor="student_age" className="font-mono text-xs uppercase tracking-eyebrow text-ink-2">
+                        Student Age (optional)
+                      </Label>
+                      <Input
+                        id="student_age"
+                        name="student_age"
+                        placeholder="e.g., 14"
+                        className="border-border bg-background text-foreground placeholder:text-muted-foreground"
+                      />
+                    </div>
+                  </div>
+                )}
+
+                {/* Message */}
+                <div className="space-y-2">
+                  <Label htmlFor="message" className="font-mono text-xs uppercase tracking-eyebrow text-ink-2">
+                    Message (optional)
+                  </Label>
+                  <Textarea
+                    id="message"
+                    name="message"
+                    placeholder="Tell us more about what you're looking for..."
+                    className="border-border bg-background text-foreground placeholder:text-muted-foreground min-h-32"
+                  />
+                </div>
+
+                {/* Submit Button */}
+                <button
+                  type="submit"
+                  disabled={loading}
+                  className="vm-btn w-full inline-flex items-center justify-center gap-2 rounded-full bg-primary px-6 py-3 font-medium text-primary-foreground shadow-sticker hover:bg-accent transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
+                >
+                  {loading ? "Submitting..." : "Send Enquiry"}
+                  <span className="vm-arrow">→</span>
+                </button>
+              </form>
+            </div>
+          )}
         </div>
       </section>
     </Layout>

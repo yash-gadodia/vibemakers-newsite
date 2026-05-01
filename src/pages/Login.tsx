@@ -2,10 +2,8 @@ import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useAuth } from '@/contexts/AuthContext';
 import { supabase } from '@/integrations/supabase/client';
-import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { AlertCircle, Loader2 } from 'lucide-react';
 
 const Login = () => {
@@ -58,19 +56,22 @@ const Login = () => {
   };
 
   return (
-    <div className="min-h-screen flex items-center justify-center bg-background p-4">
-      <Card className="w-full max-w-md">
-        <CardHeader className="space-y-1">
-          <CardTitle className="text-2xl font-bold">
-            {isSignUp ? 'Create Admin Account' : 'Admin Login'}
-          </CardTitle>
-          <CardDescription>
-            {isSignUp
-              ? 'Create your admin account to get started'
-              : 'Enter your credentials to access the admin dashboard'}
-          </CardDescription>
-        </CardHeader>
-        <CardContent>
+    <section className="bg-background min-h-[80vh] flex items-center">
+      <div className="mx-auto max-w-md px-6 w-full">
+        <span className="vm-sticker" style={{ transform: 'rotate(-3deg)' }}>
+          ● Admin login
+        </span>
+
+        <h1 className="font-display font-bold tracking-display leading-[1.02] text-3xl md:text-4xl mt-6 mb-2">
+          {isSignUp ? 'Create Account' : 'Sign In'}
+        </h1>
+        <p className="text-muted-foreground mb-8">
+          {isSignUp
+            ? 'Create your admin account to get started'
+            : 'Enter your credentials to access the admin dashboard'}
+        </p>
+
+        <div className="vm-card rounded-2xl border border-border bg-card p-8">
           <form onSubmit={handleSubmit} className="space-y-4">
             {error && (
               <div className="flex items-center gap-2 p-3 text-sm text-destructive bg-destructive/10 rounded-md">
@@ -97,6 +98,7 @@ const Login = () => {
               <Input
                 id="password"
                 type="password"
+                placeholder="••••••••"
                 value={password}
                 onChange={(e) => setPassword(e.target.value)}
                 required
@@ -104,18 +106,22 @@ const Login = () => {
               />
             </div>
 
-            <Button type="submit" className="w-full" disabled={isLoading}>
+            <button
+              type="submit"
+              disabled={isLoading}
+              className="vm-btn rounded-full bg-primary text-primary-foreground w-full shadow-sticker flex items-center justify-center gap-2 font-medium py-3"
+            >
               {isLoading ? (
                 <>
-                  <Loader2 className="mr-2 h-4 w-4 animate-spin" />
-                  {isSignUp ? 'Creating account...' : 'Signing in...'}
+                  <Loader2 className="h-4 w-4 animate-spin" />
+                  {isSignUp ? 'Creating...' : 'Signing in...'}
                 </>
               ) : isSignUp ? (
                 'Create Account'
               ) : (
                 'Sign In'
               )}
-            </Button>
+            </button>
 
             <div className="text-center text-sm">
               <button
@@ -130,9 +136,9 @@ const Login = () => {
               </button>
             </div>
           </form>
-        </CardContent>
-      </Card>
-    </div>
+        </div>
+      </div>
+    </section>
   );
 };
 

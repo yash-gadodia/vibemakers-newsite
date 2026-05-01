@@ -2,11 +2,10 @@ import { useState } from "react";
 import { Helmet } from "react-helmet-async";
 import { Layout } from "@/components/layout/Layout";
 import { ArrowDown, Check, Eye, Lightbulb, Hammer, RotateCcw, Brain, MessageSquare, Monitor } from "lucide-react";
-import { Button } from "@/components/ui/button";
 import { PartnershipForm } from "@/components/programmes/PartnershipForm";
-import { HeroGlowBackground } from "@/components/ui/hero-glow-background";
 import { Reveal } from "@/components/ui/Reveal";
 import { RevealGroup } from "@/components/ui/RevealGroup";
+import { cn } from "@/lib/utils";
 
 // Import school logos
 import vjcLogo from "@/assets/logos/vjc.png";
@@ -199,72 +198,50 @@ export default function Schools() {
         <meta name="twitter:card" content="summary_large_image" />
       </Helmet>
 
-      {/* Hero Section - Light Background */}
-      <HeroGlowBackground>
-        <section className="section-padding pt-32 md:pt-40">
-          <div className="container mx-auto px-4">
-            <Reveal variant="up">
-              <div className="max-w-3xl">
-                <div className="flex flex-wrap items-center gap-3 mb-6">
-                  <span className="inline-block px-3 py-1 text-xs font-medium uppercase border border-primary text-primary rounded">
-                    For Schools
-                  </span>
-                  <a 
-                    href="https://www.moe.gov.sg/education-in-sg/educational-technology-journey/edtech-masterplan"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="inline-flex items-center gap-2 px-3 py-1 rounded bg-secondary border border-border text-xs font-medium hover:border-primary/50 transition-colors"
-                  >
-                    🇸🇬 Aligned with MOE EdTech Masterplan 2030
-                  </a>
-                </div>
-                
-                <h1 className="text-4xl md:text-5xl lg:text-6xl font-display font-bold mb-8 leading-tight">
-                  Enrichment programmes that develop{" "}
-                  <span className="relative inline-block">
-                    <span className="text-foreground">21CC</span>
-                    <svg
-                      className="absolute -bottom-0.5 left-0 w-full h-2"
-                      viewBox="0 0 200 8"
-                      preserveAspectRatio="none"
-                      aria-hidden="true"
-                    >
-                      <path
-                        d="M0,4 Q15,1 30,4 T60,4 T90,4 T120,4 T150,4 T180,4 T200,4"
-                        fill="none"
-                        stroke="hsl(var(--primary))"
-                        strokeWidth="2"
-                        strokeLinecap="round"
-                      />
-                    </svg>
-                  </span>{" "}
-                  through hands-on AI problem-solving
-                </h1>
-                
-                <div className="flex flex-col md:flex-row md:items-end gap-6 md:gap-16">
-                  <p className="text-lg text-muted-foreground max-w-xl">
-                    Designed for post-exam enrichment, non-curricular slots, and holiday programmes. We handle facilitation — you choose the format, track, and cohort size.
-                  </p>
-                  <a href="#formats" className="text-primary text-sm font-medium flex items-center gap-2 hover:gap-3 transition-all">
-                    <span className="w-8 h-px bg-primary"></span>
-                    Scroll to explore
-                    <ArrowDown className="w-4 h-4" />
-                  </a>
-                </div>
+      {/* Hero Section */}
+      <section className="bg-background py-20 md:py-28">
+        <div className="mx-auto max-w-[1200px] px-6 md:px-14">
+          <Reveal variant="up">
+            <div className="max-w-3xl">
+              <span
+                className="vm-sticker inline-block mb-6"
+                style={{ transform: 'rotate(-3deg)' }}
+              >
+                ● For Schools
+              </span>
+
+              <h1 className="font-display font-bold tracking-display leading-[1.02] text-5xl md:text-6xl lg:text-7xl mb-8">
+                Enrichment programmes that develop{" "}
+                <span className="vm-sheen-text">21CC</span>
+                {" "}through hands-on AI problem-solving
+              </h1>
+
+              <div className="flex flex-col md:flex-row md:items-end gap-6 md:gap-16">
+                <p className="font-sans text-foreground max-w-xl">
+                  Designed for post-exam enrichment, non-curricular slots, and holiday programmes. We handle facilitation — you choose the format, track, and cohort size.
+                </p>
+                <a
+                  href="#formats"
+                  className="text-primary text-sm font-medium flex items-center gap-2 hover:gap-3 transition-all"
+                >
+                  <span className="w-8 h-px bg-primary"></span>
+                  Scroll to explore
+                  <ArrowDown className="w-4 h-4" />
+                </a>
               </div>
-            </Reveal>
-          </div>
-        </section>
-      </HeroGlowBackground>
+            </div>
+          </Reveal>
+        </div>
+      </section>
 
       {/* School Partners Trust Bar */}
-      <section className="bg-secondary/40 py-10 md:py-14 overflow-hidden">
-        <div className="container mx-auto px-4 text-center">
+      <section className="bg-bg-warm py-12 md:py-16 overflow-hidden border-t border-border">
+        <div className="mx-auto max-w-[1200px] px-6 md:px-14 text-center">
           <Reveal variant="up">
-            <p className="text-muted-foreground text-sm font-medium uppercase tracking-widest mb-2">
+            <p className="font-mono text-xs uppercase tracking-eyebrow text-ink-2 mb-2">
               Trusted by Singapore Schools
             </p>
-            <p className="text-muted-foreground text-sm mb-8">
+            <p className="text-foreground text-base mb-8">
               Delivering enrichment programmes from primary schools to JCs since 2018
             </p>
           </Reveal>
@@ -275,23 +252,23 @@ export default function Schools() {
               onMouseEnter={() => setIsPaused(true)}
               onMouseLeave={() => setIsPaused(false)}
             >
-              <div className="absolute left-0 top-0 bottom-0 w-16 md:w-24 bg-gradient-to-r from-secondary/40 to-transparent z-10 pointer-events-none" />
-              <div className="absolute right-0 top-0 bottom-0 w-16 md:w-24 bg-gradient-to-l from-secondary/40 to-transparent z-10 pointer-events-none" />
+              <div className="absolute left-0 top-0 bottom-0 w-16 md:w-24 bg-gradient-to-r from-bg-warm to-transparent z-10 pointer-events-none" />
+              <div className="absolute right-0 top-0 bottom-0 w-16 md:w-24 bg-gradient-to-l from-bg-warm to-transparent z-10 pointer-events-none" />
               <div
-                className={`flex gap-4 md:gap-6 ${isPaused ? "" : "animate-scroll"}`}
+                className={`flex gap-4 md:gap-6 ${isPaused ? "" : "animate-vm-marquee"}`}
                 style={{ width: "fit-content" }}
               >
                 {duplicatedSchools.map((school, index) => (
                   <div
                     key={`${school.abbr}-${index}`}
-                    className="flex-shrink-0 flex items-center justify-center px-4 py-3 rounded-2xl transition-all duration-300 group min-w-[100px] md:min-w-[120px] h-16 md:h-20"
+                    className="vm-logo-cell flex-shrink-0 flex items-center justify-center px-4 py-3 rounded-2xl transition-all duration-300 min-w-[100px] md:min-w-[120px] h-16 md:h-20"
                     title={school.name}
                   >
                     {school.logo ? (
                       <img
                         src={school.logo}
                         alt={school.name}
-                        className="h-10 md:h-14 w-auto object-contain transition-all duration-300 group-hover:scale-105"
+                        className="h-10 md:h-14 w-auto object-contain transition-all duration-300"
                         loading="lazy"
                       />
                     ) : (
@@ -310,15 +287,15 @@ export default function Schools() {
             <div className="grid grid-cols-3 gap-6 max-w-xl mx-auto mt-10">
               <div className="text-center">
                 <p className="text-primary font-display font-bold text-2xl md:text-3xl">5,000+</p>
-                <p className="text-muted-foreground text-xs mt-1">Students taught</p>
+                <p className="text-foreground text-xs mt-1">Students taught</p>
               </div>
               <div className="text-center border-x border-border">
                 <p className="text-primary font-display font-bold text-2xl md:text-3xl">40+</p>
-                <p className="text-muted-foreground text-xs mt-1">School partners</p>
+                <p className="text-foreground text-xs mt-1">School partners</p>
               </div>
               <div className="text-center">
                 <p className="text-primary font-display font-bold text-2xl md:text-3xl">2018</p>
-                <p className="text-muted-foreground text-xs mt-1">Founded</p>
+                <p className="text-foreground text-xs mt-1">Founded</p>
               </div>
             </div>
           </Reveal>
@@ -326,22 +303,17 @@ export default function Schools() {
       </section>
 
       {/* About Dialogic Academy */}
-      <section className="section-padding">
-        <div className="container mx-auto px-4">
+      <section className="bg-background py-20 md:py-28 border-t border-border">
+        <div className="mx-auto max-w-[1200px] px-6 md:px-14">
           <div className="max-w-3xl mx-auto">
             <Reveal variant="up">
-              <div className="flex items-center gap-3 mb-6">
-                <div className="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center">
-                  <span className="text-lg">🎓</span>
-                </div>
-                <h2 className="text-2xl md:text-3xl font-display font-bold">
-                  A Programme by Dialogic Academy
-                </h2>
-              </div>
+              <h2 className="font-display font-bold tracking-display leading-[1.02] text-3xl md:text-4xl mb-6">
+                A Programme by Dialogic Academy
+              </h2>
             </Reveal>
 
             <Reveal variant="up" delayMs={100}>
-              <div className="space-y-4 text-muted-foreground">
+              <div className="space-y-4 font-sans text-foreground">
                 <p>
                   <a href="https://dialogic.academy" target="_blank" rel="noopener noreferrer" className="text-primary font-medium hover:underline">Dialogic Academy</a> has
                   been Singapore's trusted partner for school enrichment since 2018 — delivering debate coaching,
@@ -363,25 +335,28 @@ export default function Schools() {
                   href="https://dialogic.academy"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center gap-2 px-4 py-2 bg-primary/10 border border-primary/30 rounded-full text-sm font-medium hover:bg-primary/20 transition-colors"
+                  className="vm-btn inline-flex items-center gap-2 rounded-full bg-primary px-5 py-3 font-medium text-primary-foreground shadow-sticker"
                 >
-                  Visit Dialogic Academy <span className="text-muted-foreground">→</span>
+                  Visit Dialogic Academy
+                  <span className="vm-arrow">→</span>
                 </a>
                 <a
                   href="https://www.moe.gov.sg/education-in-sg/21st-century-competencies"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center gap-2 px-4 py-2 bg-secondary border border-border rounded-full text-sm font-medium hover:border-primary/50 transition-colors"
+                  className="inline-flex items-center gap-2 px-5 py-3 font-medium rounded-full bg-transparent text-foreground border-[1.5px] border-foreground hover:bg-foreground hover:text-background transition-colors"
                 >
-                  MOE 21CC Framework <span className="text-muted-foreground">→</span>
+                  MOE 21CC Framework
+                  <span className="vm-arrow">→</span>
                 </a>
                 <a
                   href="https://www.moe.gov.sg/education-in-sg/educational-technology-journey/edtech-masterplan"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center gap-2 px-4 py-2 bg-secondary border border-border rounded-full text-sm font-medium hover:border-primary/50 transition-colors"
+                  className="inline-flex items-center gap-2 px-5 py-3 font-medium rounded-full bg-transparent text-foreground border-[1.5px] border-foreground hover:bg-foreground hover:text-background transition-colors"
                 >
-                  EdTech Masterplan 2030 <span className="text-muted-foreground">→</span>
+                  EdTech Masterplan 2030
+                  <span className="vm-arrow">→</span>
                 </a>
               </div>
             </Reveal>
@@ -390,14 +365,20 @@ export default function Schools() {
       </section>
 
       {/* Programme Formats */}
-      <section id="formats" className="section-padding scroll-mt-24">
-        <div className="container mx-auto px-4">
+      <section id="formats" className="bg-bg-warm py-20 md:py-28 border-t border-border scroll-mt-24">
+        <div className="mx-auto max-w-[1200px] px-6 md:px-14">
           <Reveal variant="up">
             <div className="mb-10">
-              <h2 className="text-2xl md:text-3xl font-display font-bold mb-3">
+              <span
+                className="vm-sticker inline-block mb-4"
+                style={{ transform: 'rotate(3deg)' }}
+              >
+                ● Flexible Options
+              </span>
+              <h2 className="font-display font-bold tracking-display leading-[1.02] text-3xl md:text-4xl mb-3">
                 Programme Formats
               </h2>
-              <p className="text-muted-foreground max-w-2xl">
+              <p className="font-sans text-foreground max-w-2xl">
 All formats run the same V.I.B.E. methodology — Vision, Ideate, Build, Evolve. Students develop CAIT competencies through authentic problem-solving with AI tools. Choose based on depth and time available.
               </p>
             </div>
@@ -405,40 +386,40 @@ All formats run the same V.I.B.E. methodology — Vision, Ideate, Build, Evolve.
 
           <RevealGroup staggerMs={100} variant="up" className="grid md:grid-cols-3 gap-6">
             {formats.map((format) => {
-              return <div key={format.title} className="rounded-2xl p-6 transition-all bg-secondary/30 border border-border hover:border-primary/30">
+              return <div key={format.title} className="vm-card rounded-2xl border border-border bg-card p-6">
                     {/* Header row */}
                     <div className="flex items-center justify-between mb-6">
                       <span className="inline-flex items-center px-3 py-1 text-xs font-medium rounded-full uppercase bg-foreground text-white">
                         {format.duration}
                       </span>
-                      <span className="inline-flex items-center gap-1.5 text-xs text-muted-foreground">
+                      <span className="inline-flex items-center gap-1.5 text-xs text-foreground">
                         <span>👥</span>
                         {format.groupSize}
                       </span>
                     </div>
 
                     {/* Title */}
-                    <h3 className="text-2xl font-display font-bold mb-6">
+                    <h3 className="font-display font-bold text-xl mb-6">
                       {format.title}
                     </h3>
 
                     {/* Purpose */}
                     <div className="mb-4">
-                      <p className="text-xs font-medium uppercase tracking-wide mb-1 text-muted-foreground">Purpose</p>
-                      <p>{format.purpose}</p>
+                      <p className="font-mono text-xs uppercase tracking-eyebrow text-ink-2 mb-1">Purpose</p>
+                      <p className="font-sans text-foreground">{format.purpose}</p>
                     </div>
 
                     {/* Best for */}
                     <div className="mb-4">
-                      <p className="text-xs font-medium uppercase tracking-wide mb-1 text-muted-foreground">Best for</p>
-                      <p>{format.bestFor}</p>
+                      <p className="font-mono text-xs uppercase tracking-eyebrow text-ink-2 mb-1">Best for</p>
+                      <p className="font-sans text-foreground">{format.bestFor}</p>
                     </div>
 
                     {/* Outcomes */}
                     <div className="mb-6">
-                      <p className="text-xs font-medium uppercase tracking-wide mb-2 text-muted-foreground">Outcomes</p>
+                      <p className="font-mono text-xs uppercase tracking-eyebrow text-ink-2 mb-2">Outcomes</p>
                       <ul className="space-y-2">
-                        {format.outcomes.map(outcome => <li key={outcome} className="flex items-center gap-2 text-sm">
+                        {format.outcomes.map(outcome => <li key={outcome} className="flex items-center gap-2 text-sm font-sans text-foreground">
                             <span className="w-2 h-2 rounded-full bg-primary flex-shrink-0" />
                             {outcome}
                           </li>)}
@@ -446,9 +427,10 @@ All formats run the same V.I.B.E. methodology — Vision, Ideate, Build, Evolve.
                     </div>
 
                     {/* CTA */}
-                    <Button asChild className="w-full rounded-full">
-                      <a href="#proposal">Request This Format</a>
-                    </Button>
+                    <a href="#proposal" className="vm-btn inline-flex w-full items-center justify-center gap-2 rounded-full bg-primary px-5 py-3 font-medium text-primary-foreground shadow-sticker">
+                      Request This Format
+                      <span className="vm-arrow">→</span>
+                    </a>
                   </div>;
             })}
           </RevealGroup>
@@ -456,28 +438,34 @@ All formats run the same V.I.B.E. methodology — Vision, Ideate, Build, Evolve.
       </section>
 
       {/* Build Tracks */}
-      <section className="section-padding bg-secondary/30">
-        <div className="container mx-auto px-4">
+      <section className="bg-background py-20 md:py-28 border-t border-border">
+        <div className="mx-auto max-w-[1200px] px-6 md:px-14">
           <Reveal variant="up">
             <div className="mb-10">
-              <h2 className="text-2xl md:text-3xl font-display font-bold mb-3">
+              <span
+                className="vm-sticker vm-sticker--orange inline-block mb-4"
+                style={{ transform: 'rotate(-3deg)' }}
+              >
+                ● Project Options
+              </span>
+              <h2 className="font-display font-bold tracking-display leading-[1.02] text-3xl md:text-4xl mb-3">
                 Build Tracks
               </h2>
-              <p className="text-muted-foreground max-w-2xl">
+              <p className="font-sans text-foreground max-w-2xl">
                 Choose a project focus that resonates with your students. Each track applies the same core methodology to different creative outcomes.
               </p>
             </div>
           </Reveal>
 
           <RevealGroup staggerMs={100} variant="up" className="grid md:grid-cols-3 gap-6">
-            {buildTracks.map(track => <div key={track.title} className="bg-card border border-border rounded-2xl p-6 hover:border-primary/30 transition-colors">
-                <div className="w-12 h-12 rounded-xl bg-white flex items-center justify-center mb-4">
+            {buildTracks.map(track => <div key={track.title} className="vm-card rounded-2xl border border-border bg-card p-6">
+                <div className="w-12 h-12 rounded-xl bg-bg-warm flex items-center justify-center mb-4">
                   <span className="text-3xl">{track.emoji}</span>
                 </div>
-                <h3 className="text-xl font-display font-bold mb-2">{track.title}</h3>
-                <p className="text-sm text-muted-foreground mb-4">{track.description}</p>
-                <p className="text-xs">
-                  <span className="text-muted-foreground">Best for:</span>{" "}
+                <h3 className="font-display font-bold text-lg mb-2">{track.title}</h3>
+                <p className="font-sans text-foreground text-sm mb-4">{track.description}</p>
+                <p className="font-sans text-sm">
+                  <span className="text-ink-2">Best for:</span>{" "}
                   <span className="text-foreground">{track.bestFor}</span>
                 </p>
               </div>)}
@@ -486,39 +474,47 @@ All formats run the same V.I.B.E. methodology — Vision, Ideate, Build, Evolve.
       </section>
 
       {/* V.I.B.E. Methodology */}
-      <section className="section-padding bg-secondary/30">
-        <div className="container mx-auto px-4">
+      <section className="bg-bg-warm py-20 md:py-28 border-t border-border">
+        <div className="mx-auto max-w-[1200px] px-6 md:px-14">
           <Reveal variant="up">
             <div className="max-w-3xl mx-auto text-center mb-12">
-              <span className="inline-block px-3 py-1 text-xs font-medium uppercase border border-primary text-primary rounded mb-4">
-                Our Methodology
+              <span
+                className="vm-sticker inline-block mb-4"
+                style={{ transform: 'rotate(3deg)' }}
+              >
+                ● Our Methodology
               </span>
-              <h2 className="text-2xl md:text-3xl font-display font-bold mb-3">
+              <h2 className="font-display font-bold tracking-display leading-[1.02] text-3xl md:text-4xl mb-3">
                 The V.I.B.E. Cycle
               </h2>
-              <p className="text-muted-foreground max-w-2xl mx-auto">
+              <p className="font-sans text-foreground max-w-2xl mx-auto">
                 A student-friendly design thinking loop that brings product thinking to life with AI. Each phase develops specific competencies while keeping students engaged in building something real.
               </p>
             </div>
           </Reveal>
 
           <RevealGroup staggerMs={100} variant="up" className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 max-w-5xl mx-auto">
-            {vibePhases.map((phase) => {
+            {vibePhases.map((phase, idx) => {
               const Icon = phase.icon;
               return (
                 <div
                   key={phase.key}
-                  className="bg-card border border-border rounded-2xl p-6 hover:border-primary/30 transition-colors"
+                  className="vm-card rounded-2xl border border-border bg-card p-6"
                 >
-                  <div className="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center mb-4">
-                    <Icon className="w-6 h-6 text-primary" />
+                  <span
+                    className="vm-sticker inline-block mb-4"
+                    style={{ transform: idx % 2 === 0 ? 'rotate(-3deg)' : 'rotate(3deg)' }}
+                  >
+                    ● {phase.label}
+                  </span>
+                  <div className="w-10 h-10 rounded-lg bg-bg-warm flex items-center justify-center mb-3">
+                    <Icon className="w-5 h-5 text-primary" />
                   </div>
-                  <h3 className="text-lg font-display font-bold mb-1">{phase.label}</h3>
-                  <p className="text-xs text-primary font-medium mb-3">{phase.subtitle}</p>
-                  <p className="text-sm text-muted-foreground mb-4">{phase.what}</p>
+                  <p className="font-mono text-xs uppercase tracking-eyebrow text-ink-2 mb-3">{phase.subtitle}</p>
+                  <p className="font-sans text-foreground text-sm mb-4">{phase.what}</p>
                   <div className="pt-3 border-t border-border">
-                    <p className="text-xs text-muted-foreground">
-                      <span className="font-medium text-foreground">Evidence:</span> {phase.evidence}
+                    <p className="font-sans text-xs text-foreground">
+                      <span className="font-medium">Evidence:</span> {phase.evidence}
                     </p>
                   </div>
                 </div>
@@ -527,7 +523,7 @@ All formats run the same V.I.B.E. methodology — Vision, Ideate, Build, Evolve.
           </RevealGroup>
 
           <Reveal variant="up" delayMs={300}>
-            <p className="text-center text-sm text-muted-foreground mt-8 max-w-xl mx-auto">
+            <p className="font-sans text-center text-base text-foreground mt-8 max-w-xl mx-auto">
               Process over product — but students still ship. By the end, every student has a working prototype AND can explain their problem, design, build, and improvement process.
             </p>
           </Reveal>
@@ -535,17 +531,20 @@ All formats run the same V.I.B.E. methodology — Vision, Ideate, Build, Evolve.
       </section>
 
       {/* Sample Lesson Plan */}
-      <section className="section-padding">
-        <div className="container mx-auto px-4">
+      <section className="bg-background py-20 md:py-28 border-t border-border">
+        <div className="mx-auto max-w-[1200px] px-6 md:px-14">
           <Reveal variant="up">
             <div className="max-w-3xl mx-auto text-center mb-10">
-              <span className="inline-block px-3 py-1 text-xs font-medium uppercase border border-primary text-primary rounded mb-4">
-                Sample Programme
+              <span
+                className="vm-sticker vm-sticker--orange inline-block mb-4"
+                style={{ transform: 'rotate(-3deg)' }}
+              >
+                ● Sample Programme
               </span>
-              <h2 className="text-2xl md:text-3xl font-display font-bold mb-3">
+              <h2 className="font-display font-bold tracking-display leading-[1.02] text-3xl md:text-4xl mb-3">
                 What a Programme Looks Like
               </h2>
-              <p className="text-muted-foreground max-w-2xl mx-auto">
+              <p className="font-sans text-foreground max-w-2xl mx-auto">
                 An illustrative 4-session plan showing programme flow. All programmes are customised to your school's objectives, schedule, and student profile.
               </p>
             </div>
@@ -556,27 +555,27 @@ All formats run the same V.I.B.E. methodology — Vision, Ideate, Build, Evolve.
               {lessonPlan.map((session, index) => (
                 <div
                   key={session.day}
-                  className="bg-card border border-border rounded-2xl p-5 md:p-6 hover:border-primary/30 transition-colors"
+                  className="vm-card rounded-2xl border border-border bg-card p-5 md:p-6"
                 >
                   <div className="flex flex-col md:flex-row md:items-start gap-4">
                     {/* Day badge */}
                     <div className="flex items-center gap-3 md:w-32 flex-shrink-0">
-                      <div className="w-10 h-10 rounded-full bg-foreground text-white flex items-center justify-center text-sm font-bold">
+                      <div className="w-10 h-10 rounded-full bg-foreground text-background flex items-center justify-center text-sm font-bold">
                         {index + 1}
                       </div>
                       <div>
                         <p className="font-display font-bold text-sm">{session.day}</p>
-                        <p className="text-xs text-muted-foreground">{session.hours}</p>
+                        <p className="font-sans text-xs text-ink-2">{session.hours}</p>
                       </div>
                     </div>
 
                     {/* Content */}
                     <div className="flex-1">
                       <h4 className="font-display font-bold text-base mb-2">{session.focus}</h4>
-                      <p className="text-sm text-muted-foreground mb-3">{session.activities}</p>
-                      <div className="flex items-start gap-2 bg-secondary/50 rounded-lg px-3 py-2">
+                      <p className="font-sans text-foreground text-sm mb-3">{session.activities}</p>
+                      <div className="flex items-start gap-2 bg-bg-warm rounded-lg px-3 py-2">
                         <Check className="w-4 h-4 text-primary flex-shrink-0 mt-0.5" />
-                        <p className="text-xs text-foreground">
+                        <p className="font-sans text-xs text-foreground">
                           <span className="font-medium">Deliverable:</span> {session.deliverable}
                         </p>
                       </div>
@@ -589,9 +588,9 @@ All formats run the same V.I.B.E. methodology — Vision, Ideate, Build, Evolve.
 
           <Reveal variant="up" delayMs={200}>
             <div className="max-w-4xl mx-auto mt-6">
-              <div className="flex items-start gap-4 p-4 rounded-xl bg-primary/5 border border-primary/20">
+              <div className="flex items-start gap-4 p-4 rounded-lg bg-bg-warm-2 border border-border">
                 <div className="w-1 min-h-[40px] bg-primary rounded-full flex-shrink-0" />
-                <p className="text-sm text-foreground">
+                <p className="font-sans text-foreground text-sm">
                   This is a sample plan. We customise every programme to your school's objectives, schedule, and student interests.{" "}
                   <a href="#proposal" className="text-primary font-medium hover:underline">
                     Let's co-design yours.
@@ -604,15 +603,15 @@ All formats run the same V.I.B.E. methodology — Vision, Ideate, Build, Evolve.
       </section>
 
       {/* Learning Outcomes & Skills */}
-      <section className="section-padding bg-foreground text-background">
-        <div className="container mx-auto px-4">
+      <section className="bg-foreground py-20 md:py-28">
+        <div className="mx-auto max-w-[1200px] px-6 md:px-14">
           <div className="max-w-4xl mx-auto">
             <Reveal variant="up">
               <div className="text-center mb-10">
-                <h2 className="text-2xl md:text-3xl font-display font-bold mb-3">
+                <h2 className="font-display font-bold tracking-display leading-[1.02] text-3xl md:text-4xl mb-3 text-background">
                   Learning Outcomes
                 </h2>
-                <p className="text-background/70 max-w-2xl mx-auto">
+                <p className="font-sans text-background/80 max-w-2xl mx-auto">
                   By the end of the programme, students will be able to:
                 </p>
               </div>
@@ -623,12 +622,12 @@ All formats run the same V.I.B.E. methodology — Vision, Ideate, Build, Evolve.
                 {learningOutcomes.map((outcome) => (
                   <div
                     key={outcome}
-                    className="flex items-start gap-3 p-3 rounded-xl bg-background/5"
+                    className="flex items-start gap-3 p-3 rounded-lg bg-background/10 border border-background/20"
                   >
-                    <div className="w-5 h-5 rounded-full bg-primary/20 flex items-center justify-center flex-shrink-0 mt-0.5">
-                      <Check className="w-3 h-3 text-primary" />
+                    <div className="w-5 h-5 rounded-full bg-primary/30 flex items-center justify-center flex-shrink-0 mt-0.5">
+                      <Check className="w-3 h-3" />
                     </div>
-                    <p className="text-sm text-background/90">{outcome}</p>
+                    <p className="font-sans text-sm text-background/90">{outcome}</p>
                   </div>
                 ))}
               </div>
@@ -636,8 +635,8 @@ All formats run the same V.I.B.E. methodology — Vision, Ideate, Build, Evolve.
 
             <Reveal variant="up" delayMs={200}>
               <div className="text-center mb-8">
-                <h3 className="text-xl font-display font-bold">Skills Developed</h3>
-                <p className="text-background/60 text-sm mt-1">Mapped to MOE's 21st Century Competencies framework</p>
+                <h3 className="font-display font-bold text-xl text-background">Skills Developed</h3>
+                <p className="font-sans text-background/70 text-sm mt-1">Mapped to MOE's 21st Century Competencies framework</p>
               </div>
             </Reveal>
 
@@ -647,13 +646,13 @@ All formats run the same V.I.B.E. methodology — Vision, Ideate, Build, Evolve.
                 return (
                   <div
                     key={skill.category}
-                    className="rounded-2xl p-5 bg-background/5 border border-background/10"
+                    className="rounded-lg p-5 bg-background/10 border border-background/20"
                   >
-                    <div className="w-10 h-10 rounded-xl bg-primary/20 flex items-center justify-center mb-4">
-                      <Icon className="w-5 h-5 text-primary" />
+                    <div className="w-10 h-10 rounded-lg bg-background/20 flex items-center justify-center mb-4">
+                      <Icon className="w-5 h-5 text-background" />
                     </div>
-                    <h4 className="font-display font-bold text-sm mb-2">{skill.category}</h4>
-                    <p className="text-xs text-background/70 leading-relaxed">{skill.skills}</p>
+                    <h4 className="font-display font-bold text-sm mb-2 text-background">{skill.category}</h4>
+                    <p className="font-sans text-xs text-background/80 leading-relaxed">{skill.skills}</p>
                   </div>
                 );
               })}
@@ -663,24 +662,30 @@ All formats run the same V.I.B.E. methodology — Vision, Ideate, Build, Evolve.
       </section>
 
       {/* How Schools Customise */}
-      <section className="section-padding">
-        <div className="container mx-auto px-4">
+      <section className="bg-bg-warm py-20 md:py-28 border-t border-border">
+        <div className="mx-auto max-w-[1200px] px-6 md:px-14">
           <div className="grid md:grid-cols-2 gap-12 lg:gap-20 items-start">
-            
+
             {/* Left column */}
             <Reveal variant="left">
               <div>
-                <h2 className="text-3xl md:text-4xl font-display font-bold mb-4">
+                <span
+                  className="vm-sticker inline-block mb-4"
+                  style={{ transform: 'rotate(3deg)' }}
+                >
+                  ● Customisation
+                </span>
+                <h2 className="font-display font-bold tracking-display leading-[1.02] text-3xl md:text-4xl mb-4">
                   How Schools Customise a Programme
                 </h2>
-                <p className="text-muted-foreground mb-8">
+                <p className="font-sans text-foreground mb-8">
                   Every engagement is defined along three dimensions. We guide schools through this process to ensure pedagogical coherence and operational feasibility.
                 </p>
-                
+
                 {/* Orange bar callout */}
                 <div className="flex items-start gap-4">
                   <div className="w-1 min-h-[40px] bg-primary rounded-full flex-shrink-0" />
-                  <p className="text-foreground">
+                  <p className="font-sans text-foreground">
                     Not sure which format fits your needs?{" "}
                     <a href="#proposal" className="text-primary font-medium hover:underline">
                       We'll recommend one.
@@ -689,42 +694,42 @@ All formats run the same V.I.B.E. methodology — Vision, Ideate, Build, Evolve.
                 </div>
               </div>
             </Reveal>
-            
+
             {/* Right column - Numbered steps */}
             <Reveal variant="right" delayMs={100}>
               <div className="space-y-0">
                 {customiseSteps.map((step, index, arr) => <div key={step.num} className="flex items-start gap-4">
                     {/* Number + connector line */}
                     <div className="flex flex-col items-center">
-                      <div className="w-10 h-10 rounded-full bg-foreground text-white flex items-center justify-center text-sm font-bold flex-shrink-0">
+                      <div className="w-10 h-10 rounded-full bg-foreground text-background flex items-center justify-center text-sm font-bold flex-shrink-0">
                         {step.num}
                       </div>
                       {index < arr.length - 1 && <div className="w-px h-8 bg-border mt-2" />}
                     </div>
-                    
+
                     {/* Content */}
                     <div className="pt-2 pb-6">
-                      <h4 className="font-semibold mb-1">{step.title}</h4>
-                      <p className="text-sm text-muted-foreground">{step.desc}</p>
+                      <h4 className="font-display font-bold text-base mb-1">{step.title}</h4>
+                      <p className="font-sans text-foreground text-sm">{step.desc}</p>
                     </div>
                   </div>)}
               </div>
             </Reveal>
-            
+
           </div>
         </div>
       </section>
 
       {/* CTA Form */}
-      <section id="proposal" className="section-padding bg-foreground text-background scroll-mt-24">
-        <div className="container mx-auto px-4">
+      <section id="proposal" className="bg-foreground py-20 md:py-28 scroll-mt-24">
+        <div className="mx-auto max-w-[1200px] px-6 md:px-14">
           <Reveal variant="up">
             <div className="max-w-2xl mx-auto">
               <div className="text-center mb-8">
-                <h2 className="text-2xl md:text-3xl font-display font-bold mb-3">
+                <h2 className="font-display font-bold tracking-display leading-[1.02] text-3xl md:text-4xl mb-3 text-background">
                   Request a Proposal
                 </h2>
-                <p className="text-background/70">
+                <p className="font-sans text-background/80">
                   Tell us about your school's needs and we'll prepare a tailored proposal within 2 working days.
                 </p>
               </div>

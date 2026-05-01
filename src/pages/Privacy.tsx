@@ -10,12 +10,16 @@ const Privacy = () => {
         <link rel="canonical" href="https://vibemakers.dev/privacy" />
       </Helmet>
 
-      <section className="py-16 md:py-24">
-        <div className="container mx-auto px-4 max-w-3xl">
-          <h1 className="text-4xl md:text-5xl font-bold mb-8">Privacy Policy</h1>
-          <p className="text-muted-foreground mb-8">Last updated: March 2026</p>
+      <section className="bg-background py-20 md:py-28">
+        <div className="mx-auto max-w-3xl px-6 md:px-14">
+          <span className="vm-sticker" style={{ transform: 'rotate(-3deg)' }}>
+            ● Privacy
+          </span>
 
-          <div className="prose prose-lg max-w-none prose-headings:font-display prose-headings:text-foreground prose-p:text-muted-foreground prose-a:text-primary">
+          <h1 className="font-display font-bold tracking-display leading-[1.02] text-4xl md:text-5xl mt-6 mb-4">Privacy Policy</h1>
+          <p className="text-muted-foreground mb-12">Last updated: March 2026</p>
+
+          <div className="prose prose-stone max-w-none text-foreground">
             <h2>1. Introduction</h2>
             <p>
               Vibe Makers Academy ("we", "our", "us"), a programme by Dialogic Academy Pte Ltd (UEN: 202040782G),
