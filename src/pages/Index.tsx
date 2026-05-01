@@ -747,9 +747,9 @@ function HHero({ tweaks }) {
   ];
 
   return (
-    <section style={{ padding: '64px 56px 56px', position: 'relative', overflow: 'hidden' }}>
+    <section className="vm-hero-section" style={{ padding: 'clamp(36px, 6vw, 64px) clamp(20px, 5vw, 56px) clamp(40px, 6vw, 56px)', position: 'relative', overflow: 'hidden' }}>
       <CursorGlow color="rgba(255,107,26,0.22)" size={520} />
-      <div style={{ display: 'flex', alignItems: 'center', gap: 12, marginBottom: 28, position: 'relative', zIndex: 1 }}>
+      <div className="vm-hero-eyebrow" style={{ display: 'flex', alignItems: 'center', gap: 12, marginBottom: 28, position: 'relative', zIndex: 1, flexWrap: 'wrap' }}>
         <span className="vm-wiggle" style={{ '--rot': '-3deg' }}>
           <HSticker color={H.yellow} rotate={0}>
             <span className="vm-pulse" style={{ display: 'inline-block', width: 7, height: 7, borderRadius: '50%', background: H.orange, marginRight: 2 }} />
@@ -759,9 +759,10 @@ function HHero({ tweaks }) {
         <span style={{ ...hStyles.mono, color: H.muted }}>Ages 13–18 · Trusted by 40+ schools</span>
       </div>
 
-      <h1 style={{
+      <h1 className="vm-hero-h1" style={{
         ...hStyles.display,
-        fontSize: 88,
+        fontSize: 'clamp(40px, 9vw, 88px)',
+        lineHeight: 1.02,
         margin: 0,
         maxWidth: 1180,
         position: 'relative',
@@ -772,13 +773,13 @@ function HHero({ tweaks }) {
         </Reveal>
         <Reveal as="span" y={26} duration={800} delay={120} style={{ display: 'block' }}>
           working <span style={{ position: 'relative', display: 'inline-block' }}>
-            <span className="vm-sheen-text" style={{ ...hStyles.serif, color: H.orange, position: 'relative', zIndex: 2, fontSize: 92 }}>products</span>
+            <span className="vm-sheen-text" style={{ ...hStyles.serif, color: H.orange, position: 'relative', zIndex: 2, fontSize: 'clamp(42px, 9.5vw, 92px)' }}>products</span>
             <span style={{
               position: 'absolute',
-              bottom: 8,
+              bottom: '0.08em',
               left: -6,
               right: -6,
-              height: 18,
+              height: '0.2em',
               background: H.yellow,
               zIndex: 1,
               borderRadius: 4,
@@ -789,12 +790,12 @@ function HHero({ tweaks }) {
       </h1>
 
       <Reveal delay={420} y={20}>
-      <div style={{ display: 'flex', gap: 64, marginTop: 36, alignItems: 'flex-start', position: 'relative', zIndex: 1 }}>
-        <p style={{ fontSize: 19, color: H.ink2, maxWidth: 580, margin: 0, lineHeight: 1.5 }}>
+      <div className="vm-hero-row" style={{ display: 'flex', gap: 'clamp(20px, 4vw, 64px)', marginTop: 36, alignItems: 'flex-start', position: 'relative', zIndex: 1, flexWrap: 'wrap' }}>
+        <p style={{ fontSize: 'clamp(16px, 2vw, 19px)', color: H.ink2, maxWidth: 580, margin: 0, lineHeight: 1.5 }}>
           {c.heroSub}
         </p>
-        <div style={{ flex: 1 }} />
-        <div style={{ display: 'flex', flexDirection: 'column', gap: 10, alignItems: 'stretch', minWidth: 280 }}>
+        <div className="vm-hero-spacer" style={{ flex: 1 }} />
+        <div className="vm-hero-ctas" style={{ display: 'flex', flexDirection: 'column', gap: 10, alignItems: 'stretch', minWidth: 280 }}>
           <div style={{ position: 'relative' }}>
             <a href="/parents" className="vm-btn" style={{
                 background: H.orange,
@@ -836,7 +837,7 @@ function HHero({ tweaks }) {
       </Reveal>
 
       {/* Hero showcase strip — V.I.B.E. teaser tiles (full container width) */}
-      <div style={{ marginTop: 56, display: 'grid', gridTemplateColumns: 'repeat(4, 1fr)', gap: 20, position: 'relative', zIndex: 1 }}>
+      <div className="vm-hero-tiles" style={{ marginTop: 56, display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(180px, 1fr))', gap: 20, position: 'relative', zIndex: 1 }}>
         {showcaseTiles.map((p, i) => (
           <Reveal key={i} delay={600 + i * 90} y={28} duration={750}>
           <div className="vm-drift" style={{
@@ -1866,12 +1867,92 @@ export default function Index() {
         <script type="application/ld+json">{`{
   "@context": "https://schema.org",
   "@type": "EducationalOrganization",
-  "name": "Vibemakers Academy",
+  "name": "Vibe Makers Academy",
+  "alternateName": "Vibemakers",
   "url": "https://vibemakers.dev",
-  "description": "Singapore's AI coding academy for teens. Build real apps in one session with Cursor, Claude and Lovable.",
-  "parentOrganization": { "@type": "Organization", "name": "Dialogic Academy" },
-  "areaServed": "Singapore",
-  "audience": { "@type": "EducationalAudience", "educationalRole": "student", "audienceType": "Teens aged 13-18" }
+  "logo": "https://vibemakers.dev/og-image.png",
+  "image": "https://vibemakers.dev/og-image.png",
+  "description": "Singapore's AI-first academy for teens 13-18. Students learn to spot real problems, design solutions, and build working apps using Claude, Lovable, and Cursor.",
+  "parentOrganization": { "@type": "EducationalOrganization", "name": "Dialogic Academy", "url": "https://dialogic.academy", "foundingDate": "2018" },
+  "areaServed": { "@type": "Country", "name": "Singapore" },
+  "audience": { "@type": "EducationalAudience", "educationalRole": "student", "audienceType": "Teens aged 13-18" },
+  "contactPoint": {
+    "@type": "ContactPoint",
+    "contactType": "customer service",
+    "email": "vibemakers@dialogic.academy",
+    "telephone": "+65-8890-0368",
+    "availableLanguage": "en"
+  }
+}`}</script>
+        <script type="application/ld+json">{`{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "What is vibe coding?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Vibe coding is a way of building software where you describe what you want in plain English and AI tools (like Claude or Lovable) generate the code. The student then iterates — testing, giving feedback, refining — until the app works for real users. The thinking work stays human; the syntax work is delegated to AI. It's how senior engineers at top tech companies actually work today."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Who is Vibe Makers Academy for?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Teenagers aged 13–18 in Singapore. Students from international schools (UWCSEA, SAS, Tanglin Trust, Dover Court, Stamford American) and top local schools (RGS, RI, NJC, VJC, ACS, HCI). No prior coding experience needed."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What tools do students learn?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Claude (thinking partner for problem scoping and debugging), Lovable (full-stack AI app builder), Cursor (AI-powered code editor for deeper customization), and supplementary tools like ChatGPT, Gemini, NotebookLM, and Meshy. Students walk out of the first session with a deployed app."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How is this different from a Python coding class?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Traditional Python classes optimize for syntax mastery (variables, loops, functions). Vibe Makers optimizes for shipping real products. Students leave with deployed apps used by real classmates — not certificates. For DSA / EAE / JC interviews, a portfolio of working apps consistently outperforms a course-completion certificate."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How does Vibe Makers map to MOE's 4 AI Learns?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "All four. Students 'Learn about AI' (limits and failure modes), 'Learn to use AI' (prompting and iteration craft), 'Learn with AI' (AI as thinking partner during builds), and 'Learn beyond AI' (human judgment AI can't replace — taste, ethics, problem-scoping). MOE EdTech Masterplan 2030 aligned."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Is there a free trial class?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. We run free 1-hour trial classes most weekends — online or in-person. Your child builds a working app and leaves with a deployed link. No sales pitch, no obligation. Book at https://vibemakers.dev/parents."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What ages do you teach?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "13 to 18. The problem-scoping and feedback-iteration cycle requires written communication and abstract thinking that pre-secondary students typically don't have yet."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How much does it cost?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "From SGD $80 per session for school workshops. Group classes and 1-to-1 private coaching pricing varies depending on cadence and duration. Book a free trial at https://vibemakers.dev/parents to discuss what fits."
+      }
+    }
+  ]
 }`}</script>
       </Helmet>
       <DirectionHybrid />

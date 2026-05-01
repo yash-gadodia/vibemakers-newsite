@@ -332,6 +332,80 @@
   50%      { transform: translateY(-20px); }
 }
 
+/* ============================================================================
+ * Mobile responsive overrides for inline-styled hero / sections in Index.tsx
+ *
+ * The homepage was ported from a desktop-first prototype with inline styles
+ * (fontSize: 88, padding: '64px 56px', etc.). These media queries retroactively
+ * make those inline-styled elements behave well on small viewports without
+ * needing to refactor every component to Tailwind responsive prefixes.
+ * ========================================================================== */
+
+@media (max-width: 768px) {
+  /* Hero section: stack CTAs below copy, drop the spacer */
+  .vm-hero-row {
+    flex-direction: column !important;
+    align-items: stretch !important;
+  }
+  .vm-hero-spacer { display: none !important; }
+  .vm-hero-ctas {
+    min-width: 0 !important;
+    width: 100%;
+  }
+
+  /* Hero V.I.B.E. tiles: 2 cols on small viewports (auto-fit handles it but force min) */
+  .vm-hero-tiles {
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 12px !important;
+  }
+  .vm-hero-tiles > div { padding: 16px !important; }
+
+  /* Generic: any 4-col grid in a section becomes 2-col on tablet/mobile */
+  section[style*="repeat(4, 1fr)"] {
+    grid-template-columns: repeat(2, 1fr) !important;
+  }
+
+  /* Section padding: trim horizontal padding aggressively on mobile */
+  section[style*="padding: '64px 56px"],
+  section[style*="padding:'64px 56px"],
+  section[style*="padding: '32px 56px"],
+  section[style*="padding:'32px 56px"] {
+    padding-left: 20px !important;
+    padding-right: 20px !important;
+  }
+
+  /* Headers / nav: shrink heavy display type */
+  h1[style*="fontSize: 88"],
+  h1[style*="font-size: 88"],
+  h1[style*="fontSize:88"] {
+    font-size: clamp(40px, 9vw, 88px) !important;
+    line-height: 1.05 !important;
+  }
+}
+
+@media (max-width: 480px) {
+  /* On phones, V.I.B.E. tiles: single column for full readability */
+  .vm-hero-tiles {
+    grid-template-columns: 1fr !important;
+  }
+  .vm-hero-eyebrow {
+    gap: 8px !important;
+  }
+  /* Ensure tap targets meet WCAG 44x44 minimum */
+  .vm-btn {
+    min-height: 44px;
+    min-width: 44px;
+  }
+}
+
+/* Prevent horizontal overflow caused by rotated / negatively-positioned elements */
+html, body { overflow-x: hidden; }
+
+/* Form inputs on iOS: prevent zoom-on-focus by ensuring 16px+ font-size */
+input, textarea, select {
+  font-size: max(16px, 1rem);
+}
+
 /* Print-only layout for A5 flyer (kept from previous design) */
 @media print {
   @page { size: A5 portrait; margin: 0; }

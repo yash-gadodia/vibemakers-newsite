@@ -116,6 +116,48 @@ export default function Parents() {
         <meta property="og:type" content="website" />
         <meta property="og:image" content="https://vibemakers.dev/og-image.png" />
         <meta name="twitter:card" content="summary_large_image" />
+
+        <script type="application/ld+json">{`{
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "name": "AI Coding Coaching for Singapore Teens",
+  "serviceType": "Educational Coaching",
+  "provider": {
+    "@type": "EducationalOrganization",
+    "name": "Vibe Makers Academy",
+    "url": "https://vibemakers.dev"
+  },
+  "areaServed": { "@type": "Country", "name": "Singapore" },
+  "audience": {
+    "@type": "Audience",
+    "audienceType": "Parents of teens 13-18 in Singapore"
+  },
+  "description": "Personalised 1-to-1 coaching and small-group classes for Singapore teens (13-18) to build real apps with AI. No experience needed. Free trial class.",
+  "offers": [
+    {
+      "@type": "Offer",
+      "name": "Free Trial Class",
+      "price": "0",
+      "priceCurrency": "SGD",
+      "availability": "https://schema.org/InStock",
+      "url": "https://vibemakers.dev/parents"
+    },
+    {
+      "@type": "Offer",
+      "name": "Group Classes",
+      "priceCurrency": "SGD",
+      "availability": "https://schema.org/InStock",
+      "url": "https://vibemakers.dev/parents"
+    },
+    {
+      "@type": "Offer",
+      "name": "1-to-1 Private Coaching",
+      "priceCurrency": "SGD",
+      "availability": "https://schema.org/InStock",
+      "url": "https://vibemakers.dev/parents"
+    }
+  ]
+}`}</script>
       </Helmet>
 
       {/* Hero */}

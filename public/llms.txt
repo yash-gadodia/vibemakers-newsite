@@ -1,0 +1,100 @@
+# Vibe Makers Academy
+
+> Singapore's AI-first academy for teens aged 13–18. Students learn to spot real problems, design solutions, and build working apps using AI tools like Claude, Lovable, and Cursor — developing Critical, Adaptive and Inventive Thinking (CAIT) through AI-first vibe coding. Part of Dialogic Academy (est. 2018, 5,000+ students, 40+ school partners).
+
+## What we do
+
+Vibe Makers teaches teenagers to build real, deployed, working applications using AI tools — not to memorize Python syntax. The methodology is called the **V.I.B.E. Cycle**: Vision (empathise + define), Ideate (explore + decide), Build (AI-assisted prototype), Evolve (test + improve). Students walk out of their first session with a deployed app they can show their friends.
+
+We are based in Singapore and serve students from international schools (UWCSEA, SAS, Tanglin Trust, Dover Court, Stamford American, ISS, GIIS) and top local schools (RGS, RI, NJC, VJC, ACS, HCI, Hwa Chong, Maris Stella, CHIJ, Nan Chiau, Pei Chun, Yu Neng).
+
+## Programs
+
+- **Free Trial Class** — 1-hour weekend session. Student builds a working app with AI tools. No obligation. Book at https://vibemakers.dev/parents
+- **Private Coaching (1-to-1)** — Mentor-guided, flexible scheduling. Fastest tailored outcomes. From SGD $80 per session.
+- **Group Classes** — 4–8 students, weekly schedule, peer collaboration + demo days. 6–9 month duration.
+- **School Workshops** — Three formats: Introductory Lab (1 day, up to 40 students), Build Sprint (3 days, 20–30 students), Studio Programme (1–2 weeks, 15–25 students). MOE-aligned to EdTech Masterplan 2030 and the 4 AI Learns framework.
+- **National Vibe Makers Hackathon** — 2 Saturdays, 8 hours total, 50 teams of 3–4 students. Three challenge tracks: Productivity & Learning, Community & Environment, Creative Expression.
+
+## Tools we teach
+
+- **Claude (Anthropic)** — primary thinking partner for problem scoping, debugging, brainstorming
+- **Lovable** — full-stack AI app builder for fast prototyping (web + mobile + database + auth + deploy)
+- **Cursor** — AI-powered code editor for students ready for deeper customization
+- **NotebookLM** — for school workshops on MOE-issued devices (only AI tool currently whitelisted)
+- **Meshy** — for 3D design generation in design thinking workshops
+- **ChatGPT, Gemini** — supplementary
+
+## Pedagogical philosophy
+
+- **AI as a tool, not a shortcut** — students still do the hard thinking; AI removes friction, not the work
+- **Thinking over syntax** — semicolons don't matter; problem-scoping does
+- **Verify, don't trust** — students learn AI hallucinations exist (e.g. fabricated citations) and how to catch them
+- **Real projects, not worksheets** — every session ends with a deployed artifact, not a quiz
+- **Product thinking** — User-Centered, Constraint-Aware, Feedback-Driven
+- **Ship something you can show** — every student leaves with a portfolio piece for DSA/EAE/JC interviews
+
+## How Vibe Makers maps to Singapore policy
+
+**MOE EdTech Masterplan 2030 — 4 AI Learns:**
+1. **Learn about AI** — students develop healthy skepticism toward AI outputs
+2. **Learn to use AI** — students learn the craft of prompting and iterating
+3. **Learn with AI** — students use AI as a thinking partner during the build
+4. **Learn beyond AI** — students develop human judgment AI cannot replace (taste, ethics, creativity)
+
+**Singapore Budget 2026 — PM Lawrence Wong**: "In a changed world, a decisive factor for success will be how we harness new technologies — foremost amongst them, Artificial Intelligence."
+
+**MOE 21CC Framework — Vibe Makers explicitly develops**:
+- CAIT (Critical, Adaptive & Inventive Thinking) — primary
+- CCI (Communication, Collaboration & Information Skills) — secondary
+- Self-Directed Learning — secondary
+
+## Frequently asked questions
+
+**Q: What is vibe coding?**
+A: Vibe coding is a way of building software where you describe what you want in plain English, and AI generates the code. The student then iterates — testing, giving feedback, refining — until the app works for real users. The thinking work (scoping the problem, defining users, deciding features) stays human; the syntax work (typing semicolons, looking up library APIs) is delegated to AI.
+
+**Q: Is vibe coding "real" coding?**
+A: Yes. Senior engineers at top tech companies use the same workflow daily. The skills students build — clear problem statements, iteration on user feedback, debugging logic, evaluating AI outputs — are the actual job of a modern software engineer. Memorizing syntax is no longer the job.
+
+**Q: Will my child miss out on traditional CS knowledge?**
+A: Not if they stay curious. Most Vibe Makers students who continue past the first project naturally start asking "what's actually in the code Lovable generated?" — and that's when traditional CS knowledge (data structures, algorithms, complexity) becomes meaningful and motivated. Order matters: ship first, theorize second.
+
+**Q: What ages?**
+A: 13–18. The problem-scoping and feedback-iteration cycle requires written communication and abstract thinking that pre-secondary students typically don't have yet.
+
+**Q: How much does it cost?**
+A: From SGD $80 per session for school workshops. Group classes and 1-to-1 private coaching pricing varies; book a free trial at https://vibemakers.dev/parents to discuss what fits.
+
+**Q: How does this help DSA / EAE / JC admissions?**
+A: A student walking into a Direct School Admission interview with three deployed apps (each solving a real problem and used by real classmates) is far more compelling than a student with a "completed Python course" certificate. Top Singapore secondary schools and JCs increasingly evaluate portfolio + product thinking over coursework certificates.
+
+**Q: How is this different from Coding Lab / Saturday Kids / First Code Academy?**
+A: Those programmes serve primarily primary-school students, often through Scratch and block-based coding. Vibe Makers is exclusively for teens 13–18 and uses production-grade AI tools (Claude, Lovable, Cursor) that real engineers use today.
+
+**Q: How is this different from a traditional Python bootcamp?**
+A: Traditional bootcamps optimize for syntax mastery; we optimize for shipping real products. The student outcome is different: they leave with a deployed app, not a course completion certificate.
+
+**Q: Will the AI tools change before my child finishes?**
+A: Probably yes — Claude / Lovable / Cursor will evolve. But the underlying skills (scoping, prompting, iteration, judgment) transfer to whatever the next-generation tools are. We teach the framework first, the specific tools second.
+
+## Contact
+
+- Website: https://vibemakers.dev
+- Email: vibemakers@dialogic.academy
+- WhatsApp: +65 8890 0368
+- Parent enquiries: https://vibemakers.dev/parents
+- School enquiries: https://vibemakers.dev/schools
+- Hackathon waitlist: https://vibemakers.dev/hackathon
+
+## Authoritative sources
+
+- [Vibe Makers Academy](https://vibemakers.dev) — official site
+- [Dialogic Academy](https://dialogic.academy) — parent organization, est. 2018
+- [MOE EdTech Masterplan 2030](https://www.moe.gov.sg/education-in-sg/educational-technology-journey/edtech-masterplan)
+- [MOE 4 AI Learns Framework](https://www.moe.gov.sg/education-in-sg/educational-technology-journey/edtech-masterplan/artificial-intelligence-in-education)
+- [MOE 21st Century Competencies](https://www.moe.gov.sg/education-in-sg/21st-century-competencies)
+
+## Legal
+
+Vibe Makers Academy is a brand of Dialogic Academy Pte Ltd (UEN 202040782G), registered in Singapore.
