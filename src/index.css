@@ -333,77 +333,189 @@
 }
 
 /* ============================================================================
- * Mobile responsive overrides for inline-styled hero / sections in Index.tsx
+ * Mobile responsive overrides for inline-styled sections in Index.tsx
  *
- * The homepage was ported from a desktop-first prototype with inline styles
- * (fontSize: 88, padding: '64px 56px', etc.). These media queries retroactively
- * make those inline-styled elements behave well on small viewports without
- * needing to refactor every component to Tailwind responsive prefixes.
+ * The homepage was ported from a desktop-first prototype written almost
+ * entirely with inline styles. Rather than refactor each style={{...}} block,
+ * these CSS attribute selectors retroactively respond to small viewports.
+ *
+ * Important: React renders inline `fontSize: 56` as `style="font-size: 56px"`
+ * (kebab-case, with px unit). The selectors below match that rendered form.
  * ========================================================================== */
 
+/* Prevent horizontal overflow caused by rotated stickers / negative offsets / wide grids */
+html, body { overflow-x: hidden; }
+html { -webkit-text-size-adjust: 100%; }
+
+/* iOS: prevent zoom-on-focus on form inputs by ensuring 16px+ font-size */
+input, textarea, select {
+  font-size: max(16px, 1rem);
+}
+
+/* ---------- TABLET (≤ 1024px) — 4-col grids become 2-col, 3-col becomes 2-col ---------- */
+@media (max-width: 1024px) {
+  div[style*="grid-template-columns: repeat(4"],
+  div[style*="grid-template-columns: repeat(3"],
+  section[style*="grid-template-columns: repeat(4"],
+  section[style*="grid-template-columns: repeat(3"] {
+    grid-template-columns: repeat(2, 1fr) !important;
+  }
+  /* Side-by-side text + content blocks at narrower asymmetry → still side-by-side but more equal */
+  div[style*="grid-template-columns: 1fr 1.5fr"],
+  div[style*="grid-template-columns: 1.5fr 1fr"],
+  div[style*="grid-template-columns: 1fr 1.6fr"],
+  div[style*="grid-template-columns: 1.4fr 1fr"] {
+    grid-template-columns: 1fr 1fr !important;
+    gap: 28px !important;
+  }
+}
+
+/* ---------- MOBILE (≤ 768px) — collapse all multi-col grids to 1 col ---------- */
 @media (max-width: 768px) {
-  /* Hero section: stack CTAs below copy, drop the spacer */
+  /* Collapse every multi-column grid */
+  div[style*="grid-template-columns: repeat(2"],
+  div[style*="grid-template-columns: repeat(3"],
+  div[style*="grid-template-columns: repeat(4"],
+  div[style*="grid-template-columns: repeat(5"],
+  div[style*="grid-template-columns: 1fr 1fr"],
+  div[style*="grid-template-columns: 1fr 1.5fr"],
+  div[style*="grid-template-columns: 1.5fr 1fr"],
+  div[style*="grid-template-columns: 1fr 1.6fr"],
+  div[style*="grid-template-columns: 1.4fr 1fr"],
+  div[style*="grid-template-columns: 1.5fr repeat"],
+  section[style*="grid-template-columns: repeat"],
+  footer[style*="grid-template-columns: 1.5fr repeat"] {
+    grid-template-columns: 1fr !important;
+    gap: 24px !important;
+  }
+
+  /* Reduce horizontal section padding (88/72/64/56/32/16 px patterns) */
+  [style*="padding: 88px 56px"],
+  [style*="padding: 72px 56px"],
+  [style*="padding: 64px 56px"],
+  [style*="padding: 56px 56px"],
+  [style*="padding: 32px 56px"],
+  [style*="padding: 16px 56px"] {
+    padding-left: 20px !important;
+    padding-right: 20px !important;
+  }
+  [style*="padding: 88px 56px"] { padding-top: 56px !important; padding-bottom: 56px !important; }
+  [style*="padding: 72px 56px"] { padding-top: 48px !important; padding-bottom: 48px !important; }
+  [style*="padding: 64px 56px"] { padding-top: 40px !important; padding-bottom: 40px !important; }
+  [style*="padding: 32px 56px"] { padding-top: 24px !important; padding-bottom: 24px !important; }
+
+  /* Clamp display fontSize values on mobile (keeps the design feel, just smaller) */
+  [style*="font-size: 88px"]   { font-size: clamp(36px, 9vw, 88px) !important; line-height: 1.04 !important; }
+  [style*="font-size: 92px"]   { font-size: clamp(38px, 9.5vw, 92px) !important; line-height: 1.04 !important; }
+  [style*="font-size: 80px"]   { font-size: clamp(34px, 8.5vw, 80px) !important; line-height: 1.05 !important; }
+  [style*="font-size: 72px"]   { font-size: clamp(34px, 8vw, 72px) !important; line-height: 1.05 !important; }
+  [style*="font-size: 64px"]   { font-size: clamp(32px, 7.5vw, 64px) !important; line-height: 1.05 !important; }
+  [style*="font-size: 60px"]   { font-size: clamp(32px, 7.2vw, 60px) !important; line-height: 1.05 !important; }
+  [style*="font-size: 56px"]   { font-size: clamp(30px, 7vw, 56px) !important; line-height: 1.06 !important; }
+  [style*="font-size: 48px"]   { font-size: clamp(28px, 6.4vw, 48px) !important; line-height: 1.08 !important; }
+  [style*="font-size: 44px"]   { font-size: clamp(26px, 6vw, 44px) !important; line-height: 1.1 !important; }
+  [style*="font-size: 40px"]   { font-size: clamp(24px, 5.5vw, 40px) !important; line-height: 1.1 !important; }
+  [style*="font-size: 38px"]   { font-size: clamp(24px, 5.4vw, 38px) !important; line-height: 1.1 !important; }
+  [style*="font-size: 36px"]   { font-size: clamp(24px, 5vw, 36px) !important; }
+  [style*="font-size: 30px"]   { font-size: clamp(22px, 4.5vw, 30px) !important; }
+  [style*="font-size: 28px"]   { font-size: clamp(20px, 4.2vw, 28px) !important; }
+
+  /* Body copy that's wider than the viewport — let it flow */
+  p[style*="max-width: 480px"],
+  p[style*="max-width: 580px"],
+  p[style*="max-width: 620px"],
+  p[style*="max-width: 720px"],
+  p[style*="max-width: 800px"],
+  p[style*="max-width: 880px"],
+  p[style*="max-width: 1180px"],
+  h1[style*="max-width:"],
+  h2[style*="max-width:"],
+  h3[style*="max-width:"] {
+    max-width: 100% !important;
+  }
+
+  /* Force fixed-width flex children to grow with their parent */
+  [style*="min-width: 280px"] { min-width: 0 !important; width: 100% !important; }
+  [style*="min-width: 320px"] { min-width: 0 !important; width: 100% !important; }
+  [style*="min-width: 480px"] { min-width: 0 !important; }
+
+  /* Reveal certain flex rows have hardcoded gap > viewport — let them wrap + tighten gap */
+  div[style*="display: flex"][style*="gap: 64"],
+  div[style*="display:flex"][style*="gap: 64"] {
+    flex-wrap: wrap !important;
+    gap: 20px !important;
+  }
+  div[style*="display: flex"][style*="gap: 56"],
+  div[style*="display:flex"][style*="gap: 56"] {
+    flex-wrap: wrap !important;
+    gap: 20px !important;
+  }
+
+  /* Top nav (HTopBar) — hide desktop nav links, show hamburger menu */
+  .vm-topbar-nav { display: none !important; }
+  .vm-topbar-menu-btn { display: inline-flex !important; }
+  .vm-topbar-mobile-menu { display: flex !important; }
+  /* Hide the long "Enquire →" CTA on phones — Contact is in the menu */
+  .vm-topbar-cta { display: none !important; }
+  /* Top bar own padding compress */
+  [style*="padding: 16px 56px"] {
+    padding-left: 20px !important;
+    padding-right: 20px !important;
+    padding-top: 14px !important;
+    padding-bottom: 14px !important;
+  }
+
+  /* CTA section — hardcoded padding 72px 56px, big copy */
+  section[style*="padding: 72px 56px"] {
+    padding: 56px 20px !important;
+  }
+
+  /* Hero section hooks (already partly fixed) */
   .vm-hero-row {
     flex-direction: column !important;
     align-items: stretch !important;
   }
   .vm-hero-spacer { display: none !important; }
-  .vm-hero-ctas {
-    min-width: 0 !important;
-    width: 100%;
-  }
-
-  /* Hero V.I.B.E. tiles: 2 cols on small viewports (auto-fit handles it but force min) */
+  .vm-hero-ctas { min-width: 0 !important; width: 100%; }
   .vm-hero-tiles {
     grid-template-columns: repeat(2, 1fr) !important;
     gap: 12px !important;
   }
   .vm-hero-tiles > div { padding: 16px !important; }
-
-  /* Generic: any 4-col grid in a section becomes 2-col on tablet/mobile */
-  section[style*="repeat(4, 1fr)"] {
-    grid-template-columns: repeat(2, 1fr) !important;
-  }
-
-  /* Section padding: trim horizontal padding aggressively on mobile */
-  section[style*="padding: '64px 56px"],
-  section[style*="padding:'64px 56px"],
-  section[style*="padding: '32px 56px"],
-  section[style*="padding:'32px 56px"] {
-    padding-left: 20px !important;
-    padding-right: 20px !important;
-  }
-
-  /* Headers / nav: shrink heavy display type */
-  h1[style*="fontSize: 88"],
-  h1[style*="font-size: 88"],
-  h1[style*="fontSize:88"] {
-    font-size: clamp(40px, 9vw, 88px) !important;
-    line-height: 1.05 !important;
-  }
 }
 
+/* ---------- PHONE (≤ 480px) — single-column everywhere, tighter touch targets ---------- */
 @media (max-width: 480px) {
-  /* On phones, V.I.B.E. tiles: single column for full readability */
-  .vm-hero-tiles {
+  .vm-hero-tiles { grid-template-columns: 1fr !important; }
+  .vm-hero-eyebrow { gap: 8px !important; }
+
+  /* WCAG 2.5.5 — interactive controls 44x44 minimum */
+  .vm-btn { min-height: 44px; min-width: 44px; }
+
+  /* On phone, even tablet 2-col fallbacks should collapse fully */
+  div[style*="grid-template-columns: repeat(4"],
+  div[style*="grid-template-columns: repeat(3"],
+  section[style*="grid-template-columns: repeat(4"],
+  section[style*="grid-template-columns: repeat(3"] {
     grid-template-columns: 1fr !important;
   }
-  .vm-hero-eyebrow {
-    gap: 8px !important;
-  }
-  /* Ensure tap targets meet WCAG 44x44 minimum */
-  .vm-btn {
-    min-height: 44px;
-    min-width: 44px;
-  }
-}
 
-/* Prevent horizontal overflow caused by rotated / negatively-positioned elements */
-html, body { overflow-x: hidden; }
+  /* Reduce extreme padding further */
+  [style*="padding: 88px 56px"] { padding: 40px 16px !important; }
+  [style*="padding: 72px 56px"] { padding: 40px 16px !important; }
+  [style*="padding: 64px 56px"] { padding: 32px 16px !important; }
+  [style*="padding: 56px 56px"] { padding: 32px 16px !important; }
+  [style*="padding: 32px 56px"] { padding: 20px 16px !important; }
 
-/* Form inputs on iOS: prevent zoom-on-focus by ensuring 16px+ font-size */
-input, textarea, select {
-  font-size: max(16px, 1rem);
+  /* Buttons full-width on phones */
+  a[class*="vm-btn"][style*="padding: 16px 24px"],
+  a[class*="vm-btn"][style*="padding: 15px 24px"],
+  a[class*="vm-btn"][style*="padding: 18px 24px"],
+  a[class*="vm-btn"][style*="padding: 17px 24px"] {
+    width: 100% !important;
+    box-sizing: border-box !important;
+    text-align: center !important;
+  }
 }
 
 /* Print-only layout for A5 flyer (kept from previous design) */

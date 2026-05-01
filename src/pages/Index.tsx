@@ -689,8 +689,9 @@ function HSticker({ children, color = H.yellow, rotate = -3, style }) {
 }
 
 function HTopBar({ tweaks }) {
+  const [menuOpen, setMenuOpen] = useState(false);
   return (
-    <div style={{
+    <div className="vm-topbar" style={{
       borderBottom: `1px solid ${H.rule}`,
       padding: '16px 56px',
       display: 'flex',
@@ -706,7 +707,7 @@ function HTopBar({ tweaks }) {
           Vibe Makers
         </span>
       </div>
-      <nav style={{ display: 'flex', alignItems: 'center', gap: 28, fontSize: 14, color: H.ink2 }}>
+      <nav className="vm-topbar-nav" style={{ display: 'flex', alignItems: 'center', gap: 28, fontSize: 14, color: H.ink2 }}>
         <a href="/parents" className="vm-nav-link" style={{ color: 'inherit', textDecoration: 'none' }}>Parents</a>
         <a href="/schools" className="vm-nav-link" style={{ color: 'inherit', textDecoration: 'none' }}>Schools</a>
         <a href="/programme" className="vm-nav-link" style={{ color: 'inherit', textDecoration: 'none' }}>Programme</a>
@@ -714,7 +715,7 @@ function HTopBar({ tweaks }) {
         <a href="/about" className="vm-nav-link" style={{ color: 'inherit', textDecoration: 'none' }}>About</a>
       </nav>
       <div style={{ display: 'flex', alignItems: 'center', gap: 10 }}>
-        <a href="/contact" className="vm-btn" style={{
+        <a href="/contact" className="vm-btn vm-topbar-cta" style={{
           background: H.ink,
           color: H.bg,
           border: 'none',
@@ -729,7 +730,74 @@ function HTopBar({ tweaks }) {
           gap: 6,
           boxShadow: `2px 2px 0 ${H.orange}`,
         }}>Enquire <span className="vm-arrow">→</span></a>
+        <button
+          type="button"
+          className="vm-topbar-menu-btn"
+          aria-label={menuOpen ? "Close menu" : "Open menu"}
+          aria-expanded={menuOpen}
+          onClick={() => setMenuOpen((v) => !v)}
+          style={{
+            display: 'none',
+            background: 'transparent',
+            border: `1.5px solid ${H.ink}`,
+            borderRadius: 8,
+            width: 40,
+            height: 40,
+            cursor: 'pointer',
+            alignItems: 'center',
+            justifyContent: 'center',
+            padding: 0,
+          }}
+        >
+          <span aria-hidden style={{ display: 'block', width: 18, height: 2, background: H.ink, position: 'relative' }}>
+            <span style={{ position: 'absolute', inset: 0, top: -6, height: 2, background: H.ink }} />
+            <span style={{ position: 'absolute', inset: 0, top: 6, height: 2, background: H.ink }} />
+          </span>
+        </button>
       </div>
+
+      {menuOpen && (
+        <div
+          className="vm-topbar-mobile-menu"
+          style={{
+            position: 'absolute',
+            top: '100%',
+            left: 0,
+            right: 0,
+            background: H.bg,
+            borderBottom: `1px solid ${H.rule}`,
+            padding: '20px 20px 24px',
+            display: 'none',
+            flexDirection: 'column',
+            gap: 14,
+            fontSize: 16,
+            zIndex: 10,
+            boxShadow: '0 12px 24px rgba(26,22,18,0.08)',
+          }}
+        >
+          <a href="/parents" style={{ color: H.ink, textDecoration: 'none', padding: '8px 4px' }}>Parents</a>
+          <a href="/schools" style={{ color: H.ink, textDecoration: 'none', padding: '8px 4px' }}>Schools</a>
+          <a href="/programme" style={{ color: H.ink, textDecoration: 'none', padding: '8px 4px' }}>Programme</a>
+          <a href="/hackathon" style={{ color: H.ink, textDecoration: 'none', padding: '8px 4px' }}>Hackathon</a>
+          <a href="/about" style={{ color: H.ink, textDecoration: 'none', padding: '8px 4px' }}>About</a>
+          <a href="/blog" style={{ color: H.ink, textDecoration: 'none', padding: '8px 4px' }}>Blog</a>
+          <a
+            href="/contact"
+            style={{
+              marginTop: 8,
+              background: H.ink,
+              color: H.bg,
+              padding: '12px 16px',
+              borderRadius: 8,
+              fontSize: 14,
+              fontWeight: 600,
+              textDecoration: 'none',
+              textAlign: 'center',
+              boxShadow: `2px 2px 0 ${H.orange}`,
+            }}
+          >Enquire →</a>
+        </div>
+      )}
     </div>
   );
 }
