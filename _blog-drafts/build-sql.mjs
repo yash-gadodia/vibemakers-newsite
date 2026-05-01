@@ -15,6 +15,9 @@ const SLUGS = [
   "ai-coding-vs-traditional",
   "moe-4-ai-learns",
   "lovable-cursor-claude-chatgpt",
+  "dsa-portfolio-singapore",
+  "ai-coding-projects-teens-real-problems",
+  "teen-coding-without-syntax",
 ];
 
 function parseFrontmatter(md) {

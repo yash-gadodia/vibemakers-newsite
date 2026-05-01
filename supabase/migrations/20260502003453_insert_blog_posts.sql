@@ -1049,3 +1049,990 @@ assistant</li>
 </ul>
 ', 'Vibe Makers Academy', 'published', '2026-05-01T00:00:00Z'::timestamptz)
 ON CONFLICT (slug) DO UPDATE SET title = EXCLUDED.title, description = EXCLUDED.description, meta_title = EXCLUDED.meta_title, meta_description = EXCLUDED.meta_description, category = EXCLUDED.category, tags = EXCLUDED.tags, html_content = EXCLUDED.html_content, author = EXCLUDED.author, status = EXCLUDED.status, published_at = EXCLUDED.published_at, updated_at = now();
+
+-- How to build a DSA coding portfolio that actually gets your child into a top Singapore school (2026 guide)
+INSERT INTO public.blog_posts (title, slug, description, meta_title, meta_description, category, tags, html_content, author, status, published_at)
+VALUES ('How to build a DSA coding portfolio that actually gets your child into a top Singapore school (2026 guide)', 'dsa-coding-portfolio-singapore', 'A working portfolio matters more than a coding certificate for DSA. Here''s exactly what top SG secondary schools and JCs look for, and how to build it in 4-12 weeks using AI tools.', 'DSA Coding Portfolio Singapore — A 2026 Parent''s Guide', 'What top SG schools really want in a DSA coding portfolio. 4-12 week build plan with Claude + Lovable. Real artifacts, not certificates.', 'Admissions & Portfolio', ARRAY['DSA','EAE','portfolio','AI coding','Singapore secondary']::text[], '<h2 id="tldr">TL;DR</h2>
+<ul>
+<li><strong>The DSA shortlist is decided by what your child
+<em>built</em>, not what they <em>learned</em>.</strong> Certificates
+from coding bootcamps barely move the needle anymore — interviewers want
+to click on something real.</li>
+<li><strong>3 deployed apps + a 90-second walkthrough video is
+enough.</strong> That’s a credible portfolio for almost any Singapore
+secondary school or JC computing track.</li>
+<li><strong>You can build it in 4–12 weeks with Claude +
+Lovable</strong>, even if your child has zero coding experience. The
+bottleneck isn’t syntax; it’s choosing problems worth solving.</li>
+</ul>
+<hr />
+<h2 id="why-portfolios-matter-more-than-ever-for-dsa-in-2026">Why
+portfolios matter more than ever for DSA in 2026</h2>
+<p>Direct School Admission (DSA) and the Early Admissions Exercise (EAE)
+used to be a certificate-and-grades game. A child with a Python course
+completion + decent PSLE / O-Level grades had a shot.</p>
+<p>That logic is breaking down for two reasons.</p>
+<p><strong>One:</strong> AI coding tools (Claude, Lovable, Cursor,
+ChatGPT) have collapsed the time it takes to ship a working app. A
+student who can describe a problem clearly can deploy a real product in
+hours, not months. This means a “completed Python Level 3” certificate
+signals less and less — interviewers know the same student could have
+built something deployable in the same time.</p>
+<p><strong>Two:</strong> Singapore schools are hiring more interviewers
+from industry — engineers from DBS, Grab, GovTech, Shopee — and these
+people read certificates like a recruiter reads “proficient in MS
+Office.” It’s a baseline check, not a differentiator. What they actually
+click into is the <strong>portfolio link</strong>.</p>
+<p>This shift is consistent with where MOE policy is heading. The <a
+href="https://www.moe.gov.sg/education-in-sg/educational-technology-journey/edtech-masterplan">EdTech
+Masterplan 2030</a> and <a
+href="https://www.moe.gov.sg/education-in-sg/21st-century-competencies">21CC
+framework</a> explicitly weight Critical, Adaptive and Inventive
+Thinking (CAIT) — and a working app is one of the cleanest possible CAIT
+artefacts.</p>
+<hr />
+<h2 id="what-top-singapore-schools-actually-look-for">What top Singapore
+schools actually look for</h2>
+<p>We’ve seen the rubric (or close enough) for several top SG schools’
+DSA computing tracks. The signals that matter, in priority order:</p>
+<h3 id="did-your-child-solve-a-real-problem">1. Did your child solve a
+real problem?</h3>
+<p>The interview question that kills weak portfolios is: <em>“Why did
+you build this?”</em></p>
+<p>A child who built a Pomodoro timer because “the tutorial said to”
+can’t answer it. A child who built a CCA points tracker because “I kept
+losing track of which sessions I’d attended” can. The second one moves
+to the next round.</p>
+<p>The implication for parents: <strong>don’t pick the project for
+them.</strong> Help them notice friction in their own life — a homework
+workflow that’s annoying, a study group that needs better coordination,
+a hobby that lacks a tool — and let <em>that</em> be the project
+brief.</p>
+<h3 id="can-they-explain-what-they-built-and-what-they-didnt">2. Can
+they explain what they built and what they didn’t?</h3>
+<p>Modern interviewers are AI-fluent. They know your child used Claude
+or Lovable. They’re not testing whether the child wrote every line of
+code; they’re testing whether the child <strong>understood</strong> what
+got generated.</p>
+<p>Strong answer: <em>“Lovable scaffolded the database tables, but the
+logic for marking a session as ‘attended’ I had to debug myself — Claude
+initially used the wrong primary key.”</em></p>
+<p>Weak answer: <em>“I asked AI to build it.”</em></p>
+<p>This is the difference. The child should be able to walk through any
+screen of their app and explain what’s happening. That’s the new “show
+me your code.”</p>
+<h3 id="did-they-iterate-on-real-user-feedback">3. Did they iterate on
+real user feedback?</h3>
+<p>Three or more named users (classmates, family, study group) who
+actually used the app, gave feedback, and triggered a change — that’s
+the gold standard. Interviewers ask:</p>
+<ul>
+<li><em>Who used it?</em></li>
+<li><em>What did they say?</em></li>
+<li><em>What did you change?</em></li>
+<li><em>What feedback did you ignore, and why?</em></li>
+</ul>
+<p>That last question separates good portfolios from great ones. It’s a
+judgment question — <em>did you decide what mattered?</em> AI can’t make
+that call. The child has to.</p>
+<h3 id="did-they-ship">4. Did they ship?</h3>
+<p>A working, deployed link beats a half-finished local prototype every
+time. The reason is simple: shipping is hard. Anyone who’s done it
+knows. An interviewer looking at a deployed link with real users can
+shortcut a lot of the rest of the evaluation.</p>
+<p>A portfolio with three deployed apps signals follow-through. A
+portfolio with one half-finished masterpiece signals the opposite.</p>
+<hr />
+<h2 id="the-3-app-90-second-video-portfolio-formula">The 3-app +
+90-second-video portfolio formula</h2>
+<p>After looking at what’s actually working for Singapore students
+entering top secondary schools and JC computing tracks in 2026, this is
+the minimum bar:</p>
+<p><strong>App 1 — The personal-pain solution (Weeks 1–4)</strong></p>
+<p>Solves a real friction in your child’s life. Doesn’t have to be
+original. The CCA tracker, the homework checklist, the study group
+scheduler — all valid. The point is: they have a story for <em>why this
+exists.</em></p>
+<p><strong>App 2 — The community-or-school solution (Weeks
+5–8)</strong></p>
+<p>Solves a problem for someone other than your child. A tool for their
+CCA, their class, their family, a tutor. Different shape of product
+because it requires user research outside the child’s own head.</p>
+<p><strong>App 3 — The ambitious one (Weeks 9–12, optional)</strong></p>
+<p>Something with a stretch goal. Maybe an AI integration, maybe a
+feature their first two apps didn’t need (auth, payments, complex
+state). This one is for the child who’s <em>into</em> it. If app 2 was
+already a stretch, skip this.</p>
+<p><strong>The 90-second walkthrough video</strong></p>
+<p>A short Loom or YouTube unlisted video where the child screen-shares
+one of the apps, walks through what it does, says who built it, and
+explains what they’d do differently. This is the artefact the
+interviewer can watch <em>before</em> the interview. It removes the
+“talk-around-the-product” risk.</p>
+<p>That’s the whole portfolio. No GitHub stars, no certificate, no
+Hackerrank score required.</p>
+<hr />
+<h2 id="a-realistic-timeline-if-your-child-has-zero-coding-experience">A
+realistic timeline if your child has zero coding experience</h2>
+<p>This is the question parents ask most. The honest answer: it depends
+on motivation, not aptitude.</p>
+<p><strong>Week 1 (4–6 hours):</strong> Set up a free Lovable account, a
+free Claude account. Pick a problem. Build a v1 of app 1 — probably
+ugly, but deployed.</p>
+<p><strong>Week 2 (3–5 hours):</strong> Show v1 to two friends. Get
+feedback. Iterate. Add the one feature your child wishes was there.</p>
+<p><strong>Week 3 (3–5 hours):</strong> Polish — fix the broken parts,
+write a short description, share with one more user. Deploy the final
+version. Take screenshots for the portfolio.</p>
+<p><strong>Week 4 (2–3 hours):</strong> Plan app 2. Different problem,
+different person.</p>
+<p>Repeat for apps 2 and 3.</p>
+<p>So the practical floor is roughly <strong>40–60 total hours of active
+building</strong> for a 3-app portfolio. That fits easily into a school
+holiday or a 12-week weekend cadence. Most students who finish are in
+the 60–80-hour range because feedback loops are the slow part — getting
+friends to actually try the thing, then iterating.</p>
+<p>This timeline assumes structured help (a coach, a programme, or a
+parent who can sit in for the first build). Going fully solo doubles it,
+because the child wastes time being stuck on things a 30-second prompt
+rewrite would solve.</p>
+<hr />
+<h2 id="what-to-avoid-the-4-most-common-dsa-portfolio-mistakes">What to
+avoid (the 4 most common DSA portfolio mistakes)</h2>
+<h3 id="the-tutorial-project">1. The Tutorial Project</h3>
+<p>A todo app, a calculator, a tic-tac-toe — everyone has these. They
+tell the interviewer nothing about the child. Skip them.</p>
+<h3 id="the-half-built-masterpiece">2. The Half-Built Masterpiece</h3>
+<p>A massively ambitious project that’s 30% done with no users is worse
+than a tiny finished thing with three users. Always ship before you
+scope up.</p>
+<h3 id="the-solo-project">3. The Solo Project</h3>
+<p>If no one but the child has ever used the app, the interviewer can’t
+ask the most interesting questions. At least one user feedback cycle,
+ideally three.</p>
+<h3 id="the-hidden-code">4. The Hidden Code</h3>
+<p>A deployed app with no way for the interviewer to see what’s inside
+is fine for parent-facing demos, but for DSA, having a public link to
+the source (or being able to talk through it on screen) signals depth.
+Use GitHub or just keep the Lovable / Cursor project ready to share.</p>
+<hr />
+<h2 id="how-ai-tools-fit-without-being-a-crutch">How AI tools fit
+(without being a crutch)</h2>
+<p>The default toolchain for a 2026 SG teen building a DSA
+portfolio:</p>
+<ul>
+<li><strong><a href="https://claude.ai">Claude</a></strong> — for
+thinking through what to build, debugging logic, and explaining what
+code does. The free tier handles most of it.</li>
+<li><strong><a href="https://lovable.dev">Lovable</a></strong> — for the
+actual build, especially app 1 and 2. Web-based, fast, deploys
+automatically. Free tier covers 2 projects.</li>
+<li><strong><a href="https://www.cursor.com">Cursor</a></strong> — only
+by app 3 if your child wants more control over the code. Skip
+otherwise.</li>
+</ul>
+<p>The framing parents should hold: AI tools are <em>exoskeletons</em>.
+They make a small builder bigger. They don’t replace the builder. The
+interviewer can tell the difference between a child who used Claude as a
+thinking partner and a child who used Claude as a substitute for
+thinking — and they will ask questions specifically designed to surface
+that difference.</p>
+<p>If you’re new to these tools, our <a
+href="/blog/ai-tools-comparison-teens">comparison guide</a> walks
+through which to start with and when. Or read our <a
+href="/blog/what-is-vibe-coding-singapore-parent-guide">intro to vibe
+coding for SG parents</a> for the broader frame.</p>
+<hr />
+<h2 id="what-good-looks-like-a-sample-portfolio-narrative">What “good”
+looks like — a sample portfolio narrative</h2>
+<p>Here’s the kind of three-paragraph narrative a strong DSA candidate
+has ready, in their own words:</p>
+<blockquote>
+<p><em>I built three apps over the school holidays. The first was a CCA
+reminder tool for myself — I kept forgetting which days my swimming
+sessions clashed with tuition, so I made a thing that pulls from my
+Google Calendar and sends me a daily summary. My swim coach started
+using it too.</em></p>
+<p><em>The second was a study-group quiz tool. My friends and I were
+prepping for our science test and someone said it’d be useful to have a
+quiz where the questions were generated from our notes. I built it with
+Claude doing the question generation and Lovable for the UI. Six of us
+used it. We argued a lot about whether the AI’s questions were too
+easy.</em></p>
+<p><em>The third was the hard one — I tried to build a tool for our CCA
+to track service hours. I underestimated it. The login flow took a full
+week. I had to ask Claude to walk me through what ‘authentication’
+actually means three different ways before I got it. The app works now
+but isn’t pretty. If I had another two weeks I’d redo the
+dashboard.</em></p>
+</blockquote>
+<p>That narrative — three apps, real users, an honest miss, evidence of
+learning — is what wins DSA interviews.</p>
+<hr />
+<h2 id="how-vibe-makers-fits-in">How Vibe Makers fits in</h2>
+<p>We run programmes specifically structured around this DSA-portfolio
+outcome. A typical 4-week sprint at Vibe Makers gets a student from
+“never coded” to “one deployed app + screen recording + portfolio
+narrative” — the foundation for app 1. From there, students continue
+independently or extend the programme to cover apps 2 and 3.</p>
+<p>If you want a <a href="/parents">free trial class</a> where your teen
+builds the first 70% of app 1 in 90 minutes, we run them most weekends.
+No obligation — the trial is designed to let you both see whether vibe
+coding clicks for your child.</p>
+<hr />
+<h2 id="faq-common-parent-questions">FAQ — common parent questions</h2>
+<p><strong>Q: Does the school care which AI tool my child used?</strong>
+A: They care that the child can explain <em>what</em> they built and
+<em>why</em> — tool choice is irrelevant. Lovable, Cursor, Claude, Bolt,
+V0 are all fine.</p>
+<p><strong>Q: My child is in P6. Is it too early to start?</strong> A:
+For DSA prep specifically, P6 is the right time to start app 1. The
+first project doesn’t need to be polished — the goal is for your child
+to learn the build-iterate-ship cycle. Apps 2 and 3 can come during Sec
+1.</p>
+<p><strong>Q: My child wants to do hardcore CS — should they skip the AI
+tools?</strong> A: No. The students who go on to be strong competitive
+programmers in JC almost all started with vibe coding because it built
+motivation. Once they’re in love with shipping, the discipline of
+algorithms and data structures becomes a <em>means to an end</em> — they
+want to make things faster — instead of a syntax slog.</p>
+<p><strong>Q: What if my child’s portfolio gets compared to another
+candidate’s much fancier portfolio?</strong> A: Three deployed apps with
+real users out-performs one polished but unused masterpiece almost every
+time. Interviewers reward shipping evidence, not aesthetic polish.</p>
+<p><strong>Q: How do I help without doing it for them?</strong> A: Be
+the user. Try their app, give honest feedback, be specific about what
+didn’t work. Don’t touch the code. Don’t give them the project idea —
+let them notice friction in their own life and pick from that.</p>
+<p><strong>Q: Where do I see real student examples?</strong> A: We’re
+working on a public student showcase for late 2026 — once we have
+written consent from the students whose work we’d feature. We won’t put
+up fabricated examples.</p>
+<hr />
+<h2 id="next-step">Next step</h2>
+<p>If your child is preparing for DSA and you want a concrete starting
+point, <a href="/parents">book a free trial class</a>. One hour, online
+or in-person, your teen builds the first 70% of app 1 with one of our
+coaches, you watch (or they go solo). At the end you both know whether
+this is the right path.</p>
+<hr />
+<h2 id="related-reading">Related reading</h2>
+<ul>
+<li><a href="/blog/what-is-vibe-coding-singapore-parent-guide">What is
+vibe coding? A Singapore parent’s guide for 2026</a></li>
+<li><a href="/blog/ai-coding-vs-traditional-dsa-eae">AI coding vs
+traditional coding for Singapore teens — which actually opens DSA/EAE
+doors?</a></li>
+<li><a href="/blog/ai-tools-comparison-teens">Choosing between Lovable,
+Cursor, Claude, and ChatGPT for your teen’s first AI build</a></li>
+<li><a href="/blog/moe-4-ai-learns-framework-guide">How MOE’s ‘4 AI
+Learns’ framework affects your child’s secondary education</a></li>
+<li><a
+href="https://www.moe.gov.sg/education-in-sg/21st-century-competencies">MOE
+21st Century Competencies framework</a></li>
+</ul>
+', 'Vibe Makers Academy', 'published', '2026-05-01T00:00:00Z'::timestamptz)
+ON CONFLICT (slug) DO UPDATE SET title = EXCLUDED.title, description = EXCLUDED.description, meta_title = EXCLUDED.meta_title, meta_description = EXCLUDED.meta_description, category = EXCLUDED.category, tags = EXCLUDED.tags, html_content = EXCLUDED.html_content, author = EXCLUDED.author, status = EXCLUDED.status, published_at = EXCLUDED.published_at, updated_at = now();
+
+-- 12 AI coding project ideas Singapore teens can actually ship in a weekend
+INSERT INTO public.blog_posts (title, slug, description, meta_title, meta_description, category, tags, html_content, author, status, published_at)
+VALUES ('12 AI coding project ideas Singapore teens can actually ship in a weekend', 'ai-coding-projects-teens-singapore', 'Concrete project ideas your teen can build with Claude and Lovable that solve real problems — not tutorial-style toys. Each comes with a one-paragraph brief, a starting prompt, and an estimated build time.', 'AI Coding Projects for Singapore Teens — 12 Real-Problem Ideas', '12 weekend-buildable AI projects that solve real problems Singapore teens face. Briefs, prompts, build times. For DSA portfolios + curiosity.', 'Project Ideas', ARRAY['AI coding','project ideas','Lovable','Claude','Singapore teens','weekend project']::text[], '<h2 id="tldr">TL;DR</h2>
+<ul>
+<li><strong>The hardest part of vibe coding is <em>picking what to
+build</em></strong> — not the technical execution. AI tools handle the
+syntax. Choosing a problem worth solving is the human part.</li>
+<li><strong>The best teen projects solve problems the teen actually
+has</strong> — not abstract “good ideas.” A CCA scheduler used by their
+actual CCA mates beats a “social network for students” that no one will
+ever try.</li>
+<li><strong>Below: 12 specific briefs, each shippable in 4–10
+hours</strong>, ordered roughly by ambition.</li>
+</ul>
+<hr />
+<h2 id="why-real-problem-matters-more-than-good-idea">Why “real problem”
+matters more than “good idea”</h2>
+<p>Most teen coding tutorials hand kids a fake problem (“build a recipe
+app”) and a fake user (“imagine someone who likes cooking”). The output
+is a project that nobody uses, that the student forgets about, that
+doesn’t help in DSA / EAE / JC interviews because the student can’t
+answer <em>“who actually used this?”</em></p>
+<p>The shortcut to a project that matters: the teen picks a real
+friction in their own life or someone close to them, and builds the
+smallest possible thing that fixes it. The project is interesting
+because the user is <em>already there</em> and willing to give
+feedback.</p>
+<p>This is the same logic professional product designers use. It’s not a
+teen-specific framework. It’s why <a
+href="https://paulgraham.com/startupideas.html">“solve a problem you
+have”</a> is the most reliable starting point in software — at any
+age.</p>
+<hr />
+<h2 id="how-to-read-this-list">How to read this list</h2>
+<p>For each project below:</p>
+<ul>
+<li><strong>Who it’s for</strong> — who would actually use it</li>
+<li><strong>The brief</strong> — one paragraph the teen could paste into
+Claude or Lovable as a starting point</li>
+<li><strong>Build time</strong> — realistic for a teen with no prior
+coding experience, using Claude + Lovable</li>
+<li><strong>What makes it portfolio-worthy</strong> — the angle that
+lifts it above a tutorial project</li>
+</ul>
+<p>You’ll notice no Pomodoro timer, todo app, or weather widget. Those
+are skipped on purpose — they don’t help the teen build a coherent
+narrative. If your teen really wants to make a Pomodoro timer, fine, but
+spend 30 minutes on it, not a weekend.</p>
+<hr />
+<h2 id="the-12-projects">The 12 projects</h2>
+<h3 id="cca-points-hours-tracker">1. CCA points / hours tracker</h3>
+<p><strong>Who:</strong> Any SG student in a CCA that requires logging
+service hours, attendance, or LEAPS points.</p>
+<p><strong>Brief:</strong> <em>“Build a web app where I can log every
+CCA session I attend. Each entry has date, type (training / competition
+/ service), hours, and notes. Show running totals, a calendar view, and
+a simple progress bar against a yearly target. Authentication is
+optional; if I’m the only user, I can use a passcode.”</em></p>
+<p><strong>Build time:</strong> 4–6 hours</p>
+<p><strong>Why it works:</strong> Solves a problem every SG secondary
+student has. Easy to get a friend to use it. Naturally invites a v2 with
+reminders, a CSV export, or a leaderboard for the CCA.</p>
+<hr />
+<h3 id="past-paper-question-bank-with-ai-explanations">2. Past-paper
+question bank with AI explanations</h3>
+<p><strong>Who:</strong> The teen, plus 1–3 study-group friends.</p>
+<p><strong>Brief:</strong> <em>“I want to upload a PDF of a past-paper
+question (or paste the text). The app stores my own answer, then asks
+Claude to give a structured critique: what’s good, what’s missing, where
+I lost marks. Save the question + my answer + the AI’s feedback so I can
+review later. Subjects: chem, bio, English.”</em></p>
+<p><strong>Build time:</strong> 6–10 hours</p>
+<p><strong>Why it works:</strong> Real exam-prep value. The Claude
+integration teaches the teen to think about prompt design (what makes a
+good “critique my answer” prompt). And shows the interviewer the teen
+can wire AI into a tool, not just chat with it.</p>
+<hr />
+<h3 id="study-group-quiz-generator">3. Study-group quiz generator</h3>
+<p><strong>Who:</strong> A study group of 3–6 friends.</p>
+<p><strong>Brief:</strong> <em>“Take a paste of class notes. Have Claude
+generate 10 multiple-choice questions from those notes. Each user takes
+the quiz, sees their score, and the correct answers with explanations.
+Track scores per user across multiple quizzes. Accidentally-easy
+questions can be flagged.”</em></p>
+<p><strong>Build time:</strong> 5–8 hours</p>
+<p><strong>Why it works:</strong> Naturally social — friends will use
+it. Forces the teen to think about prompt-engineering quality (bad
+prompts = bad questions = no one uses it again). The “flag too easy”
+feature is the iteration hook.</p>
+<hr />
+<h3 id="family-household-chore-allowance-tracker">4. Family / household
+chore + allowance tracker</h3>
+<p><strong>Who:</strong> The teen + siblings + parent (the parent is the
+user that pays).</p>
+<p><strong>Brief:</strong> <em>“Each chore has an assignee, a due date,
+and a value (in dollars). When marked done, the assignee’s running
+balance increases. Parents can mark chores ‘paid out.’ Each user has a
+dashboard showing balance, completed chores this week, and a
+leaderboard.”</em></p>
+<p><strong>Build time:</strong> 6–8 hours</p>
+<p><strong>Why it works:</strong> Built-in users (siblings + parents).
+Real money flows. The parent’s feedback (“I don’t actually want to mark
+each one paid; I want a weekly digest”) is the kind of iteration
+material DSA interviewers love hearing.</p>
+<hr />
+<h3 id="tutor-session-log-revision-spaced-repetition-tracker">5. Tutor
+session log + revision spaced-repetition tracker</h3>
+<p><strong>Who:</strong> The teen + their tutor.</p>
+<p><strong>Brief:</strong> <em>“After each tutor session, log: subject,
+topic, what we covered, what I struggled with, homework set. The app
+schedules a ‘revision check-in’ 3 days later: a simple form asking ‘Did
+you actually do this?’ and ‘Do you still understand it?’ Notes carry
+forward to the next session as a brief.”</em></p>
+<p><strong>Build time:</strong> 6–8 hours</p>
+<p><strong>Why it works:</strong> Tutor becomes a second user with
+strong feedback. The spaced-repetition logic forces the teen to think
+through state and time, beyond CRUD. Great DSA interview material
+because there’s a clear “what I learned about my own learning”
+story.</p>
+<hr />
+<h3 id="school-bus-mrt-delay-logger">6. School bus / MRT delay
+logger</h3>
+<p><strong>Who:</strong> A class WhatsApp group.</p>
+<p><strong>Brief:</strong> <em>“Anyone in our class can post ‘bus 47
+delayed by 8 min’ or ‘NEL is down again.’ Posts auto-expire after 2
+hours. Show recent reports filtered by route. Optional: hook into LTA’s
+open data API for official disruptions and overlay them.”</em></p>
+<p><strong>Build time:</strong> 4–6 hours (without LTA API), 8–12 hours
+with it</p>
+<p><strong>Why it works:</strong> Many users, fast feedback loop. The
+optional LTA API integration is the stretch goal that signals technical
+depth without being scary.</p>
+<hr />
+<h3 id="birthday-anniversary-reminder-bot">7. Birthday / anniversary
+reminder bot</h3>
+<p><strong>Who:</strong> The teen, plus their family group chat.</p>
+<p><strong>Brief:</strong> <em>“I add birthdays and anniversaries (with
+notes). Three days before each one, the app sends a reminder to a
+designated email or Telegram. The reminder includes a Claude-generated
+suggestion of 2–3 thoughtful gift ideas based on what I’ve noted about
+the person.”</em></p>
+<p><strong>Build time:</strong> 5–8 hours</p>
+<p><strong>Why it works:</strong> Useful for the teen <em>and</em> the
+family. The Claude-suggestions feature shows AI integration. Easy to
+extend with a “did you actually remember this birthday?” follow-up.</p>
+<hr />
+<h3 id="anonymous-classmate-question-qa-board">8. Anonymous
+classmate-question Q&amp;A board</h3>
+<p><strong>Who:</strong> A class WhatsApp group.</p>
+<p><strong>Brief:</strong> <em>“Classmates can post questions
+anonymously (‘I don’t get question 3 in the math homework’) and others
+can answer. Upvote useful answers. Teacher (optional) can mark a ‘best
+answer.’ Spam / inappropriate posts get auto-flagged via a Claude
+moderation step.”</em></p>
+<p><strong>Build time:</strong> 8–10 hours</p>
+<p><strong>Why it works:</strong> Solves a real shyness problem (people
+who won’t ask in class). The moderation layer is a great place to talk
+about AI ethics in the interview. Need real users to validate.</p>
+<hr />
+<h3 id="parent-friendly-weekly-schedule-visualiser">9. Parent-friendly
+weekly schedule visualiser</h3>
+<p><strong>Who:</strong> The teen + their parent (often the parent who
+manages the family calendar).</p>
+<p><strong>Brief:</strong> <em>“I input my classes, tuition, CCA, social
+plans for the week. The app generates a one-page printable view
+colour-coded by category, with a free-time summary at the bottom.
+Parents can subscribe via email to get the schedule sent every
+Sunday.”</em></p>
+<p><strong>Build time:</strong> 4–6 hours</p>
+<p><strong>Why it works:</strong> Parent is a power user with strong
+opinions (“colour by <em>what</em>?” “show me free time only”, etc.).
+Interviewers love hearing about iteration cycles with non-technical
+users.</p>
+<hr />
+<h3 id="ai-assisted-journal-with-mood-tagging">10. AI-assisted journal
+with mood tagging</h3>
+<p><strong>Who:</strong> The teen, possibly only.</p>
+<p><strong>Brief:</strong> <em>“Daily journal entries (free text). After
+saving, Claude returns a mood tag (3–5 options), a one-sentence
+reflection, and one optional ‘gentle question’ for the next day. Past
+entries are searchable; mood is plotted over time.”</em></p>
+<p><strong>Build time:</strong> 5–8 hours</p>
+<p><strong>Why it works:</strong> Personal, useful, and the AI
+integration is non-trivial (output structure, prompt safety). For a
+child who’s not into team-friendly product ideas, this is the right “for
+me” project. The DSA story is around AI ethics — what does the AI
+<em>not</em> try to do?</p>
+<hr />
+<h3 id="hawker-cafe-price-tracker-for-the-school-neighbourhood">11.
+Hawker / cafe price tracker for the school neighbourhood</h3>
+<p><strong>Who:</strong> Any teen who eats out of school + their
+friends.</p>
+<p><strong>Brief:</strong> <em>“Photograph or type the price of a
+popular dish at a nearby stall. Crowd-source contributions from friends.
+Show median price per dish, trend over time, and ‘cheapest place near
+school’ rankings. No ratings of taste — just price tracking, to keep it
+boring and accurate.”</em></p>
+<p><strong>Build time:</strong> 8–10 hours</p>
+<p><strong>Why it works:</strong> Local relevance. Real friend network
+as users. Naturally evolves into a v2 with photo OCR (Claude can pull
+text from a photo of a menu). Strong “noticing what’s around me” angle
+for the interview.</p>
+<hr />
+<h3 id="jc-subject-combo-decision-tool">12. JC subject-combo decision
+tool</h3>
+<p><strong>Who:</strong> Sec 4 students choosing JC subject
+combinations.</p>
+<p><strong>Brief:</strong> <em>“Input: my likely O-Level grades, what
+I’m interested in, what universities / careers I’m considering. Output:
+a comparison of common JC subject combinations (e.g., PCME, CMEH, Arts
+streams) showing pros / cons / what universities accept what / common
+student concerns. Ask Claude to flag mismatches between my interest and
+my combo.”</em></p>
+<p><strong>Build time:</strong> 8–12 hours</p>
+<p><strong>Why it works:</strong> Genuinely high-stakes problem for SG
+Sec 4 students. The teen has to do real research (which universities
+accept what). Claude becomes a research assistant. Excellent topic for
+the DSA narrative because it shows the teen thinks beyond their own
+academics.</p>
+<hr />
+<h2 id="picking-the-right-one-for-your-child">Picking the right one for
+your child</h2>
+<p>Don’t try to pick “the best” project. Pick the one whose
+<strong>user</strong> is closest to your child.</p>
+<p>If your child has a tight CCA: project 1 or 8. If your child is
+exam-prep mode: project 2 or 3. If your child is into family /
+household: project 4 or 9. If your child likes their tutor or has a
+strong study habit: project 5. If your child is socially active in a
+class chat: project 6 or 8. If your child likes a quieter, personal
+project: project 10. If your child is into food / their neighbourhood:
+project 11. If your child is in Sec 4 making big decisions: project
+12.</p>
+<p>The right project is the one where <strong>getting feedback is
+easy</strong> — because the user is already in your child’s life.</p>
+<hr />
+<h2 id="how-to-start-any-of-these">How to start (any of these)</h2>
+<ol type="1">
+<li><strong>Pick one.</strong> Spend 10 minutes max on this. The first
+one is for learning the build-iterate-ship loop, not for being
+perfect.</li>
+<li><strong>Open Claude.</strong> Paste the brief. Ask Claude to clarify
+it: <em>“What questions do you have about this brief before I start
+building?”</em> Refine the brief based on what Claude asks.</li>
+<li><strong>Open Lovable.</strong> Paste the refined brief into the
+“describe your app” box. Hit generate.</li>
+<li><strong>Try the result.</strong> Note what’s broken or wrong. Give
+specific feedback to Lovable: <em>“The login button doesn’t do
+anything.”</em> Iterate.</li>
+<li><strong>Ship it.</strong> Click deploy. Get a public URL.</li>
+<li><strong>Show it to one user.</strong> Watch them use it. Don’t help.
+Note what confuses them.</li>
+<li><strong>Iterate once.</strong> Fix the worst friction.</li>
+<li><strong>Done.</strong> Move on to the next project. Don’t
+perfect.</li>
+</ol>
+<p>The teens who finish this loop multiple times are the ones who walk
+into DSA interviews with real portfolios. The teens who try to perfect
+the first one are the ones who don’t ship.</p>
+<hr />
+<h2 id="what-if-your-child-is-stuck-on-i-cant-think-of-a-problem">What
+if your child is stuck on “I can’t think of a problem”?</h2>
+<p>Common. Two unlocking questions:</p>
+<ul>
+<li><em>“What’s something you’ve complained about more than once in the
+last month?”</em> — your child has been giving you free product briefs.
+They just didn’t realise.</li>
+<li><em>“If your friend group had one tool that made their life slightly
+better, what would it do?”</em> — outsource the brief to social.</li>
+</ul>
+<p>If both fail: pick project 1 (CCA tracker). Universally relevant for
+SG students, low-creativity floor, plenty of room to make it
+personal.</p>
+<hr />
+<h2 id="a-note-on-ai-usage">A note on AI usage</h2>
+<p>A teen interviewer-ready answer should sound like:</p>
+<blockquote>
+<p><em>“I prompted Claude to design the database schema, and it gave me
+three tables. Two were obvious — one I had to ask about because I didn’t
+know what ‘foreign key’ meant. Lovable then built the CRUD operations
+against those tables. The login flow it generated had a bug — the
+password reset email pointed to the wrong domain. I had Claude walk me
+through what was happening and I fixed it manually.”</em></p>
+</blockquote>
+<p>That’s a strong answer because it shows: the teen used AI for what AI
+is good at (structure, scaffolding, explanation) and pushed past it
+where AI got it wrong (the bug fix). Both halves matter. The interviewer
+is checking for both.</p>
+<p>If you want our deeper view of how to choose between Lovable, Cursor,
+Claude, and ChatGPT for these projects, see our <a
+href="/blog/ai-tools-comparison-teens">tool comparison</a>. And if your
+child wants help on the “what to build” question with structured
+coaching, we run <a href="/parents">free trial classes</a> where the
+first 60 minutes is exactly that — picking a problem worth solving.</p>
+<hr />
+<h2 id="faq">FAQ</h2>
+<p><strong>Q: Are these projects too hard for a 13-year-old?</strong> A:
+No. The hardest is project 12, which a Sec 4 student can finish in a
+school week. The easiest (project 1, 6, 9) are routinely shipped by Sec
+1 students in a weekend.</p>
+<p><strong>Q: Do I need to pay for Claude / Lovable?</strong> A: For a
+single project, free tiers are enough. Lovable’s free tier covers 2
+projects; Claude’s free tier handles brainstorming + debugging. If your
+teen does all 12 projects, you’ll likely upgrade Lovable around month 2
+($25/mo).</p>
+<p><strong>Q: My child built one project and lost interest. Was the
+project wrong?</strong> A: Often yes. The user wasn’t real. If the teen
+built something for “imagined teens” instead of their actual class
+group, the feedback loop never started. Switch to a project where
+someone in the family or class will actually use the thing.</p>
+<p><strong>Q: My child wants to build a really ambitious project (full
+social network, multiplayer game). Should I let them?</strong> A: Yes —
+but as project 3, not project 1. Make them ship something simple first
+so the iteration muscle is in place.</p>
+<p><strong>Q: What if my child’s project has a bug they can’t
+fix?</strong> A: Ask Claude to explain what’s wrong line-by-line. If
+after 30 minutes it’s still stuck, the bug is usually a sign that the
+brief was unclear. Re-write the brief with the new understanding and
+start fresh — it’s faster than debugging a broken scaffold.</p>
+<hr />
+<h2 id="next-step">Next step</h2>
+<p>If your teen wants help picking a project and shipping it with a
+coach watching over their shoulder for the first 90 minutes, that’s
+exactly what our <a href="/parents">free trial class</a> is. They walk
+out with a deployed app, a story, and a clear sense of which of the 12
+projects above they actually want to build next.</p>
+<hr />
+<h2 id="related-reading">Related reading</h2>
+<ul>
+<li><a href="/blog/dsa-coding-portfolio-singapore">How to build a DSA
+coding portfolio that actually gets your child into a top Singapore
+school</a></li>
+<li><a href="/blog/what-is-vibe-coding-singapore-parent-guide">What is
+vibe coding? A Singapore parent’s guide for 2026</a></li>
+<li><a href="/blog/ai-tools-comparison-teens">Choosing between Lovable,
+Cursor, Claude, and ChatGPT for your teen’s first AI build</a></li>
+<li><a href="/blog/ai-coding-vs-traditional-dsa-eae">AI coding vs
+traditional coding for Singapore teens — which actually opens DSA/EAE
+doors?</a></li>
+</ul>
+', 'Vibe Makers Academy', 'published', '2026-05-01T00:00:00Z'::timestamptz)
+ON CONFLICT (slug) DO UPDATE SET title = EXCLUDED.title, description = EXCLUDED.description, meta_title = EXCLUDED.meta_title, meta_description = EXCLUDED.meta_description, category = EXCLUDED.category, tags = EXCLUDED.tags, html_content = EXCLUDED.html_content, author = EXCLUDED.author, status = EXCLUDED.status, published_at = EXCLUDED.published_at, updated_at = now();
+
+-- How to get your teen into coding without making them learn syntax — a 2026 Singapore parent's playbook
+INSERT INTO public.blog_posts (title, slug, description, meta_title, meta_description, category, tags, html_content, author, status, published_at)
+VALUES ('How to get your teen into coding without making them learn syntax — a 2026 Singapore parent''s playbook', 'teen-coding-without-syntax-singapore', 'If your teen "isn''t a coder" but you want them to develop AI-fluency for school and life, syntax is no longer the way in. Here''s a 4-step playbook for getting them shipping in a weekend, no semicolons required.', 'Get Your Teen Coding Without Syntax — 2026 SG Playbook', 'Your teen doesn''t need to learn Python to be AI-fluent. Here''s how to get them building real apps with Claude + Lovable in a weekend — no syntax required.', 'Parent Playbook', ARRAY['AI coding','no syntax','Singapore parents','vibe coding','Lovable','Claude']::text[], '<h2 id="tldr">TL;DR</h2>
+<ul>
+<li><strong>You don’t need to teach your teen Python anymore</strong> to
+make them AI-fluent. The 2010s coding-class playbook (start with syntax,
+build slowly toward projects) has been obsoleted by AI tools.</li>
+<li><strong>The 2026 way:</strong> start with a real problem, use Claude
+as a thinking partner, use Lovable to ship the prototype. Syntax shows
+up later, only if the teen wants to go deeper.</li>
+<li><strong>A weekend is enough</strong> to take a “not a coder” teen
+from zero to a deployed working app. The bottleneck isn’t talent or
+background — it’s the parent’s willingness to let the first version be
+ugly.</li>
+</ul>
+<hr />
+<h2 id="why-the-syntax-first-approach-has-stopped-working">Why the
+syntax-first approach has stopped working</h2>
+<p>If you went through the 2015-era logic, the path looked like
+this:</p>
+<blockquote>
+<p><em>Sign your kid up for a Scratch course → graduate to Python →
+maybe HTML/CSS → eventually a “real project” in 6–12 months.</em></p>
+</blockquote>
+<p>In 2010s Singapore this was reasonable. Coding classes were the only
+on-ramp. Building anything meaningful required first knowing how to read
+and write code.</p>
+<p>That logic broke around 2023–2024. By 2026 it’s actively
+counter-productive.</p>
+<p>Three things changed:</p>
+<p><strong>One — AI handles the syntax.</strong> A teen who can describe
+what they want clearly can have working code in front of them in 90
+seconds. They never need to memorize that JavaScript uses
+<code>===</code> or that Python lists are zero-indexed before shipping
+their first product.</p>
+<p><strong>Two — Industry moved.</strong> Senior engineers at Grab,
+GovTech, DBS, Shopee don’t memorize APIs. They prompt Claude or use
+Cursor for almost everything that isn’t core algorithms. This is now <a
+href="https://www.anthropic.com/research">openly acknowledged in tech
+leadership communications</a> — the workflow is AI-assisted by default.
+Teaching teens to “code without AI” is teaching a workflow nobody uses
+anymore.</p>
+<p><strong>Three — MOE caught up faster than parents.</strong> The <a
+href="https://www.moe.gov.sg/education-in-sg/educational-technology-journey/edtech-masterplan/artificial-intelligence-in-education">EdTech
+Masterplan 2030</a> explicitly frames AI literacy as four learning
+modes: <em>learn about</em>, <em>learn to use</em>, <em>learn with</em>,
+<em>learn beyond</em>. None of those four require Python. (Our <a
+href="/blog/moe-4-ai-learns-framework-guide">deeper guide on the 4 AI
+Learns is here</a> if you want context.)</p>
+<p>The implication for parents: the syntax detour is no longer a
+prerequisite. It’s a tax. Teens who skip it get to “I shipped a real
+thing” much faster, and that’s where motivation lives.</p>
+<hr />
+<h2 id="the-but-theyre-not-a-coder-objection">The “but they’re not a
+coder” objection</h2>
+<p>This comes up almost daily on calls with parents. The parent says
+some version of:</p>
+<blockquote>
+<p><em>“My child isn’t really technical. They’re more into writing /
+sports / music / art. They wouldn’t enjoy coding.”</em></p>
+</blockquote>
+<p>Here’s what’s hidden in that statement: the parent is imagining
+2015-era coding — typing semicolons, reading error messages, debugging
+memory issues. Of course a writing-loving teen won’t enjoy that.</p>
+<p>But 2026-era vibe coding looks different. It looks like:</p>
+<ul>
+<li>Describing what you want, in English, in clear sentences.</li>
+<li>Looking at what the AI made, deciding what’s good and what’s
+wrong.</li>
+<li>Giving feedback on the result and watching it change.</li>
+<li>Showing it to a friend, hearing their reaction, deciding what to
+fix.</li>
+</ul>
+<p>That’s <em>writing</em>. That’s <em>editing</em>. That’s
+<em>feedback</em>. None of which is exotic to a writing-loving teen. The
+only difference is the medium: the artifact is a working app instead of
+an essay.</p>
+<p>The teens who struggle with traditional coding precisely because
+they’re “not technical” tend to do <em>better</em> with vibe coding than
+the kids who memorize syntax for the love of it. Because vibe coding
+rewards clarity of thought, not memorization. And clarity-of-thought is
+portable — your kid already has it from whatever they’re already good
+at.</p>
+<p>So the real question isn’t “is my teen technical enough?” It’s “is my
+teen willing to ship something ugly, get feedback, and fix it?” That’s
+not a technical question. That’s a temperament question — and most teens
+are way more comfortable with this than parents assume.</p>
+<hr />
+<h2 id="the-4-step-playbook-works-in-a-weekend">The 4-step playbook
+(works in a weekend)</h2>
+<p>This is the exact sequence that gets a “not a coder” teen from zero
+to a deployed app.</p>
+<h3 id="step-1-pick-a-problem-from-their-life-15-minutes">Step 1 — Pick
+a problem from their life (15 minutes)</h3>
+<p>Sit down with them. Ask:</p>
+<blockquote>
+<p><em>“What’s something annoying you’ve complained about more than once
+recently?”</em></p>
+</blockquote>
+<p>Wait. Don’t fill the silence. Most teens have an answer within 30
+seconds — they just need permission to take their own complaints
+seriously.</p>
+<p>Examples we’ve heard:</p>
+<ul>
+<li>“I keep forgetting which days I have band practice.”</li>
+<li>“My CCA mates and I always miscount our service hours.”</li>
+<li>“When my study group meets we waste 20 minutes deciding who reviews
+what.”</li>
+<li>“My grandma keeps asking when my piano recital is and I never
+remember to tell her.”</li>
+<li>“I can’t keep track of which K-drama episodes I’m up to across three
+platforms.”</li>
+</ul>
+<p>Any of these is enough. The first project doesn’t need to be
+impressive. It needs to be <em>real</em>.</p>
+<p>If your teen says “I can’t think of anything” — that’s not the truth,
+that’s a stuck moment. Try the alternate prompt: <em>“If your friend
+group had one tool that made things slightly better, what would it
+do?”</em> Outsourcing the brief to a social context unlocks teens who
+clam up on personal questions.</p>
+<h3 id="step-2-open-claude.-have-a-conversation.-30-minutes">Step 2 —
+Open Claude. Have a conversation. (30 minutes)</h3>
+<p>Go to <a href="https://claude.ai">claude.ai</a>. The free tier is
+enough.</p>
+<p>Have your teen type their problem in plain English. Something
+like:</p>
+<blockquote>
+<p><em>“I want a simple website where my CCA friends and I can each log
+how many hours we did this week. I want to see a running total. I want
+it to be just for our group, not public.”</em></p>
+</blockquote>
+<p>Then they ask Claude:</p>
+<blockquote>
+<p><em>“What questions do you have about this before I start building
+it?”</em></p>
+</blockquote>
+<p>This is the unlock. Claude will ask 4–6 clarifying questions: <em>Do
+users sign in? How do you decide who’s in the CCA? Do you want to edit
+past entries? Should the total reset weekly or accumulate?</em></p>
+<p>Your teen answers each question. By the end they have a much sharper
+brief. <strong>This is what real software design looks like</strong> —
+not memorizing syntax, but defining what you actually want before you
+build it.</p>
+<h3
+id="step-3-open-lovable.-paste-the-brief.-ship-the-v1.-12-hours">Step 3
+— Open Lovable. Paste the brief. Ship the v1. (1–2 hours)</h3>
+<p>Go to <a href="https://lovable.dev">lovable.dev</a>. Sign up (free
+tier covers 2 projects).</p>
+<p>Your teen copies their refined brief from the Claude conversation and
+pastes it into Lovable’s “describe your app” box. They click
+“Build.”</p>
+<p>About 60–90 seconds later, a working app appears. With a database.
+With auth (if they asked for it). Deployed to a public URL.</p>
+<p>Almost certainly something will be wrong. That’s expected. The label
+colour is off, the form isn’t lining up, the calculation is wrong, the
+buttons don’t do what they should. This is the iteration moment. Your
+teen tells Lovable, in plain English:</p>
+<blockquote>
+<p><em>“The ‘add hours’ button doesn’t actually save the data. Fix
+it.”</em></p>
+</blockquote>
+<p>Lovable updates the code. The app reloads. Sometimes it works first
+try; sometimes they need 3–4 rounds of feedback. Your teen learns the
+rhythm of <em>describe → see what’s wrong → describe again</em>.</p>
+<p>By the end of this step, they have a working v1. Ugly, maybe. But
+shipped.</p>
+<h3
+id="step-4-show-one-user.-watch-them-use-it.-iterate-once.-45-minutes">Step
+4 — Show one user. Watch them use it. Iterate once. (45 minutes)</h3>
+<p>This is the most important step and the one most parents skip. You —
+or one of their CCA mates / friends / family — sits down with the v1.
+You try to use it. You don’t help. You don’t make it easier. You let
+your teen watch you struggle (or not).</p>
+<p>Then your teen iterates. <strong>Specifically based on what tripped
+you up.</strong></p>
+<p>This is where the magic happens. A teen who sees a real human be
+confused by their app — and then <em>fixes</em> the confusion — has just
+done what professional product designers do for a living. They didn’t
+memorize Python. They did something more valuable.</p>
+<p>End of weekend: your teen has a deployed app, a story, and a working
+understanding of the build-iterate-ship loop. The next project is
+dramatically easier because the loop is now familiar.</p>
+<hr />
+<h2
+id="what-youll-likely-worry-about-and-why-each-worry-doesnt-hold">What
+you’ll likely worry about (and why each worry doesn’t hold)</h2>
+<h3 id="are-they-actually-learning-anything">“Are they actually learning
+anything?”</h3>
+<p>Yes — just not what you expected. They’re learning:</p>
+<ul>
+<li>How to describe a problem precisely enough that it can be
+solved.</li>
+<li>How to read generated code and tell when it does or doesn’t match
+what they asked for.</li>
+<li>How to give specific, actionable feedback (a transferable life
+skill).</li>
+<li>How to make decisions when the AI offers options.</li>
+<li>How to ship something imperfect and accept feedback.</li>
+</ul>
+<p>These skills compound. Syntax doesn’t compound — it’s a tool, not a
+skill.</p>
+<h3 id="if-they-dont-learn-syntax-now-they-never-will.">“If they don’t
+learn syntax now, they never will.”</h3>
+<p>False, but the order matters. Teens who ship 5–10 vibe coding
+projects almost always start asking <em>“how does this code actually
+work?”</em> by month 3. They open Cursor, look at the React or Python
+code Lovable generated, and ask Claude to explain it line by line.
+<strong>Now</strong> they’re learning syntax — but with a real product
+motivating it. That kind of motivated learning sticks. Forced syntax
+learning at month one usually doesn’t.</p>
+<h3 id="but-what-about-for-university-job-applications">“But what about
+for university / job applications?”</h3>
+<p>Universities and employers in 2026 increasingly want a portfolio
+link, not a course completion certificate. A teen with three deployed
+apps signals capability in ways a Python certificate doesn’t. (Our <a
+href="/blog/dsa-coding-portfolio-singapore">DSA portfolio guide</a> is
+the deeper version of this argument.)</p>
+<h3 id="isnt-this-just-outsourcing-the-work">“Isn’t this just
+outsourcing the work?”</h3>
+<p>The worry behind this question is real, but the framing is wrong.
+Vibe coding outsources <em>typing</em>, not <em>thinking</em>. The teen
+still has to:</p>
+<ul>
+<li>Decide what to build.</li>
+<li>Define what success looks like.</li>
+<li>Evaluate AI output.</li>
+<li>Get user feedback and decide what to act on.</li>
+</ul>
+<p>Those are the hard parts. Typing was never the hard part — it was
+just the gatekeeper.</p>
+<h3 id="what-if-they-get-into-it-and-want-to-go-deeper">“What if they
+get into it and want to go deeper?”</h3>
+<p>Then they will, on their own, when they’re motivated. That’s the
+right time to introduce structured CS — algorithms, data structures,
+complexity. Doing it earlier rarely sticks. Doing it after they’ve
+shipped real work, almost always sticks.</p>
+<hr />
+<h2 id="a-note-on-tools-and-cost">A note on tools and cost</h2>
+<p>You don’t need to spend anything to start.</p>
+<ul>
+<li><strong><a href="https://claude.ai">Claude</a></strong> free tier:
+enough for ~10–20 conversations a day. Sufficient for one project.</li>
+<li><strong><a href="https://lovable.dev">Lovable</a></strong> free
+tier: 2 projects, limited generation. Sufficient for project 1 and
+2.</li>
+<li><strong><a href="https://www.cursor.com">Cursor</a></strong> free
+tier: for the curious teen ready to look at the actual code, by month 2
+or 3.</li>
+</ul>
+<p>Most parents start paying for one of these around month 2
+($20–25/mo). That’s roughly 1/3 the cost of a single weekly tuition
+class — and it’s used by your teen far more often.</p>
+<p>We have a deeper <a href="/blog/ai-tools-comparison-teens">tool
+comparison guide here</a> if you want to see what each does and when to
+use which.</p>
+<hr />
+<h2 id="what-good-enough-looks-like-at-the-end-of-weekend-1">What “good
+enough” looks like at the end of weekend 1</h2>
+<p>A reasonable target after one focused weekend:</p>
+<ul>
+<li><strong>One deployed app</strong>, with a public URL your teen can
+share.</li>
+<li><strong>At least one real user</strong> other than your teen who has
+tried it.</li>
+<li><strong>One round of iteration</strong> based on that user’s
+feedback.</li>
+<li><strong>A 30-second walkthrough video</strong> the teen records on
+their phone, screen-recording the app while talking through what it
+does.</li>
+</ul>
+<p>That’s it. No certificate, no syntax mastery, no big ambitious
+vision. Just a small, real, deployed thing.</p>
+<p>If your teen finishes weekend 1 with this artifact, they’ve already
+passed the bar that 90% of “I learned to code” teens never reach — the
+bar of <em>I made something other people use</em>.</p>
+<hr />
+<h2 id="when-to-consider-structured-help">When to consider structured
+help</h2>
+<p>Going fully solo works for some teens. Others need scaffolding for
+the first weekend, then accelerate from there. Signs your teen would
+benefit from a coached first session:</p>
+<ul>
+<li>They get stuck and lose motivation when something doesn’t work.</li>
+<li>They need someone to model the “give specific feedback” muscle
+before they can do it themselves.</li>
+<li>They’d benefit from doing the first build alongside a peer (small
+group).</li>
+<li>You as a parent can’t sit in for the first 90 minutes and don’t have
+a technical friend who can.</li>
+</ul>
+<p>If any of these apply, that’s exactly what our <a
+href="/parents">free trial class</a> is for. One hour, online or
+in-person, your teen builds the first 70% of their app 1 with a Vibe
+Makers coach. You watch (or they go solo, your call). At the end you
+both know whether this is the right path. No sales pitch, no
+obligation.</p>
+<hr />
+<h2 id="faq-common-parent-questions">FAQ — common parent questions</h2>
+<p><strong>Q: My teen has zero interest in coding. Should I still try
+this?</strong> A: Yes — but with a problem they care about, not a
+generic “build an app” framing. The problem brief is the entire game. If
+you start from “build something for your CCA” or “make a tool for your
+study group,” teens who hate “coding class” often surprise
+themselves.</p>
+<p><strong>Q: Is 13 too young? Is 18 too old?</strong> A: 13 is the
+floor — younger than that, the abstraction muscle (defining a problem,
+describing a feature) isn’t usually there yet. 18 is fine; some of our
+most ambitious students start at 17 because they finally have the agency
+to choose their own learning.</p>
+<p><strong>Q: Won’t this make my child dependent on AI?</strong> A: No
+more than calculators made students dependent on calculators. The skill
+is using the tool well, not avoiding it. We explicitly teach our
+students to spot where AI is wrong (Claude hallucinates; Lovable
+scaffolds the wrong database structure sometimes) — that’s part of the
+curriculum.</p>
+<p><strong>Q: What if they’re more into design / art / writing?</strong>
+A: Vibe coding <em>is</em> design + writing + iteration. The kids who
+are strong in those areas often do better than the “STEM kids,” because
+describing-clearly is the bottleneck. Push them into building something
+that uses their existing skill — a poetry-share app, a sketchbook
+tracker, a music-tag tool.</p>
+<p><strong>Q: Will this hurt their chances at a “serious” CS programme
+later?</strong> A: The opposite. Top SG and overseas CS programmes
+increasingly evaluate portfolio + project depth over coursework
+certificates. A teen with shipped products + the ability to talk through
+their build is a stronger candidate than a teen who’s done a Python
+tutorial.</p>
+<p><strong>Q: How much parent involvement is required?</strong> A: For
+weekend 1: about 2–3 hours of parental presence (mostly observing, not
+doing). After that, almost zero — once the loop is internalized, teens
+drive their own iteration cycles. The parent’s job becomes “be the user
+who tries v2 once a week.”</p>
+<hr />
+<h2 id="next-step">Next step</h2>
+<p>If your teen is “not a coder” and you’ve been quietly worrying
+they’re falling behind on AI-fluency, the easiest reversal is the
+simplest: pick a real problem this weekend, sit with them for the first
+90 minutes, and let them ship something. We’ve seen this exact reversal
+— from “my kid hates coding” to “my kid hasn’t put their laptop down” —
+happen often enough that it’s basically a routine outcome of the first
+project.</p>
+<p>If you want a coached first build, <a href="/parents">book a free
+trial class</a>. Otherwise: pick a problem, open Claude, follow the 4
+steps above. The path is short.</p>
+<hr />
+<h2 id="related-reading">Related reading</h2>
+<ul>
+<li><a href="/blog/what-is-vibe-coding-singapore-parent-guide">What is
+vibe coding? A Singapore parent’s guide for 2026</a></li>
+<li><a href="/blog/dsa-coding-portfolio-singapore">How to build a DSA
+coding portfolio for top Singapore schools</a></li>
+<li><a href="/blog/ai-coding-projects-teens-singapore">12 AI coding
+project ideas Singapore teens can ship in a weekend</a></li>
+<li><a href="/blog/ai-tools-comparison-teens">Choosing between Lovable,
+Cursor, Claude, and ChatGPT for your teen’s first AI build</a></li>
+<li><a href="/blog/moe-4-ai-learns-framework-guide">How MOE’s ‘4 AI
+Learns’ framework affects your child’s secondary education</a></li>
+</ul>
+', 'Vibe Makers Academy', 'published', '2026-05-01T00:00:00Z'::timestamptz)
+ON CONFLICT (slug) DO UPDATE SET title = EXCLUDED.title, description = EXCLUDED.description, meta_title = EXCLUDED.meta_title, meta_description = EXCLUDED.meta_description, category = EXCLUDED.category, tags = EXCLUDED.tags, html_content = EXCLUDED.html_content, author = EXCLUDED.author, status = EXCLUDED.status, published_at = EXCLUDED.published_at, updated_at = now();

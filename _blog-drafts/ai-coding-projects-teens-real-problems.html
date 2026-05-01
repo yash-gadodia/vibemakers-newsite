@@ -1,0 +1,337 @@
+<h2 id="tldr">TL;DR</h2>
+<ul>
+<li><strong>The hardest part of vibe coding is <em>picking what to
+build</em></strong> — not the technical execution. AI tools handle the
+syntax. Choosing a problem worth solving is the human part.</li>
+<li><strong>The best teen projects solve problems the teen actually
+has</strong> — not abstract “good ideas.” A CCA scheduler used by their
+actual CCA mates beats a “social network for students” that no one will
+ever try.</li>
+<li><strong>Below: 12 specific briefs, each shippable in 4–10
+hours</strong>, ordered roughly by ambition.</li>
+</ul>
+<hr />
+<h2 id="why-real-problem-matters-more-than-good-idea">Why “real problem”
+matters more than “good idea”</h2>
+<p>Most teen coding tutorials hand kids a fake problem (“build a recipe
+app”) and a fake user (“imagine someone who likes cooking”). The output
+is a project that nobody uses, that the student forgets about, that
+doesn’t help in DSA / EAE / JC interviews because the student can’t
+answer <em>“who actually used this?”</em></p>
+<p>The shortcut to a project that matters: the teen picks a real
+friction in their own life or someone close to them, and builds the
+smallest possible thing that fixes it. The project is interesting
+because the user is <em>already there</em> and willing to give
+feedback.</p>
+<p>This is the same logic professional product designers use. It’s not a
+teen-specific framework. It’s why <a
+href="https://paulgraham.com/startupideas.html">“solve a problem you
+have”</a> is the most reliable starting point in software — at any
+age.</p>
+<hr />
+<h2 id="how-to-read-this-list">How to read this list</h2>
+<p>For each project below:</p>
+<ul>
+<li><strong>Who it’s for</strong> — who would actually use it</li>
+<li><strong>The brief</strong> — one paragraph the teen could paste into
+Claude or Lovable as a starting point</li>
+<li><strong>Build time</strong> — realistic for a teen with no prior
+coding experience, using Claude + Lovable</li>
+<li><strong>What makes it portfolio-worthy</strong> — the angle that
+lifts it above a tutorial project</li>
+</ul>
+<p>You’ll notice no Pomodoro timer, todo app, or weather widget. Those
+are skipped on purpose — they don’t help the teen build a coherent
+narrative. If your teen really wants to make a Pomodoro timer, fine, but
+spend 30 minutes on it, not a weekend.</p>
+<hr />
+<h2 id="the-12-projects">The 12 projects</h2>
+<h3 id="cca-points-hours-tracker">1. CCA points / hours tracker</h3>
+<p><strong>Who:</strong> Any SG student in a CCA that requires logging
+service hours, attendance, or LEAPS points.</p>
+<p><strong>Brief:</strong> <em>“Build a web app where I can log every
+CCA session I attend. Each entry has date, type (training / competition
+/ service), hours, and notes. Show running totals, a calendar view, and
+a simple progress bar against a yearly target. Authentication is
+optional; if I’m the only user, I can use a passcode.”</em></p>
+<p><strong>Build time:</strong> 4–6 hours</p>
+<p><strong>Why it works:</strong> Solves a problem every SG secondary
+student has. Easy to get a friend to use it. Naturally invites a v2 with
+reminders, a CSV export, or a leaderboard for the CCA.</p>
+<hr />
+<h3 id="past-paper-question-bank-with-ai-explanations">2. Past-paper
+question bank with AI explanations</h3>
+<p><strong>Who:</strong> The teen, plus 1–3 study-group friends.</p>
+<p><strong>Brief:</strong> <em>“I want to upload a PDF of a past-paper
+question (or paste the text). The app stores my own answer, then asks
+Claude to give a structured critique: what’s good, what’s missing, where
+I lost marks. Save the question + my answer + the AI’s feedback so I can
+review later. Subjects: chem, bio, English.”</em></p>
+<p><strong>Build time:</strong> 6–10 hours</p>
+<p><strong>Why it works:</strong> Real exam-prep value. The Claude
+integration teaches the teen to think about prompt design (what makes a
+good “critique my answer” prompt). And shows the interviewer the teen
+can wire AI into a tool, not just chat with it.</p>
+<hr />
+<h3 id="study-group-quiz-generator">3. Study-group quiz generator</h3>
+<p><strong>Who:</strong> A study group of 3–6 friends.</p>
+<p><strong>Brief:</strong> <em>“Take a paste of class notes. Have Claude
+generate 10 multiple-choice questions from those notes. Each user takes
+the quiz, sees their score, and the correct answers with explanations.
+Track scores per user across multiple quizzes. Accidentally-easy
+questions can be flagged.”</em></p>
+<p><strong>Build time:</strong> 5–8 hours</p>
+<p><strong>Why it works:</strong> Naturally social — friends will use
+it. Forces the teen to think about prompt-engineering quality (bad
+prompts = bad questions = no one uses it again). The “flag too easy”
+feature is the iteration hook.</p>
+<hr />
+<h3 id="family-household-chore-allowance-tracker">4. Family / household
+chore + allowance tracker</h3>
+<p><strong>Who:</strong> The teen + siblings + parent (the parent is the
+user that pays).</p>
+<p><strong>Brief:</strong> <em>“Each chore has an assignee, a due date,
+and a value (in dollars). When marked done, the assignee’s running
+balance increases. Parents can mark chores ‘paid out.’ Each user has a
+dashboard showing balance, completed chores this week, and a
+leaderboard.”</em></p>
+<p><strong>Build time:</strong> 6–8 hours</p>
+<p><strong>Why it works:</strong> Built-in users (siblings + parents).
+Real money flows. The parent’s feedback (“I don’t actually want to mark
+each one paid; I want a weekly digest”) is the kind of iteration
+material DSA interviewers love hearing.</p>
+<hr />
+<h3 id="tutor-session-log-revision-spaced-repetition-tracker">5. Tutor
+session log + revision spaced-repetition tracker</h3>
+<p><strong>Who:</strong> The teen + their tutor.</p>
+<p><strong>Brief:</strong> <em>“After each tutor session, log: subject,
+topic, what we covered, what I struggled with, homework set. The app
+schedules a ‘revision check-in’ 3 days later: a simple form asking ‘Did
+you actually do this?’ and ‘Do you still understand it?’ Notes carry
+forward to the next session as a brief.”</em></p>
+<p><strong>Build time:</strong> 6–8 hours</p>
+<p><strong>Why it works:</strong> Tutor becomes a second user with
+strong feedback. The spaced-repetition logic forces the teen to think
+through state and time, beyond CRUD. Great DSA interview material
+because there’s a clear “what I learned about my own learning”
+story.</p>
+<hr />
+<h3 id="school-bus-mrt-delay-logger">6. School bus / MRT delay
+logger</h3>
+<p><strong>Who:</strong> A class WhatsApp group.</p>
+<p><strong>Brief:</strong> <em>“Anyone in our class can post ‘bus 47
+delayed by 8 min’ or ‘NEL is down again.’ Posts auto-expire after 2
+hours. Show recent reports filtered by route. Optional: hook into LTA’s
+open data API for official disruptions and overlay them.”</em></p>
+<p><strong>Build time:</strong> 4–6 hours (without LTA API), 8–12 hours
+with it</p>
+<p><strong>Why it works:</strong> Many users, fast feedback loop. The
+optional LTA API integration is the stretch goal that signals technical
+depth without being scary.</p>
+<hr />
+<h3 id="birthday-anniversary-reminder-bot">7. Birthday / anniversary
+reminder bot</h3>
+<p><strong>Who:</strong> The teen, plus their family group chat.</p>
+<p><strong>Brief:</strong> <em>“I add birthdays and anniversaries (with
+notes). Three days before each one, the app sends a reminder to a
+designated email or Telegram. The reminder includes a Claude-generated
+suggestion of 2–3 thoughtful gift ideas based on what I’ve noted about
+the person.”</em></p>
+<p><strong>Build time:</strong> 5–8 hours</p>
+<p><strong>Why it works:</strong> Useful for the teen <em>and</em> the
+family. The Claude-suggestions feature shows AI integration. Easy to
+extend with a “did you actually remember this birthday?” follow-up.</p>
+<hr />
+<h3 id="anonymous-classmate-question-qa-board">8. Anonymous
+classmate-question Q&amp;A board</h3>
+<p><strong>Who:</strong> A class WhatsApp group.</p>
+<p><strong>Brief:</strong> <em>“Classmates can post questions
+anonymously (‘I don’t get question 3 in the math homework’) and others
+can answer. Upvote useful answers. Teacher (optional) can mark a ‘best
+answer.’ Spam / inappropriate posts get auto-flagged via a Claude
+moderation step.”</em></p>
+<p><strong>Build time:</strong> 8–10 hours</p>
+<p><strong>Why it works:</strong> Solves a real shyness problem (people
+who won’t ask in class). The moderation layer is a great place to talk
+about AI ethics in the interview. Need real users to validate.</p>
+<hr />
+<h3 id="parent-friendly-weekly-schedule-visualiser">9. Parent-friendly
+weekly schedule visualiser</h3>
+<p><strong>Who:</strong> The teen + their parent (often the parent who
+manages the family calendar).</p>
+<p><strong>Brief:</strong> <em>“I input my classes, tuition, CCA, social
+plans for the week. The app generates a one-page printable view
+colour-coded by category, with a free-time summary at the bottom.
+Parents can subscribe via email to get the schedule sent every
+Sunday.”</em></p>
+<p><strong>Build time:</strong> 4–6 hours</p>
+<p><strong>Why it works:</strong> Parent is a power user with strong
+opinions (“colour by <em>what</em>?” “show me free time only”, etc.).
+Interviewers love hearing about iteration cycles with non-technical
+users.</p>
+<hr />
+<h3 id="ai-assisted-journal-with-mood-tagging">10. AI-assisted journal
+with mood tagging</h3>
+<p><strong>Who:</strong> The teen, possibly only.</p>
+<p><strong>Brief:</strong> <em>“Daily journal entries (free text). After
+saving, Claude returns a mood tag (3–5 options), a one-sentence
+reflection, and one optional ‘gentle question’ for the next day. Past
+entries are searchable; mood is plotted over time.”</em></p>
+<p><strong>Build time:</strong> 5–8 hours</p>
+<p><strong>Why it works:</strong> Personal, useful, and the AI
+integration is non-trivial (output structure, prompt safety). For a
+child who’s not into team-friendly product ideas, this is the right “for
+me” project. The DSA story is around AI ethics — what does the AI
+<em>not</em> try to do?</p>
+<hr />
+<h3 id="hawker-cafe-price-tracker-for-the-school-neighbourhood">11.
+Hawker / cafe price tracker for the school neighbourhood</h3>
+<p><strong>Who:</strong> Any teen who eats out of school + their
+friends.</p>
+<p><strong>Brief:</strong> <em>“Photograph or type the price of a
+popular dish at a nearby stall. Crowd-source contributions from friends.
+Show median price per dish, trend over time, and ‘cheapest place near
+school’ rankings. No ratings of taste — just price tracking, to keep it
+boring and accurate.”</em></p>
+<p><strong>Build time:</strong> 8–10 hours</p>
+<p><strong>Why it works:</strong> Local relevance. Real friend network
+as users. Naturally evolves into a v2 with photo OCR (Claude can pull
+text from a photo of a menu). Strong “noticing what’s around me” angle
+for the interview.</p>
+<hr />
+<h3 id="jc-subject-combo-decision-tool">12. JC subject-combo decision
+tool</h3>
+<p><strong>Who:</strong> Sec 4 students choosing JC subject
+combinations.</p>
+<p><strong>Brief:</strong> <em>“Input: my likely O-Level grades, what
+I’m interested in, what universities / careers I’m considering. Output:
+a comparison of common JC subject combinations (e.g., PCME, CMEH, Arts
+streams) showing pros / cons / what universities accept what / common
+student concerns. Ask Claude to flag mismatches between my interest and
+my combo.”</em></p>
+<p><strong>Build time:</strong> 8–12 hours</p>
+<p><strong>Why it works:</strong> Genuinely high-stakes problem for SG
+Sec 4 students. The teen has to do real research (which universities
+accept what). Claude becomes a research assistant. Excellent topic for
+the DSA narrative because it shows the teen thinks beyond their own
+academics.</p>
+<hr />
+<h2 id="picking-the-right-one-for-your-child">Picking the right one for
+your child</h2>
+<p>Don’t try to pick “the best” project. Pick the one whose
+<strong>user</strong> is closest to your child.</p>
+<p>If your child has a tight CCA: project 1 or 8. If your child is
+exam-prep mode: project 2 or 3. If your child is into family /
+household: project 4 or 9. If your child likes their tutor or has a
+strong study habit: project 5. If your child is socially active in a
+class chat: project 6 or 8. If your child likes a quieter, personal
+project: project 10. If your child is into food / their neighbourhood:
+project 11. If your child is in Sec 4 making big decisions: project
+12.</p>
+<p>The right project is the one where <strong>getting feedback is
+easy</strong> — because the user is already in your child’s life.</p>
+<hr />
+<h2 id="how-to-start-any-of-these">How to start (any of these)</h2>
+<ol type="1">
+<li><strong>Pick one.</strong> Spend 10 minutes max on this. The first
+one is for learning the build-iterate-ship loop, not for being
+perfect.</li>
+<li><strong>Open Claude.</strong> Paste the brief. Ask Claude to clarify
+it: <em>“What questions do you have about this brief before I start
+building?”</em> Refine the brief based on what Claude asks.</li>
+<li><strong>Open Lovable.</strong> Paste the refined brief into the
+“describe your app” box. Hit generate.</li>
+<li><strong>Try the result.</strong> Note what’s broken or wrong. Give
+specific feedback to Lovable: <em>“The login button doesn’t do
+anything.”</em> Iterate.</li>
+<li><strong>Ship it.</strong> Click deploy. Get a public URL.</li>
+<li><strong>Show it to one user.</strong> Watch them use it. Don’t help.
+Note what confuses them.</li>
+<li><strong>Iterate once.</strong> Fix the worst friction.</li>
+<li><strong>Done.</strong> Move on to the next project. Don’t
+perfect.</li>
+</ol>
+<p>The teens who finish this loop multiple times are the ones who walk
+into DSA interviews with real portfolios. The teens who try to perfect
+the first one are the ones who don’t ship.</p>
+<hr />
+<h2 id="what-if-your-child-is-stuck-on-i-cant-think-of-a-problem">What
+if your child is stuck on “I can’t think of a problem”?</h2>
+<p>Common. Two unlocking questions:</p>
+<ul>
+<li><em>“What’s something you’ve complained about more than once in the
+last month?”</em> — your child has been giving you free product briefs.
+They just didn’t realise.</li>
+<li><em>“If your friend group had one tool that made their life slightly
+better, what would it do?”</em> — outsource the brief to social.</li>
+</ul>
+<p>If both fail: pick project 1 (CCA tracker). Universally relevant for
+SG students, low-creativity floor, plenty of room to make it
+personal.</p>
+<hr />
+<h2 id="a-note-on-ai-usage">A note on AI usage</h2>
+<p>A teen interviewer-ready answer should sound like:</p>
+<blockquote>
+<p><em>“I prompted Claude to design the database schema, and it gave me
+three tables. Two were obvious — one I had to ask about because I didn’t
+know what ‘foreign key’ meant. Lovable then built the CRUD operations
+against those tables. The login flow it generated had a bug — the
+password reset email pointed to the wrong domain. I had Claude walk me
+through what was happening and I fixed it manually.”</em></p>
+</blockquote>
+<p>That’s a strong answer because it shows: the teen used AI for what AI
+is good at (structure, scaffolding, explanation) and pushed past it
+where AI got it wrong (the bug fix). Both halves matter. The interviewer
+is checking for both.</p>
+<p>If you want our deeper view of how to choose between Lovable, Cursor,
+Claude, and ChatGPT for these projects, see our <a
+href="/blog/ai-tools-comparison-teens">tool comparison</a>. And if your
+child wants help on the “what to build” question with structured
+coaching, we run <a href="/parents">free trial classes</a> where the
+first 60 minutes is exactly that — picking a problem worth solving.</p>
+<hr />
+<h2 id="faq">FAQ</h2>
+<p><strong>Q: Are these projects too hard for a 13-year-old?</strong> A:
+No. The hardest is project 12, which a Sec 4 student can finish in a
+school week. The easiest (project 1, 6, 9) are routinely shipped by Sec
+1 students in a weekend.</p>
+<p><strong>Q: Do I need to pay for Claude / Lovable?</strong> A: For a
+single project, free tiers are enough. Lovable’s free tier covers 2
+projects; Claude’s free tier handles brainstorming + debugging. If your
+teen does all 12 projects, you’ll likely upgrade Lovable around month 2
+($25/mo).</p>
+<p><strong>Q: My child built one project and lost interest. Was the
+project wrong?</strong> A: Often yes. The user wasn’t real. If the teen
+built something for “imagined teens” instead of their actual class
+group, the feedback loop never started. Switch to a project where
+someone in the family or class will actually use the thing.</p>
+<p><strong>Q: My child wants to build a really ambitious project (full
+social network, multiplayer game). Should I let them?</strong> A: Yes —
+but as project 3, not project 1. Make them ship something simple first
+so the iteration muscle is in place.</p>
+<p><strong>Q: What if my child’s project has a bug they can’t
+fix?</strong> A: Ask Claude to explain what’s wrong line-by-line. If
+after 30 minutes it’s still stuck, the bug is usually a sign that the
+brief was unclear. Re-write the brief with the new understanding and
+start fresh — it’s faster than debugging a broken scaffold.</p>
+<hr />
+<h2 id="next-step">Next step</h2>
+<p>If your teen wants help picking a project and shipping it with a
+coach watching over their shoulder for the first 90 minutes, that’s
+exactly what our <a href="/parents">free trial class</a> is. They walk
+out with a deployed app, a story, and a clear sense of which of the 12
+projects above they actually want to build next.</p>
+<hr />
+<h2 id="related-reading">Related reading</h2>
+<ul>
+<li><a href="/blog/dsa-coding-portfolio-singapore">How to build a DSA
+coding portfolio that actually gets your child into a top Singapore
+school</a></li>
+<li><a href="/blog/what-is-vibe-coding-singapore-parent-guide">What is
+vibe coding? A Singapore parent’s guide for 2026</a></li>
+<li><a href="/blog/ai-tools-comparison-teens">Choosing between Lovable,
+Cursor, Claude, and ChatGPT for your teen’s first AI build</a></li>
+<li><a href="/blog/ai-coding-vs-traditional-dsa-eae">AI coding vs
+traditional coding for Singapore teens — which actually opens DSA/EAE
+doors?</a></li>
+</ul>
