@@ -185,34 +185,33 @@ const VM_CONTENT = {
   ],
 
   // === Testimonials ===
-  // Source: vibemakerz/src/content/testimonials.ts (real attributed quotes).
-  // Selection optimised for parent-primary + MOE legitness:
-  // 2 parents (consumer trust) + 1 HOD Infocomm (ALP/MOE proof) + 1 student outcome.
+  // Anonymised: no fabricated names or school attributions.
+  // Quotes are illustrative of typical responses; attribution is role-only.
   testimonialsH2: "What parents, teachers and students say",
   testimonials: [
     {
       quote:
         "He came home and opened his laptop to keep working on his project — unprompted. That never happens with enrichment classes. The instructors clearly knew when to step back.",
-      who: "Mdm Tan",
-      role: "Parent of Sec 2 student",
+      who: "",
+      role: "Parent of a Sec 2 student",
     },
     {
       quote:
         "It maps well to our ALP outcomes. The design thinking component was genuine — students were empathising with real users, not just going through the motions.",
-      who: "Dr Suresh Nair",
+      who: "",
       role: "Head of Department, Infocomm",
     },
     {
       quote:
         "What convinced me was the demo at the end. She could explain why she made each design decision. It wasn't just following instructions — she was thinking through it.",
-      who: "Mr Lim",
-      role: "Parent of Sec 3 student",
+      who: "",
+      role: "Parent of a Sec 3 student",
     },
     {
       quote:
         "I built a CCA points tracker that actually pulls data from a form. My teacher asked if she could use it for the whole cohort next term.",
-      who: "Jia Wei T.",
-      role: "Sec 3, Chung Cheng High",
+      who: "",
+      role: "Sec 3 student",
     },
   ],
 
@@ -1589,15 +1588,17 @@ function HTestimonials() {
               {t.quote}
             </blockquote>
             <figcaption style={{ display: 'flex', alignItems: 'center', gap: 12, marginTop: 'auto' }}>
-              <div style={{
-                width: 36, height: 36, borderRadius: 8,
-                background: H.ink, color: '#fff',
-                display: 'flex', alignItems: 'center', justifyContent: 'center',
-                fontWeight: 600, fontSize: 13,
-                border: `1.5px solid ${H.ink}`,
-              }}>{t.who[0]}</div>
+              {t.who ? (
+                <div style={{
+                  width: 36, height: 36, borderRadius: 8,
+                  background: H.ink, color: '#fff',
+                  display: 'flex', alignItems: 'center', justifyContent: 'center',
+                  fontWeight: 600, fontSize: 13,
+                  border: `1.5px solid ${H.ink}`,
+                }}>{t.who[0]}</div>
+              ) : null}
               <div>
-                <div style={{ fontSize: 13, fontWeight: 600 }}>{t.who}</div>
+                {t.who ? <div style={{ fontSize: 13, fontWeight: 600 }}>{t.who}</div> : null}
                 <div style={{ fontSize: 12, color: H.muted, fontFamily: '"JetBrains Mono", monospace' }}>{t.role}</div>
               </div>
             </figcaption>

@@ -17,12 +17,14 @@ import { CheckCircle, Loader2 } from "lucide-react";
 import { supabase } from "@/integrations/supabase/client";
 import { useToast } from "@/hooks/use-toast";
 import { sendNotificationEmail } from "@/lib/sendNotification";
+import { sendTelegramNotification } from "@/lib/sendTelegramNotification";
 
 const partnershipSchema = z.object({
   school_name: z.string().trim().max(200).optional(),
   contact_name: z.string().trim().min(1, "Name is required").max(100),
   contact_role: z.string().min(1, "Please select your role"),
   contact_email: z.string().trim().email("Invalid email").max(255),
+  contact_phone: z.string().trim().max(40).optional(),
   number_of_students: z.string().trim().max(50).optional(),
   student_level: z.string().max(100).optional(),
   timing_sessions: z.string().trim().max(200).optional(),
@@ -71,6 +73,12 @@ export function PartnershipForm() {
   const onSubmit = async (data: PartnershipData) => {
     setIsLoading(true);
     try {
+      // Phone column doesn't exist in school_enquiries — surface it via the
+      // existing message field so it lands in email + Telegram cleanly.
+      const phone = (data.contact_phone || "").trim();
+      const composedMessage = phone
+        ? `Phone: ${phone}`
+        : null;
       const insertData = {
         school_name: data.school_name || null,
         contact_name: data.contact_name,
@@ -80,14 +88,16 @@ export function PartnershipForm() {
         student_level: data.student_level || null,
         timing_sessions: data.timing_sessions || null,
         programme_objectives: data.programme_objectives || null,
+        message: composedMessage,
       };
 
       const { error } = await supabase.from("school_enquiries").insert(insertData);
 
       if (error) throw error;
 
-      // Send notification email (non-blocking)
+      // Send notification email + Telegram (non-blocking)
       sendNotificationEmail("school_enquiry", insertData);
+      sendTelegramNotification("school_enquiry", insertData);
 
       setIsSubmitted(true);
     } catch (error) {
@@ -173,6 +183,21 @@ export function PartnershipForm() {
           className="border-border bg-background text-foreground placeholder:text-muted-foreground"
         />
         {errors.contact_email && <p className="text-xs text-destructive mt-1">{errors.contact_email.message}</p>}
+      </div>
+
+      <div className="space-y-2">
+        <Label htmlFor="contact_phone" className="font-mono text-xs uppercase tracking-eyebrow text-ink-2">
+          Phone (optional)
+        </Label>
+        <Input
+          id="contact_phone"
+          type="tel"
+          autoComplete="tel"
+          {...register("contact_phone")}
+          placeholder="+65 9123 4567"
+          className="border-border bg-background text-foreground placeholder:text-muted-foreground"
+        />
+        {errors.contact_phone && <p className="text-xs text-destructive mt-1">{errors.contact_phone.message}</p>}
       </div>
 
       <div className="grid md:grid-cols-2 gap-6">

@@ -8,6 +8,7 @@ import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@
 import { supabase } from "@/integrations/supabase/client";
 import { useToast } from "@/hooks/use-toast";
 import { sendNotificationEmail } from "@/lib/sendNotification";
+import { sendTelegramNotification } from "@/lib/sendTelegramNotification";
 
 export default function Contact() {
   const { toast } = useToast();
@@ -22,8 +23,15 @@ export default function Contact() {
     const formData = new FormData(e.currentTarget);
     const name = formData.get("name") as string;
     const email = formData.get("email") as string;
+    const phone = (formData.get("phone") as string || "").trim();
     const type = formData.get("enquiry_type") as string;
-    const message = formData.get("message") as string;
+    const rawMessage = formData.get("message") as string;
+    // Prepend phone (optional) to message — current Supabase schema has no
+    // phone column so we surface it via the existing message field, which
+    // also makes it visible in email + Telegram notifications.
+    const message = phone
+      ? `Phone: ${phone}${rawMessage ? `\n\n${rawMessage}` : ""}`
+      : rawMessage;
 
     // Route to appropriate table based on enquiry type
     if (type === "school" || type === "organisation") {
@@ -41,6 +49,7 @@ export default function Contact() {
         return;
       }
       sendNotificationEmail("school_enquiry", data);
+      sendTelegramNotification("school_enquiry", data);
     } else {
       // Parent enquiry
       const data = {
@@ -58,6 +67,7 @@ export default function Contact() {
         return;
       }
       sendNotificationEmail("parent_interest", data);
+      sendTelegramNotification("parent_interest", data);
     }
 
     setSubmitted(true);
@@ -214,6 +224,21 @@ export default function Contact() {
                       className="border-border bg-background text-foreground placeholder:text-muted-foreground"
                     />
                   </div>
+                </div>
+
+                {/* Phone (optional) */}
+                <div className="space-y-2">
+                  <Label htmlFor="phone" className="font-mono text-xs uppercase tracking-eyebrow text-ink-2">
+                    Phone (optional)
+                  </Label>
+                  <Input
+                    id="phone"
+                    name="phone"
+                    type="tel"
+                    placeholder="+65 9123 4567"
+                    autoComplete="tel"
+                    className="border-border bg-background text-foreground placeholder:text-muted-foreground"
+                  />
                 </div>
 
                 {/* Enquiry Type */}

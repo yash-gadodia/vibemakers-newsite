@@ -11,10 +11,12 @@ import { CheckCircle, Loader2 } from "lucide-react";
 import { supabase } from "@/integrations/supabase/client";
 import { useToast } from "@/hooks/use-toast";
 import { sendNotificationEmail } from "@/lib/sendNotification";
+import { sendTelegramNotification } from "@/lib/sendTelegramNotification";
 
 const registrationSchema = z.object({
   parent_name: z.string().trim().min(1, "Name is required").max(100),
   parent_email: z.string().trim().email("Invalid email").max(255),
+  parent_phone: z.string().trim().max(40).optional(),
   student_name: z.string().trim().min(1, "Student name is required").max(100),
   student_age: z.string().min(1, "Please select age group"),
   programme_interest: z.string().min(1, "Please select a format"),
@@ -45,21 +47,28 @@ export function RegistrationForm() {
   const onSubmit = async (data: RegistrationData) => {
     setIsLoading(true);
     try {
+      // Phone column doesn't exist in Supabase schema yet — surface it via
+      // the existing message field so it lands in email + Telegram cleanly.
+      const phone = (data.parent_phone || "").trim();
+      const composedMessage = phone
+        ? `Phone: ${phone}${data.message ? `\n\n${data.message}` : ""}`
+        : data.message || null;
       const insertData = {
         parent_name: data.parent_name,
         parent_email: data.parent_email,
         student_name: data.student_name,
         student_age: data.student_age,
         programme_interest: data.programme_interest,
-        message: data.message || null,
+        message: composedMessage,
       };
 
       const { error } = await supabase.from("parent_interest").insert(insertData);
 
       if (error) throw error;
 
-      // Send notification email (non-blocking)
+      // Send notification email + Telegram (non-blocking)
       sendNotificationEmail("parent_interest", insertData);
+      sendTelegramNotification("parent_interest", insertData);
 
       setIsSubmitted(true);
     } catch (error) {
@@ -115,6 +124,21 @@ export function RegistrationForm() {
           />
           {errors.parent_email && <p className="text-xs text-destructive mt-1">{errors.parent_email.message}</p>}
         </div>
+      </div>
+
+      <div className="space-y-2">
+        <Label htmlFor="parent_phone" className="font-mono text-xs uppercase tracking-eyebrow text-ink-2">
+          Phone (optional)
+        </Label>
+        <Input
+          id="parent_phone"
+          type="tel"
+          autoComplete="tel"
+          {...register("parent_phone")}
+          placeholder="+65 9123 4567"
+          className="border-border bg-background text-foreground placeholder:text-muted-foreground"
+        />
+        {errors.parent_phone && <p className="text-xs text-destructive mt-1">{errors.parent_phone.message}</p>}
       </div>
 
       <div className="grid md:grid-cols-2 gap-6">

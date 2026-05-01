@@ -14,6 +14,7 @@ import {
 import { supabase } from "@/integrations/supabase/client";
 import { useToast } from "@/hooks/use-toast";
 import { sendNotificationEmail } from "@/lib/sendNotification";
+import { sendTelegramNotification } from "@/lib/sendTelegramNotification";
 
 export function RegistrationForm() {
   const { toast } = useToast();
@@ -45,12 +46,14 @@ export function RegistrationForm() {
       });
     } else {
       // Send notification email (non-blocking)
-      sendNotificationEmail("hackathon_waitlist", {
+      const enrichedData = {
         ...data,
         team_preference: teamPreference,
         tshirt_size: formData.get("tshirt_size") as string,
         dietary: formData.get("dietary") as string,
-      });
+      };
+      sendNotificationEmail("hackathon_waitlist", enrichedData);
+      sendTelegramNotification("hackathon_waitlist", enrichedData);
 
       setSubmitted(true);
       toast({ title: "Success!", description: "You're on the waitlist!" });

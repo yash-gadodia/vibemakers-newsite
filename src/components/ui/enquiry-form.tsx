@@ -9,11 +9,13 @@ import { Label } from "@/components/ui/label";
 import { Textarea } from "@/components/ui/textarea";
 import { supabase } from "@/integrations/supabase/client";
 import { sendNotificationEmail } from "@/lib/sendNotification";
+import { sendTelegramNotification } from "@/lib/sendTelegramNotification";
 import { cn } from "@/lib/utils";
 
 const parentSchema = z.object({
   parent_name: z.string().min(2, "Required"),
   parent_email: z.string().email("Invalid email"),
+  parent_phone: z.string().trim().max(40).optional().default(""),
   student_name: z.string().min(1, "Required"),
   student_age: z.string().min(1, "Required"),
   programme_interest: z.string().optional().default(""),
@@ -23,6 +25,7 @@ const parentSchema = z.object({
 const schoolSchema = z.object({
   contact_name: z.string().min(2, "Required"),
   contact_email: z.string().email("Invalid email"),
+  contact_phone: z.string().trim().max(40).optional().default(""),
   contact_role: z.string().min(1, "Required"),
   school_name: z.string().min(1, "Required"),
   student_level: z.string().optional().default(""),
@@ -57,13 +60,22 @@ function ParentForm({ className }: { className?: string }) {
 
   const onSubmit = async (data: z.infer<typeof parentSchema>) => {
     setSubmitting(true);
-    const { error } = await supabase.from("parent_interest").insert(data);
+    // Phone column doesn't exist in parent_interest schema — surface it via
+    // the message field so it lands in email + Telegram cleanly.
+    const phone = (data.parent_phone || "").trim();
+    const composedMessage = phone
+      ? `Phone: ${phone}${data.message ? `\n\n${data.message}` : ""}`
+      : data.message || null;
+    const { parent_phone: _phone, ...rest } = data;
+    const insertData = { ...rest, message: composedMessage };
+    const { error } = await supabase.from("parent_interest").insert(insertData);
     if (error) {
       toast.error("Couldn't send your enquiry. Try again or WhatsApp us.");
       setSubmitting(false);
       return;
     }
-    sendNotificationEmail("parent_interest", data);
+    sendNotificationEmail("parent_interest", insertData);
+    sendTelegramNotification("parent_interest", insertData);
     toast.success("Got it. We'll reply within 24 hours.");
     reset();
     setSubmitting(false);
@@ -94,6 +106,21 @@ function ParentForm({ className }: { className?: string }) {
           className="border-border bg-background text-foreground placeholder:text-muted-foreground"
         />
         {errors.parent_email ? <p className="text-destructive text-xs mt-1">{errors.parent_email.message}</p> : null}
+      </div>
+
+      <div className="space-y-2">
+        <Label htmlFor="parent_phone" className="font-mono text-xs uppercase tracking-eyebrow text-ink-2">
+          Phone (optional)
+        </Label>
+        <Input
+          id="parent_phone"
+          type="tel"
+          autoComplete="tel"
+          placeholder="+65 9123 4567"
+          {...register("parent_phone")}
+          className="border-border bg-background text-foreground placeholder:text-muted-foreground"
+        />
+        {errors.parent_phone ? <p className="text-destructive text-xs mt-1">{errors.parent_phone.message}</p> : null}
       </div>
 
       <div className="space-y-2">
@@ -168,13 +195,20 @@ function SchoolForm({ className }: { className?: string }) {
 
   const onSubmit = async (data: z.infer<typeof schoolSchema>) => {
     setSubmitting(true);
-    const { error } = await supabase.from("school_enquiries").insert(data);
+    const phone = (data.contact_phone || "").trim();
+    const composedMessage = phone
+      ? `Phone: ${phone}${data.message ? `\n\n${data.message}` : ""}`
+      : data.message || "";
+    const { contact_phone: _phone, ...rest } = data;
+    const insertData = { ...rest, message: composedMessage };
+    const { error } = await supabase.from("school_enquiries").insert(insertData);
     if (error) {
       toast.error("Couldn't send your enquiry. Try again or email us.");
       setSubmitting(false);
       return;
     }
-    sendNotificationEmail("school_enquiry", data);
+    sendNotificationEmail("school_enquiry", insertData);
+    sendTelegramNotification("school_enquiry", insertData);
     toast.success("Got it. We'll be in touch within 1 business day.");
     reset();
     setSubmitting(false);
@@ -218,6 +252,21 @@ function SchoolForm({ className }: { className?: string }) {
           className="border-border bg-background text-foreground placeholder:text-muted-foreground"
         />
         {errors.contact_email ? <p className="text-destructive text-xs mt-1">{errors.contact_email.message}</p> : null}
+      </div>
+
+      <div className="space-y-2">
+        <Label htmlFor="contact_phone" className="font-mono text-xs uppercase tracking-eyebrow text-ink-2">
+          Phone (optional)
+        </Label>
+        <Input
+          id="contact_phone"
+          type="tel"
+          autoComplete="tel"
+          placeholder="+65 9123 4567"
+          {...register("contact_phone")}
+          className="border-border bg-background text-foreground placeholder:text-muted-foreground"
+        />
+        {errors.contact_phone ? <p className="text-destructive text-xs mt-1">{errors.contact_phone.message}</p> : null}
       </div>
 
       <div className="space-y-2">
