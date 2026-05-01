@@ -75,12 +75,12 @@ export function RegistrationForm() {
 
   if (isSubmitted) {
     return (
-      <div className="text-center py-12 px-6 bg-card border border-border rounded-2xl">
+      <div className="vm-card rounded-2xl border border-border bg-card p-8 md:p-12 text-center">
         <div className="w-16 h-16 rounded-full bg-primary/10 flex items-center justify-center mx-auto mb-4">
           <CheckCircle className="w-8 h-8 text-primary" />
         </div>
-        <h4 className="text-xl font-display font-bold mb-2">Thank You!</h4>
-        <p className="text-muted-foreground">
+        <h4 className="text-xl font-display font-bold mb-2 text-foreground">Thank You!</h4>
+        <p className="text-ink-2">
           We'll reach out within 2 working days.
         </p>
       </div>
@@ -88,28 +88,52 @@ export function RegistrationForm() {
   }
 
   return (
-    <form onSubmit={handleSubmit(onSubmit)} className="space-y-6 bg-card border border-border rounded-2xl p-6 md:p-8">
-      <div className="grid md:grid-cols-2 gap-4">
+    <form onSubmit={handleSubmit(onSubmit)} className="vm-card rounded-2xl border border-border bg-card p-8 md:p-10 space-y-6">
+      <div className="grid md:grid-cols-2 gap-6">
         <div className="space-y-2">
-          <Label htmlFor="parent_name">Your Name *</Label>
-          <Input id="parent_name" {...register("parent_name")} placeholder="Parent/Guardian name" />
-          {errors.parent_name && <p className="text-sm text-destructive">{errors.parent_name.message}</p>}
+          <Label htmlFor="parent_name" className="font-mono text-xs uppercase tracking-eyebrow text-ink-2">
+            Your Name *
+          </Label>
+          <Input
+            id="parent_name"
+            {...register("parent_name")}
+            placeholder="Parent/Guardian name"
+            className="border-border bg-background text-foreground placeholder:text-muted-foreground"
+          />
+          {errors.parent_name && <p className="text-xs text-destructive mt-1">{errors.parent_name.message}</p>}
         </div>
         <div className="space-y-2">
-          <Label htmlFor="parent_email">Email *</Label>
-          <Input id="parent_email" type="email" {...register("parent_email")} placeholder="your@email.com" />
-          {errors.parent_email && <p className="text-sm text-destructive">{errors.parent_email.message}</p>}
+          <Label htmlFor="parent_email" className="font-mono text-xs uppercase tracking-eyebrow text-ink-2">
+            Email *
+          </Label>
+          <Input
+            id="parent_email"
+            type="email"
+            {...register("parent_email")}
+            placeholder="your@email.com"
+            className="border-border bg-background text-foreground placeholder:text-muted-foreground"
+          />
+          {errors.parent_email && <p className="text-xs text-destructive mt-1">{errors.parent_email.message}</p>}
         </div>
       </div>
 
-      <div className="grid md:grid-cols-2 gap-4">
+      <div className="grid md:grid-cols-2 gap-6">
         <div className="space-y-2">
-          <Label htmlFor="student_name">Student's Name *</Label>
-          <Input id="student_name" {...register("student_name")} placeholder="Your child's name" />
-          {errors.student_name && <p className="text-sm text-destructive">{errors.student_name.message}</p>}
+          <Label htmlFor="student_name" className="font-mono text-xs uppercase tracking-eyebrow text-ink-2">
+            Student's Name *
+          </Label>
+          <Input
+            id="student_name"
+            {...register("student_name")}
+            placeholder="Your child's name"
+            className="border-border bg-background text-foreground placeholder:text-muted-foreground"
+          />
+          {errors.student_name && <p className="text-xs text-destructive mt-1">{errors.student_name.message}</p>}
         </div>
         <div className="space-y-2">
-          <Label>Student's Age Group *</Label>
+          <Label className="font-mono text-xs uppercase tracking-eyebrow text-ink-2">
+            Student's Age Group *
+          </Label>
           <RadioGroup
             value={watch("student_age")}
             onValueChange={(value) => setValue("student_age", value)}
@@ -122,12 +146,14 @@ export function RegistrationForm() {
               </div>
             ))}
           </RadioGroup>
-          {errors.student_age && <p className="text-sm text-destructive">{errors.student_age.message}</p>}
+          {errors.student_age && <p className="text-xs text-destructive mt-1">{errors.student_age.message}</p>}
         </div>
       </div>
 
       <div className="space-y-2">
-        <Label>Preferred Format *</Label>
+        <Label className="font-mono text-xs uppercase tracking-eyebrow text-ink-2">
+          Preferred Format *
+        </Label>
         <RadioGroup
           value={watch("programme_interest")}
           onValueChange={(value) => setValue("programme_interest", value)}
@@ -146,29 +172,39 @@ export function RegistrationForm() {
             <Label htmlFor="format-unsure" className="cursor-pointer">Not sure yet</Label>
           </div>
         </RadioGroup>
-        {errors.programme_interest && <p className="text-sm text-destructive">{errors.programme_interest.message}</p>}
+        {errors.programme_interest && <p className="text-xs text-destructive mt-1">{errors.programme_interest.message}</p>}
       </div>
 
       <div className="space-y-2">
-        <Label htmlFor="message">Anything else we should know? (optional)</Label>
+        <Label htmlFor="message" className="font-mono text-xs uppercase tracking-eyebrow text-ink-2">
+          Anything else we should know? (optional)
+        </Label>
         <Textarea
           id="message"
           {...register("message")}
           placeholder="E.g., specific interests, schedule preferences, questions..."
           rows={3}
+          className="border-border bg-background text-foreground placeholder:text-muted-foreground"
         />
       </div>
 
-      <Button type="submit" className="w-full" disabled={isLoading}>
+      <button
+        type="submit"
+        disabled={isLoading}
+        className="vm-btn inline-flex items-center justify-center gap-2 rounded-full bg-primary px-6 py-3 text-primary-foreground shadow-sticker disabled:opacity-50 w-full md:w-auto"
+      >
         {isLoading ? (
           <>
             <Loader2 className="w-4 h-4 mr-2 animate-spin" />
             Submitting...
           </>
         ) : (
-          "Register Interest"
+          <>
+            Register Interest
+            <span className="vm-arrow">→</span>
+          </>
         )}
-      </Button>
+      </button>
     </form>
   );
 }

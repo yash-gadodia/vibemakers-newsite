@@ -9,22 +9,24 @@ const events = [
 
 export function Timeline() {
   return (
-    <section className="py-20 bg-secondary/30">
-      <div className="container mx-auto px-4">
+    <section className="border-t border-border bg-bg-warm py-20 md:py-28">
+      <div className="mx-auto max-w-[1200px] px-6 md:px-14">
         <div className="text-center mb-12">
-          <h2 className="text-3xl md:text-4xl font-display font-bold mb-4">
+          <span className="vm-sticker" style={{ transform: 'rotate(1deg)' }}>
+            ● Timeline
+          </span>
+          <h2 className="font-display font-bold tracking-display leading-[1.02] text-3xl md:text-4xl mb-4 mt-6 text-foreground">
             Event Timeline
           </h2>
-          <div className="inline-flex items-center gap-2 px-4 py-2 bg-muted rounded-full">
-            <span className="text-base">🕐</span>
-            <span className="text-sm text-muted-foreground">Dates to be announced</span>
-          </div>
+          <p className="font-sans text-ink-2">
+            🕐 Dates to be announced
+          </p>
         </div>
 
         <div className="max-w-3xl mx-auto">
           <div className="relative">
             {/* Vertical line */}
-            <div className="absolute left-4 md:left-1/2 top-0 bottom-0 w-0.5 bg-border md:-translate-x-0.5" />
+            <div className="absolute left-4 md:left-1/2 top-0 bottom-0 w-0.5 border-l border-border md:-translate-x-0.5" />
 
             {events.map((item, index) => (
               <div
@@ -44,12 +46,12 @@ export function Timeline() {
                     index % 2 === 0 ? "md:pr-12 md:text-right" : "md:pl-12"
                   }`}
                 >
-                  <div className="bg-card border border-border rounded-xl p-5 inline-block hover:border-primary/30 transition-colors">
-                    <span className="text-xs font-medium text-muted-foreground bg-muted px-2 py-1 rounded">
+                  <div className="vm-card inline-block p-5">
+                    <span className="font-mono text-xs uppercase tracking-eyebrow text-ink-2 bg-bg-warm px-2 py-1 rounded">
                       {item.date}
                     </span>
-                    <h3 className="font-semibold mt-2">{item.event}</h3>
-                    <p className="text-sm text-muted-foreground mt-1">{item.description}</p>
+                    <h3 className="font-display font-bold mt-2 text-foreground">{item.event}</h3>
+                    <p className="font-sans text-sm text-ink-2 mt-1">{item.description}</p>
                   </div>
                 </div>
               </div>

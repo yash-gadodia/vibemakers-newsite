@@ -70,28 +70,87 @@ function ParentForm({ className }: { className?: string }) {
   };
 
   return (
-    <form onSubmit={handleSubmit(onSubmit)} className={cn("space-y-4", className)}>
-      <Field id="parent_name" label="Parent name" error={errors.parent_name?.message}>
-        <Input id="parent_name" {...register("parent_name")} />
-      </Field>
-      <Field id="parent_email" label="Email" error={errors.parent_email?.message}>
-        <Input id="parent_email" type="email" {...register("parent_email")} />
-      </Field>
-      <Field id="student_name" label="Student name" error={errors.student_name?.message}>
-        <Input id="student_name" {...register("student_name")} />
-      </Field>
-      <Field id="student_age" label="Student age" error={errors.student_age?.message}>
-        <Input id="student_age" {...register("student_age")} />
-      </Field>
-      <Field id="programme_interest" label="Programme interest (optional)">
-        <Input id="programme_interest" {...register("programme_interest")} />
-      </Field>
-      <Field id="message" label="Anything else? (optional)">
-        <Textarea id="message" {...register("message")} rows={3} />
-      </Field>
-      <Button type="submit" disabled={submitting} className="w-full">
+    <form onSubmit={handleSubmit(onSubmit)} className={cn("vm-card rounded-2xl border border-border bg-card p-8 md:p-10 space-y-6", className)}>
+      <div className="space-y-2">
+        <Label htmlFor="parent_name" className="font-mono text-xs uppercase tracking-eyebrow text-ink-2">
+          Parent name
+        </Label>
+        <Input
+          id="parent_name"
+          {...register("parent_name")}
+          className="border-border bg-background text-foreground placeholder:text-muted-foreground"
+        />
+        {errors.parent_name ? <p className="text-destructive text-xs mt-1">{errors.parent_name.message}</p> : null}
+      </div>
+
+      <div className="space-y-2">
+        <Label htmlFor="parent_email" className="font-mono text-xs uppercase tracking-eyebrow text-ink-2">
+          Email
+        </Label>
+        <Input
+          id="parent_email"
+          type="email"
+          {...register("parent_email")}
+          className="border-border bg-background text-foreground placeholder:text-muted-foreground"
+        />
+        {errors.parent_email ? <p className="text-destructive text-xs mt-1">{errors.parent_email.message}</p> : null}
+      </div>
+
+      <div className="space-y-2">
+        <Label htmlFor="student_name" className="font-mono text-xs uppercase tracking-eyebrow text-ink-2">
+          Student name
+        </Label>
+        <Input
+          id="student_name"
+          {...register("student_name")}
+          className="border-border bg-background text-foreground placeholder:text-muted-foreground"
+        />
+        {errors.student_name ? <p className="text-destructive text-xs mt-1">{errors.student_name.message}</p> : null}
+      </div>
+
+      <div className="space-y-2">
+        <Label htmlFor="student_age" className="font-mono text-xs uppercase tracking-eyebrow text-ink-2">
+          Student age
+        </Label>
+        <Input
+          id="student_age"
+          {...register("student_age")}
+          className="border-border bg-background text-foreground placeholder:text-muted-foreground"
+        />
+        {errors.student_age ? <p className="text-destructive text-xs mt-1">{errors.student_age.message}</p> : null}
+      </div>
+
+      <div className="space-y-2">
+        <Label htmlFor="programme_interest" className="font-mono text-xs uppercase tracking-eyebrow text-ink-2">
+          Programme interest (optional)
+        </Label>
+        <Input
+          id="programme_interest"
+          {...register("programme_interest")}
+          className="border-border bg-background text-foreground placeholder:text-muted-foreground"
+        />
+      </div>
+
+      <div className="space-y-2">
+        <Label htmlFor="message" className="font-mono text-xs uppercase tracking-eyebrow text-ink-2">
+          Anything else? (optional)
+        </Label>
+        <Textarea
+          id="message"
+          {...register("message")}
+          rows={3}
+          className="border-border bg-background text-foreground placeholder:text-muted-foreground"
+        />
+      </div>
+
+      <button
+        type="submit"
+        disabled={submitting}
+        className="vm-btn inline-flex items-center justify-center gap-2 rounded-full bg-primary px-6 py-3 text-primary-foreground shadow-sticker disabled:opacity-50 w-full md:w-auto"
+      >
         {submitting ? "Sending..." : "Send enquiry"}
-      </Button>
+        <span className="vm-arrow">→</span>
+      </button>
     </form>
   );
 }
@@ -122,53 +181,100 @@ function SchoolForm({ className }: { className?: string }) {
   };
 
   return (
-    <form onSubmit={handleSubmit(onSubmit)} className={cn("space-y-4", className)}>
-      <Field id="contact_name" label="Contact name" error={errors.contact_name?.message}>
-        <Input id="contact_name" {...register("contact_name")} />
-      </Field>
-      <Field id="contact_role" label="Your role" error={errors.contact_role?.message}>
-        <Input id="contact_role" placeholder="HoD, Teacher, Principal..." {...register("contact_role")} />
-      </Field>
-      <Field id="contact_email" label="Email" error={errors.contact_email?.message}>
-        <Input id="contact_email" type="email" {...register("contact_email")} />
-      </Field>
-      <Field id="school_name" label="School name" error={errors.school_name?.message}>
-        <Input id="school_name" {...register("school_name")} />
-      </Field>
-      <Field id="student_level" label="Student level (optional)">
-        <Input id="student_level" placeholder="Sec 1-4, JC..." {...register("student_level")} />
-      </Field>
-      <Field id="number_of_students" label="Approx. number of students (optional)">
-        <Input id="number_of_students" {...register("number_of_students")} />
-      </Field>
-      <Field id="programme_objectives" label="What you're looking for (optional)">
-        <Textarea id="programme_objectives" {...register("programme_objectives")} rows={3} />
-      </Field>
-      <Button type="submit" disabled={submitting} className="w-full">
-        {submitting ? "Sending..." : "Get a proposal"}
-      </Button>
-    </form>
-  );
-}
+    <form onSubmit={handleSubmit(onSubmit)} className={cn("vm-card rounded-2xl border border-border bg-card p-8 md:p-10 space-y-6", className)}>
+      <div className="space-y-2">
+        <Label htmlFor="contact_name" className="font-mono text-xs uppercase tracking-eyebrow text-ink-2">
+          Contact name
+        </Label>
+        <Input
+          id="contact_name"
+          {...register("contact_name")}
+          className="border-border bg-background text-foreground placeholder:text-muted-foreground"
+        />
+        {errors.contact_name ? <p className="text-destructive text-xs mt-1">{errors.contact_name.message}</p> : null}
+      </div>
 
-function Field({
-  id,
-  label,
-  error,
-  children,
-}: {
-  id: string;
-  label: string;
-  error?: string;
-  children: React.ReactNode;
-}) {
-  return (
-    <div>
-      <Label htmlFor={id} className="mb-2 block text-sm font-medium">
-        {label}
-      </Label>
-      {children}
-      {error ? <p className="mt-1 text-xs text-destructive">{error}</p> : null}
-    </div>
+      <div className="space-y-2">
+        <Label htmlFor="contact_role" className="font-mono text-xs uppercase tracking-eyebrow text-ink-2">
+          Your role
+        </Label>
+        <Input
+          id="contact_role"
+          placeholder="HoD, Teacher, Principal..."
+          {...register("contact_role")}
+          className="border-border bg-background text-foreground placeholder:text-muted-foreground"
+        />
+        {errors.contact_role ? <p className="text-destructive text-xs mt-1">{errors.contact_role.message}</p> : null}
+      </div>
+
+      <div className="space-y-2">
+        <Label htmlFor="contact_email" className="font-mono text-xs uppercase tracking-eyebrow text-ink-2">
+          Email
+        </Label>
+        <Input
+          id="contact_email"
+          type="email"
+          {...register("contact_email")}
+          className="border-border bg-background text-foreground placeholder:text-muted-foreground"
+        />
+        {errors.contact_email ? <p className="text-destructive text-xs mt-1">{errors.contact_email.message}</p> : null}
+      </div>
+
+      <div className="space-y-2">
+        <Label htmlFor="school_name" className="font-mono text-xs uppercase tracking-eyebrow text-ink-2">
+          School name
+        </Label>
+        <Input
+          id="school_name"
+          {...register("school_name")}
+          className="border-border bg-background text-foreground placeholder:text-muted-foreground"
+        />
+        {errors.school_name ? <p className="text-destructive text-xs mt-1">{errors.school_name.message}</p> : null}
+      </div>
+
+      <div className="space-y-2">
+        <Label htmlFor="student_level" className="font-mono text-xs uppercase tracking-eyebrow text-ink-2">
+          Student level (optional)
+        </Label>
+        <Input
+          id="student_level"
+          placeholder="Sec 1-4, JC..."
+          {...register("student_level")}
+          className="border-border bg-background text-foreground placeholder:text-muted-foreground"
+        />
+      </div>
+
+      <div className="space-y-2">
+        <Label htmlFor="number_of_students" className="font-mono text-xs uppercase tracking-eyebrow text-ink-2">
+          Approx. number of students (optional)
+        </Label>
+        <Input
+          id="number_of_students"
+          {...register("number_of_students")}
+          className="border-border bg-background text-foreground placeholder:text-muted-foreground"
+        />
+      </div>
+
+      <div className="space-y-2">
+        <Label htmlFor="programme_objectives" className="font-mono text-xs uppercase tracking-eyebrow text-ink-2">
+          What you're looking for (optional)
+        </Label>
+        <Textarea
+          id="programme_objectives"
+          {...register("programme_objectives")}
+          rows={3}
+          className="border-border bg-background text-foreground placeholder:text-muted-foreground"
+        />
+      </div>
+
+      <button
+        type="submit"
+        disabled={submitting}
+        className="vm-btn inline-flex items-center justify-center gap-2 rounded-full bg-primary px-6 py-3 text-primary-foreground shadow-sticker disabled:opacity-50 w-full md:w-auto"
+      >
+        {submitting ? "Sending..." : "Get a proposal"}
+        <span className="vm-arrow">→</span>
+      </button>
+    </form>
   );
 }

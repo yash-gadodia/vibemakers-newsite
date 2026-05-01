@@ -5,57 +5,60 @@ import { RevealGroup } from "@/components/ui/RevealGroup";
 
 export function FormatCardsSection() {
   return (
-    <section className="section-padding bg-background">
-      <div className="container mx-auto px-4">
+    <section className="border-t border-border bg-bg-warm py-20 md:py-28">
+      <div className="mx-auto max-w-[1200px] px-6 md:px-14">
         <Reveal variant="up">
           <div className="text-center mb-12">
-            <h2 className="text-2xl md:text-3xl font-display font-bold mb-4">
+            <span className="vm-sticker" style={{ transform: 'rotate(-3deg)' }}>
+              ● Formats
+            </span>
+            <h2 className="font-display font-bold tracking-display leading-[1.02] text-3xl md:text-4xl text-foreground mt-6 mb-6">
               Choose Your Format
             </h2>
-            <p className="text-muted-foreground max-w-2xl mx-auto">
+            <p className="font-sans text-ink-2 max-w-2xl mx-auto text-lg">
               One core programme, multiple ways to learn.
             </p>
           </div>
         </Reveal>
 
-        <RevealGroup staggerMs={120} variant="up" className="grid md:grid-cols-2 gap-6 max-w-5xl mx-auto">
-          {/* Schools Card - Dark */}
-          <div className="bg-foreground rounded-3xl p-8">
-            <div className="w-12 h-12 rounded-xl bg-background/20 flex items-center justify-center mb-8">
-              <Building2 className="w-6 h-6 text-white" />
+        <RevealGroup staggerMs={120} variant="up" className="grid md:grid-cols-2 gap-6 max-w-4xl mx-auto">
+          {/* Schools Card */}
+          <div className="vm-card rounded-2xl border border-border bg-card p-8">
+            <div className="w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center mb-6">
+              <Building2 className="w-6 h-6 text-primary" />
             </div>
-            <h3 className="text-2xl font-display font-bold mb-3 text-white">
+            <h3 className="font-display font-bold text-2xl text-foreground mb-3">
               Programmes for Schools
             </h3>
-            <p className="text-background/70 mb-8">
+            <p className="font-sans text-foreground mb-8 leading-relaxed">
               School-based programmes for post-exam periods, enrichment blocks, and special programmes.
             </p>
-            <Link 
+            <Link
               to="/schools"
-              className="w-full bg-background text-foreground hover:bg-muted rounded-full py-4 px-6 flex items-center justify-between font-medium transition-colors"
+              className="vm-btn inline-flex items-center gap-2 rounded-full bg-primary text-primary-foreground px-6 py-3 shadow-sticker"
             >
               View School Programmes
-              <ArrowRight className="w-5 h-5" />
+              <span className="vm-arrow">→</span>
             </Link>
           </div>
 
-          {/* Parents Card - Orange */}
-          <div className="bg-primary rounded-3xl p-8">
-            <div className="w-12 h-12 rounded-xl bg-white/20 flex items-center justify-center mb-8">
-              <Home className="w-6 h-6 text-white" />
+          {/* Parents Card */}
+          <div className="vm-card rounded-2xl border border-border bg-card p-8">
+            <div className="w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center mb-6">
+              <Home className="w-6 h-6 text-primary" />
             </div>
-            <h3 className="text-2xl font-display font-bold mb-3 text-white">
+            <h3 className="font-display font-bold text-2xl text-foreground mb-3">
               Programmes for Parents & Students
             </h3>
-            <p className="text-white/80 mb-8">
+            <p className="font-sans text-foreground mb-8 leading-relaxed">
               Holiday classes and small-group coaching for students and families.
             </p>
-            <Link 
+            <Link
               to="/parents"
-              className="w-full bg-foreground text-background hover:bg-foreground/90 rounded-full py-4 px-6 flex items-center justify-between font-medium transition-colors"
+              className="vm-btn inline-flex items-center gap-2 rounded-full bg-primary text-primary-foreground px-6 py-3 shadow-sticker"
             >
               View Classes for Parents & Students
-              <ArrowRight className="w-5 h-5" />
+              <span className="vm-arrow">→</span>
             </Link>
           </div>
         </RevealGroup>

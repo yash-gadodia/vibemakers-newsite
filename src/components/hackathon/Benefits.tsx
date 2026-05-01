@@ -33,13 +33,16 @@ const benefits = [
 
 export function Benefits() {
   return (
-    <section className="py-20">
-      <div className="container mx-auto px-4">
+    <section className="border-t border-border bg-background py-20 md:py-28">
+      <div className="mx-auto max-w-[1200px] px-6 md:px-14">
         <div className="text-center mb-12">
-          <h2 className="text-3xl md:text-4xl font-display font-bold mb-4">
+          <span className="vm-sticker" style={{ transform: 'rotate(-1deg)' }}>
+            ● Six Benefits
+          </span>
+          <h2 className="font-display font-bold tracking-display leading-[1.02] text-3xl md:text-4xl mb-4 mt-6 text-foreground">
             Why Join?
           </h2>
-          <p className="text-muted-foreground max-w-2xl mx-auto">
+          <p className="font-sans text-ink-2 max-w-2xl mx-auto">
             More than just a competition – it's a learning experience
           </p>
         </div>
@@ -48,14 +51,14 @@ export function Benefits() {
           {benefits.map((benefit) => (
             <div
               key={benefit.title}
-              className="flex items-start gap-4 p-6 bg-card border border-border rounded-xl group hover:border-primary/30 hover:bg-card/80 transition-all duration-300"
+              className="vm-card flex items-start gap-4 p-6"
             >
-              <div className="w-12 h-12 shrink-0 rounded-lg bg-white flex items-center justify-center group-hover:scale-105 transition-transform">
+              <div className="w-12 h-12 shrink-0 rounded-lg bg-background flex items-center justify-center group-hover:scale-105 transition-transform border border-border">
                 <span className="text-2xl">{benefit.emoji}</span>
               </div>
               <div>
-                <h3 className="font-semibold mb-1">{benefit.title}</h3>
-                <p className="text-sm text-muted-foreground">
+                <h3 className="font-display font-bold mb-1 text-foreground">{benefit.title}</h3>
+                <p className="font-sans text-sm text-ink-2">
                   {benefit.description}
                 </p>
               </div>

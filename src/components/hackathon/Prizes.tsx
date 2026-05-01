@@ -34,13 +34,16 @@ const categoryAwards = [
 
 export function Prizes() {
   return (
-    <section className="py-20 bg-secondary/30">
-      <div className="container mx-auto px-4">
+    <section className="border-t border-border bg-bg-warm py-20 md:py-28">
+      <div className="mx-auto max-w-[1200px] px-6 md:px-14">
         <div className="text-center mb-12">
-          <h2 className="text-3xl md:text-4xl font-display font-bold mb-4">
+          <span className="vm-sticker vm-sticker--orange inline-block" style={{ transform: 'rotate(-2deg)' }}>
+            ● Prizes & Rewards
+          </span>
+          <h2 className="font-display font-bold tracking-display leading-[1.02] text-3xl md:text-4xl mb-4 mt-6 text-foreground">
             Awards & Prizes
           </h2>
-          <p className="text-muted-foreground">
+          <p className="font-sans text-ink-2">
             Amazing prizes to be announced! ✨
           </p>
         </div>
@@ -50,19 +53,17 @@ export function Prizes() {
           {mainPrizes.map((prize) => (
             <div
               key={prize.position}
-              className={`relative bg-card border-2 ${prize.borderColor} rounded-2xl p-6 text-center group hover:shadow-lg transition-all duration-300`}
+              className="vm-card relative p-6 text-center group"
             >
-              <div
-                className={`w-16 h-16 mx-auto rounded-full bg-gradient-to-br ${prize.gradient} flex items-center justify-center mb-4 group-hover:scale-110 transition-transform`}
-              >
+              <div className="w-16 h-16 mx-auto rounded-lg bg-background flex items-center justify-center mb-4 group-hover:scale-110 transition-transform border border-border">
                 <span className="text-3xl">{prize.emoji}</span>
               </div>
-              <span className="text-xs font-medium text-muted-foreground">
+              <span className="font-mono text-xs uppercase tracking-eyebrow text-ink-2">
                 {prize.position}
               </span>
-              <h3 className="font-semibold text-lg mt-1">{prize.title}</h3>
-              <div className="mt-3 px-3 py-1.5 bg-muted rounded-lg inline-block">
-                <span className="text-sm text-muted-foreground">{prize.prize}</span>
+              <h3 className="font-display font-bold text-lg mt-1 text-foreground">{prize.title}</h3>
+              <div className="mt-3 px-3 py-1.5 bg-background rounded-lg inline-block">
+                <span className="font-sans text-sm text-foreground">{prize.prize}</span>
               </div>
             </div>
           ))}
@@ -70,36 +71,36 @@ export function Prizes() {
 
         {/* Category Awards */}
         <div className="max-w-4xl mx-auto">
-          <h3 className="text-center text-lg font-semibold mb-6">Category Awards</h3>
+          <h3 className="text-center font-display font-bold text-lg mb-6 text-foreground">Category Awards</h3>
           <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
             {categoryAwards.map((award) => (
               <div
                 key={award.title}
-                className="bg-card border border-border rounded-xl p-4 text-center hover:border-primary/30 transition-colors"
+                className="vm-card p-4 text-center"
               >
-                <div className="w-10 h-10 mx-auto rounded-lg bg-primary/10 flex items-center justify-center mb-3">
+                <div className="w-10 h-10 mx-auto rounded-lg bg-background flex items-center justify-center mb-3 border border-border">
                   <span className="text-xl">{award.emoji}</span>
                 </div>
-                <h4 className="font-medium text-sm">{award.title}</h4>
-                <p className="text-xs text-muted-foreground mt-1">{award.description}</p>
+                <h4 className="font-display font-bold text-sm text-foreground">{award.title}</h4>
+                <p className="font-sans text-xs text-ink-2 mt-1">{award.description}</p>
               </div>
             ))}
           </div>
         </div>
 
         {/* Participation */}
-        <div className="max-w-2xl mx-auto mt-12 p-6 bg-card border border-border rounded-2xl text-center">
-          <h3 className="font-semibold mb-3">All Participants Receive</h3>
+        <div className="max-w-2xl mx-auto mt-12 p-6 vm-card text-center">
+          <h3 className="font-display font-bold mb-3 text-foreground">All Participants Receive</h3>
           <div className="flex flex-wrap justify-center gap-4">
-            <div className="flex items-center gap-2 text-sm">
+            <div className="flex items-center gap-2 font-sans text-sm text-foreground">
               <span>📜</span>
               <span>Certificate of Participation</span>
             </div>
-            <div className="flex items-center gap-2 text-sm">
+            <div className="flex items-center gap-2 font-sans text-sm text-foreground">
               <span>🚀</span>
               <span>LinkedIn-ready Portfolio Project</span>
             </div>
-            <div className="flex items-center gap-2 text-sm">
+            <div className="flex items-center gap-2 font-sans text-sm text-foreground">
               <span>👕</span>
               <span>Exclusive Swag</span>
             </div>

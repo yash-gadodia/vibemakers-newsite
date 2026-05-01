@@ -72,56 +72,64 @@ export function RegistrationForm() {
           </div>
 
           {submitted ? (
-            <div className="glass-card p-10 text-center animate-fade-in">
-              <div className="w-20 h-20 mx-auto rounded-full bg-primary/20 flex items-center justify-center mb-6">
+            <div className="vm-card rounded-2xl border border-border bg-card p-8 md:p-12 text-center">
+              <div className="w-20 h-20 mx-auto rounded-full bg-primary/10 flex items-center justify-center mb-6">
                 <span className="text-4xl">✅</span>
               </div>
-              <h3 className="text-2xl font-semibold mb-3">You're on the list!</h3>
-              <p className="text-muted-foreground">
-                We'll notify you when registration opens. Get ready to learn, build, and demo something amazing! 🚀
+              <h3 className="text-2xl font-display font-bold mb-3 text-foreground">You're on the list!</h3>
+              <p className="text-ink-2">
+                We'll notify you when registration opens. Get ready to learn, build, and demo something amazing!
               </p>
             </div>
           ) : (
-            <div className="glass-card p-8 md:p-10">
+            <div className="vm-card rounded-2xl border border-border bg-card p-8 md:p-10">
               <form onSubmit={handleSubmit} className="space-y-6">
                 <div className="space-y-2">
-                  <Label htmlFor="name">Full Name *</Label>
+                  <Label htmlFor="name" className="font-mono text-xs uppercase tracking-eyebrow text-ink-2">
+                    Full Name *
+                  </Label>
                   <Input
                     id="name"
                     name="name"
                     required
                     placeholder="Enter your full name"
-                    className="h-12"
+                    className="border-border bg-background text-foreground placeholder:text-muted-foreground"
                   />
                 </div>
 
                 <div className="space-y-2">
-                  <Label htmlFor="email">Email Address *</Label>
+                  <Label htmlFor="email" className="font-mono text-xs uppercase tracking-eyebrow text-ink-2">
+                    Email Address *
+                  </Label>
                   <Input
                     id="email"
                     name="email"
                     type="email"
                     required
                     placeholder="your@email.com"
-                    className="h-12"
+                    className="border-border bg-background text-foreground placeholder:text-muted-foreground"
                   />
                 </div>
 
                 <div className="space-y-2">
-                  <Label htmlFor="school">School *</Label>
+                  <Label htmlFor="school" className="font-mono text-xs uppercase tracking-eyebrow text-ink-2">
+                    School *
+                  </Label>
                   <Input
                     id="school"
                     name="school"
                     required
                     placeholder="Your school name"
-                    className="h-12"
+                    className="border-border bg-background text-foreground placeholder:text-muted-foreground"
                   />
                 </div>
 
                 <div className="space-y-2">
-                  <Label htmlFor="age_group">Age Group *</Label>
+                  <Label htmlFor="age_group" className="font-mono text-xs uppercase tracking-eyebrow text-ink-2">
+                    Age Group *
+                  </Label>
                   <Select name="age_group" required>
-                    <SelectTrigger className="h-12">
+                    <SelectTrigger className="border-border bg-background text-foreground">
                       <SelectValue placeholder="Select your age group" />
                     </SelectTrigger>
                     <SelectContent>
@@ -133,7 +141,9 @@ export function RegistrationForm() {
                 </div>
 
                 <div className="space-y-3">
-                  <Label>Team Preference</Label>
+                  <Label className="font-mono text-xs uppercase tracking-eyebrow text-ink-2">
+                    Team Preference
+                  </Label>
                   <RadioGroup
                     value={teamPreference}
                     onValueChange={setTeamPreference}
@@ -162,9 +172,11 @@ export function RegistrationForm() {
 
                 <div className="grid grid-cols-2 gap-4">
                   <div className="space-y-2">
-                    <Label htmlFor="tshirt_size">T-Shirt Size</Label>
+                    <Label htmlFor="tshirt_size" className="font-mono text-xs uppercase tracking-eyebrow text-ink-2">
+                      T-Shirt Size
+                    </Label>
                     <Select name="tshirt_size">
-                      <SelectTrigger className="h-12">
+                      <SelectTrigger className="border-border bg-background text-foreground">
                         <SelectValue placeholder="Select size" />
                       </SelectTrigger>
                       <SelectContent>
@@ -178,9 +190,11 @@ export function RegistrationForm() {
                     </Select>
                   </div>
                   <div className="space-y-2">
-                    <Label htmlFor="dietary">Dietary Requirements</Label>
+                    <Label htmlFor="dietary" className="font-mono text-xs uppercase tracking-eyebrow text-ink-2">
+                      Dietary Requirements
+                    </Label>
                     <Select name="dietary">
-                      <SelectTrigger className="h-12">
+                      <SelectTrigger className="border-border bg-background text-foreground">
                         <SelectValue placeholder="Select" />
                       </SelectTrigger>
                       <SelectContent>
@@ -209,21 +223,20 @@ export function RegistrationForm() {
                   </Label>
                 </div>
 
-                <Button
+                <button
                   type="submit"
-                  size="lg"
-                  className="w-full h-12 text-base font-semibold"
                   disabled={loading || !consent}
+                  className="vm-btn inline-flex items-center justify-center gap-2 rounded-full bg-primary px-6 py-3 text-primary-foreground shadow-sticker disabled:opacity-50 w-full"
                 >
                   {loading ? (
                     "Submitting..."
                   ) : (
                     <>
-                      <span className="mr-2">✨</span>
                       Register Interest
+                      <span className="vm-arrow">→</span>
                     </>
                   )}
-                </Button>
+                </button>
               </form>
             </div>
           )}

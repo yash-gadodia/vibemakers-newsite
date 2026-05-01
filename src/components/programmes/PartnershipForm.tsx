@@ -103,12 +103,12 @@ export function PartnershipForm() {
 
   if (isSubmitted) {
     return (
-      <div className="text-center py-12 px-6 bg-background/10 border border-background/20 rounded-2xl">
-        <div className="w-16 h-16 rounded-full bg-primary/20 flex items-center justify-center mx-auto mb-4">
+      <div className="vm-card rounded-2xl border border-border bg-card p-8 md:p-12 text-center">
+        <div className="w-16 h-16 rounded-full bg-primary/10 flex items-center justify-center mx-auto mb-4">
           <CheckCircle className="w-8 h-8 text-primary" />
         </div>
-        <h4 className="text-xl font-display font-bold mb-2">Thank You!</h4>
-        <p className="text-background/70">
+        <h4 className="text-xl font-display font-bold mb-2 text-foreground">Thank You!</h4>
+        <p className="text-ink-2">
           We'll prepare a proposal and reach out within 3 working days.
         </p>
       </div>
@@ -116,33 +116,39 @@ export function PartnershipForm() {
   }
 
   return (
-    <form onSubmit={handleSubmit(onSubmit)} className="space-y-6 bg-background/10 border border-background/20 rounded-2xl p-6 md:p-8">
+    <form onSubmit={handleSubmit(onSubmit)} className="vm-card rounded-2xl border border-border bg-card p-8 md:p-10 space-y-6">
       <div className="space-y-2">
-        <Label htmlFor="school_name" className="text-background">School / Organisation (optional)</Label>
+        <Label htmlFor="school_name" className="font-mono text-xs uppercase tracking-eyebrow text-ink-2">
+          School / Organisation (optional)
+        </Label>
         <Input
           id="school_name"
           {...register("school_name")}
           placeholder="Leave blank if enquiring for private tuition"
-          className="bg-background/10 border-background/20 text-background placeholder:text-background/50"
+          className="border-border bg-background text-foreground placeholder:text-muted-foreground"
         />
-        {errors.school_name && <p className="text-sm text-red-300">{errors.school_name.message}</p>}
+        {errors.school_name && <p className="text-xs text-destructive mt-1">{errors.school_name.message}</p>}
       </div>
 
-      <div className="grid md:grid-cols-2 gap-4">
+      <div className="grid md:grid-cols-2 gap-6">
         <div className="space-y-2">
-          <Label htmlFor="contact_name" className="text-background">Your Name *</Label>
+          <Label htmlFor="contact_name" className="font-mono text-xs uppercase tracking-eyebrow text-ink-2">
+            Your Name *
+          </Label>
           <Input
             id="contact_name"
             {...register("contact_name")}
             placeholder="Contact person"
-            className="bg-background/10 border-background/20 text-background placeholder:text-background/50"
+            className="border-border bg-background text-foreground placeholder:text-muted-foreground"
           />
-          {errors.contact_name && <p className="text-sm text-red-300">{errors.contact_name.message}</p>}
+          {errors.contact_name && <p className="text-xs text-destructive mt-1">{errors.contact_name.message}</p>}
         </div>
         <div className="space-y-2">
-          <Label className="text-background">Your Role *</Label>
+          <Label className="font-mono text-xs uppercase tracking-eyebrow text-ink-2">
+            Your Role *
+          </Label>
           <Select value={watch("contact_role")} onValueChange={(value) => setValue("contact_role", value)}>
-            <SelectTrigger className="bg-background/10 border-background/20 text-background">
+            <SelectTrigger className="border-border bg-background text-foreground">
               <SelectValue placeholder="Select your role" />
             </SelectTrigger>
             <SelectContent>
@@ -151,36 +157,42 @@ export function PartnershipForm() {
               ))}
             </SelectContent>
           </Select>
-          {errors.contact_role && <p className="text-sm text-red-300">{errors.contact_role.message}</p>}
+          {errors.contact_role && <p className="text-xs text-destructive mt-1">{errors.contact_role.message}</p>}
         </div>
       </div>
 
       <div className="space-y-2">
-        <Label htmlFor="contact_email" className="text-background">Email *</Label>
+        <Label htmlFor="contact_email" className="font-mono text-xs uppercase tracking-eyebrow text-ink-2">
+          Email *
+        </Label>
         <Input
           id="contact_email"
           type="email"
           {...register("contact_email")}
           placeholder="your@school.edu.sg"
-          className="bg-background/10 border-background/20 text-background placeholder:text-background/50"
+          className="border-border bg-background text-foreground placeholder:text-muted-foreground"
         />
-        {errors.contact_email && <p className="text-sm text-red-300">{errors.contact_email.message}</p>}
+        {errors.contact_email && <p className="text-xs text-destructive mt-1">{errors.contact_email.message}</p>}
       </div>
 
-      <div className="grid md:grid-cols-2 gap-4">
+      <div className="grid md:grid-cols-2 gap-6">
         <div className="space-y-2">
-          <Label htmlFor="number_of_students" className="text-background">Number of Students</Label>
+          <Label htmlFor="number_of_students" className="font-mono text-xs uppercase tracking-eyebrow text-ink-2">
+            Number of Students
+          </Label>
           <Input
             id="number_of_students"
             {...register("number_of_students")}
             placeholder="e.g., 30, 60-80"
-            className="bg-background/10 border-background/20 text-background placeholder:text-background/50"
+            className="border-border bg-background text-foreground placeholder:text-muted-foreground"
           />
         </div>
         <div className="space-y-2">
-          <Label className="text-background">Student Level</Label>
+          <Label className="font-mono text-xs uppercase tracking-eyebrow text-ink-2">
+            Student Level
+          </Label>
           <Select value={watch("student_level")} onValueChange={(value) => setValue("student_level", value)}>
-            <SelectTrigger className="bg-background/10 border-background/20 text-background">
+            <SelectTrigger className="border-border bg-background text-foreground">
               <SelectValue placeholder="Select level" />
             </SelectTrigger>
             <SelectContent>
@@ -193,36 +205,47 @@ export function PartnershipForm() {
       </div>
 
       <div className="space-y-2">
-        <Label htmlFor="timing_sessions" className="text-background">Timing & Number of Sessions</Label>
+        <Label htmlFor="timing_sessions" className="font-mono text-xs uppercase tracking-eyebrow text-ink-2">
+          Timing & Number of Sessions
+        </Label>
         <Input
           id="timing_sessions"
           {...register("timing_sessions")}
           placeholder="e.g., 4 x 2hr sessions during June holidays"
-          className="bg-background/10 border-background/20 text-background placeholder:text-background/50"
+          className="border-border bg-background text-foreground placeholder:text-muted-foreground"
         />
       </div>
 
       <div className="space-y-2">
-        <Label htmlFor="programme_objectives" className="text-background">Programme Objectives / Needs (optional)</Label>
+        <Label htmlFor="programme_objectives" className="font-mono text-xs uppercase tracking-eyebrow text-ink-2">
+          Programme Objectives / Needs (optional)
+        </Label>
         <Textarea
           id="programme_objectives"
           {...register("programme_objectives")}
           placeholder="What do you hope students will gain? Any specific themes or focus areas?"
           rows={3}
-          className="bg-background/10 border-background/20 text-background placeholder:text-background/50"
+          className="border-border bg-background text-foreground placeholder:text-muted-foreground"
         />
       </div>
 
-      <Button type="submit" variant="secondary" className="w-full bg-background text-foreground hover:bg-background/90" disabled={isLoading}>
+      <button
+        type="submit"
+        disabled={isLoading}
+        className="vm-btn inline-flex items-center justify-center gap-2 rounded-full bg-primary px-6 py-3 text-primary-foreground shadow-sticker disabled:opacity-50 w-full md:w-auto"
+      >
         {isLoading ? (
           <>
             <Loader2 className="w-4 h-4 mr-2 animate-spin" />
             Submitting...
           </>
         ) : (
-          "Request a Proposal"
+          <>
+            Request a Proposal
+            <span className="vm-arrow">→</span>
+          </>
         )}
-      </Button>
+      </button>
     </form>
   );
 }

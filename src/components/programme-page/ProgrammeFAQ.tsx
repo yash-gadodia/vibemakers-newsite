@@ -23,12 +23,17 @@ function FAQAccordion({ faqs }: { faqs: Array<{ question: string; answer: string
 
 export function ProgrammeFAQ() {
   return (
-    <section className="section-padding bg-secondary/30">
-      <div className="container mx-auto px-4">
+    <section className="border-t border-border bg-background py-20 md:py-28">
+      <div className="mx-auto max-w-[1200px] px-6 md:px-14">
         <Reveal variant="up">
           <div className="text-center mb-12">
-            <h2 className="text-2xl md:text-3xl font-display font-bold mb-3">Frequently Asked Questions</h2>
-            <p className="text-muted-foreground">Pick the lens: parents or schools.</p>
+            <span className="vm-sticker" style={{ transform: 'rotate(3deg)' }}>
+              ● FAQ
+            </span>
+            <h2 className="font-display font-bold tracking-display leading-[1.02] text-3xl md:text-4xl text-foreground mt-6 mb-4">
+              Frequently Asked Questions
+            </h2>
+            <p className="font-sans text-ink-2">Pick the lens: parents or schools.</p>
           </div>
         </Reveal>
 

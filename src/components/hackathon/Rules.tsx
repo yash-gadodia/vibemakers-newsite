@@ -42,13 +42,16 @@ const ruleCategories = [
 
 export function Rules() {
   return (
-    <section className="py-20">
-      <div className="container mx-auto px-4">
+    <section className="border-t border-border bg-bg-warm py-20 md:py-28">
+      <div className="mx-auto max-w-[1200px] px-6 md:px-14">
         <div className="text-center mb-12">
-          <h2 className="text-3xl md:text-4xl font-display font-bold mb-4">
+          <span className="vm-sticker" style={{ transform: 'rotate(2deg)' }}>
+            ● Four Categories
+          </span>
+          <h2 className="font-display font-bold tracking-display leading-[1.02] text-3xl md:text-4xl mb-4 mt-6 text-foreground">
             Rules & Guidelines
           </h2>
-          <p className="text-muted-foreground max-w-2xl mx-auto">
+          <p className="font-sans text-ink-2 max-w-2xl mx-auto">
             Everything you need to know before participating
           </p>
         </div>
@@ -57,17 +60,17 @@ export function Rules() {
           {ruleCategories.map((category) => (
             <div
               key={category.title}
-              className="bg-card border border-border rounded-2xl p-6"
+              className="vm-card p-6"
             >
               <div className="flex items-center gap-3 mb-4">
-                <div className="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center">
+                <div className="w-10 h-10 rounded-lg bg-background flex items-center justify-center border border-border">
                   <span className="text-xl">{category.emoji}</span>
                 </div>
-                <h3 className="font-semibold text-lg">{category.title}</h3>
+                <h3 className="font-display font-bold text-lg text-foreground">{category.title}</h3>
               </div>
               <ul className="space-y-2">
                 {category.rules.map((rule, index) => (
-                  <li key={index} className="flex items-start gap-2 text-sm text-muted-foreground">
+                  <li key={index} className="flex items-start gap-2 font-sans text-sm text-foreground">
                     <span className="w-1.5 h-1.5 rounded-full bg-primary mt-1.5 shrink-0" />
                     <span>{rule}</span>
                   </li>

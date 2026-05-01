@@ -57,12 +57,17 @@ const responsibleAI = {
 
 export function SkillsGainedSection() {
   return (
-    <section className="section-padding bg-secondary/30">
-      <div className="container mx-auto px-4">
+    <section className="border-t border-border bg-background py-20 md:py-28">
+      <div className="mx-auto max-w-[1200px] px-6 md:px-14">
         {/* Header */}
         <Reveal variant="up">
-          <div className="mb-10">
-            <h2 className="text-2xl md:text-3xl lg:text-4xl font-display font-bold">What Skills Students Gain</h2>
+          <div className="mb-12">
+            <span className="vm-sticker" style={{ transform: 'rotate(3deg)' }}>
+              ● Skills
+            </span>
+            <h2 className="font-display font-bold tracking-display leading-[1.02] text-3xl md:text-4xl text-foreground mt-6">
+              What Skills Students Gain
+            </h2>
           </div>
         </Reveal>
 
@@ -110,12 +115,12 @@ export function SkillsGainedSection() {
 
         {/* Responsible AI Banner */}
         <Reveal variant="up" delayMs={100}>
-          <div className="bg-gradient-to-r from-primary via-primary to-[hsl(10,80%,55%)] rounded-2xl p-6 md:p-8 flex items-center justify-between gap-6">
+          <div className="rounded-2xl bg-primary text-primary-foreground p-6 md:p-8 flex items-center justify-between gap-6 shadow-sticker">
             <div>
-              <h3 className="text-lg md:text-xl font-display font-bold text-primary-foreground mb-1">
+              <h3 className="font-display font-bold text-lg md:text-xl mb-2">
                 {responsibleAI.title}
               </h3>
-              <p className="text-primary-foreground/80 text-sm md:text-base">{responsibleAI.subtitle}</p>
+              <p className="text-primary-foreground/90 text-sm md:text-base">{responsibleAI.subtitle}</p>
             </div>
             <div className="hidden sm:flex w-14 h-14 rounded-full bg-primary-foreground/20 items-center justify-center flex-shrink-0">
               <span className="text-2xl">{responsibleAI.emoji}</span>
@@ -140,18 +145,18 @@ function SkillCard({ skill, size = "medium", featured, tinted }: SkillCardProps)
   return (
     <div
       className={cn(
-        "rounded-2xl p-5 md:p-6 h-full relative overflow-hidden transition-all",
+        "vm-card rounded-2xl p-6 md:p-6 h-full relative overflow-hidden transition-all border",
         heightClass,
         featured
-          ? "bg-foreground"
+          ? "bg-foreground border-foreground"
           : tinted
-            ? "bg-[hsl(28_55%_95%)] border border-border/30"
-            : "bg-white/70 border border-border/40",
+            ? "bg-bg-warm-2 border-border"
+            : "bg-card border-border",
       )}
     >
       {/* Decorative star for featured card */}
       {featured && (
-        <div className="absolute right-6 top-1/2 -translate-y-1/2 opacity-[0.14]">
+        <div className="absolute right-6 top-1/2 -translate-y-1/2 opacity-[0.12]">
           <span className="text-[10rem] leading-none">⭐</span>
         </div>
       )}
@@ -159,21 +164,21 @@ function SkillCard({ skill, size = "medium", featured, tinted }: SkillCardProps)
       <div className="relative z-10">
         <div
           className={cn(
-            "w-10 h-10 rounded-xl flex items-center justify-center mb-4",
-            featured ? "bg-background/10" : "bg-white",
+            "w-10 h-10 rounded-lg flex items-center justify-center mb-4",
+            featured ? "bg-primary-foreground/10" : "bg-primary/10",
           )}
         >
           <span className="text-2xl">{skill.emoji}</span>
         </div>
         <h3
           className={cn(
-            "font-display font-bold mb-1 text-base md:text-lg",
-            featured ? "text-white" : "text-foreground",
+            "font-display font-bold mb-2 text-base md:text-lg",
+            featured ? "text-primary-foreground" : "text-foreground",
           )}
         >
           {skill.title}
         </h3>
-        <p className={cn("text-sm", featured ? "text-background/60" : "text-muted-foreground")}>
+        <p className={cn("font-sans text-sm", featured ? "text-primary-foreground/75" : "text-ink-2")}>
           {skill.subtitle}
         </p>
       </div>

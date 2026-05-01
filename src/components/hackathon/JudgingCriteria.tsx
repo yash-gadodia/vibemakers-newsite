@@ -27,13 +27,16 @@ const criteria = [
 
 export function JudgingCriteria() {
   return (
-    <section className="py-20">
-      <div className="container mx-auto px-4">
+    <section className="border-t border-border bg-background py-20 md:py-28">
+      <div className="mx-auto max-w-[1200px] px-6 md:px-14">
         <div className="text-center mb-12">
-          <h2 className="text-3xl md:text-4xl font-display font-bold mb-4">
+          <span className="vm-sticker vm-sticker--orange inline-block" style={{ transform: 'rotate(2deg)' }}>
+            ● Fair Judging
+          </span>
+          <h2 className="font-display font-bold tracking-display leading-[1.02] text-3xl md:text-4xl mb-4 mt-6 text-foreground">
             Judging Criteria
           </h2>
-          <p className="text-muted-foreground max-w-2xl mx-auto">
+          <p className="font-sans text-ink-2 max-w-2xl mx-auto">
             Projects will be evaluated across four equally-weighted dimensions
           </p>
         </div>
@@ -42,21 +45,21 @@ export function JudgingCriteria() {
           {criteria.map((item) => (
             <div
               key={item.title}
-              className="group bg-card border border-border rounded-2xl p-6 text-center hover:border-primary/30 transition-all duration-300"
+              className="vm-card group p-6 text-center"
             >
-              <div className="w-14 h-14 mx-auto rounded-full bg-primary/10 flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
+              <div className="w-14 h-14 mx-auto rounded-lg bg-bg-warm flex items-center justify-center mb-4 group-hover:scale-110 transition-transform border border-border">
                 <span className="text-2xl">{item.emoji}</span>
               </div>
-              <div className="inline-block px-3 py-1 bg-secondary rounded-full mb-3">
-                <span className="text-sm font-bold text-primary">{item.weight}</span>
+              <div className="inline-block mb-3">
+                <span className="font-display font-bold text-5xl text-primary">{item.weight}</span>
               </div>
-              <h3 className="font-semibold text-lg mb-2">{item.title}</h3>
-              <p className="text-sm text-muted-foreground">{item.description}</p>
+              <h3 className="font-display font-bold text-lg mb-2 text-foreground">{item.title}</h3>
+              <p className="font-sans text-sm text-ink-2">{item.description}</p>
             </div>
           ))}
         </div>
 
-        <p className="text-center text-sm text-muted-foreground mt-8">
+        <p className="text-center font-sans text-sm text-ink-2 mt-8">
           Judges include industry professionals, educators, and tech leaders
         </p>
       </div>

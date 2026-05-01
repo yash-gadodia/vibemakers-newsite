@@ -18,69 +18,72 @@ const day2Schedule = [
 
 export function EventFormat() {
   return (
-    <section className="py-20">
-      <div className="container mx-auto px-4">
+    <section className="border-t border-border bg-bg-warm py-20 md:py-28">
+      <div className="mx-auto max-w-[1200px] px-6 md:px-14">
         <div className="text-center mb-12">
-          <h2 className="text-3xl md:text-4xl font-display font-bold mb-4">
+          <span className="vm-sticker" style={{ transform: 'rotate(2deg)' }}>
+            ● Two Saturdays
+          </span>
+          <h2 className="font-display font-bold tracking-display leading-[1.02] text-3xl md:text-4xl mb-4 mt-6 text-foreground">
             2-Day Event Format
           </h2>
-          <p className="text-muted-foreground max-w-2xl mx-auto">
+          <p className="font-sans text-foreground max-w-2xl mx-auto text-ink-2">
             Learn vibe coding on Day 1, build at home overnight, and demo on Day 2
           </p>
         </div>
 
         <div className="grid lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
           {/* Day 1 */}
-          <div className="bg-card border border-border rounded-2xl p-6 md:p-8">
+          <div className="vm-card p-6 md:p-8">
             <div className="flex items-center gap-3 mb-6">
-              <div className="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center">
+              <div className="w-12 h-12 rounded-lg bg-bg-warm-2 flex items-center justify-center">
                 <span className="text-2xl">☀️</span>
               </div>
               <div>
-                <span className="text-xs font-semibold text-primary uppercase tracking-wide">Day 1</span>
-                <h3 className="font-display font-bold text-xl">Learn & Build</h3>
+                <span className="font-mono text-xs uppercase tracking-eyebrow text-ink-2">Day 1</span>
+                <h3 className="font-display font-bold text-xl text-foreground">Learn & Build</h3>
               </div>
             </div>
             <div className="space-y-4">
               {day1Schedule.map((item, index) => (
                 <div key={index} className="flex items-start gap-3">
-                  <span className="text-xs font-mono text-muted-foreground w-16 shrink-0 pt-0.5">
+                  <span className="font-mono text-xs text-ink-2 w-16 shrink-0 pt-0.5">
                     {item.time}
                   </span>
-                  <span className="text-sm">{item.activity}</span>
+                  <span className="font-sans text-sm text-foreground">{item.activity}</span>
                 </div>
               ))}
             </div>
           </div>
 
           {/* Overnight */}
-          <div className="bg-gradient-to-b from-secondary/50 to-card border border-border rounded-2xl p-6 md:p-8">
+          <div className="vm-card bg-bg-warm-2 p-6 md:p-8">
             <div className="flex items-center gap-3 mb-6">
-              <div className="w-12 h-12 rounded-xl bg-accent/10 flex items-center justify-center">
+              <div className="w-12 h-12 rounded-lg bg-background flex items-center justify-center">
                 <span className="text-2xl">🏠</span>
               </div>
               <div>
-                <span className="text-xs font-semibold text-accent-foreground uppercase tracking-wide">Overnight</span>
-                <h3 className="font-display font-bold text-xl">Build at Home</h3>
+                <span className="font-mono text-xs uppercase tracking-eyebrow text-ink-2">Overnight</span>
+                <h3 className="font-display font-bold text-xl text-foreground">Build at Home</h3>
               </div>
             </div>
             <div className="space-y-4">
-              <div className="p-4 bg-card/50 rounded-xl border border-border/50">
-                <p className="text-sm text-muted-foreground mb-3">
+              <div className="p-4 bg-card rounded-xl border border-border">
+                <p className="font-sans text-sm text-ink-2 mb-3">
                   Continue building from the comfort of your home
                 </p>
                 <ul className="space-y-2 text-sm">
                   <li className="flex items-center gap-2">
                     <span className="w-1.5 h-1.5 rounded-full bg-primary" />
-                    <span>Discord support channel open</span>
+                    <span className="font-sans text-foreground">Discord support channel open</span>
                   </li>
                   <li className="flex items-center gap-2">
                     <span className="w-1.5 h-1.5 rounded-full bg-primary" />
-                    <span>Mentors available via chat</span>
+                    <span className="font-sans text-foreground">Mentors available via chat</span>
                   </li>
                   <li className="flex items-center gap-2">
                     <span className="w-1.5 h-1.5 rounded-full bg-primary" />
-                    <span>No overnight stay required</span>
+                    <span className="font-sans text-foreground">No overnight stay required</span>
                   </li>
                 </ul>
               </div>
@@ -88,23 +91,23 @@ export function EventFormat() {
           </div>
 
           {/* Day 2 */}
-          <div className="bg-card border border-border rounded-2xl p-6 md:p-8">
+          <div className="vm-card p-6 md:p-8">
             <div className="flex items-center gap-3 mb-6">
-              <div className="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center">
+              <div className="w-12 h-12 rounded-lg bg-bg-warm-2 flex items-center justify-center">
                 <span className="text-2xl">🎤</span>
               </div>
               <div>
-                <span className="text-xs font-semibold text-primary uppercase tracking-wide">Day 2</span>
-                <h3 className="font-display font-bold text-xl">Demo Day</h3>
+                <span className="font-mono text-xs uppercase tracking-eyebrow text-ink-2">Day 2</span>
+                <h3 className="font-display font-bold text-xl text-foreground">Demo Day</h3>
               </div>
             </div>
             <div className="space-y-4">
               {day2Schedule.map((item, index) => (
                 <div key={index} className="flex items-start gap-3">
-                  <span className="text-xs font-mono text-muted-foreground w-16 shrink-0 pt-0.5">
+                  <span className="font-mono text-xs text-ink-2 w-16 shrink-0 pt-0.5">
                     {item.time}
                   </span>
-                  <span className="text-sm">{item.activity}</span>
+                  <span className="font-sans text-sm text-foreground">{item.activity}</span>
                 </div>
               ))}
             </div>

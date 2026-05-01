@@ -60,13 +60,16 @@ const faqs = [
 
 export function FAQ() {
   return (
-    <section className="py-20 bg-secondary/30">
-      <div className="container mx-auto px-4">
+    <section className="border-t border-border bg-background py-20 md:py-28">
+      <div className="mx-auto max-w-[1200px] px-6 md:px-14">
         <div className="text-center mb-12">
-          <h2 className="text-3xl md:text-4xl font-display font-bold mb-4">
+          <span className="vm-sticker" style={{ transform: 'rotate(-2deg)' }}>
+            ● Ten Questions
+          </span>
+          <h2 className="font-display font-bold tracking-display leading-[1.02] text-3xl md:text-4xl mb-4 mt-6 text-foreground">
             Frequently Asked Questions
           </h2>
-          <p className="text-muted-foreground">
+          <p className="font-sans text-ink-2">
             Got questions? We've got answers
           </p>
         </div>
@@ -77,12 +80,12 @@ export function FAQ() {
               <AccordionItem
                 key={index}
                 value={`item-${index}`}
-                className="bg-card border border-border rounded-xl px-6 data-[state=open]:border-primary/30"
+                className="vm-card px-6 data-[state=open]:border-primary/30"
               >
                 <AccordionTrigger className="text-left hover:no-underline py-5">
-                  <span className="font-medium">{faq.question}</span>
+                  <span className="font-sans font-medium text-foreground">{faq.question}</span>
                 </AccordionTrigger>
-                <AccordionContent className="text-muted-foreground pb-5">
+                <AccordionContent className="font-sans text-ink-2 pb-5">
                   {faq.answer}
                 </AccordionContent>
               </AccordionItem>

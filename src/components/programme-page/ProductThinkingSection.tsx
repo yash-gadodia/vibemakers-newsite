@@ -28,59 +28,57 @@ const pillars = [
 
 export function ProductThinkingSection() {
   return (
-    <section className="section-padding bg-secondary/40">
-      <div className="container mx-auto px-4">
-        <div className="max-w-6xl mx-auto">
-          {/* Header */}
-          <Reveal variant="up">
-            <div className="text-center mb-12">
-              <span className="inline-block px-3 py-1 text-xs font-semibold tracking-widest text-primary uppercase bg-primary/10 rounded-full mb-4">
-                The Mindset
+    <section className="border-t border-border bg-background py-20 md:py-28">
+      <div className="mx-auto max-w-[1200px] px-6 md:px-14">
+        {/* Header */}
+        <Reveal variant="up">
+          <div className="text-center mb-12">
+            <span className="vm-sticker" style={{ transform: 'rotate(-3deg)' }}>
+              ● The Mindset
+            </span>
+            <h2 className="font-display font-bold tracking-display leading-[1.02] text-3xl md:text-4xl mt-6 mb-6">
+              What is Product Thinking?
+            </h2>
+            <p className="font-sans text-ink-2 max-w-2xl mx-auto text-lg">
+              Before building, students learn to think like product designers: understand users,
+              define problems, weigh trade-offs, and iterate based on feedback.
+            </p>
+          </div>
+        </Reveal>
+
+        {/* Three Pillars */}
+        <RevealGroup staggerMs={100} variant="up" className="grid md:grid-cols-3 gap-6 mb-12">
+          {pillars.map((pillar, index) => (
+            <div
+              key={index}
+              className="vm-card rounded-2xl border border-border bg-card p-8"
+            >
+              {/* Badge */}
+              <span className="text-xs font-mono uppercase tracking-eyebrow text-ink-2 mb-4 inline-block">
+                {pillar.badge}
               </span>
-              <h2 className="text-3xl md:text-4xl font-display font-bold mb-4">
-                What is Product Thinking?
-              </h2>
-              <p className="text-muted-foreground max-w-2xl mx-auto">
-                Before building, students learn to think like product designers: understand users, 
-                define problems, weigh trade-offs, and iterate based on feedback.
-              </p>
-            </div>
-          </Reveal>
 
-          {/* Three Pillars */}
-          <RevealGroup staggerMs={100} variant="up" className="grid md:grid-cols-3 gap-6">
-            {pillars.map((pillar, index) => (
-              <div
-                key={index}
-                className="group relative rounded-3xl bg-background border border-border p-6 transition-all hover:shadow-lg hover:border-primary/30"
-              >
-                {/* Badge */}
-                <span className="absolute top-4 right-4 text-xs font-medium text-muted-foreground bg-secondary px-2 py-1 rounded-full">
-                  {pillar.badge}
-                </span>
-
-                {/* Icon */}
-                <div className="w-14 h-14 rounded-2xl bg-primary/10 flex items-center justify-center mb-5 group-hover:bg-primary/20 transition-colors">
-                  <pillar.icon className="w-7 h-7 text-primary" />
-                </div>
-
-                {/* Content */}
-                <h3 className="text-xl font-display font-bold mb-2">{pillar.title}</h3>
-                <p className="text-muted-foreground mb-4">{pillar.description}</p>
-                <p className="text-sm text-muted-foreground/80">{pillar.detail}</p>
+              {/* Icon */}
+              <div className="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center mb-6">
+                <pillar.icon className="w-6 h-6 text-primary" />
               </div>
-            ))}
-          </RevealGroup>
 
-          {/* Bottom Callout */}
-          <Reveal variant="up" delayMs={300}>
-            <div className="mt-12 text-center">
-              <p className="text-sm text-muted-foreground max-w-xl mx-auto">
-                Product thinking develops <strong className="text-foreground">Critical, Adaptive and Inventive Thinking (CAIT)</strong> — one of three core 21CC domains. Our approach maps to MOE's <strong className="text-foreground">Applied Learning Programme</strong> framework: authentic problems, real-world contexts, student-led iteration.
-              </p>
+              {/* Content */}
+              <h3 className="font-display font-bold text-xl text-foreground mb-3">{pillar.title}</h3>
+              <p className="font-sans text-foreground mb-3">{pillar.description}</p>
+              <p className="font-sans text-ink-2 text-sm">{pillar.detail}</p>
             </div>
-          </Reveal>
-        </div>
+          ))}
+        </RevealGroup>
+
+        {/* Bottom Callout */}
+        <Reveal variant="up" delayMs={300}>
+          <div className="rounded-2xl bg-bg-warm-2 border border-border p-6 md:p-8 text-center">
+            <p className="font-sans text-foreground max-w-2xl mx-auto">
+              Product thinking develops <strong>Critical, Adaptive and Inventive Thinking (CAIT)</strong> — one of three core 21CC domains. Our approach maps to MOE's <strong>Applied Learning Programme</strong> framework: authentic problems, real-world contexts, student-led iteration.
+            </p>
+          </div>
+        </Reveal>
       </div>
     </section>
   );
