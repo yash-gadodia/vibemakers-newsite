@@ -1,0 +1,21 @@
+<svg width="640" height="220" viewBox="0 0 640 220" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="w" x1="80" y1="40" x2="560" y2="180" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#F97316"/>
+      <stop offset="1" stop-color="#7C3AED"/>
+    </linearGradient>
+  </defs>
+  <g>
+    <path d="M110 160c30 0 50-18 50-40 0-24-18-38-44-38-16 0-30 6-38 16 2-34 30-58 70-58 26 0 47 7 62 18l18-28C208 16 182 6 148 6 76 6 28 50 28 112c0 54 34 88 82 88Zm0-30c-18 0-32-10-32-24s14-24 32-24c17 0 31 10 31 24s-14 24-31 24Z" fill="url(#w)" opacity="0.22"/>
+    <circle cx="110" cy="110" r="54" stroke="url(#w)" stroke-width="10"/>
+    <path d="M94 104l14-32 14 32 34 3-26 21 8 33-30-18-30 18 8-33-26-21 34-3Z" fill="url(#w)"/>
+  </g>
+  <g>
+    <text x="200" y="105" font-family="ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial" font-size="54" font-weight="800" letter-spacing="-0.5px" fill="#111827" stroke="#FFFFFF" stroke-width="8" paint-order="stroke">
+      Wonder
+    </text>
+    <text x="200" y="155" font-family="ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial" font-size="34" font-weight="700" letter-spacing="-0.2px" fill="#111827" stroke="#FFFFFF" stroke-width="6" paint-order="stroke">
+      Education
+    </text>
+  </g>
+</svg>

@@ -1,0 +1,7 @@
+project_id = "rtvlqgieeckkxdwjbnrh"
+
+[functions.send-notification-email]
+verify_jwt = false
+
+[functions.receive-article]
+verify_jwt = false

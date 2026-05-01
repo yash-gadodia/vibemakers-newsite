@@ -1,0 +1,83 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="720" viewBox="0 0 1200 720">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#f97316"/>
+      <stop offset="1" stop-color="#ef4444"/>
+    </linearGradient>
+    <filter id="shadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="14" stdDeviation="18" flood-color="#000" flood-opacity="0.18"/>
+    </filter>
+    <style>
+      .ui { font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial; }
+      .t0 { font-size: 18px; font-weight: 800; fill: #111827; }
+      .t1 { font-size: 13px; font-weight: 700; fill: #111827; }
+      .t2 { font-size: 12px; font-weight: 500; fill: #6b7280; }
+      .t3 { font-size: 12px; font-weight: 700; fill: #111827; }
+      .big { font-size: 26px; font-weight: 900; fill: #111827; }
+    </style>
+  </defs>
+
+  <rect x="0" y="0" width="1200" height="720" fill="url(#bg)"/>
+
+  <g filter="url(#shadow)">
+    <rect x="110" y="84" width="980" height="552" rx="18" fill="#ffffff"/>
+    <rect x="110" y="84" width="980" height="56" rx="18" fill="#fff7ed"/>
+    <rect x="110" y="122" width="980" height="18" fill="#fff7ed"/>
+
+    <circle cx="146" cy="112" r="7" fill="#ef4444"/>
+    <circle cx="170" cy="112" r="7" fill="#f59e0b"/>
+    <circle cx="194" cy="112" r="7" fill="#22c55e"/>
+
+    <text class="ui t0" x="240" y="118">EcoTracker</text>
+    <text class="ui t2" x="240" y="138">Family footprint · Weekly summary · Gamified streaks</text>
+
+    <rect x="140" y="164" width="930" height="110" rx="14" fill="#ffffff" stroke="#e5e7eb"/>
+    <text class="ui t2" x="162" y="196">This week</text>
+    <text class="ui big" x="162" y="232">42.6 kg CO₂e</text>
+    <text class="ui t2" x="320" y="232">· down 8% vs last week</text>
+    <rect x="820" y="182" width="230" height="74" rx="14" fill="#f0fdf4" stroke="#dcfce7"/>
+    <text class="ui t1" x="842" y="212">Streak</text>
+    <text class="ui big" x="842" y="244" fill="#14532d">5 days</text>
+
+    <rect x="140" y="290" width="450" height="314" rx="14" fill="#ffffff" stroke="#e5e7eb"/>
+    <text class="ui t3" x="162" y="322">Footprint meter</text>
+    <text class="ui t2" x="162" y="342">Target: 38.0 kg CO₂e</text>
+
+    <circle cx="365" cy="454" r="118" fill="#f8fafc"/>
+    <path d="M247 454 A118 118 0 0 1 483 454" fill="none" stroke="#e2e8f0" stroke-width="20" stroke-linecap="round"/>
+    <path d="M247 454 A118 118 0 0 1 440 390" fill="none" stroke="#f97316" stroke-width="20" stroke-linecap="round"/>
+    <text class="ui big" x="365" y="466" text-anchor="middle">42.6</text>
+    <text class="ui t2" x="365" y="490" text-anchor="middle">kg CO₂e</text>
+    <rect x="248" y="520" width="234" height="36" rx="999" fill="#fff7ed" stroke="#fed7aa"/>
+    <text class="ui t3" x="270" y="544" fill="#9a3412">Tip: 1 less grab ride</text>
+
+    <rect x="610" y="290" width="460" height="314" rx="14" fill="#ffffff" stroke="#e5e7eb"/>
+    <text class="ui t3" x="632" y="322">Breakdown</text>
+    <text class="ui t2" x="632" y="342">Top contributors this week</text>
+
+    <g class="ui">
+      <text class="t2" x="632" y="382">Transport</text>
+      <rect x="740" y="368" width="290" height="18" rx="999" fill="#e2e8f0"/>
+      <rect x="740" y="368" width="220" height="18" rx="999" fill="#fb923c"/>
+      <text class="t2" x="1036" y="382" text-anchor="end">18.2</text>
+
+      <text class="t2" x="632" y="428">Electricity</text>
+      <rect x="740" y="414" width="290" height="18" rx="999" fill="#e2e8f0"/>
+      <rect x="740" y="414" width="162" height="18" rx="999" fill="#f97316"/>
+      <text class="t2" x="1036" y="428" text-anchor="end">12.4</text>
+
+      <text class="t2" x="632" y="474">Food</text>
+      <rect x="740" y="460" width="290" height="18" rx="999" fill="#e2e8f0"/>
+      <rect x="740" y="460" width="118" height="18" rx="999" fill="#ef4444"/>
+      <text class="t2" x="1036" y="474" text-anchor="end">8.1</text>
+
+      <text class="t2" x="632" y="520">Shopping</text>
+      <rect x="740" y="506" width="290" height="18" rx="999" fill="#e2e8f0"/>
+      <rect x="740" y="506" width="74" height="18" rx="999" fill="#fca5a5"/>
+      <text class="t2" x="1036" y="520" text-anchor="end">3.9</text>
+
+      <rect x="632" y="546" width="398" height="44" rx="12" fill="#111827"/>
+      <text class="t3" x="764" y="574" fill="#ffffff">Get personalised tips</text>
+    </g>
+  </g>
+</svg>

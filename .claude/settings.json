@@ -1,0 +1,39 @@
+{
+  "hooks": {
+    "PreToolUse": [
+      {
+        "matcher": "Write",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "INPUT=$(cat); if echo \"$INPUT\" | grep -qEi '\\.env(\\.[a-z]+)?\"|\\.pem\"|\\.key\"|\\.cert\"|\\.p12\"|\\.pfx\"|/\\.ssh/|/\\.aws/|/\\.gnupg/|supabase/config\\.toml\"|integrations/supabase/client\\.ts\"|integrations/supabase/types\\.ts\"'; then echo '{\"decision\": \"block\", \"reason\": \"Blocked: writing to credential/secret file, or to an auto-generated Supabase file. Regenerate types from the Supabase dashboard instead.\"}'; else echo '{\"decision\": \"allow\"}'; fi",
+            "timeout": 5000,
+            "statusMessage": "Checking write target..."
+          }
+        ]
+      },
+      {
+        "matcher": "Bash",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "INPUT=$(cat); if echo \"$INPUT\" | grep -qEi 'git\\s+push\\s+(-f|--force)|npm\\s+publish|docker\\s+push|supabase\\s+db\\s+reset'; then echo '{\"decision\": \"block\", \"reason\": \"Blocked: destructive or irreversible operation. Get explicit user approval first.\"}'; else echo '{\"decision\": \"allow\"}'; fi",
+            "timeout": 5000,
+            "statusMessage": "Safety check..."
+          }
+        ]
+      }
+    ]
+  },
+  "permissions": {
+    "deny": [
+      "Bash(git push --force*)",
+      "Bash(git push -f *)",
+      "Bash(npm publish*)",
+      "Bash(supabase db reset*)",
+      "Read(~/.ssh/**)",
+      "Read(~/.aws/**)",
+      "Read(~/.gnupg/**)"
+    ]
+  }
+}

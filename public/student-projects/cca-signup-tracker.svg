@@ -1,0 +1,111 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="720" viewBox="0 0 1200 720">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#2563eb"/>
+      <stop offset="1" stop-color="#4f46e5"/>
+    </linearGradient>
+    <filter id="shadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="14" stdDeviation="18" flood-color="#000" flood-opacity="0.18"/>
+    </filter>
+    <style>
+      .ui { font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial; }
+      .t0 { font-size: 18px; font-weight: 600; fill: #0f172a; }
+      .t1 { font-size: 13px; font-weight: 500; fill: #334155; }
+      .t2 { font-size: 12px; font-weight: 500; fill: #64748b; }
+      .t3 { font-size: 12px; font-weight: 600; fill: #0f172a; }
+      .chip { font-size: 12px; font-weight: 600; fill: #1d4ed8; }
+      .mono { font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New"; font-size: 11px; fill: #475569; }
+    </style>
+  </defs>
+
+  <rect x="0" y="0" width="1200" height="720" fill="url(#bg)"/>
+
+  <g filter="url(#shadow)">
+    <rect x="110" y="84" width="980" height="552" rx="18" fill="#ffffff"/>
+    <rect x="110" y="84" width="980" height="56" rx="18" fill="#f8fafc"/>
+    <rect x="110" y="122" width="980" height="18" fill="#f8fafc"/>
+
+    <circle cx="146" cy="112" r="7" fill="#ef4444"/>
+    <circle cx="170" cy="112" r="7" fill="#f59e0b"/>
+    <circle cx="194" cy="112" r="7" fill="#22c55e"/>
+
+    <text class="ui t0" x="240" y="118">CCA Sign‑up Tracker</text>
+    <text class="ui t2" x="240" y="138">Sec 1–4 registrations · AY2026 Term 1</text>
+
+    <rect x="140" y="164" width="220" height="440" rx="14" fill="#f8fafc" stroke="#e2e8f0"/>
+    <text class="ui t3" x="160" y="200">Filters</text>
+    <rect x="160" y="214" width="180" height="30" rx="10" fill="#ffffff" stroke="#e2e8f0"/>
+    <text class="ui t2" x="172" y="234">Level</text>
+    <text class="ui t1" x="258" y="234">Sec 2</text>
+    <rect x="160" y="254" width="180" height="30" rx="10" fill="#ffffff" stroke="#e2e8f0"/>
+    <text class="ui t2" x="172" y="274">Status</text>
+    <text class="ui t1" x="252" y="274">Open</text>
+    <rect x="160" y="294" width="180" height="30" rx="10" fill="#ffffff" stroke="#e2e8f0"/>
+    <text class="ui t2" x="172" y="314">Day</text>
+    <text class="ui t1" x="258" y="314">Wed</text>
+
+    <text class="ui t3" x="160" y="368">Quick tags</text>
+    <rect x="160" y="382" width="88" height="28" rx="999" fill="#dbeafe"/>
+    <text class="ui chip" x="174" y="401">Sports</text>
+    <rect x="254" y="382" width="102" height="28" rx="999" fill="#e0e7ff"/>
+    <text class="ui chip" x="266" y="401" fill="#4338ca">Leadership</text>
+    <rect x="160" y="418" width="116" height="28" rx="999" fill="#dcfce7"/>
+    <text class="ui chip" x="174" y="437" fill="#15803d">Performing</text>
+
+    <rect x="390" y="164" width="680" height="440" rx="14" fill="#ffffff" stroke="#e2e8f0"/>
+    <rect x="412" y="184" width="390" height="36" rx="12" fill="#f8fafc" stroke="#e2e8f0"/>
+    <text class="ui t2" x="428" y="207">Search CCA…</text>
+    <rect x="812" y="184" width="238" height="36" rx="12" fill="#2563eb"/>
+    <text class="ui t3" x="848" y="207" fill="#ffffff">Export CSV</text>
+    <text class="ui t2" x="932" y="207" fill="#bfdbfe">Last updated 2m</text>
+
+    <rect x="412" y="238" width="636" height="34" rx="10" fill="#f8fafc"/>
+    <text class="ui t2" x="430" y="260">CCA</text>
+    <text class="ui t2" x="640" y="260">Slots</text>
+    <text class="ui t2" x="720" y="260">Status</text>
+    <text class="ui t2" x="820" y="260">Teacher</text>
+    <text class="ui t2" x="940" y="260">Deadline</text>
+
+    <g class="ui">
+      <rect x="412" y="276" width="636" height="44" rx="10" fill="#ffffff"/>
+      <text class="t1" x="430" y="304">Basketball (Boys)</text>
+      <text class="mono" x="640" y="304">24/30</text>
+      <rect x="718" y="288" width="72" height="22" rx="999" fill="#dcfce7"/>
+      <text class="t2" x="734" y="304" fill="#15803d">Open</text>
+      <text class="t2" x="820" y="304">Mr Lim</text>
+      <text class="t2" x="940" y="304">14 Feb</text>
+
+      <rect x="412" y="326" width="636" height="44" rx="10" fill="#ffffff"/>
+      <text class="t1" x="430" y="354">Choir</text>
+      <text class="mono" x="640" y="354">38/40</text>
+      <rect x="718" y="338" width="92" height="22" rx="999" fill="#fef9c3"/>
+      <text class="t2" x="734" y="354" fill="#a16207">Waitlist</text>
+      <text class="t2" x="820" y="354">Ms Tan</text>
+      <text class="t2" x="940" y="354">11 Feb</text>
+
+      <rect x="412" y="376" width="636" height="44" rx="10" fill="#ffffff"/>
+      <text class="t1" x="430" y="404">Robotics</text>
+      <text class="mono" x="640" y="404">16/20</text>
+      <rect x="718" y="388" width="72" height="22" rx="999" fill="#dcfce7"/>
+      <text class="t2" x="734" y="404" fill="#15803d">Open</text>
+      <text class="t2" x="820" y="404">Mr Goh</text>
+      <text class="t2" x="940" y="404">18 Feb</text>
+
+      <rect x="412" y="426" width="636" height="44" rx="10" fill="#ffffff"/>
+      <text class="t1" x="430" y="454">Debate</text>
+      <text class="mono" x="640" y="454">20/20</text>
+      <rect x="718" y="438" width="84" height="22" rx="999" fill="#fee2e2"/>
+      <text class="t2" x="734" y="454" fill="#b91c1c">Closed</text>
+      <text class="t2" x="820" y="454">Ms Wong</text>
+      <text class="t2" x="940" y="454">09 Feb</text>
+
+      <rect x="412" y="476" width="636" height="44" rx="10" fill="#ffffff"/>
+      <text class="t1" x="430" y="504">Track &amp; Field</text>
+      <text class="mono" x="640" y="504">12/25</text>
+      <rect x="718" y="488" width="72" height="22" rx="999" fill="#dcfce7"/>
+      <text class="t2" x="734" y="504" fill="#15803d">Open</text>
+      <text class="t2" x="820" y="504">Mr Lee</text>
+      <text class="t2" x="940" y="504">16 Feb</text>
+    </g>
+  </g>
+</svg>

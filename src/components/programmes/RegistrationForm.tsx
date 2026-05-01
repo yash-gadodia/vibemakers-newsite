@@ -1,0 +1,174 @@
+import { useState } from "react";
+import { useForm } from "react-hook-form";
+import { zodResolver } from "@hookform/resolvers/zod";
+import { z } from "zod";
+import { Button } from "@/components/ui/button";
+import { Input } from "@/components/ui/input";
+import { Textarea } from "@/components/ui/textarea";
+import { Label } from "@/components/ui/label";
+import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group";
+import { CheckCircle, Loader2 } from "lucide-react";
+import { supabase } from "@/integrations/supabase/client";
+import { useToast } from "@/hooks/use-toast";
+import { sendNotificationEmail } from "@/lib/sendNotification";
+
+const registrationSchema = z.object({
+  parent_name: z.string().trim().min(1, "Name is required").max(100),
+  parent_email: z.string().trim().email("Invalid email").max(255),
+  student_name: z.string().trim().min(1, "Student name is required").max(100),
+  student_age: z.string().min(1, "Please select age group"),
+  programme_interest: z.string().min(1, "Please select a format"),
+  message: z.string().max(1000).optional(),
+});
+
+type RegistrationData = z.infer<typeof registrationSchema>;
+
+export function RegistrationForm() {
+  const [isSubmitted, setIsSubmitted] = useState(false);
+  const [isLoading, setIsLoading] = useState(false);
+  const { toast } = useToast();
+
+  const {
+    register,
+    handleSubmit,
+    setValue,
+    watch,
+    formState: { errors },
+  } = useForm<RegistrationData>({
+    resolver: zodResolver(registrationSchema),
+    defaultValues: {
+      programme_interest: "",
+      student_age: "",
+    },
+  });
+
+  const onSubmit = async (data: RegistrationData) => {
+    setIsLoading(true);
+    try {
+      const insertData = {
+        parent_name: data.parent_name,
+        parent_email: data.parent_email,
+        student_name: data.student_name,
+        student_age: data.student_age,
+        programme_interest: data.programme_interest,
+        message: data.message || null,
+      };
+
+      const { error } = await supabase.from("parent_interest").insert(insertData);
+
+      if (error) throw error;
+
+      // Send notification email (non-blocking)
+      sendNotificationEmail("parent_interest", insertData);
+
+      setIsSubmitted(true);
+    } catch (error) {
+      toast({
+        title: "Something went wrong",
+        description: "Please try again or contact us directly.",
+        variant: "destructive",
+      });
+    } finally {
+      setIsLoading(false);
+    }
+  };
+
+  if (isSubmitted) {
+    return (
+      <div className="text-center py-12 px-6 bg-card border border-border rounded-2xl">
+        <div className="w-16 h-16 rounded-full bg-primary/10 flex items-center justify-center mx-auto mb-4">
+          <CheckCircle className="w-8 h-8 text-primary" />
+        </div>
+        <h4 className="text-xl font-display font-bold mb-2">Thank You!</h4>
+        <p className="text-muted-foreground">
+          We'll reach out within 2 working days.
+        </p>
+      </div>
+    );
+  }
+
+  return (
+    <form onSubmit={handleSubmit(onSubmit)} className="space-y-6 bg-card border border-border rounded-2xl p-6 md:p-8">
+      <div className="grid md:grid-cols-2 gap-4">
+        <div className="space-y-2">
+          <Label htmlFor="parent_name">Your Name *</Label>
+          <Input id="parent_name" {...register("parent_name")} placeholder="Parent/Guardian name" />
+          {errors.parent_name && <p className="text-sm text-destructive">{errors.parent_name.message}</p>}
+        </div>
+        <div className="space-y-2">
+          <Label htmlFor="parent_email">Email *</Label>
+          <Input id="parent_email" type="email" {...register("parent_email")} placeholder="your@email.com" />
+          {errors.parent_email && <p className="text-sm text-destructive">{errors.parent_email.message}</p>}
+        </div>
+      </div>
+
+      <div className="grid md:grid-cols-2 gap-4">
+        <div className="space-y-2">
+          <Label htmlFor="student_name">Student's Name *</Label>
+          <Input id="student_name" {...register("student_name")} placeholder="Your child's name" />
+          {errors.student_name && <p className="text-sm text-destructive">{errors.student_name.message}</p>}
+        </div>
+        <div className="space-y-2">
+          <Label>Student's Age Group *</Label>
+          <RadioGroup
+            value={watch("student_age")}
+            onValueChange={(value) => setValue("student_age", value)}
+            className="flex flex-wrap gap-3"
+          >
+            {["10-12", "13-15", "16-18"].map((age) => (
+              <div key={age} className="flex items-center space-x-2">
+                <RadioGroupItem value={age} id={`age-${age}`} />
+                <Label htmlFor={`age-${age}`} className="text-sm cursor-pointer">{age}</Label>
+              </div>
+            ))}
+          </RadioGroup>
+          {errors.student_age && <p className="text-sm text-destructive">{errors.student_age.message}</p>}
+        </div>
+      </div>
+
+      <div className="space-y-2">
+        <Label>Preferred Format *</Label>
+        <RadioGroup
+          value={watch("programme_interest")}
+          onValueChange={(value) => setValue("programme_interest", value)}
+          className="flex flex-wrap gap-4"
+        >
+          <div className="flex items-center space-x-2">
+            <RadioGroupItem value="group" id="format-group" />
+            <Label htmlFor="format-group" className="cursor-pointer">Group Sessions</Label>
+          </div>
+          <div className="flex items-center space-x-2">
+            <RadioGroupItem value="1-to-1" id="format-1to1" />
+            <Label htmlFor="format-1to1" className="cursor-pointer">1-to-1 Coaching</Label>
+          </div>
+          <div className="flex items-center space-x-2">
+            <RadioGroupItem value="unsure" id="format-unsure" />
+            <Label htmlFor="format-unsure" className="cursor-pointer">Not sure yet</Label>
+          </div>
+        </RadioGroup>
+        {errors.programme_interest && <p className="text-sm text-destructive">{errors.programme_interest.message}</p>}
+      </div>
+
+      <div className="space-y-2">
+        <Label htmlFor="message">Anything else we should know? (optional)</Label>
+        <Textarea
+          id="message"
+          {...register("message")}
+          placeholder="E.g., specific interests, schedule preferences, questions..."
+          rows={3}
+        />
+      </div>
+
+      <Button type="submit" className="w-full" disabled={isLoading}>
+        {isLoading ? (
+          <>
+            <Loader2 className="w-4 h-4 mr-2 animate-spin" />
+            Submitting...
+          </>
+        ) : (
+          "Register Interest"
+        )}
+      </Button>
+    </form>
+  );
+}

@@ -1,0 +1,359 @@
+/* Cabinet Grotesk (display) + Satoshi (body) from Fontshare. JetBrains Mono from Google. */
+@import url('https://api.fontshare.com/v2/css?f[]=cabinet-grotesk@500,700,800&f[]=satoshi@400,500,700,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ============================================================================
+ * Vibe Makers Design System (v2 — "warm sticker" direction)
+ *
+ * Palette source: _prototype/homepage-prototype.html (the H token object).
+ * Reference doc:  .claude/design-system.md
+ *
+ * Core idea: warm cream backgrounds + near-black ink + vibrant orange brand,
+ * with sticker accents (rotated, bordered, hard-shadow) and a small yellow
+ * highlight color. Cabinet Grotesk for display, Satoshi for body, JetBrains
+ * Mono for tech moments / eyebrow labels.
+ * ========================================================================== */
+
+@layer base {
+  :root {
+    /* Backgrounds */
+    --background: 38 36% 96%;        /* H.bg          #faf7f2 — warm cream (page) */
+    --bg-warm: 36 38% 91%;           /* H.bgWarm      #f3ecdf — warm beige (alt section) */
+    --bg-warm-2: 35 100% 95%;        /* H.bgWarm2     #fff4e6 — light peach (callouts) */
+
+    /* Ink (text) */
+    --foreground: 30 17% 9%;         /* H.ink         #1a1612 — near-black warm */
+    --ink-2: 23 16% 19%;             /* H.ink2        #3a312a — secondary ink */
+    --muted-foreground: 27 11% 49%;  /* H.muted       #8a7d70 — tertiary text */
+
+    /* Surfaces */
+    --card: 0 0% 100%;               /* H.card        #ffffff */
+    --card-foreground: 30 17% 9%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 30 17% 9%;
+
+    /* Brand */
+    --primary: 20 100% 55%;          /* H.orange      #ff6b1a — vibrant orange */
+    --primary-foreground: 0 0% 100%;
+    --accent: 22 100% 43%;           /* H.orangeDeep  #d94e00 — deep orange (hover/emphasis) */
+    --accent-foreground: 0 0% 100%;
+
+    /* Highlight (sticker yellow — new in v2) */
+    --yellow: 43 100% 65%;           /* H.yellow      #ffc94d — sticker / highlight */
+    --yellow-foreground: 30 17% 9%;
+    --yellow-deep: 41 100% 47%;      /* H.yellowDeep  #f0a500 */
+
+    /* Secondary surface (alt section bg) */
+    --secondary: 36 38% 91%;
+    --secondary-foreground: 30 17% 9%;
+    --muted: 36 38% 94%;
+    --surface: 36 38% 91%;
+
+    /* Lines / inputs / focus ring */
+    --border: 34 32% 87%;            /* H.rule        #e8e0d4 */
+    --input: 34 32% 87%;
+    --ring: 20 100% 55%;
+
+    /* States */
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
+
+    /* Radius (kept tight for institutional feel; sticker pills use rounded-full) */
+    --radius: 0.5rem;
+    --radius-lg: 0.75rem;
+    --radius-xl: 1rem;
+
+    /* Gradients */
+    --gradient-primary: linear-gradient(135deg, hsl(20, 100%, 55%) 0%, hsl(22, 100%, 43%) 100%);
+    --gradient-hero: linear-gradient(180deg, hsl(38, 36%, 96%) 0%, hsl(36, 38%, 91%) 100%);
+    --gradient-glass: linear-gradient(135deg, rgba(255,255,255,0.8) 0%, rgba(255,255,255,0.4) 100%);
+
+    /* Shadows */
+    --shadow-sm: 0 2px 8px -2px hsl(20 100% 55% / 0.10);
+    --shadow-md: 0 8px 24px -8px hsl(20 100% 55% / 0.15);
+    --shadow-lg: 0 16px 48px -12px hsl(20 100% 55% / 0.20);
+    --shadow-glow: 0 0 40px hsl(20 100% 55% / 0.30);
+    /* Sticker hard-shadow (signature look — flat, no blur) */
+    --shadow-sticker: 2px 2px 0 hsl(30 17% 9%);
+  }
+
+  .dark {
+    --background: 30 17% 8%;
+    --foreground: 38 36% 95%;
+    --card: 30 17% 12%;
+    --card-foreground: 38 36% 95%;
+    --popover: 30 17% 12%;
+    --popover-foreground: 38 36% 95%;
+    --primary: 20 100% 58%;
+    --primary-foreground: 30 17% 8%;
+    --secondary: 30 17% 18%;
+    --secondary-foreground: 38 36% 95%;
+    --muted: 30 17% 18%;
+    --muted-foreground: 30 14% 60%;
+    --accent: 22 100% 50%;
+    --accent-foreground: 0 0% 100%;
+    --yellow: 43 100% 65%;
+    --yellow-foreground: 30 17% 8%;
+    --yellow-deep: 41 100% 47%;
+    --destructive: 0 62% 30%;
+    --destructive-foreground: 0 0% 100%;
+    --border: 30 17% 22%;
+    --input: 30 17% 22%;
+    --ring: 20 100% 58%;
+    --surface: 30 17% 10%;
+  }
+}
+
+@layer base {
+  * { @apply border-border; box-sizing: border-box; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    @apply bg-background text-foreground font-sans antialiased;
+    font-feature-settings: "rlig" 1, "calt" 1;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-display font-bold;
+    letter-spacing: -0.025em;
+    line-height: 1.02;
+  }
+
+  /* Reduced motion */
+  @media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+      scroll-behavior: auto !important;
+    }
+  }
+}
+
+/* ============================================================================
+ * V2 component primitives — copied from prototype
+ * Use sparingly — these are presentational helpers, not full components.
+ * ========================================================================== */
+
+@layer components {
+  /* Sticker — rotated pill with hard shadow + ink border. Hero/section eyebrows. */
+  .vm-sticker {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    background: hsl(var(--yellow));
+    color: hsl(var(--foreground));
+    font-family: "JetBrains Mono", monospace;
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    padding: 5px 11px;
+    border-radius: 999px;
+    border: 1.5px solid hsl(var(--foreground));
+    box-shadow: var(--shadow-sticker);
+  }
+  .vm-sticker--orange { background: hsl(var(--primary)); color: #fff; }
+
+  /* Card lift on hover. Pair with rounded-2xl + border + bg-card. */
+  .vm-card {
+    transition: transform 380ms cubic-bezier(.2,.7,.2,1),
+                box-shadow 380ms cubic-bezier(.2,.7,.2,1),
+                border-color 280ms;
+    will-change: transform;
+  }
+  .vm-card:hover { transform: translateY(-4px); }
+
+  /* Button lift + arrow slide */
+  .vm-btn {
+    transition: transform 220ms cubic-bezier(.2,.7,.2,1),
+                box-shadow 220ms cubic-bezier(.2,.7,.2,1),
+                background-color 220ms;
+    will-change: transform;
+  }
+  .vm-btn:hover { transform: translateY(-2px); }
+  .vm-btn:active { transform: translateY(0); transition-duration: 80ms; }
+
+  .vm-arrow { display: inline-block; transition: transform 320ms cubic-bezier(.2,.7,.2,1); }
+  .vm-btn:hover .vm-arrow,
+  .vm-link:hover .vm-arrow { transform: translateX(6px); }
+
+  /* Nav link with underline grow-from-left */
+  .vm-nav-link { position: relative; }
+  .vm-nav-link::after {
+    content: '';
+    position: absolute;
+    left: 0; right: 0; bottom: -4px;
+    height: 1.5px;
+    background: currentColor;
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 320ms cubic-bezier(.2,.7,.2,1);
+  }
+  .vm-nav-link:hover::after { transform: scaleX(1); }
+
+  /* Logo cell — muted on rest, full color on hover */
+  .vm-logo-cell img {
+    filter: saturate(0.55) opacity(0.78);
+    transition: filter 380ms ease, transform 380ms cubic-bezier(.2,.7,.2,1);
+  }
+  .vm-logo-cell:hover img {
+    filter: saturate(1) opacity(1);
+    transform: scale(1.06);
+  }
+
+  /* FAQ accordion (paired with .vm-faq-open class on container) */
+  .vm-chev { transition: transform 320ms cubic-bezier(.2,.7,.2,1); }
+  .vm-faq-open .vm-chev { transform: rotate(45deg); }
+  .vm-faq-body {
+    overflow: hidden;
+    max-height: 0;
+    opacity: 0;
+    transition: max-height 380ms cubic-bezier(.2,.7,.2,1),
+                opacity 280ms ease,
+                padding 280ms ease;
+  }
+  .vm-faq-open .vm-faq-body { max-height: 400px; opacity: 1; }
+
+  /* Sheen sweep across hero headline (uses currentColor + brand orange) */
+  .vm-sheen-text {
+    background: linear-gradient(90deg,
+      currentColor 0%, currentColor 35%,
+      hsl(20 100% 55% / 0.85) 50%,
+      currentColor 65%, currentColor 100%);
+    background-size: 200% 100%;
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: vm-sheen 6s ease-in-out infinite;
+    animation-delay: 1.2s;
+  }
+
+  /* Terminal caret (used in code-display blocks) */
+  .vm-caret {
+    display: inline-block;
+    margin-left: 2px;
+    animation: vm-blink 1s steps(1) infinite;
+    color: #ff8a3d;
+  }
+
+  /* Legacy compat — keep so unported components don't break visually */
+  .gradient-text {
+    @apply bg-clip-text text-transparent bg-gradient-to-r from-primary to-accent;
+  }
+  .glass {
+    @apply bg-white/80 backdrop-blur-xl border border-white/20;
+  }
+  .glass-card {
+    @apply bg-white/70 backdrop-blur-lg border border-white/30 shadow-lg;
+  }
+  .soft-card {
+    @apply rounded-3xl border border-border bg-card/80 backdrop-blur-sm shadow-md;
+  }
+  .inset-panel {
+    @apply rounded-[2rem] border border-border bg-card/60 backdrop-blur-sm shadow-md;
+  }
+  .hover-lift {
+    @apply transition-all duration-300 hover:-translate-y-1 hover:shadow-lg hover:border-primary/50;
+  }
+  .hover-glow {
+    @apply transition-all duration-300 hover:shadow-[0_0_20px_hsl(20_100%_55%/0.3)] hover:border-primary;
+  }
+  .hover-scale {
+    @apply transition-transform duration-200 hover:scale-105;
+  }
+  .section-padding {
+    @apply py-16 md:py-24 lg:py-32;
+  }
+  .container-narrow {
+    @apply max-w-5xl mx-auto px-4 sm:px-6 lg:px-8;
+  }
+}
+
+/* ============================================================================
+ * V2 keyframes — sticker wiggle, hero sheen, marquee, terminal caret, drift
+ * ========================================================================== */
+
+@layer utilities {
+  .text-balance { text-wrap: balance; }
+
+  .animate-vm-wiggle { animation: vm-wiggle 4.5s ease-in-out infinite; transform-origin: center; }
+  .animate-vm-pulse  { animation: vm-pulse 2.4s ease-out infinite; }
+  .animate-vm-drift  { animation: vm-drift 6s ease-in-out infinite; }
+  .animate-vm-marquee { animation: vm-marquee 25s linear infinite; }
+
+  /* Legacy float/scroll kept */
+  .animate-float { animation: vm-float 6s ease-in-out infinite; }
+  .animate-pulse-slow { animation: pulse 4s cubic-bezier(0.4, 0, 0.6, 1) infinite; }
+  .animate-scroll { animation: vm-marquee 25s linear infinite; }
+
+  .scrollbar-hide { -ms-overflow-style: none; scrollbar-width: none; }
+  .scrollbar-hide::-webkit-scrollbar { display: none; }
+}
+
+@keyframes vm-wiggle {
+  0%, 100% { transform: rotate(var(--rot, -3deg)); }
+  50%      { transform: rotate(calc(var(--rot, -3deg) + 2deg)); }
+}
+
+@keyframes vm-pulse {
+  0%   { box-shadow: 0 0 0 0 rgba(255, 107, 26, 0.55); }
+  70%  { box-shadow: 0 0 0 10px rgba(255, 107, 26, 0); }
+  100% { box-shadow: 0 0 0 0 rgba(255, 107, 26, 0); }
+}
+
+@keyframes vm-sheen {
+  0%   { background-position: -200% 0; }
+  100% { background-position: 200% 0; }
+}
+
+@keyframes vm-marquee {
+  from { transform: translate3d(0, 0, 0); }
+  to   { transform: translate3d(-50%, 0, 0); }
+}
+
+@keyframes vm-blink {
+  0%, 49%  { opacity: 1; }
+  50%, 100% { opacity: 0; }
+}
+
+@keyframes vm-drift {
+  0%, 100% { transform: translateY(0) rotate(var(--card-rot, 0deg)); }
+  50%      { transform: translateY(-6px) rotate(var(--card-rot, 0deg)); }
+}
+
+@keyframes vm-float {
+  0%, 100% { transform: translateY(0px); }
+  50%      { transform: translateY(-20px); }
+}
+
+/* Print-only layout for A5 flyer (kept from previous design) */
+@media print {
+  @page { size: A5 portrait; margin: 0; }
+
+  html, body {
+    margin: 0 !important;
+    padding: 0 !important;
+    width: 148mm !important;
+    height: 210mm !important;
+    overflow: hidden !important;
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
+  }
+
+  .print-flyer-container {
+    width: 148mm !important;
+    height: 210mm !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    box-sizing: border-box !important;
+    overflow: hidden !important;
+    page-break-after: avoid !important;
+    page-break-inside: avoid !important;
+  }
+}

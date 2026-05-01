@@ -1,0 +1,89 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 280" fill="none">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="400" y2="280" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#818cf8"/>
+      <stop offset="100%" stop-color="#a855f7"/>
+    </linearGradient>
+    <filter id="shadow" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="0" dy="4" stdDeviation="8" flood-opacity="0.15"/>
+    </filter>
+    <style>
+      .ui { font-family: system-ui, -apple-system, sans-serif; }
+      .t0 { font-size: 10px; font-weight: 600; fill: #1f2937; }
+      .t1 { font-size: 7px; fill: #6b7280; }
+      .t2 { font-size: 6px; fill: #9ca3af; }
+      .t3 { font-size: 5px; fill: #d1d5db; }
+      .hero { font-size: 14px; font-weight: 700; fill: #1f2937; }
+      .sub { font-size: 6px; fill: #6b7280; }
+    </style>
+  </defs>
+  
+  <!-- Background gradient -->
+  <rect width="400" height="280" fill="url(#bg)"/>
+  
+  <!-- Main content card -->
+  <g filter="url(#shadow)">
+    <rect x="20" y="16" width="360" height="248" rx="12" fill="white"/>
+    
+    <!-- Navigation bar -->
+    <rect x="20" y="16" width="360" height="32" rx="12" fill="#fafafa"/>
+    <rect x="20" y="36" width="360" height="12" fill="#fafafa"/>
+    
+    <!-- Logo placeholder -->
+    <circle cx="44" cy="32" r="8" fill="#818cf8"/>
+    <text x="56" y="35" class="ui t0" fill="#818cf8">JW</text>
+    
+    <!-- Nav links -->
+    <text x="260" y="35" class="ui t2">About</text>
+    <text x="290" y="35" class="ui t2">Projects</text>
+    <text x="330" y="35" class="ui t2">Contact</text>
+    
+    <!-- Hero Section -->
+    <rect x="40" y="60" width="140" height="90" rx="8" fill="#f3f4f6"/>
+    <!-- Avatar placeholder -->
+    <circle cx="110" cy="95" r="25" fill="#e5e7eb"/>
+    <circle cx="110" cy="88" r="10" fill="#d1d5db"/>
+    <ellipse cx="110" cy="110" rx="15" ry="10" fill="#d1d5db"/>
+    
+    <text x="200" y="85" class="ui hero">Hi, I'm Jane</text>
+    <text x="200" y="100" class="ui sub">Sec 4 Student • Aspiring Developer</text>
+    <text x="200" y="115" class="ui t2">Building apps that solve real problems.</text>
+    <text x="200" y="125" class="ui t2">Passionate about AI and design.</text>
+    
+    <!-- CTA Button -->
+    <rect x="200" y="135" width="60" height="16" rx="8" fill="#818cf8"/>
+    <text x="215" y="146" class="ui" style="font-size:6px;fill:white;font-weight:500">View Work</text>
+    
+    <!-- About Section Label -->
+    <text x="40" y="170" class="ui t0">About Me</text>
+    <rect x="40" y="178" width="150" height="6" rx="2" fill="#f3f4f6"/>
+    <rect x="40" y="188" width="130" height="6" rx="2" fill="#f3f4f6"/>
+    <rect x="40" y="198" width="140" height="6" rx="2" fill="#f3f4f6"/>
+    
+    <!-- Projects Section -->
+    <text x="210" y="170" class="ui t0">Projects</text>
+    
+    <!-- Project Card 1 -->
+    <rect x="210" y="178" width="75" height="55" rx="6" fill="#f3f4f6"/>
+    <rect x="216" y="184" width="63" height="30" rx="3" fill="#e5e7eb"/>
+    <text x="216" y="224" class="ui t2">Study Planner</text>
+    
+    <!-- Project Card 2 -->
+    <rect x="295" y="178" width="75" height="55" rx="6" fill="#f3f4f6"/>
+    <rect x="301" y="184" width="63" height="30" rx="3" fill="#e5e7eb"/>
+    <text x="301" y="224" class="ui t2">EcoTracker</text>
+    
+    <!-- Skills Section -->
+    <text x="40" y="220" class="ui t0">Skills</text>
+    <rect x="40" y="228" width="35" height="14" rx="7" fill="#dbeafe"/>
+    <text x="48" y="238" class="ui" style="font-size:5px;fill:#3b82f6">React</text>
+    <rect x="80" y="228" width="45" height="14" rx="7" fill="#dcfce7"/>
+    <text x="88" y="238" class="ui" style="font-size:5px;fill:#22c55e">Tailwind</text>
+    <rect x="130" y="228" width="30" height="14" rx="7" fill="#fef3c7"/>
+    <text x="137" y="238" class="ui" style="font-size:5px;fill:#f59e0b">AI</text>
+    
+    <!-- Contact footer hint -->
+    <rect x="40" y="250" width="330" height="1" fill="#f3f4f6"/>
+    <text x="180" y="260" class="ui t3">jane@email.com • GitHub • LinkedIn</text>
+  </g>
+</svg>
