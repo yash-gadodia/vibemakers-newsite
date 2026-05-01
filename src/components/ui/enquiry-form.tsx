@@ -7,9 +7,8 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Textarea } from "@/components/ui/textarea";
-import { supabase } from "@/integrations/supabase/client";
 import { sendNotificationEmail } from "@/lib/sendNotification";
-import { sendTelegramNotification } from "@/lib/sendTelegramNotification";
+import { submitParentInterest, submitSchoolEnquiry } from "@/lib/formApi";
 import { cn } from "@/lib/utils";
 
 const parentSchema = z.object({
@@ -67,15 +66,14 @@ function ParentForm({ className }: { className?: string }) {
       ? `Phone: ${phone}${data.message ? `\n\n${data.message}` : ""}`
       : data.message || null;
     const { parent_phone: _phone, ...rest } = data;
-    const insertData = { ...rest, message: composedMessage };
-    const { error } = await supabase.from("parent_interest").insert(insertData);
-    if (error) {
+    const payload = { ...rest, message: composedMessage };
+    const result = await submitParentInterest(payload);
+    if (!result.ok) {
       toast.error("Couldn't send your enquiry. Try again or WhatsApp us.");
       setSubmitting(false);
       return;
     }
-    sendNotificationEmail("parent_interest", insertData);
-    sendTelegramNotification("parent_interest", insertData);
+    sendNotificationEmail("parent_interest", payload);
     toast.success("Got it. We'll reply within 24 hours.");
     reset();
     setSubmitting(false);
@@ -200,15 +198,14 @@ function SchoolForm({ className }: { className?: string }) {
       ? `Phone: ${phone}${data.message ? `\n\n${data.message}` : ""}`
       : data.message || "";
     const { contact_phone: _phone, ...rest } = data;
-    const insertData = { ...rest, message: composedMessage };
-    const { error } = await supabase.from("school_enquiries").insert(insertData);
-    if (error) {
+    const payload = { ...rest, message: composedMessage };
+    const result = await submitSchoolEnquiry(payload);
+    if (!result.ok) {
       toast.error("Couldn't send your enquiry. Try again or email us.");
       setSubmitting(false);
       return;
     }
-    sendNotificationEmail("school_enquiry", insertData);
-    sendTelegramNotification("school_enquiry", insertData);
+    sendNotificationEmail("school_enquiry", payload);
     toast.success("Got it. We'll be in touch within 1 business day.");
     reset();
     setSubmitting(false);

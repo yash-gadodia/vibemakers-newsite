@@ -5,10 +5,9 @@ import { Label } from "@/components/ui/label";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
-import { supabase } from "@/integrations/supabase/client";
 import { useToast } from "@/hooks/use-toast";
 import { sendNotificationEmail } from "@/lib/sendNotification";
-import { sendTelegramNotification } from "@/lib/sendTelegramNotification";
+import { submitParentInterest, submitSchoolEnquiry } from "@/lib/formApi";
 
 export default function Contact() {
   const { toast } = useToast();
@@ -36,38 +35,35 @@ export default function Contact() {
     // Route to appropriate table based on enquiry type
     if (type === "school" || type === "organisation") {
       const data = {
-        school_name: formData.get("organisation") as string || "",
+        school_name: (formData.get("organisation") as string) || "",
         contact_name: name,
         contact_email: email,
         contact_role: type === "school" ? "school_staff" : "other",
-        message: message || null,
+        message: message || undefined,
       };
-      const { error } = await supabase.from("school_enquiries").insert([data]);
-      if (error) {
+      const result = await submitSchoolEnquiry(data);
+      if (!result.ok) {
         toast({ title: "Error", description: "Please try again.", variant: "destructive" });
         setLoading(false);
         return;
       }
       sendNotificationEmail("school_enquiry", data);
-      sendTelegramNotification("school_enquiry", data);
     } else {
-      // Parent enquiry
       const data = {
         parent_name: name,
         parent_email: email,
-        student_name: formData.get("student_name") as string || "Not provided",
-        student_age: formData.get("student_age") as string || "Not provided",
+        student_name: (formData.get("student_name") as string) || "Not provided",
+        student_age: (formData.get("student_age") as string) || "Not provided",
         programme_interest: type,
         message: message || null,
       };
-      const { error } = await supabase.from("parent_interest").insert([data]);
-      if (error) {
+      const result = await submitParentInterest(data);
+      if (!result.ok) {
         toast({ title: "Error", description: "Please try again.", variant: "destructive" });
         setLoading(false);
         return;
       }
       sendNotificationEmail("parent_interest", data);
-      sendTelegramNotification("parent_interest", data);
     }
 
     setSubmitted(true);

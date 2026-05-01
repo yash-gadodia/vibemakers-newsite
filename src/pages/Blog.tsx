@@ -1,29 +1,14 @@
-import { useState } from "react";
 import { Link } from "react-router-dom";
 import { Helmet } from "react-helmet-async";
 import { useQuery } from "@tanstack/react-query";
 import { format } from "date-fns";
-import { supabase } from "@/integrations/supabase/client";
 import { Layout } from "@/components/layout/Layout";
-import { Database } from "@/integrations/supabase/types";
-
-type BlogPost = Database["public"]["Tables"]["blog_posts"]["Row"];
+import { listBlogPosts, type BlogPost } from "@/lib/blogApi";
 
 const Blog = () => {
-  const { data: posts, isLoading } = useQuery({
+  const { data: posts, isLoading } = useQuery<BlogPost[]>({
     queryKey: ["blog_posts"],
-    queryFn: async () => {
-      const { data, error } = await supabase
-        .from("blog_posts")
-        .select(
-          "id, title, slug, description, cover_image, author, category, tags, published_at"
-        )
-        .eq("status", "published")
-        .order("published_at", { ascending: false });
-
-      if (error) throw error;
-      return data as BlogPost[];
-    },
+    queryFn: listBlogPosts,
   });
 
   return (

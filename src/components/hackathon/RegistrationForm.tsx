@@ -11,10 +11,9 @@ import {
   SelectTrigger,
   SelectValue,
 } from "@/components/ui/select";
-import { supabase } from "@/integrations/supabase/client";
 import { useToast } from "@/hooks/use-toast";
 import { sendNotificationEmail } from "@/lib/sendNotification";
-import { sendTelegramNotification } from "@/lib/sendTelegramNotification";
+import { submitHackathonWaitlist } from "@/lib/formApi";
 
 export function RegistrationForm() {
   const { toast } = useToast();
@@ -36,16 +35,15 @@ export function RegistrationForm() {
       parental_consent: consent,
     };
 
-    const { error } = await supabase.from("hackathon_waitlist").insert([data]);
+    const result = await submitHackathonWaitlist(data);
 
-    if (error) {
+    if (!result.ok) {
       toast({
         title: "Error",
         description: "Something went wrong. Please try again.",
         variant: "destructive",
       });
     } else {
-      // Send notification email (non-blocking)
       const enrichedData = {
         ...data,
         team_preference: teamPreference,
@@ -53,8 +51,6 @@ export function RegistrationForm() {
         dietary: formData.get("dietary") as string,
       };
       sendNotificationEmail("hackathon_waitlist", enrichedData);
-      sendTelegramNotification("hackathon_waitlist", enrichedData);
-
       setSubmitted(true);
       toast({ title: "Success!", description: "You're on the waitlist!" });
     }

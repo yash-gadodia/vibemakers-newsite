@@ -4,30 +4,15 @@ import { Helmet } from "react-helmet-async";
 import { useQuery } from "@tanstack/react-query";
 import { format } from "date-fns";
 import DOMPurify from "dompurify";
-import { supabase } from "@/integrations/supabase/client";
 import { Layout } from "@/components/layout/Layout";
-import { Database } from "@/integrations/supabase/types";
-
-type BlogPost = Database["public"]["Tables"]["blog_posts"]["Row"];
+import { getBlogPost, type BlogPost } from "@/lib/blogApi";
 
 const BlogPost = () => {
   const { slug } = useParams<{ slug: string }>();
 
-  const { data: post, isLoading } = useQuery({
+  const { data: post, isLoading } = useQuery<BlogPost | null>({
     queryKey: ["blog_post", slug],
-    queryFn: async () => {
-      if (!slug) return null;
-
-      const { data, error } = await supabase
-        .from("blog_posts")
-        .select("*")
-        .eq("slug", slug)
-        .eq("status", "published")
-        .maybeSingle();
-
-      if (error) throw error;
-      return data as BlogPost | null;
-    },
+    queryFn: () => (slug ? getBlogPost(slug) : Promise.resolve(null)),
     enabled: !!slug,
   });
 

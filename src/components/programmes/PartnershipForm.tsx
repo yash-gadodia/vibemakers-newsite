@@ -14,10 +14,9 @@ import {
   SelectValue,
 } from "@/components/ui/select";
 import { CheckCircle, Loader2 } from "lucide-react";
-import { supabase } from "@/integrations/supabase/client";
 import { useToast } from "@/hooks/use-toast";
 import { sendNotificationEmail } from "@/lib/sendNotification";
-import { sendTelegramNotification } from "@/lib/sendTelegramNotification";
+import { submitSchoolEnquiry } from "@/lib/formApi";
 
 const partnershipSchema = z.object({
   school_name: z.string().trim().max(200).optional(),
@@ -79,26 +78,22 @@ export function PartnershipForm() {
       const composedMessage = phone
         ? `Phone: ${phone}`
         : null;
-      const insertData = {
-        school_name: data.school_name || null,
+      const payload = {
+        school_name: data.school_name || undefined,
         contact_name: data.contact_name,
         contact_role: data.contact_role,
         contact_email: data.contact_email,
-        number_of_students: data.number_of_students || null,
-        student_level: data.student_level || null,
-        timing_sessions: data.timing_sessions || null,
-        programme_objectives: data.programme_objectives || null,
-        message: composedMessage,
+        number_of_students: data.number_of_students || undefined,
+        student_level: data.student_level || undefined,
+        timing_sessions: data.timing_sessions || undefined,
+        programme_objectives: data.programme_objectives || undefined,
+        message: composedMessage || undefined,
       };
 
-      const { error } = await supabase.from("school_enquiries").insert(insertData);
+      const result = await submitSchoolEnquiry(payload);
+      if (!result.ok) throw new Error(result.error);
 
-      if (error) throw error;
-
-      // Send notification email + Telegram (non-blocking)
-      sendNotificationEmail("school_enquiry", insertData);
-      sendTelegramNotification("school_enquiry", insertData);
-
+      sendNotificationEmail("school_enquiry", payload);
       setIsSubmitted(true);
     } catch (error) {
       toast({

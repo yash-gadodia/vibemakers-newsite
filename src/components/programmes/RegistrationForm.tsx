@@ -8,10 +8,9 @@ import { Textarea } from "@/components/ui/textarea";
 import { Label } from "@/components/ui/label";
 import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group";
 import { CheckCircle, Loader2 } from "lucide-react";
-import { supabase } from "@/integrations/supabase/client";
 import { useToast } from "@/hooks/use-toast";
 import { sendNotificationEmail } from "@/lib/sendNotification";
-import { sendTelegramNotification } from "@/lib/sendTelegramNotification";
+import { submitParentInterest } from "@/lib/formApi";
 
 const registrationSchema = z.object({
   parent_name: z.string().trim().min(1, "Name is required").max(100),
@@ -53,7 +52,7 @@ export function RegistrationForm() {
       const composedMessage = phone
         ? `Phone: ${phone}${data.message ? `\n\n${data.message}` : ""}`
         : data.message || null;
-      const insertData = {
+      const payload = {
         parent_name: data.parent_name,
         parent_email: data.parent_email,
         student_name: data.student_name,
@@ -62,14 +61,10 @@ export function RegistrationForm() {
         message: composedMessage,
       };
 
-      const { error } = await supabase.from("parent_interest").insert(insertData);
+      const result = await submitParentInterest(payload);
+      if (!result.ok) throw new Error(result.error);
 
-      if (error) throw error;
-
-      // Send notification email + Telegram (non-blocking)
-      sendNotificationEmail("parent_interest", insertData);
-      sendTelegramNotification("parent_interest", insertData);
-
+      sendNotificationEmail("parent_interest", payload);
       setIsSubmitted(true);
     } catch (error) {
       toast({
