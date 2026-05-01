@@ -372,19 +372,48 @@ input, textarea, select {
 
 /* ---------- MOBILE (≤ 768px) — collapse all multi-col grids to 1 col ---------- */
 @media (max-width: 768px) {
-  /* Collapse every multi-column grid */
-  div[style*="grid-template-columns: repeat(2"],
-  div[style*="grid-template-columns: repeat(3"],
-  div[style*="grid-template-columns: repeat(4"],
-  div[style*="grid-template-columns: repeat(5"],
-  div[style*="grid-template-columns: 1fr 1fr"],
-  div[style*="grid-template-columns: 1fr 1.5fr"],
-  div[style*="grid-template-columns: 1.5fr 1fr"],
-  div[style*="grid-template-columns: 1fr 1.6fr"],
-  div[style*="grid-template-columns: 1.4fr 1fr"],
-  div[style*="grid-template-columns: 1.5fr repeat"],
-  section[style*="grid-template-columns: repeat"],
-  footer[style*="grid-template-columns: 1.5fr repeat"] {
+  /* Showcase grids: switch to horizontal scroll-snap on mobile (NOT collapsed
+     to single column). Marked with .vm-h-scroll-mobile. Higher selector
+     specificity ensures these win over the generic grid-collapse rule below. */
+  .vm-h-scroll-mobile {
+    display: flex !important;
+    flex-wrap: nowrap !important;
+    overflow-x: auto !important;
+    overflow-y: visible !important;
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+    gap: 14px !important;
+    padding-bottom: 12px;
+    margin-left: -16px;
+    margin-right: -16px;
+    padding-left: 16px;
+    padding-right: 16px;
+    scrollbar-width: none;
+  }
+  .vm-h-scroll-mobile::-webkit-scrollbar { display: none; }
+  .vm-h-scroll-mobile > * {
+    flex: 0 0 auto !important;
+    width: 78vw !important;
+    max-width: 320px !important;
+    scroll-snap-align: start;
+    transform: none !important; /* drop the desktop rotation/drift on mobile */
+  }
+  /* Add a subtle gradient cue on the right edge so users see there's more */
+  .vm-h-scroll-mobile { position: relative; }
+
+  /* Collapse every multi-column grid (default for non-showcase grids) */
+  div[style*="grid-template-columns: repeat(2"]:not(.vm-h-scroll-mobile),
+  div[style*="grid-template-columns: repeat(3"]:not(.vm-h-scroll-mobile),
+  div[style*="grid-template-columns: repeat(4"]:not(.vm-h-scroll-mobile),
+  div[style*="grid-template-columns: repeat(5"]:not(.vm-h-scroll-mobile),
+  div[style*="grid-template-columns: 1fr 1fr"]:not(.vm-h-scroll-mobile),
+  div[style*="grid-template-columns: 1fr 1.5fr"]:not(.vm-h-scroll-mobile),
+  div[style*="grid-template-columns: 1.5fr 1fr"]:not(.vm-h-scroll-mobile),
+  div[style*="grid-template-columns: 1fr 1.6fr"]:not(.vm-h-scroll-mobile),
+  div[style*="grid-template-columns: 1.4fr 1fr"]:not(.vm-h-scroll-mobile),
+  div[style*="grid-template-columns: 1.5fr repeat"]:not(.vm-h-scroll-mobile),
+  section[style*="grid-template-columns: repeat"]:not(.vm-h-scroll-mobile),
+  footer[style*="grid-template-columns: 1.5fr repeat"]:not(.vm-h-scroll-mobile) {
     grid-template-columns: 1fr !important;
     gap: 24px !important;
   }
@@ -486,19 +515,22 @@ input, textarea, select {
 
 /* ---------- PHONE (≤ 480px) — single-column everywhere, tighter touch targets ---------- */
 @media (max-width: 480px) {
-  .vm-hero-tiles { grid-template-columns: 1fr !important; }
+  .vm-hero-tiles:not(.vm-h-scroll-mobile) { grid-template-columns: 1fr !important; }
   .vm-hero-eyebrow { gap: 8px !important; }
 
   /* WCAG 2.5.5 — interactive controls 44x44 minimum */
   .vm-btn { min-height: 44px; min-width: 44px; }
 
-  /* On phone, even tablet 2-col fallbacks should collapse fully */
-  div[style*="grid-template-columns: repeat(4"],
-  div[style*="grid-template-columns: repeat(3"],
-  section[style*="grid-template-columns: repeat(4"],
-  section[style*="grid-template-columns: repeat(3"] {
+  /* On phone, even tablet 2-col fallbacks should collapse fully — except showcase scrollers */
+  div[style*="grid-template-columns: repeat(4"]:not(.vm-h-scroll-mobile),
+  div[style*="grid-template-columns: repeat(3"]:not(.vm-h-scroll-mobile),
+  section[style*="grid-template-columns: repeat(4"]:not(.vm-h-scroll-mobile),
+  section[style*="grid-template-columns: repeat(3"]:not(.vm-h-scroll-mobile) {
     grid-template-columns: 1fr !important;
   }
+
+  /* On narrower phones, scroller cards take more of the viewport */
+  .vm-h-scroll-mobile > * { width: 82vw !important; }
 
   /* Reduce extreme padding further */
   [style*="padding: 88px 56px"] { padding: 40px 16px !important; }

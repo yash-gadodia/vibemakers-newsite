@@ -905,7 +905,7 @@ function HHero({ tweaks }) {
       </Reveal>
 
       {/* Hero showcase strip — V.I.B.E. teaser tiles (full container width) */}
-      <div className="vm-hero-tiles" style={{ marginTop: 56, display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(180px, 1fr))', gap: 20, position: 'relative', zIndex: 1 }}>
+      <div className="vm-hero-tiles vm-h-scroll-mobile" style={{ marginTop: 56, display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(180px, 1fr))', gap: 20, position: 'relative', zIndex: 1 }}>
         {showcaseTiles.map((p, i) => (
           <Reveal key={i} delay={600 + i * 90} y={28} duration={750}>
           <div className="vm-drift" style={{
@@ -1092,7 +1092,7 @@ function HOutcomes() {
         <p style={{ fontSize: 18, color: H.ink2, maxWidth: 620, marginTop: 16 }}>{c.outcomesSub}</p>
       </Reveal>
 
-      <div style={{ display: 'grid', gridTemplateColumns: 'repeat(4, 1fr)', gap: 14, marginTop: 48 }}>
+      <div className="vm-h-scroll-mobile" style={{ display: 'grid', gridTemplateColumns: 'repeat(4, 1fr)', gap: 14, marginTop: 48 }}>
         {c.outcomes.map((o, i) => (
           <Reveal key={i} delay={i * 90} y={22}>
           <div className="vm-card" style={{
@@ -1412,7 +1412,7 @@ function HHow() {
       </div>
 
       {/* 4 phase reference tiles */}
-      <div style={{ display: 'grid', gridTemplateColumns: 'repeat(4, 1fr)', gap: 24, position: 'relative' }}>
+      <div className="vm-h-scroll-mobile" style={{ display: 'grid', gridTemplateColumns: 'repeat(4, 1fr)', gap: 24, position: 'relative' }}>
         {c.howSteps.map((s, i) => (
           <Reveal key={i} delay={i * 110} y={24} duration={700}>
             <div style={{ paddingTop: 24, borderTop: `2px solid ${H.ink}`, height: '100%' }}>
