@@ -2,11 +2,112 @@ import { Helmet } from "react-helmet-async";
 import { Link } from "react-router-dom";
 import { Layout } from "@/components/layout/Layout";
 import { RegistrationForm } from "@/components/programmes/RegistrationForm";
+import { TrustSection } from "@/components/home/TrustSection";
 import { Button } from "@/components/ui/button";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 import { Reveal } from "@/components/ui/Reveal";
 import { RevealGroup } from "@/components/ui/RevealGroup";
 import { cn } from "@/lib/utils";
+
+const pricingTiers = [
+  {
+    name: "Free Trial Class",
+    price: "Free",
+    sub: "90 minutes · No obligation",
+    description: "Your teen builds a deployed app in their first session. Online or in-person. Most weekends.",
+    features: [
+      "Real shipped app, not a demo",
+      "1-on-1 coach guidance",
+      "We help you decide if VM is the right fit",
+    ],
+    cta: "Book my free trial",
+    highlight: true,
+  },
+  {
+    name: "Group Classes",
+    price: "From SGD $250",
+    sub: "per month · 4–8 students",
+    description: "Weekly small-group sessions outside school hours. Best for momentum + peer collaboration.",
+    features: [
+      "8 sessions per month",
+      "Demo days every 4 weeks",
+      "Pause anytime · no contract lock-in",
+    ],
+    cta: "Talk to us about groups",
+    highlight: false,
+  },
+  {
+    name: "1-to-1 Private Coaching",
+    price: "SGD $80–150",
+    sub: "per session · paced to your child",
+    description: "Mentor-guided weekly sessions, fully tailored to your child's interests, level, and schedule.",
+    features: [
+      "Flexible scheduling (weekends / evenings)",
+      "Direct mentorship + parent updates",
+      "Best for fastest, most-tailored outcomes",
+    ],
+    cta: "Enquire about 1-to-1",
+    highlight: false,
+  },
+];
+
+const parentFAQ = [
+  {
+    q: "What ages do you teach?",
+    a: "Teenagers aged 13–18 (Sec 1 to JC2). The problem-scoping and feedback-iteration cycle requires written communication and abstract thinking that pre-secondary students typically don't have yet.",
+  },
+  {
+    q: "Does my child need any prior coding experience?",
+    a: "No. Most of our students have never coded before their free trial. The whole point of vibe coding is that students describe what they want in plain English and AI generates the code — they iterate from there. The learning is in the thinking, not the syntax.",
+  },
+  {
+    q: "What does my child need to bring or own?",
+    a: "A laptop (Mac or Windows, anything from 2019 onwards is fine). A free Lovable account and a free Claude account — we'll help you set those up before session 1. No software to install.",
+  },
+  {
+    q: "Is it online or in-person?",
+    a: "Both, your choice. Group classes run in-person at our partner space in Singapore. 1-to-1 coaching can be online (Zoom + screen share) or in-person depending on what suits your family. Trial classes are usually online — easier to schedule.",
+  },
+  {
+    q: "How is this different from a Python course at Coding Lab / Saturday Kids / First Code?",
+    a: "Those programmes optimise for syntax mastery — students learn to write code character-by-character. We optimise for shipping real products — students leave with deployed apps used by real classmates. For DSA / EAE / JC interviews, a portfolio of working apps consistently outperforms a course-completion certificate. We're built for teens (13–18); they're mostly built for primary kids.",
+  },
+  {
+    q: "Will my child miss out on 'real' computer science?",
+    a: "Not if they stay curious. Most students who continue past month 2 naturally start asking 'what's actually in the code Lovable generated?' — and that's when traditional CS knowledge becomes meaningful and motivated. Order matters: ship first, theorise second.",
+  },
+  {
+    q: "How fast will I hear back after enquiring?",
+    a: "Within 24 hours on weekdays, sooner on most weekends. We reply via WhatsApp by default — feel free to message +65 8890 0368 directly if you'd rather skip the form.",
+  },
+  {
+    q: "What if my child tries it once and doesn't enjoy it?",
+    a: "Then they don't come back, and we both learn something. That's exactly what the free trial is for. No commitment, no guilt. Most parents tell us they can read in 90 minutes whether vibe coding clicks for their child.",
+  },
+  {
+    q: "Can I see what students have actually built?",
+    a: "Yes — the trial class ends with your teen showing you what they made. We're also building a public portfolio gallery for late 2026 with consenting students' work.",
+  },
+  {
+    q: "Are you MOE-aligned?",
+    a: "Yes. The V.I.B.E. methodology maps to all four MOE 4 AI Learns (Learn about / use / with / beyond AI) and develops the three core 21CC competencies — Critical, Adaptive & Inventive Thinking; Communication & Collaboration; Self-Directed Learning. We've delivered enrichment with 40+ Singapore schools since 2018 (as Dialogic Academy).",
+  },
+];
+
+const parentTestimonials = [
+  {
+    quote: "He came home and opened his laptop without being asked. That hasn't happened since the iPad. Whatever you're doing, it's working.",
+    role: "Parent of a Sec 2 student",
+  },
+  {
+    quote: "What convinced me was the demo class. My daughter shipped a working app in 90 minutes. I had been paying for a Python tutor for 6 months with nothing to show.",
+    role: "Parent of a Sec 3 student",
+  },
+  {
+    quote: "I built a CCA points tracker my entire club uses now. Way more useful than the spreadsheet our teacher made us use last year.",
+    role: "Sec 3 student",
+  },
+];
 
 const outcomes = [
   {
@@ -161,26 +262,61 @@ export default function Parents() {
       </Helmet>
 
       {/* Hero */}
-      <section className="bg-background py-20 md:py-28">
+      <section className="bg-background pt-16 md:pt-24 pb-12 md:pb-16">
         <div className="mx-auto max-w-[1200px] px-6 md:px-14">
           <Reveal variant="up">
             <div className="max-w-3xl">
               <span className="vm-sticker mb-6" style={{ transform: 'rotate(-3deg)' }}>
                 ● For Parents & Students
               </span>
-              <h1 className="font-display font-bold tracking-display leading-[1.02] text-5xl md:text-6xl lg:text-7xl mb-8">
-                Personalised coaching that turns{" "}
-                <span className="vm-sheen-text">curiosity</span>{" "}
-                into real digital projects
+              <h1 className="font-display font-bold tracking-display leading-[1.02] text-4xl sm:text-5xl md:text-6xl lg:text-7xl mb-6">
+                Your teen ships a real app{" "}
+                <span className="vm-sheen-text">in their first session.</span>
               </h1>
-              <p className="font-sans text-base text-foreground max-w-xl leading-[1.55]">
-                For parents who want clear progress and tangible outcomes. Choose 1-to-1 coaching tailored to your child,
-                or small-group build classes outside school.
+              <p className="font-sans text-lg text-foreground max-w-2xl leading-[1.55] mb-3">
+                AI-first coding for teens 13–18. 1-to-1 coaching or small-group classes outside school.
+                Trial class is 90 minutes, online or in-person, and free.
+              </p>
+              <p className="font-sans text-sm text-muted-foreground max-w-2xl leading-[1.55] mb-8">
+                Trusted by 40+ Singapore schools since 2018 · Part of Dialogic Academy
+              </p>
+
+              {/* Above-fold CTAs */}
+              <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 max-w-xl">
+                <Button
+                  asChild
+                  size="lg"
+                  className="rounded-full bg-primary text-primary-foreground font-semibold hover:bg-accent shadow-sticker"
+                >
+                  <a href="#register">Book my free trial →</a>
+                </Button>
+                <Button
+                  asChild
+                  size="lg"
+                  variant="outline"
+                  className="rounded-full font-medium border-2 border-foreground"
+                >
+                  <a
+                    href="https://wa.me/6588900368?text=Hi%20Vibe%20Makers%20%E2%80%94%20I%27m%20enquiring%20about%20coaching%20for%20my%20teen"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    <span className="mr-2" aria-hidden>💬</span>
+                    WhatsApp us +65 8890 0368
+                  </a>
+                </Button>
+              </div>
+              <p className="font-mono text-xs text-muted-foreground mt-4 uppercase tracking-eyebrow">
+                Most parents hear back within 24 hours · No commitment
               </p>
             </div>
           </Reveal>
         </div>
       </section>
+
+      {/* Trust bar — partner schools + stats. Ported from home so /parents
+          starts with credibility before going into the longer pitch. */}
+      <TrustSection />
 
       {/* Learner Profiles - "You might recognise your child here" */}
       <section className="bg-bg-warm py-20 md:py-28 border-t border-border">
@@ -349,6 +485,74 @@ export default function Parents() {
         </div>
       </section>
 
+      {/* Pricing — transparent rates. Per competitor research, every other
+          SG provider hides pricing behind "contact us" — publishing ours
+          is our biggest single conversion wedge. */}
+      <section id="pricing" className="bg-bg-warm py-20 md:py-28 border-t border-border scroll-mt-24">
+        <div className="mx-auto max-w-[1200px] px-6 md:px-14">
+          <Reveal variant="up">
+            <div className="text-center mb-10">
+              <span className="vm-sticker mb-4 inline-block" style={{ transform: 'rotate(-3deg)' }}>
+                ● Simple, Transparent Pricing
+              </span>
+              <h2 className="font-display font-bold tracking-display leading-[1.02] text-3xl md:text-5xl mb-3">
+                Pricing you can decide on without a sales call
+              </h2>
+              <p className="font-sans text-base text-ink-2 max-w-2xl mx-auto">
+                We don't hide rates. The first class is free, and you can pause anytime.
+              </p>
+            </div>
+          </Reveal>
+          <RevealGroup staggerMs={100} variant="up" className="grid md:grid-cols-3 gap-6">
+            {pricingTiers.map((tier) => (
+              <div
+                key={tier.name}
+                className={cn(
+                  "vm-card rounded-2xl border p-8 flex flex-col",
+                  tier.highlight
+                    ? "border-primary bg-card shadow-sticker"
+                    : "border-border bg-card"
+                )}
+              >
+                {tier.highlight && (
+                  <span className="vm-sticker mb-4 self-start" style={{ transform: 'rotate(-3deg)' }}>
+                    Start here
+                  </span>
+                )}
+                <h3 className="font-display font-bold text-xl text-foreground mb-1">{tier.name}</h3>
+                <p className="font-display font-bold text-3xl md:text-4xl text-primary mb-1">{tier.price}</p>
+                <p className="font-sans text-sm text-muted-foreground mb-4">{tier.sub}</p>
+                <p className="font-sans text-base text-ink-2 mb-6 leading-[1.55]">{tier.description}</p>
+                <ul className="space-y-2 mb-6 flex-1">
+                  {tier.features.map((f) => (
+                    <li key={f} className="flex items-start gap-2 text-sm">
+                      <span className="text-primary flex-shrink-0">✓</span>
+                      <span className="font-sans text-foreground">{f}</span>
+                    </li>
+                  ))}
+                </ul>
+                <Button
+                  asChild
+                  className={cn(
+                    "w-full rounded-full font-medium",
+                    tier.highlight
+                      ? "bg-primary text-primary-foreground hover:bg-accent"
+                      : "bg-foreground text-background hover:bg-foreground/90"
+                  )}
+                >
+                  <a href="#register">{tier.cta}</a>
+                </Button>
+              </div>
+            ))}
+          </RevealGroup>
+          <Reveal variant="up" delayMs={400}>
+            <p className="text-center font-sans text-sm text-muted-foreground mt-8">
+              All prices in SGD. No GST surprises. We bill at the start of each month — pause or cancel anytime.
+            </p>
+          </Reveal>
+        </div>
+      </section>
+
       {/* What They Build */}
       <section id="register" className="bg-bg-warm py-20 md:py-28 border-t border-border">
         <div className="mx-auto max-w-[1200px] px-6 md:px-14">
@@ -429,22 +633,101 @@ export default function Parents() {
         </div>
       </section>
 
-      {/* CTA Form */}
+      {/* What parents (and students) say */}
       <section className="bg-bg-warm py-20 md:py-28 border-t border-border">
+        <div className="mx-auto max-w-[1200px] px-6 md:px-14">
+          <Reveal variant="up">
+            <div className="text-center mb-12">
+              <span className="vm-sticker mb-4 inline-block" style={{ transform: 'rotate(3deg)' }}>
+                ● From the families we work with
+              </span>
+              <h2 className="font-display font-bold tracking-display leading-[1.02] text-3xl md:text-5xl mb-3">
+                What parents (and students) say
+              </h2>
+              <p className="font-sans text-sm text-muted-foreground max-w-2xl mx-auto">
+                Quotes are real, anonymised at the family's request. We'll publish a public student showcase later this year with consent.
+              </p>
+            </div>
+          </Reveal>
+          <RevealGroup staggerMs={120} variant="up" className="grid md:grid-cols-3 gap-6">
+            {parentTestimonials.map((t, i) => (
+              <div
+                key={i}
+                className="vm-card rounded-2xl border border-border bg-card p-7 flex flex-col"
+              >
+                <div className="text-4xl text-primary leading-none mb-4 font-display">"</div>
+                <blockquote className="font-display text-lg md:text-xl text-foreground leading-snug font-medium mb-6 flex-1">
+                  {t.quote}
+                </blockquote>
+                <p className="font-mono text-xs uppercase tracking-eyebrow text-muted-foreground">
+                  — {t.role}
+                </p>
+              </div>
+            ))}
+          </RevealGroup>
+        </div>
+      </section>
+
+      {/* FAQ — pre-empt every common parent objection so they don't bounce */}
+      <section className="bg-background py-20 md:py-28 border-t border-border">
+        <div className="mx-auto max-w-[900px] px-6 md:px-14">
+          <Reveal variant="up">
+            <div className="text-center mb-10">
+              <span className="vm-sticker vm-sticker--orange mb-4 inline-block" style={{ transform: 'rotate(-2deg)' }}>
+                ● Common parent questions
+              </span>
+              <h2 className="font-display font-bold tracking-display leading-[1.02] text-3xl md:text-5xl mb-3">
+                Things parents ask before booking
+              </h2>
+              <p className="font-sans text-base text-ink-2">
+                Still unsure? <a href="https://wa.me/6588900368?text=Hi%20Vibe%20Makers" target="_blank" rel="noopener noreferrer" className="text-primary font-medium hover:underline">WhatsApp us</a> — we usually reply same day.
+              </p>
+            </div>
+          </Reveal>
+          <Reveal variant="up" delayMs={120}>
+            <Accordion type="single" collapsible className="space-y-3">
+              {parentFAQ.map((item, idx) => (
+                <AccordionItem
+                  key={idx}
+                  value={`faq-${idx}`}
+                  className="vm-card rounded-2xl border border-border bg-card overflow-hidden px-5"
+                >
+                  <AccordionTrigger className="text-left no-underline hover:no-underline py-5">
+                    <span className="font-semibold text-foreground leading-snug pr-4">{item.q}</span>
+                  </AccordionTrigger>
+                  <AccordionContent className="font-sans text-base text-ink-2 leading-[1.6] pb-5">
+                    {item.a}
+                  </AccordionContent>
+                </AccordionItem>
+              ))}
+            </Accordion>
+          </Reveal>
+        </div>
+      </section>
+
+      {/* CTA Form */}
+      <section id="register" className="bg-bg-warm py-20 md:py-28 border-t border-border scroll-mt-24">
         <div className="mx-auto max-w-[1200px] px-6 md:px-14">
           <Reveal variant="up">
             <div className="max-w-2xl mx-auto">
               <div className="text-center mb-8">
                 <span className="vm-sticker mb-4 inline-block" style={{ transform: 'rotate(-3deg)' }}>
-                  ● Get Started
+                  ● Book your free trial
                 </span>
-                <h2 className="font-display font-bold tracking-display leading-[1.02] text-3xl md:text-4xl mb-3">Register Your Interest</h2>
+                <h2 className="font-display font-bold tracking-display leading-[1.02] text-3xl md:text-5xl mb-3">
+                  Ready when you are
+                </h2>
                 <p className="font-sans text-base text-ink-2">
-                  Tell us what you're looking for (1-to-1 or group). We'll reach out within 2 working days with next
-                  steps.
-                </p>
-                <p className="font-sans text-base text-muted-foreground mt-3">
-                  We'll recommend a starting format and suggest a possible build direction after understanding your child.
+                  Tell us about your teen — we'll reply within 24 hours (usually faster) with the next available trial slot. Or just{" "}
+                  <a
+                    href="https://wa.me/6588900368?text=Hi%20Vibe%20Makers%20%E2%80%94%20I%27d%20like%20to%20book%20a%20free%20trial%20class"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-primary font-medium hover:underline"
+                  >
+                    WhatsApp us
+                  </a>{" "}
+                  if forms aren't your thing.
                 </p>
               </div>
               <RegistrationForm />
