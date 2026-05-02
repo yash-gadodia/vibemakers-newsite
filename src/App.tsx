@@ -30,6 +30,7 @@ const Privacy = lazy(() => import("./pages/Privacy"));
 const Terms = lazy(() => import("./pages/Terms"));
 const NotFound = lazy(() => import("./pages/NotFound"));
 const DemoLoyangView = lazy(() => import("./pages/DemoLoyangView"));
+const IntlSummerCamp = lazy(() => import("./pages/IntlSummerCamp"));
 
 const queryClient = new QueryClient();
 
@@ -78,6 +79,8 @@ const App = () => (
               <Route path="/privacy" element={<Privacy />} />
               <Route path="/terms" element={<Terms />} />
               <Route path="/demo/loyang-view" element={<DemoLoyangView />} />
+              <Route path="/intl-summer-camp" element={<IntlSummerCamp />} />
+              <Route path="/summer-camp" element={<IntlSummerCamp />} />
               <Route path="*" element={<NotFound />} />
             </Routes>
           </Suspense>
