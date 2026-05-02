@@ -32,6 +32,6 @@ describe("NotFound", () => {
       </HelmetProvider>,
     );
     expect(getByText("404")).toBeTruthy();
-    expect(getByText(/Return to Home/i)).toBeTruthy();
+    expect(getByText(/back to home/i)).toBeTruthy();
   });
 });

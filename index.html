@@ -10,6 +10,29 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 
+    <!-- Google tag (gtag.js) — Google Ads + GA4. The actual IDs are injected
+         via Vite at build-time from VITE_GADS_ID + VITE_GA4_ID env vars on
+         Railway. If neither is configured the helper just no-ops, so this
+         block is safe to ship even on the dev environment. -->
+    <script>
+      // Will be replaced by Vite at build time with the env values.
+      window.__VM_GADS_ID__ = "%VITE_GADS_ID%";
+      window.__VM_GA4_ID__ = "%VITE_GA4_ID%";
+      (function () {
+        var ids = [window.__VM_GADS_ID__, window.__VM_GA4_ID__]
+          .filter(function (id) { return id && !id.startsWith("%"); });
+        if (!ids.length) return;
+        var s = document.createElement("script");
+        s.async = true;
+        s.src = "https://www.googletagmanager.com/gtag/js?id=" + encodeURIComponent(ids[0]);
+        document.head.appendChild(s);
+        window.dataLayer = window.dataLayer || [];
+        window.gtag = function () { window.dataLayer.push(arguments); };
+        window.gtag("js", new Date());
+        ids.forEach(function (id) { window.gtag("config", id); });
+      })();
+    </script>
+
     <!-- Google Search Console — domain verification -->
     <meta name="google-site-verification" content="8lSCTJbqGNihseFUCZXK9HhCvbnRY4vX6_vu_XywddA" />
 

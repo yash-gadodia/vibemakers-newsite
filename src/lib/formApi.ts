@@ -1,9 +1,19 @@
 // Form-submission helpers backed by the Railway server.js + Postgres.
 // Replaces direct supabase.from(...).insert() calls in the form components.
+//
+// Successful submits also fire a Google Ads + GA4 conversion via gtag.ts.
+// If the gtag IDs aren't configured (env empty), trackConversion no-ops.
+
+import { trackConversion } from "@/lib/gtag";
 
 const API_BASE = "";
 
-async function postForm<T>(path: string, body: T): Promise<{ ok: true } | { ok: false; error: string }> {
+async function postForm<T>(
+  path: string,
+  body: T,
+  conversionType: string,
+  conversionValue: number = 0,
+): Promise<{ ok: true } | { ok: false; error: string }> {
   try {
     const res = await fetch(`${API_BASE}${path}`, {
       method: "POST",
@@ -13,6 +23,13 @@ async function postForm<T>(path: string, body: T): Promise<{ ok: true } | { ok: 
     const json = await res.json().catch(() => ({}));
     if (!res.ok || !json?.ok) {
       return { ok: false, error: json?.error || `HTTP ${res.status}` };
+    }
+    // Fire-and-forget conversion event. Wrapped in try so a gtag failure
+    // never poisons the success path.
+    try {
+      trackConversion(conversionType, conversionValue);
+    } catch {
+      /* noop */
     }
     return { ok: true };
   } catch (e) {
@@ -28,8 +45,11 @@ export type ParentInterestPayload = {
   programme_interest?: string;
   message?: string | null;
 };
+// Conversion value is the rough gross revenue we'd expect from a converted
+// trial booking (1 trial → ~25-35% paid → avg LTV ~$1500). Google Ads uses
+// this for value-based bidding, so even a coarse number helps optimisation.
 export const submitParentInterest = (data: ParentInterestPayload) =>
-  postForm("/api/parent-interest", data);
+  postForm("/api/parent-interest", data, "parent_interest", 100);
 
 export type SchoolEnquiryPayload = {
   contact_name: string;
@@ -43,7 +63,7 @@ export type SchoolEnquiryPayload = {
   message?: string;
 };
 export const submitSchoolEnquiry = (data: SchoolEnquiryPayload) =>
-  postForm("/api/school-enquiries", data);
+  postForm("/api/school-enquiries", data, "school_enquiry", 500);
 
 export type HackathonWaitlistPayload = {
   name: string;
@@ -53,4 +73,4 @@ export type HackathonWaitlistPayload = {
   parental_consent: boolean;
 };
 export const submitHackathonWaitlist = (data: HackathonWaitlistPayload) =>
-  postForm("/api/hackathon-waitlist", data);
+  postForm("/api/hackathon-waitlist", data, "hackathon_waitlist", 25);
