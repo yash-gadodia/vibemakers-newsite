@@ -1,42 +1,40 @@
-# Logs
-logs
-*.log
-npm-debug.log*
-yarn-debug.log*
-yarn-error.log*
-pnpm-debug.log*
-lerna-debug.log*
 
-node_modules
-dist
-dist-ssr
-*.local
-
-# Editor directories and files
-.vscode/*
+_originals_debug/
+_originals_favicon-1536.png
 !.vscode/extensions.json
-.idea
-.DS_Store
-*.suo
-*.ntvs*
-*.njsproj
-*.sln
-*.sw?
-
-# Claude Code local config
-.claude/settings.local.json
 .claude/agent-memory-local/
+.claude/settings.local.json
 .claude/worktrees/
-
-# Environment / secrets (Supabase keys etc — set on Railway, not here)
+.DS_Store
 .env
 .env.production
-
-# Railway local link metadata
-.railway/
-
-# Lovable platform metadata (legacy — we're off Lovable)
+.idea
 .lovable/
-
-# Playwright MCP cache
 .playwright-mcp/
+.railway/
+.vscode/*
+*.local
+*.log
+*.njsproj
+*.ntvs*
+*.sln
+*.suo
+*.sw?
+# Claude Code local config
+# Editor directories and files
+# Environment / secrets (Supabase keys etc — set on Railway, not here)
+# Image compression originals (kept locally for rollback)
+# Logs
+# Lovable platform metadata (legacy — we're off Lovable)
+# Playwright MCP cache
+# Railway local link metadata
+dist
+dist-ssr
+lerna-debug.log*
+logs
+node_modules
+npm-debug.log*
+pnpm-debug.log*
+src/assets/_originals/
+yarn-debug.log*
+yarn-error.log*

@@ -2,7 +2,7 @@ import { Helmet } from "react-helmet-async";
 import { Layout } from "@/components/layout/Layout";
 import { Reveal } from "@/components/ui/Reveal";
 import { RevealGroup } from "@/components/ui/RevealGroup";
-import aboutHero from "@/assets/about-hero.png";
+import aboutHero from "@/assets/about-hero.jpg";
 import peiSongPhoto from "@/assets/faculty/pei-song.jpg";
 import yashGadodiaPhoto from "@/assets/faculty/yash-gadodia.jpg";
 
