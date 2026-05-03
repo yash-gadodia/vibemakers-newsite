@@ -79,6 +79,9 @@
     --shadow-glow: 0 0 40px hsl(20 100% 55% / 0.30);
     /* Sticker hard-shadow (signature look — flat, no blur) */
     --shadow-sticker: 2px 2px 0 hsl(30 17% 9%);
+    --shadow-card-md: 3px 3px 0 hsl(30 17% 9%);
+    --shadow-card: 4px 4px 0 hsl(30 17% 9%);
+    --shadow-card-lg: 6px 6px 0 hsl(30 17% 9%);
   }
 
   .dark {

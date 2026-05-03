@@ -99,7 +99,9 @@ export default {
         soft: "0 8px 32px -8px hsl(20 100% 55% / 0.15)",
         // Sticker hard-shadow signature look
         sticker: "2px 2px 0 hsl(30 17% 9%)",
+        "sticker-md": "3px 3px 0 hsl(30 17% 9%)",
         "sticker-lg": "4px 4px 0 hsl(30 17% 9%)",
+        "sticker-xl": "6px 6px 0 hsl(30 17% 9%)",
       },
       keyframes: {
         "accordion-down": {
