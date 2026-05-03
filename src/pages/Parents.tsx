@@ -13,7 +13,7 @@ const pricingTiers = [
   {
     name: "Free Trial Class",
     price: "Free",
-    sub: "90 minutes · No obligation",
+    sub: "60 minutes · No obligation",
     description: "Your teen builds a deployed app in their first session. Online or in-person. Most weekends.",
     features: [
       "Real shipped app, not a demo",
@@ -82,7 +82,7 @@ const parentFAQ = [
   },
   {
     q: "What if my child tries it once and doesn't enjoy it?",
-    a: "Then they don't come back, and we both learn something. That's exactly what the free trial is for. No commitment, no guilt. Most parents tell us they can read in 90 minutes whether vibe coding clicks for their child.",
+    a: "Then they don't come back, and we both learn something. That's exactly what the free trial is for. No commitment, no guilt. Most parents tell us they can read in 60 minutes whether vibe coding clicks for their child.",
   },
   {
     q: "Can I see what students have actually built?",
@@ -100,7 +100,7 @@ const parentTestimonials = [
     role: "Parent of a Sec 2 student",
   },
   {
-    quote: "What convinced me was the demo class. My daughter shipped a working app in 90 minutes. I had been paying for a Python tutor for 6 months with nothing to show.",
+    quote: "What convinced me was the demo class. My daughter shipped a working app in 60 minutes. I had been paying for a Python tutor for 6 months with nothing to show.",
     role: "Parent of a Sec 3 student",
   },
   {
@@ -275,7 +275,7 @@ export default function Parents() {
               </h1>
               <p className="font-sans text-lg text-foreground max-w-2xl leading-[1.55] mb-3">
                 AI-first coding for teens 13–18. 1-to-1 coaching or small-group classes outside school.
-                Trial class is 90 minutes, online or in-person, and free.
+                Trial class is 60 minutes, online or in-person, and free.
               </p>
               <p className="font-sans text-sm text-muted-foreground max-w-2xl leading-[1.55] mb-8">
                 Trusted by 40+ Singapore schools since 2018 · Part of Dialogic Academy
