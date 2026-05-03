@@ -2,6 +2,7 @@ import { Helmet } from "react-helmet-async";
 import { Layout } from "@/components/layout/Layout";
 import { Reveal } from "@/components/ui/Reveal";
 import { RevealGroup } from "@/components/ui/RevealGroup";
+import { BrutalSticker } from "@/components/ui/brutal-sticker";
 import aboutHero from "@/assets/about-hero.jpg";
 import peiSongPhoto from "@/assets/faculty/pei-song.jpg";
 import yashGadodiaPhoto from "@/assets/faculty/yash-gadodia.jpg";
@@ -75,7 +76,7 @@ export default function About() {
         <div className="mx-auto max-w-[1200px] px-6 md:px-14">
           <Reveal variant="up">
             <div className="max-w-3xl mx-auto">
-              <span className="vm-sticker" style={{ transform: 'rotate(-2deg)' }}>● Our Story</span>
+              <BrutalSticker rotate={-2}>● Our Story</BrutalSticker>
               <h2 id="our-story" className="font-display font-bold tracking-display leading-[1.02] text-3xl md:text-4xl mb-6 mt-4">Our Story</h2>
               <div className="space-y-4 text-ink-2">
                 <p>
@@ -104,7 +105,7 @@ export default function About() {
         <div className="mx-auto max-w-[1200px] px-6 md:px-14">
           <Reveal variant="up">
             <div className="mb-12">
-              <span className="vm-sticker" style={{ transform: 'rotate(1deg)' }}>● How We Teach</span>
+              <BrutalSticker rotate={1}>● How We Teach</BrutalSticker>
               <h2 id="our-values" className="font-display font-bold tracking-display leading-[1.02] text-3xl md:text-4xl mt-4">How We Teach</h2>
             </div>
           </Reveal>
@@ -127,7 +128,7 @@ export default function About() {
         <div className="mx-auto max-w-[1200px] px-6 md:px-14">
           <Reveal variant="up">
             <div className="mb-12">
-              <span className="vm-sticker" style={{ transform: 'rotate(-1deg)' }}>● Meet the Team</span>
+              <BrutalSticker rotate={-1}>● Meet the Team</BrutalSticker>
               <h2 id="our-faculty" className="font-display font-bold tracking-display leading-[1.02] text-3xl md:text-4xl mt-4 mb-4">Meet the Team</h2>
               <p className="text-ink-2 max-w-2xl">Enrichment educators and product builders — combining Dialogic Academy's 6-year track record with hands-on AI product experience.</p>
             </div>
@@ -160,7 +161,7 @@ export default function About() {
         <div className="mx-auto max-w-[1200px] px-6 md:px-14">
           <Reveal variant="up">
             <div className="max-w-4xl mx-auto mb-12">
-              <span className="vm-sticker" style={{ transform: 'rotate(2deg)' }}>● MOE Alignment</span>
+              <BrutalSticker rotate={2}>● MOE Alignment</BrutalSticker>
               <h2 id="moe-alignment" className="font-display font-bold tracking-display leading-[1.02] text-3xl md:text-4xl text-center mt-4 mb-6">
                 Aligned With Singapore's Education Direction
               </h2>

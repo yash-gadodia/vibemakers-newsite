@@ -1,6 +1,7 @@
 import { Users, Target, RefreshCw } from "lucide-react";
 import { Reveal } from "@/components/ui/Reveal";
 import { RevealGroup } from "@/components/ui/RevealGroup";
+import { BrutalSticker } from "@/components/ui/brutal-sticker";
 
 const pillars = [
   {
@@ -33,9 +34,9 @@ export function ProductThinkingSection() {
         {/* Header */}
         <Reveal variant="up">
           <div className="text-center mb-12">
-            <span className="vm-sticker" style={{ transform: 'rotate(-3deg)' }}>
+            <BrutalSticker tone="yellow" rotate={-3}>
               ● The Mindset
-            </span>
+            </BrutalSticker>
             <h2 className="font-display font-bold tracking-display leading-[1.02] text-3xl md:text-4xl mt-6 mb-6">
               What is Product Thinking?
             </h2>

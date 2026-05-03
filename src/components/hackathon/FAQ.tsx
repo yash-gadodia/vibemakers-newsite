@@ -4,6 +4,7 @@ import {
   AccordionItem,
   AccordionTrigger,
 } from "@/components/ui/accordion";
+import { BrutalSectionHeading } from "@/components/ui/brutal-section-heading";
 
 const faqs = [
   {
@@ -62,17 +63,15 @@ export function FAQ() {
   return (
     <section className="border-t border-border bg-background py-20 md:py-28">
       <div className="mx-auto max-w-[1200px] px-6 md:px-14">
-        <div className="text-center mb-12">
-          <span className="vm-sticker" style={{ transform: 'rotate(-2deg)' }}>
-            ● Ten Questions
-          </span>
-          <h2 className="font-display font-bold tracking-display leading-[1.02] text-3xl md:text-4xl mb-4 mt-6 text-foreground">
-            Frequently Asked Questions
-          </h2>
-          <p className="font-sans text-ink-2">
-            Got questions? We've got answers
-          </p>
-        </div>
+        <BrutalSectionHeading
+          eyebrow="● Ten Questions"
+          eyebrowTone="yellow"
+          title="Frequently Asked Questions"
+          sub="Got questions? We've got answers"
+          align="center"
+          size="md"
+          className="mb-12"
+        />
 
         <div className="max-w-2xl mx-auto">
           <Accordion type="single" collapsible className="space-y-3">

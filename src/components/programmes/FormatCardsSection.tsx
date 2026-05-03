@@ -1,7 +1,9 @@
 import { Link } from "react-router-dom";
-import { Building2, Home, ArrowRight } from "lucide-react";
+import { Building2, Home } from "lucide-react";
 import { Reveal } from "@/components/ui/Reveal";
 import { RevealGroup } from "@/components/ui/RevealGroup";
+import { BrutalSticker } from "@/components/ui/brutal-sticker";
+import { BrutalButton } from "@/components/ui/brutal-button";
 
 export function FormatCardsSection() {
   return (
@@ -9,9 +11,9 @@ export function FormatCardsSection() {
       <div className="mx-auto max-w-[1200px] px-6 md:px-14">
         <Reveal variant="up">
           <div className="text-center mb-12">
-            <span className="vm-sticker" style={{ transform: 'rotate(-3deg)' }}>
+            <BrutalSticker tone="yellow" rotate={-3}>
               ● Formats
-            </span>
+            </BrutalSticker>
             <h2 className="font-display font-bold tracking-display leading-[1.02] text-3xl md:text-4xl text-foreground mt-6 mb-6">
               Choose Your Format
             </h2>
@@ -33,13 +35,12 @@ export function FormatCardsSection() {
             <p className="font-sans text-foreground mb-8 leading-relaxed">
               School-based programmes for post-exam periods, enrichment blocks, and special programmes.
             </p>
-            <Link
-              to="/schools"
-              className="vm-btn inline-flex items-center gap-2 rounded-full bg-primary text-primary-foreground px-6 py-3 shadow-sticker"
-            >
-              View School Programmes
-              <span className="vm-arrow">→</span>
-            </Link>
+            <BrutalButton asChild variant="primary" size="md" className="rounded-full shadow-sticker">
+              <Link to="/schools">
+                View School Programmes
+                <span className="vm-arrow">→</span>
+              </Link>
+            </BrutalButton>
           </div>
 
           {/* Parents Card */}
@@ -53,13 +54,12 @@ export function FormatCardsSection() {
             <p className="font-sans text-foreground mb-8 leading-relaxed">
               Holiday classes and small-group coaching for students and families.
             </p>
-            <Link
-              to="/parents"
-              className="vm-btn inline-flex items-center gap-2 rounded-full bg-primary text-primary-foreground px-6 py-3 shadow-sticker"
-            >
-              View Classes for Parents & Students
-              <span className="vm-arrow">→</span>
-            </Link>
+            <BrutalButton asChild variant="primary" size="md" className="rounded-full shadow-sticker">
+              <Link to="/parents">
+                View Classes for Parents & Students
+                <span className="vm-arrow">→</span>
+              </Link>
+            </BrutalButton>
           </div>
         </RevealGroup>
       </div>

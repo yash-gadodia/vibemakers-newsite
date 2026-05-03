@@ -1,3 +1,5 @@
+import { BrutalSectionHeading } from "@/components/ui/brutal-section-heading";
+
 const mainPrizes = [
   {
     position: "1st Place",
@@ -36,17 +38,15 @@ export function Prizes() {
   return (
     <section className="border-t border-border bg-bg-warm py-20 md:py-28">
       <div className="mx-auto max-w-[1200px] px-6 md:px-14">
-        <div className="text-center mb-12">
-          <span className="vm-sticker vm-sticker--orange inline-block" style={{ transform: 'rotate(-2deg)' }}>
-            ● Prizes & Rewards
-          </span>
-          <h2 className="font-display font-bold tracking-display leading-[1.02] text-3xl md:text-4xl mb-4 mt-6 text-foreground">
-            Awards & Prizes
-          </h2>
-          <p className="font-sans text-ink-2">
-            Amazing prizes to be announced! ✨
-          </p>
-        </div>
+        <BrutalSectionHeading
+          eyebrow="● Prizes & Rewards"
+          eyebrowTone="orange"
+          title="Awards & Prizes"
+          sub="Amazing prizes to be announced! ✨"
+          align="center"
+          size="md"
+          className="mb-12"
+        />
 
         {/* Main Prizes */}
         <div className="grid sm:grid-cols-3 gap-6 max-w-4xl mx-auto mb-12">

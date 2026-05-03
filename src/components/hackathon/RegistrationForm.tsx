@@ -1,9 +1,9 @@
 import { useState } from "react";
-import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Checkbox } from "@/components/ui/checkbox";
 import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group";
+import { BrutalButton } from "@/components/ui/brutal-button";
 import {
   Select,
   SelectContent,
@@ -222,10 +222,12 @@ export function RegistrationForm() {
                   </Label>
                 </div>
 
-                <button
+                <BrutalButton
                   type="submit"
+                  variant="primary"
+                  size="md"
                   disabled={loading || !consent}
-                  className="vm-btn inline-flex items-center justify-center gap-2 rounded-full bg-primary px-6 py-3 text-primary-foreground shadow-sticker disabled:opacity-50 w-full"
+                  className="rounded-full w-full"
                 >
                   {loading ? (
                     "Submitting..."
@@ -235,7 +237,7 @@ export function RegistrationForm() {
                       <span className="vm-arrow">→</span>
                     </>
                   )}
-                </button>
+                </BrutalButton>
               </form>
             </div>
           )}

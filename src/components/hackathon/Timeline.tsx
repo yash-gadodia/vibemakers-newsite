@@ -1,3 +1,5 @@
+import { BrutalSectionHeading } from "@/components/ui/brutal-section-heading";
+
 const events = [
   { emoji: "📋", event: "Registration Opens", date: "TBC", description: "Sign up and register your interest" },
   { emoji: "⏰", event: "Application Deadline", date: "TBC", description: "Submit your application" },
@@ -11,17 +13,15 @@ export function Timeline() {
   return (
     <section className="border-t border-border bg-bg-warm py-20 md:py-28">
       <div className="mx-auto max-w-[1200px] px-6 md:px-14">
-        <div className="text-center mb-12">
-          <span className="vm-sticker" style={{ transform: 'rotate(1deg)' }}>
-            ● Timeline
-          </span>
-          <h2 className="font-display font-bold tracking-display leading-[1.02] text-3xl md:text-4xl mb-4 mt-6 text-foreground">
-            Event Timeline
-          </h2>
-          <p className="font-sans text-ink-2">
-            🕐 Dates to be announced
-          </p>
-        </div>
+        <BrutalSectionHeading
+          eyebrow="● Timeline"
+          eyebrowTone="yellow"
+          title="Event Timeline"
+          sub="🕐 Dates to be announced"
+          align="center"
+          size="md"
+          className="mb-12"
+        />
 
         <div className="max-w-3xl mx-auto">
           <div className="relative">

@@ -1,3 +1,5 @@
+import { BrutalSectionHeading } from "@/components/ui/brutal-section-heading";
+
 const criteria = [
   {
     emoji: "💡",
@@ -29,17 +31,15 @@ export function JudgingCriteria() {
   return (
     <section className="border-t border-border bg-background py-20 md:py-28">
       <div className="mx-auto max-w-[1200px] px-6 md:px-14">
-        <div className="text-center mb-12">
-          <span className="vm-sticker vm-sticker--orange inline-block" style={{ transform: 'rotate(2deg)' }}>
-            ● Fair Judging
-          </span>
-          <h2 className="font-display font-bold tracking-display leading-[1.02] text-3xl md:text-4xl mb-4 mt-6 text-foreground">
-            Judging Criteria
-          </h2>
-          <p className="font-sans text-ink-2 max-w-2xl mx-auto">
-            Projects will be evaluated across four equally-weighted dimensions
-          </p>
-        </div>
+        <BrutalSectionHeading
+          eyebrow="● Fair Judging"
+          eyebrowTone="orange"
+          title="Judging Criteria"
+          sub="Projects will be evaluated across four equally-weighted dimensions"
+          align="center"
+          size="md"
+          className="mb-12"
+        />
 
         <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6 max-w-5xl mx-auto">
           {criteria.map((item) => (

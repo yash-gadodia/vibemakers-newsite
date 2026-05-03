@@ -1,3 +1,5 @@
+import { BrutalSectionHeading } from "@/components/ui/brutal-section-heading";
+
 const day1Schedule = [
   { time: "9:00 AM", activity: "Registration & Opening Ceremony" },
   { time: "10:00 AM", activity: "Vibe Coding Workshop" },
@@ -20,17 +22,15 @@ export function EventFormat() {
   return (
     <section className="border-t border-border bg-bg-warm py-20 md:py-28">
       <div className="mx-auto max-w-[1200px] px-6 md:px-14">
-        <div className="text-center mb-12">
-          <span className="vm-sticker" style={{ transform: 'rotate(2deg)' }}>
-            ● Two Saturdays
-          </span>
-          <h2 className="font-display font-bold tracking-display leading-[1.02] text-3xl md:text-4xl mb-4 mt-6 text-foreground">
-            2-Day Event Format
-          </h2>
-          <p className="font-sans text-foreground max-w-2xl mx-auto text-ink-2">
-            Learn vibe coding on Day 1, build at home overnight, and demo on Day 2
-          </p>
-        </div>
+        <BrutalSectionHeading
+          eyebrow="● Two Saturdays"
+          eyebrowTone="yellow"
+          title="2-Day Event Format"
+          sub="Learn vibe coding on Day 1, build at home overnight, and demo on Day 2"
+          align="center"
+          size="md"
+          className="mb-12"
+        />
 
         <div className="grid lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
           {/* Day 1 */}

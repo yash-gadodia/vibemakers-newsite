@@ -1,5 +1,6 @@
 import { Compass, Lightbulb, Layers, Repeat, Quote } from "lucide-react";
 import { Reveal } from "@/components/ui/Reveal";
+import { BrutalSticker } from "@/components/ui/brutal-sticker";
 
 const journeySteps = [
   {
@@ -59,9 +60,9 @@ export function CaseStudySection() {
         {/* Header */}
         <Reveal variant="up">
           <div className="text-center mb-12">
-            <span className="vm-sticker vm-sticker--orange" style={{ transform: 'rotate(-3deg)' }}>
+            <BrutalSticker tone="orange" rotate={-3}>
               ● Case Study
-            </span>
+            </BrutalSticker>
             <h2 className="font-display font-bold tracking-display leading-[1.02] text-3xl md:text-4xl text-foreground mt-6 mb-6">
               A Student's Journey
             </h2>

@@ -7,6 +7,7 @@ import {
 } from "@/components/ui/accordion";
 import { Reveal } from "@/components/ui/Reveal";
 import { parentsFAQs, schoolsFAQs } from "@/components/programmes/FAQSection";
+import { BrutalSticker } from "@/components/ui/brutal-sticker";
 
 function FAQAccordion({ faqs }: { faqs: Array<{ question: string; answer: string }> }) {
   return (
@@ -27,9 +28,9 @@ export function ProgrammeFAQ() {
       <div className="mx-auto max-w-[1200px] px-6 md:px-14">
         <Reveal variant="up">
           <div className="text-center mb-12">
-            <span className="vm-sticker" style={{ transform: 'rotate(3deg)' }}>
+            <BrutalSticker tone="yellow" rotate={3}>
               ● FAQ
-            </span>
+            </BrutalSticker>
             <h2 className="font-display font-bold tracking-display leading-[1.02] text-3xl md:text-4xl text-foreground mt-6 mb-4">
               Frequently Asked Questions
             </h2>

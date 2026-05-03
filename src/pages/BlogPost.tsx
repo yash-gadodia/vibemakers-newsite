@@ -5,6 +5,10 @@ import { useQuery } from "@tanstack/react-query";
 import { format } from "date-fns";
 import DOMPurify from "dompurify";
 import { Layout } from "@/components/layout/Layout";
+import { BrutalCard } from "@/components/ui/brutal-card";
+import { BrutalSticker } from "@/components/ui/brutal-sticker";
+import { BrutalButton } from "@/components/ui/brutal-button";
+import { BrutalSectionHeading } from "@/components/ui/brutal-section-heading";
 import { getBlogPost, type BlogPost } from "@/lib/blogApi";
 
 const BlogPost = () => {
@@ -29,9 +33,9 @@ const BlogPost = () => {
         </Helmet>
         <section className="bg-background py-20 md:py-28">
           <div className="mx-auto max-w-3xl px-6 md:px-14">
-            <div className="vm-card rounded-2xl border border-border bg-card p-8 text-center text-muted-foreground">
+            <BrutalCard className="p-8 text-center text-muted-foreground">
               Loading article...
-            </div>
+            </BrutalCard>
           </div>
         </section>
       </Layout>
@@ -46,21 +50,20 @@ const BlogPost = () => {
         </Helmet>
         <section className="bg-background py-20 md:py-28">
           <div className="mx-auto max-w-3xl px-6 md:px-14">
-            <div className="vm-card rounded-2xl border border-border bg-card p-12 text-center">
+            <BrutalCard className="p-12 text-center">
               <h1 className="font-display font-bold tracking-display text-2xl mb-4 text-foreground">
                 Post Not Found
               </h1>
               <p className="text-muted-foreground mb-6">
                 The article you're looking for doesn't exist or has been removed.
               </p>
-              <Link
-                to="/blog"
-                className="vm-btn inline-flex items-center gap-2 rounded-full bg-primary px-5 py-3 font-medium text-primary-foreground shadow-sticker hover:no-underline"
-              >
-                Back to all posts
-                <span className="vm-arrow">→</span>
-              </Link>
-            </div>
+              <BrutalButton variant="primary" size="md" asChild>
+                <Link to="/blog" className="hover:no-underline">
+                  Back to all posts
+                  <span className="vm-arrow">→</span>
+                </Link>
+              </BrutalButton>
+            </BrutalCard>
           </div>
         </section>
       </Layout>
@@ -99,20 +102,14 @@ const BlogPost = () => {
       <article>
         <section className="bg-background py-20 md:py-28">
           <div className="mx-auto max-w-3xl px-6 md:px-14">
-            {post.category && (
-              <span
-                className="vm-sticker inline-block"
-                style={{ transform: "rotate(-3deg)" }}
-              >
-                {post.category}
-              </span>
-            )}
+            <BrutalSectionHeading
+              eyebrow={post.category || undefined}
+              title={post.title}
+              size="lg"
+              align="left"
+            />
 
-            <h1 className="font-display font-bold tracking-display leading-[1.02] text-4xl md:text-5xl mt-6 mb-6">
-              {post.title}
-            </h1>
-
-            <div className="flex flex-wrap items-center gap-4 text-muted-foreground mb-8">
+            <div className="flex flex-wrap items-center gap-4 text-muted-foreground mt-6 mb-8">
               {post.author && <span className="font-medium">{post.author}</span>}
               {post.author && post.published_at && (
                 <span className="text-ink-2">·</span>
@@ -146,28 +143,25 @@ const BlogPost = () => {
                 <p className="text-sm font-medium text-ink-2 mb-4">Tags</p>
                 <div className="flex flex-wrap gap-3">
                   {post.tags.map((tag, idx) => (
-                    <span
+                    <BrutalSticker
                       key={idx}
-                      className="vm-sticker text-sm"
-                      style={{
-                        transform: `rotate(${idx % 2 === 0 ? -3 : 3}deg)`,
-                      }}
+                      rotate={idx % 2 === 0 ? -3 : 3}
+                      className="text-sm"
                     >
                       {tag}
-                    </span>
+                    </BrutalSticker>
                   ))}
                 </div>
               </div>
             )}
 
             <div className="mt-12 pt-8 border-t border-border">
-              <Link
-                to="/blog"
-                className="vm-btn inline-flex items-center gap-2 rounded-full bg-primary px-5 py-3 font-medium text-primary-foreground shadow-sticker hover:no-underline"
-              >
-                Back to all posts
-                <span className="vm-arrow">→</span>
-              </Link>
+              <BrutalButton variant="primary" size="md" asChild>
+                <Link to="/blog" className="hover:no-underline">
+                  Back to all posts
+                  <span className="vm-arrow">→</span>
+                </Link>
+              </BrutalButton>
             </div>
           </div>
         </section>

@@ -3,10 +3,12 @@ import { Helmet } from "react-helmet-async";
 import { Layout } from "@/components/layout/Layout";
 import { ArrowDown, Check, Eye, Lightbulb, Hammer, RotateCcw, Brain, MessageSquare, Monitor, Compass, BookOpen, Users, ShieldCheck } from "lucide-react";
 import { PartnershipForm } from "@/components/programmes/PartnershipForm";
-import { Button } from "@/components/ui/button";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 import { Reveal } from "@/components/ui/Reveal";
 import { RevealGroup } from "@/components/ui/RevealGroup";
+import { BrutalSticker } from "@/components/ui/brutal-sticker";
+import { BrutalCard } from "@/components/ui/brutal-card";
+import { BrutalButton } from "@/components/ui/brutal-button";
 import { cn } from "@/lib/utils";
 
 const fourLearns = [
@@ -331,9 +333,7 @@ export default function Schools() {
           <Reveal variant="up">
             <div className="max-w-3xl">
               <div className="flex flex-wrap items-center gap-3 mb-6">
-                <span className="vm-sticker" style={{ transform: 'rotate(-3deg)' }}>
-                  ● For Schools
-                </span>
+                <BrutalSticker>● For Schools</BrutalSticker>
                 <span className="font-mono text-xs uppercase tracking-eyebrow text-muted-foreground">
                   MOE 4 AI Learns aligned · 21CC mapped
                 </span>
@@ -353,10 +353,10 @@ export default function Schools() {
               </p>
 
               <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 max-w-xl">
-                <Button asChild size="lg" className="rounded-full bg-primary text-primary-foreground font-semibold hover:bg-accent shadow-sticker">
+                <BrutalButton variant="primary" size="lg" asChild>
                   <a href="#proposal">Get a proposal →</a>
-                </Button>
-                <Button asChild size="lg" variant="outline" className="rounded-full font-medium border-2 border-foreground">
+                </BrutalButton>
+                <BrutalButton variant="outline" size="lg" asChild>
                   <a
                     href="https://wa.me/6588900368?text=Hi%20Vibe%20Makers%20%E2%80%94%20I%27m%20enquiring%20about%20a%20school%20workshop"
                     target="_blank"
@@ -365,7 +365,7 @@ export default function Schools() {
                     <span className="mr-2" aria-hidden>💬</span>
                     WhatsApp +65 8890 0368
                   </a>
-                </Button>
+                </BrutalButton>
               </div>
               <p className="font-mono text-xs text-muted-foreground mt-4 uppercase tracking-eyebrow">
                 Tailored proposal within 1 working day · Free pilot session available
@@ -450,9 +450,9 @@ export default function Schools() {
         <div className="mx-auto max-w-[1200px] px-6 md:px-14">
           <Reveal variant="up">
             <div className="max-w-3xl mb-12">
-              <span className="vm-sticker vm-sticker--orange inline-block mb-4" style={{ transform: 'rotate(-2deg)' }}>
+              <BrutalSticker tone="orange" rotate={-2} className="mb-4">
                 ● MOE 4 AI Learns alignment
-              </span>
+              </BrutalSticker>
               <h2 className="font-display font-bold tracking-display leading-[1.02] text-3xl md:text-5xl mb-3">
                 We hit all four 'Learns' — including the one most providers skip
               </h2>
@@ -465,13 +465,12 @@ export default function Schools() {
             {fourLearns.map((p) => {
               const Icon = p.icon;
               return (
-                <div
+                <BrutalCard
                   key={p.pillar}
+                  shadow={p.highlight ? "sm" : "none"}
                   className={cn(
-                    "vm-card rounded-2xl border p-6 flex flex-col h-full",
-                    p.highlight
-                      ? "border-primary bg-card shadow-sticker"
-                      : "border-border bg-card"
+                    "p-6 flex flex-col h-full",
+                    p.highlight ? "border-primary" : "border-border",
                   )}
                 >
                   <div className="flex items-center justify-between mb-4">
@@ -488,7 +487,7 @@ export default function Schools() {
                     <p className="font-mono text-[10px] uppercase tracking-eyebrow text-primary mb-1">How we deliver</p>
                     <p className="font-sans text-xs text-foreground leading-[1.5]">{p.weDo}</p>
                   </div>
-                </div>
+                </BrutalCard>
               );
             })}
           </RevealGroup>
@@ -529,33 +528,36 @@ export default function Schools() {
 
             <Reveal variant="up" delayMs={200}>
               <div className="mt-8 flex flex-wrap gap-3">
-                <a
-                  href="https://dialogic.academy"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="vm-btn inline-flex items-center gap-2 rounded-full bg-primary px-5 py-3 font-medium text-primary-foreground shadow-sticker"
-                >
-                  Visit Dialogic Academy
-                  <span className="vm-arrow">→</span>
-                </a>
-                <a
-                  href="https://www.moe.gov.sg/education-in-sg/21st-century-competencies"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="inline-flex items-center gap-2 px-5 py-3 font-medium rounded-full bg-transparent text-foreground border-[1.5px] border-foreground hover:bg-foreground hover:text-background transition-colors"
-                >
-                  MOE 21CC Framework
-                  <span className="vm-arrow">→</span>
-                </a>
-                <a
-                  href="https://www.moe.gov.sg/education-in-sg/educational-technology-journey/edtech-masterplan"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="inline-flex items-center gap-2 px-5 py-3 font-medium rounded-full bg-transparent text-foreground border-[1.5px] border-foreground hover:bg-foreground hover:text-background transition-colors"
-                >
-                  EdTech Masterplan 2030
-                  <span className="vm-arrow">→</span>
-                </a>
+                <BrutalButton variant="primary" size="md" asChild>
+                  <a
+                    href="https://dialogic.academy"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    Visit Dialogic Academy
+                    <span className="vm-arrow">→</span>
+                  </a>
+                </BrutalButton>
+                <BrutalButton variant="outline" size="md" asChild>
+                  <a
+                    href="https://www.moe.gov.sg/education-in-sg/21st-century-competencies"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    MOE 21CC Framework
+                    <span className="vm-arrow">→</span>
+                  </a>
+                </BrutalButton>
+                <BrutalButton variant="outline" size="md" asChild>
+                  <a
+                    href="https://www.moe.gov.sg/education-in-sg/educational-technology-journey/edtech-masterplan"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    EdTech Masterplan 2030
+                    <span className="vm-arrow">→</span>
+                  </a>
+                </BrutalButton>
               </div>
             </Reveal>
           </div>
@@ -567,12 +569,7 @@ export default function Schools() {
         <div className="mx-auto max-w-[1200px] px-6 md:px-14">
           <Reveal variant="up">
             <div className="mb-10">
-              <span
-                className="vm-sticker inline-block mb-4"
-                style={{ transform: 'rotate(3deg)' }}
-              >
-                ● Flexible Options
-              </span>
+              <BrutalSticker rotate={3} className="mb-4">● Flexible Options</BrutalSticker>
               <h2 className="font-display font-bold tracking-display leading-[1.02] text-3xl md:text-4xl mb-3">
                 Programme Formats
               </h2>
@@ -584,7 +581,7 @@ All formats run the same V.I.B.E. methodology — Vision, Ideate, Build, Evolve.
 
           <RevealGroup staggerMs={100} variant="up" className="grid md:grid-cols-3 gap-6">
             {formats.map((format) => {
-              return <div key={format.title} className="vm-card rounded-2xl border border-border bg-card p-6">
+              return <BrutalCard key={format.title} className="p-6">
                     {/* Header row */}
                     <div className="flex items-center justify-between mb-6">
                       <span className="inline-flex items-center px-3 py-1 text-xs font-medium rounded-full uppercase bg-foreground text-white">
@@ -625,11 +622,13 @@ All formats run the same V.I.B.E. methodology — Vision, Ideate, Build, Evolve.
                     </div>
 
                     {/* CTA */}
-                    <a href="#proposal" className="vm-btn inline-flex w-full items-center justify-center gap-2 rounded-full bg-primary px-5 py-3 font-medium text-primary-foreground shadow-sticker">
-                      Request This Format
-                      <span className="vm-arrow">→</span>
-                    </a>
-                  </div>;
+                    <BrutalButton variant="primary" size="md" asChild className="w-full">
+                      <a href="#proposal">
+                        Request This Format
+                        <span className="vm-arrow">→</span>
+                      </a>
+                    </BrutalButton>
+                  </BrutalCard>;
             })}
           </RevealGroup>
         </div>
@@ -640,12 +639,7 @@ All formats run the same V.I.B.E. methodology — Vision, Ideate, Build, Evolve.
         <div className="mx-auto max-w-[1200px] px-6 md:px-14">
           <Reveal variant="up">
             <div className="mb-10">
-              <span
-                className="vm-sticker vm-sticker--orange inline-block mb-4"
-                style={{ transform: 'rotate(-3deg)' }}
-              >
-                ● Project Options
-              </span>
+              <BrutalSticker tone="orange" className="mb-4">● Project Options</BrutalSticker>
               <h2 className="font-display font-bold tracking-display leading-[1.02] text-3xl md:text-4xl mb-3">
                 Build Tracks
               </h2>
@@ -656,7 +650,7 @@ All formats run the same V.I.B.E. methodology — Vision, Ideate, Build, Evolve.
           </Reveal>
 
           <RevealGroup staggerMs={100} variant="up" className="grid md:grid-cols-3 gap-6">
-            {buildTracks.map(track => <div key={track.title} className="vm-card rounded-2xl border border-border bg-card p-6">
+            {buildTracks.map(track => <BrutalCard key={track.title} className="p-6">
                 <div className="w-12 h-12 rounded-xl bg-bg-warm flex items-center justify-center mb-4">
                   <span className="text-3xl">{track.emoji}</span>
                 </div>
@@ -666,7 +660,7 @@ All formats run the same V.I.B.E. methodology — Vision, Ideate, Build, Evolve.
                   <span className="text-ink-2">Best for:</span>{" "}
                   <span className="text-foreground">{track.bestFor}</span>
                 </p>
-              </div>)}
+              </BrutalCard>)}
           </RevealGroup>
         </div>
       </section>
@@ -676,12 +670,7 @@ All formats run the same V.I.B.E. methodology — Vision, Ideate, Build, Evolve.
         <div className="mx-auto max-w-[1200px] px-6 md:px-14">
           <Reveal variant="up">
             <div className="max-w-3xl mx-auto text-center mb-12">
-              <span
-                className="vm-sticker inline-block mb-4"
-                style={{ transform: 'rotate(3deg)' }}
-              >
-                ● Our Methodology
-              </span>
+              <BrutalSticker rotate={3} className="mb-4">● Our Methodology</BrutalSticker>
               <h2 className="font-display font-bold tracking-display leading-[1.02] text-3xl md:text-4xl mb-3">
                 The V.I.B.E. Cycle
               </h2>
@@ -695,16 +684,10 @@ All formats run the same V.I.B.E. methodology — Vision, Ideate, Build, Evolve.
             {vibePhases.map((phase, idx) => {
               const Icon = phase.icon;
               return (
-                <div
-                  key={phase.key}
-                  className="vm-card rounded-2xl border border-border bg-card p-6"
-                >
-                  <span
-                    className="vm-sticker inline-block mb-4"
-                    style={{ transform: idx % 2 === 0 ? 'rotate(-3deg)' : 'rotate(3deg)' }}
-                  >
+                <BrutalCard key={phase.key} className="p-6">
+                  <BrutalSticker rotate={idx % 2 === 0 ? -3 : 3} className="mb-4">
                     ● {phase.label}
-                  </span>
+                  </BrutalSticker>
                   <div className="w-10 h-10 rounded-lg bg-bg-warm flex items-center justify-center mb-3">
                     <Icon className="w-5 h-5 text-primary" />
                   </div>
@@ -715,7 +698,7 @@ All formats run the same V.I.B.E. methodology — Vision, Ideate, Build, Evolve.
                       <span className="font-medium">Evidence:</span> {phase.evidence}
                     </p>
                   </div>
-                </div>
+                </BrutalCard>
               );
             })}
           </RevealGroup>
@@ -733,12 +716,7 @@ All formats run the same V.I.B.E. methodology — Vision, Ideate, Build, Evolve.
         <div className="mx-auto max-w-[1200px] px-6 md:px-14">
           <Reveal variant="up">
             <div className="max-w-3xl mx-auto text-center mb-10">
-              <span
-                className="vm-sticker vm-sticker--orange inline-block mb-4"
-                style={{ transform: 'rotate(-3deg)' }}
-              >
-                ● Sample Programme
-              </span>
+              <BrutalSticker tone="orange" className="mb-4">● Sample Programme</BrutalSticker>
               <h2 className="font-display font-bold tracking-display leading-[1.02] text-3xl md:text-4xl mb-3">
                 What a Programme Looks Like
               </h2>
@@ -751,9 +729,9 @@ All formats run the same V.I.B.E. methodology — Vision, Ideate, Build, Evolve.
           <Reveal variant="up" delayMs={100}>
             <div className="max-w-4xl mx-auto space-y-4">
               {lessonPlan.map((session, index) => (
-                <div
+                <BrutalCard
                   key={session.day}
-                  className="vm-card rounded-2xl border border-border bg-card p-5 md:p-6"
+                  className="p-5 md:p-6"
                 >
                   <div className="flex flex-col md:flex-row md:items-start gap-4">
                     {/* Day badge */}
@@ -779,7 +757,7 @@ All formats run the same V.I.B.E. methodology — Vision, Ideate, Build, Evolve.
                       </div>
                     </div>
                   </div>
-                </div>
+                </BrutalCard>
               ))}
             </div>
           </Reveal>
@@ -867,12 +845,7 @@ All formats run the same V.I.B.E. methodology — Vision, Ideate, Build, Evolve.
             {/* Left column */}
             <Reveal variant="left">
               <div>
-                <span
-                  className="vm-sticker inline-block mb-4"
-                  style={{ transform: 'rotate(3deg)' }}
-                >
-                  ● Customisation
-                </span>
+                <BrutalSticker rotate={3} className="mb-4">● Customisation</BrutalSticker>
                 <h2 className="font-display font-bold tracking-display leading-[1.02] text-3xl md:text-4xl mb-4">
                   How Schools Customise a Programme
                 </h2>
@@ -925,9 +898,7 @@ All formats run the same V.I.B.E. methodology — Vision, Ideate, Build, Evolve.
         <div className="mx-auto max-w-[1200px] px-6 md:px-14">
           <Reveal variant="up">
             <div className="text-center max-w-3xl mx-auto mb-12">
-              <span className="vm-sticker inline-block mb-4" style={{ transform: 'rotate(-3deg)' }}>
-                ● Transparent pricing
-              </span>
+              <BrutalSticker className="mb-4">● Transparent pricing</BrutalSticker>
               <h2 className="font-display font-bold tracking-display leading-[1.02] text-3xl md:text-5xl mb-3">
                 Pricing your VP can sign off in one read
               </h2>
@@ -938,19 +909,18 @@ All formats run the same V.I.B.E. methodology — Vision, Ideate, Build, Evolve.
           </Reveal>
           <RevealGroup staggerMs={120} variant="up" className="grid md:grid-cols-3 gap-6">
             {schoolPricing.map((tier) => (
-              <div
+              <BrutalCard
                 key={tier.name}
+                shadow={tier.highlight ? "sm" : "none"}
                 className={cn(
-                  "vm-card rounded-2xl border p-6 flex flex-col",
-                  tier.highlight
-                    ? "border-primary bg-card shadow-sticker"
-                    : "border-border bg-card"
+                  "p-6 flex flex-col",
+                  tier.highlight ? "border-primary" : "border-border",
                 )}
               >
                 {tier.highlight && (
-                  <span className="vm-sticker mb-3 self-start" style={{ transform: 'rotate(-3deg)' }}>
+                  <BrutalSticker className="mb-3 self-start">
                     Most booked
-                  </span>
+                  </BrutalSticker>
                 )}
                 <h3 className="font-display font-bold text-xl text-foreground mb-1">{tier.name}</h3>
                 <p className="font-display font-bold text-2xl md:text-3xl text-primary mb-1">{tier.price}</p>
@@ -964,18 +934,15 @@ All formats run the same V.I.B.E. methodology — Vision, Ideate, Build, Evolve.
                     </li>
                   ))}
                 </ul>
-                <Button
+                <BrutalButton
+                  variant={tier.highlight ? "primary" : "dark"}
+                  size="md"
                   asChild
-                  className={cn(
-                    "w-full mt-auto rounded-full font-medium",
-                    tier.highlight
-                      ? "bg-primary text-primary-foreground hover:bg-accent"
-                      : "bg-foreground text-background hover:bg-foreground/90"
-                  )}
+                  className="w-full mt-auto"
                 >
                   <a href="#proposal">Request quote</a>
-                </Button>
-              </div>
+                </BrutalButton>
+              </BrutalCard>
             ))}
           </RevealGroup>
           <Reveal variant="up" delayMs={400}>
@@ -991,9 +958,9 @@ All formats run the same V.I.B.E. methodology — Vision, Ideate, Build, Evolve.
         <div className="mx-auto max-w-[900px] px-6 md:px-14">
           <Reveal variant="up">
             <div className="text-center mb-10">
-              <span className="vm-sticker vm-sticker--orange inline-block mb-4" style={{ transform: 'rotate(-2deg)' }}>
+              <BrutalSticker tone="orange" rotate={-2} className="mb-4">
                 ● Common questions from HoDs + VPs
-              </span>
+              </BrutalSticker>
               <h2 className="font-display font-bold tracking-display leading-[1.02] text-3xl md:text-5xl mb-3">
                 Things schools ask before booking
               </h2>

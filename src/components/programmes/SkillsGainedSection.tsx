@@ -1,6 +1,7 @@
 import { cn } from "@/lib/utils";
 import { Reveal } from "@/components/ui/Reveal";
 import { RevealGroup } from "@/components/ui/RevealGroup";
+import { BrutalSticker } from "@/components/ui/brutal-sticker";
 
 interface Skill {
   emoji: string;
@@ -62,9 +63,9 @@ export function SkillsGainedSection() {
         {/* Header */}
         <Reveal variant="up">
           <div className="mb-12">
-            <span className="vm-sticker" style={{ transform: 'rotate(3deg)' }}>
+            <BrutalSticker tone="yellow" rotate={3}>
               ● Skills
-            </span>
+            </BrutalSticker>
             <h2 className="font-display font-bold tracking-display leading-[1.02] text-3xl md:text-4xl text-foreground mt-6">
               What Skills Students Gain
             </h2>

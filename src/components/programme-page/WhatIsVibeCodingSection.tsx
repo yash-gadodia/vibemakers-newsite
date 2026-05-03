@@ -1,6 +1,7 @@
 import { motion } from "framer-motion";
-import { Sparkles, Code, Rocket } from "lucide-react";
+import { Sparkles } from "lucide-react";
 import { Reveal } from "@/components/ui/Reveal";
+import { BrutalSticker } from "@/components/ui/brutal-sticker";
 
 export function WhatIsVibeCodingSection() {
   return (
@@ -9,9 +10,9 @@ export function WhatIsVibeCodingSection() {
         {/* Header */}
         <Reveal variant="up">
           <div className="text-center mb-12">
-            <span className="vm-sticker" style={{ transform: 'rotate(3deg)' }}>
+            <BrutalSticker tone="yellow" rotate={3}>
               ● The Approach
-            </span>
+            </BrutalSticker>
             <h2 className="font-display font-bold tracking-display leading-[1.02] text-3xl md:text-4xl mt-6 mb-6">
               What is Vibe Coding?
             </h2>

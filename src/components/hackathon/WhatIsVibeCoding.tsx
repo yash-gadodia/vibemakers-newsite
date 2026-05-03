@@ -1,3 +1,5 @@
+import { BrutalSticker } from "@/components/ui/brutal-sticker";
+
 const features = [
   {
     emoji: "💬",
@@ -42,9 +44,9 @@ export function WhatIsVibeCoding() {
                 shine.
               </p>
 
-              <span className="vm-sticker" style={{ transform: 'rotate(-1deg)' }}>
+              <BrutalSticker tone="yellow" rotate={-1}>
                 ● Ages 13-18
-              </span>
+              </BrutalSticker>
             </div>
 
             <div className="space-y-4">

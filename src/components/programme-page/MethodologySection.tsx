@@ -3,6 +3,7 @@ import { vibePhases, type VibePhaseKey } from "@/components/programmes/pedagogy/
 import { cn } from "@/lib/utils";
 import { CheckCircle2 } from "lucide-react";
 import { Reveal } from "@/components/ui/Reveal";
+import { BrutalSticker } from "@/components/ui/brutal-sticker";
 
 function BulletList({ items, variant = "default" }: { items: string[]; variant?: "default" | "success" }) {
   return (
@@ -32,9 +33,9 @@ export function MethodologySection() {
         {/* Header */}
         <Reveal variant="up">
           <div className="text-center mb-12">
-            <span className="vm-sticker" style={{ transform: 'rotate(3deg)' }}>
+            <BrutalSticker tone="yellow" rotate={3}>
               ● Methodology
-            </span>
+            </BrutalSticker>
             <h2 className="font-display font-bold tracking-display leading-[1.02] text-3xl md:text-4xl text-foreground mt-6 mb-6">
               How We Teach It: The V.I.B.E. Cycle
             </h2>

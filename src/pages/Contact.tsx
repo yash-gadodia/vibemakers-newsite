@@ -8,6 +8,9 @@ import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@
 import { useToast } from "@/hooks/use-toast";
 import { sendNotificationEmail } from "@/lib/sendNotification";
 import { submitParentInterest, submitSchoolEnquiry } from "@/lib/formApi";
+import { BrutalSticker } from "@/components/ui/brutal-sticker";
+import { BrutalCard } from "@/components/ui/brutal-card";
+import { BrutalButton } from "@/components/ui/brutal-button";
 
 export default function Contact() {
   const { toast } = useToast();
@@ -111,9 +114,9 @@ export default function Contact() {
       <section className="bg-background py-20 md:py-28">
         <div className="mx-auto max-w-[1200px] px-6 md:px-14">
           <div className="mb-12 md:mb-16">
-            <span className="vm-sticker" style={{ transform: 'rotate(-3deg)' }}>
+            <BrutalSticker rotate={-3}>
               ● Get in Touch
-            </span>
+            </BrutalSticker>
           </div>
           <h1 className="font-display font-bold tracking-display leading-[1.02] text-5xl md:text-6xl mb-6">
             We'd love to hear from you.
@@ -129,41 +132,41 @@ export default function Contact() {
         <div className="mx-auto max-w-[1200px] px-6 md:px-14">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12">
             {/* Email Card */}
-            <div className="vm-card rounded-2xl border border-border bg-card p-8">
+            <BrutalCard shadow="lg" className="p-8">
               <div className="mb-4 text-2xl">📧</div>
               <p className="font-mono text-xs uppercase tracking-eyebrow text-ink-2 mb-3">Email</p>
               <h3 className="font-display font-bold text-xl md:text-2xl mb-4 text-foreground">
                 vibemakers@dialogic.academy
               </h3>
-              <a
-                href="mailto:vibemakers@dialogic.academy"
-                className="vm-btn inline-flex items-center gap-2 rounded-full bg-primary px-5 py-3 font-medium text-primary-foreground hover:bg-accent transition-colors"
-              >
-                Send an email
-                <span className="vm-arrow">→</span>
-              </a>
-            </div>
+              <BrutalButton variant="primary" size="md" asChild className="rounded-full">
+                <a href="mailto:vibemakers@dialogic.academy">
+                  Send an email
+                  <span className="vm-arrow">→</span>
+                </a>
+              </BrutalButton>
+            </BrutalCard>
 
             {/* WhatsApp Card */}
-            <div className="vm-card rounded-2xl border border-border bg-card p-8">
+            <BrutalCard shadow="lg" className="p-8">
               <div className="mb-4 text-2xl">💬</div>
               <p className="font-mono text-xs uppercase tracking-eyebrow text-ink-2 mb-3">WhatsApp</p>
               <h3 className="font-display font-bold text-xl md:text-2xl mb-4 text-foreground">
                 +65 8890 0368
               </h3>
-              <a
-                href="https://wa.me/6588900368"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="vm-btn inline-flex items-center gap-2 rounded-full bg-primary px-5 py-3 font-medium text-primary-foreground hover:bg-accent transition-colors"
-              >
-                Message on WhatsApp
-                <span className="vm-arrow">→</span>
-              </a>
-            </div>
+              <BrutalButton variant="primary" size="md" asChild className="rounded-full">
+                <a
+                  href="https://wa.me/6588900368"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  Message on WhatsApp
+                  <span className="vm-arrow">→</span>
+                </a>
+              </BrutalButton>
+            </BrutalCard>
 
             {/* Form Card */}
-            <div className="vm-card rounded-2xl border border-border bg-card p-8">
+            <BrutalCard shadow="lg" className="p-8">
               <div className="mb-4 text-2xl">✏️</div>
               <p className="font-mono text-xs uppercase tracking-eyebrow text-ink-2 mb-3">Form</p>
               <h3 className="font-display font-bold text-xl md:text-2xl mb-4 text-foreground">
@@ -172,7 +175,7 @@ export default function Contact() {
               <p className="text-base text-ink-2">
                 Tell us what you need and we'll respond within 2 business days.
               </p>
-            </div>
+            </BrutalCard>
           </div>
         </div>
       </section>
@@ -181,7 +184,7 @@ export default function Contact() {
       <section className="bg-bg-warm py-20 md:py-28">
         <div className="mx-auto max-w-[1200px] px-6 md:px-14">
           {submitted ? (
-            <div className="vm-card rounded-2xl border border-border bg-card p-8 md:p-12 max-w-2xl mx-auto text-center">
+            <BrutalCard shadow="lg" className="p-8 md:p-12 max-w-2xl mx-auto text-center">
               <div className="mb-6 text-6xl">✅</div>
               <h2 className="font-display font-bold text-4xl md:text-5xl mb-4 text-foreground">
                 Thank you!
@@ -189,9 +192,9 @@ export default function Contact() {
               <p className="text-base text-ink-2 leading-[1.6]">
                 We've received your enquiry and will get back to you within 2 business days.
               </p>
-            </div>
+            </BrutalCard>
           ) : (
-            <div className="vm-card rounded-2xl border border-border bg-card p-8 md:p-12 max-w-2xl mx-auto">
+            <BrutalCard shadow="lg" className="p-8 md:p-12 max-w-2xl mx-auto">
               <form onSubmit={handleSubmit} className="space-y-6">
                 {/* Name and Email */}
                 <div className="grid sm:grid-cols-2 gap-6">
@@ -321,16 +324,18 @@ export default function Contact() {
                 </div>
 
                 {/* Submit Button */}
-                <button
+                <BrutalButton
                   type="submit"
+                  variant="primary"
+                  size="md"
                   disabled={loading}
-                  className="vm-btn w-full inline-flex items-center justify-center gap-2 rounded-full bg-primary px-6 py-3 font-medium text-primary-foreground shadow-sticker hover:bg-accent transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
+                  className="w-full rounded-full"
                 >
                   {loading ? "Submitting..." : "Send Enquiry"}
                   <span className="vm-arrow">→</span>
-                </button>
+                </BrutalButton>
               </form>
-            </div>
+            </BrutalCard>
           )}
         </div>
       </section>

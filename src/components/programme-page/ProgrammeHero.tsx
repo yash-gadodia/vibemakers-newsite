@@ -1,7 +1,8 @@
 import appDemo from "@/assets/gallery/app-demo-screenshot.jpg";
-import { ArrowRight, Sparkles } from "lucide-react";
 import { Link } from "react-router-dom";
 import { Reveal } from "@/components/ui/Reveal";
+import { BrutalSticker } from "@/components/ui/brutal-sticker";
+import { BrutalButton } from "@/components/ui/brutal-button";
 
 export function ProgrammeHero() {
   return (
@@ -9,9 +10,9 @@ export function ProgrammeHero() {
       <div className="mx-auto max-w-[1200px] px-6 md:px-14">
         <div className="grid lg:grid-cols-12 gap-10 items-center">
           <Reveal variant="left" className="lg:col-span-6">
-            <span className="vm-sticker" style={{ transform: 'rotate(-3deg)' }}>
+            <BrutalSticker tone="yellow" rotate={-3}>
               ● Problem-Solving
-            </span>
+            </BrutalSticker>
 
             <h1 className="font-display font-bold tracking-display leading-[1.02] text-4xl md:text-5xl mt-6 mb-6">
               Problem-Solving with AI
@@ -23,20 +24,18 @@ export function ProgrammeHero() {
             </p>
 
             <div className="flex flex-col sm:flex-row gap-4">
-              <a
-                href="#programme"
-                className="vm-btn inline-flex items-center gap-2 rounded-full bg-primary text-primary-foreground px-6 py-3 shadow-sticker"
-              >
-                Explore the programme
-                <span className="vm-arrow">→</span>
-              </a>
-              <Link
-                to="/parents"
-                className="vm-btn inline-flex items-center gap-2 rounded-full bg-transparent text-foreground border border-foreground px-6 py-3"
-              >
-                Classes for Parents
-                <span className="vm-arrow">→</span>
-              </Link>
+              <BrutalButton asChild variant="primary" size="md" className="rounded-full shadow-sticker">
+                <a href="#programme">
+                  Explore the programme
+                  <span className="vm-arrow">→</span>
+                </a>
+              </BrutalButton>
+              <BrutalButton asChild variant="outline" size="md" className="rounded-full bg-transparent">
+                <Link to="/parents">
+                  Classes for Parents
+                  <span className="vm-arrow">→</span>
+                </Link>
+              </BrutalButton>
             </div>
 
             <div className="mt-8 flex flex-wrap items-center gap-3">

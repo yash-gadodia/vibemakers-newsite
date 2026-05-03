@@ -1,4 +1,6 @@
 import { ArrowDown } from "lucide-react";
+import { BrutalSticker } from "@/components/ui/brutal-sticker";
+import { BrutalButton } from "@/components/ui/brutal-button";
 
 const stats = [
   { emoji: "📅", label: "2 Days • Date TBA" },
@@ -19,9 +21,9 @@ export function HeroSection() {
       <div className="mx-auto max-w-[1200px] px-6 md:px-14">
         <div className="mx-auto max-w-4xl text-center">
           {/* Sticker eyebrow */}
-          <span className="vm-sticker vm-sticker--orange inline-block" style={{ transform: 'rotate(-3deg)' }}>
+          <BrutalSticker tone="orange" rotate={-3}>
             ● National Challenge
-          </span>
+          </BrutalSticker>
 
           {/* Main headline */}
           <h1 className="font-display font-bold tracking-display leading-[1.02] mt-6 text-5xl md:text-6xl lg:text-7xl mb-6 text-foreground">
@@ -55,13 +57,15 @@ export function HeroSection() {
 
           {/* CTA Button */}
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-            <button
+            <BrutalButton
+              variant="primary"
+              size="md"
               onClick={scrollToForm}
-              className="vm-btn inline-flex items-center gap-2 rounded-full bg-primary px-5 py-3 font-medium text-primary-foreground shadow-sticker"
+              className="rounded-full font-medium"
             >
               Register Interest
               <span className="vm-arrow">→</span>
-            </button>
+            </BrutalButton>
           </div>
 
           {/* Scroll indicator */}

@@ -1,3 +1,5 @@
+import { BrutalSectionHeading } from "@/components/ui/brutal-section-heading";
+
 const tracks = [
   {
     emoji: "📚",
@@ -26,17 +28,15 @@ export function ChallengeTracks() {
   return (
     <section className="border-t border-border bg-background py-20 md:py-28">
       <div className="mx-auto max-w-[1200px] px-6 md:px-14">
-        <div className="text-center mb-12">
-          <span className="vm-sticker vm-sticker--orange inline-block" style={{ transform: 'rotate(-2deg)' }}>
-            ● Three Paths
-          </span>
-          <h2 className="font-display font-bold tracking-display leading-[1.02] text-3xl md:text-4xl mb-4 mt-6 text-foreground">
-            Challenge Tracks
-          </h2>
-          <p className="font-sans text-ink-2 max-w-2xl mx-auto">
-            Choose a track that matches your interests – or surprise us with something completely new!
-          </p>
-        </div>
+        <BrutalSectionHeading
+          eyebrow="● Three Paths"
+          eyebrowTone="orange"
+          title="Challenge Tracks"
+          sub="Choose a track that matches your interests – or surprise us with something completely new!"
+          align="center"
+          size="md"
+          className="mb-12"
+        />
 
         <div className="grid md:grid-cols-3 gap-6 max-w-5xl mx-auto">
           {tracks.map((track) => (

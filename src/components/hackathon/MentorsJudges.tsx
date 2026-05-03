@@ -1,18 +1,18 @@
+import { BrutalSectionHeading } from "@/components/ui/brutal-section-heading";
+
 export function MentorsJudges() {
   return (
     <section className="border-t border-border bg-bg-warm py-20 md:py-28">
       <div className="mx-auto max-w-[1200px] px-6 md:px-14">
-        <div className="text-center mb-12">
-          <span className="vm-sticker" style={{ transform: 'rotate(3deg)' }}>
-            ● Expert Guidance
-          </span>
-          <h2 className="font-display font-bold tracking-display leading-[1.02] text-3xl md:text-4xl mb-4 mt-6 text-foreground">
-            Mentors & Judges
-          </h2>
-          <p className="font-sans text-ink-2 max-w-2xl mx-auto">
-            Learn from and be judged by industry experts
-          </p>
-        </div>
+        <BrutalSectionHeading
+          eyebrow="● Expert Guidance"
+          eyebrowTone="yellow"
+          title="Mentors & Judges"
+          sub="Learn from and be judged by industry experts"
+          align="center"
+          size="md"
+          className="mb-12"
+        />
 
         <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
           {/* Mentors */}
