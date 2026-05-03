@@ -885,6 +885,27 @@ function HHero({ tweaks }) {
               <HSticker color={H.yellow} rotate={0}>1st class free</HSticker>
             </span>
           </div>
+          <div style={{ position: 'relative' }}>
+            <a href="/adults" className="vm-btn" style={{
+                background: H.orange,
+                color: '#fff',
+                border: 'none',
+                padding: '16px 24px',
+                borderRadius: 10,
+                fontSize: 15,
+                fontWeight: 600,
+                cursor: 'pointer',
+                width: '100%',
+                textAlign: 'center',
+                textDecoration: 'none',
+                boxSizing: 'border-box',
+                display: 'inline-block',
+                boxShadow: `0 1px 0 rgba(0,0,0,0.04), 0 8px 24px rgba(255,107,26,0.25), 3px 3px 0 ${H.ink}`,
+              }}>For adults <span className="vm-arrow">→</span></a>
+            <span className="vm-wiggle" style={{ '--rot': '-6deg', position: 'absolute', top: -14, right: -10, zIndex: 2 }}>
+              <HSticker color={H.yellow} rotate={0}>1st class free</HSticker>
+            </span>
+          </div>
           <a href="/schools" className="vm-btn" style={{
             background: '#fff',
             color: H.ink,

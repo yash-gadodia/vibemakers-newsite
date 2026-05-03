@@ -34,7 +34,7 @@ export function Header() {
       <nav className={cn(
         "mx-auto flex w-full items-center justify-between transition-all duration-300",
         isScrolled
-          ? "max-w-4xl px-4 py-3 rounded-full bg-card/95 backdrop-blur-xl border border-border shadow-md"
+          ? "max-w-6xl px-4 py-3 rounded-full bg-card/95 backdrop-blur-xl border border-border shadow-md"
           : "max-w-full px-0 py-4 bg-background border-b border-border"
       )}>
         <Link to="/" className="flex items-center gap-2 shrink-0">
@@ -44,12 +44,12 @@ export function Header() {
           </span>
         </Link>
 
-        <nav className="hidden lg:flex items-center gap-8">
+        <nav className="hidden lg:flex items-center gap-5 xl:gap-7">
           {navLinks.map((link) => (
             <Link
               key={link.href}
               to={link.href}
-              className="vm-nav-link font-mono text-xs uppercase tracking-eyebrow text-foreground"
+              className="vm-nav-link font-mono text-xs uppercase tracking-eyebrow text-foreground whitespace-nowrap"
             >
               {link.label}
             </Link>
