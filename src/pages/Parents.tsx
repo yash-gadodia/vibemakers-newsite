@@ -4,22 +4,16 @@ import { Layout } from "@/components/layout/Layout";
 import { RegistrationForm } from "@/components/programmes/RegistrationForm";
 import { TrustSection } from "@/components/home/TrustSection";
 import { Button } from "@/components/ui/button";
-import { BrutalButton } from "@/components/ui/brutal-button";
-import { BrutalSticker } from "@/components/ui/brutal-sticker";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 import { Reveal } from "@/components/ui/Reveal";
 import { RevealGroup } from "@/components/ui/RevealGroup";
 import { cn } from "@/lib/utils";
 
-import instructorPresentation from "@/assets/gallery/instructor-presentation-01.jpg";
-
-const WHATSAPP_URL = "https://wa.me/6588900368?text=Hi%20Vibe%20Makers%20%E2%80%94%20I%27m%20enquiring%20about%20coaching%20for%20my%20teen";
-
 const pricingTiers = [
   {
     name: "Free Trial Class",
     price: "Free",
-    sub: "Free first session · No obligation",
+    sub: "90 minutes · No obligation",
     description: "Your teen builds a deployed app in their first session. Online or in-person. Most weekends.",
     features: [
       "Real shipped app, not a demo",
@@ -88,7 +82,7 @@ const parentFAQ = [
   },
   {
     q: "What if my child tries it once and doesn't enjoy it?",
-    a: "Then they don't come back, and we both learn something. That's exactly what the free trial is for. No commitment, no guilt. Most parents tell us they can read within the first session whether vibe coding clicks for their child.",
+    a: "Then they don't come back, and we both learn something. That's exactly what the free trial is for. No commitment, no guilt. Most parents tell us they can read in 90 minutes whether vibe coding clicks for their child.",
   },
   {
     q: "Can I see what students have actually built?",
@@ -106,7 +100,7 @@ const parentTestimonials = [
     role: "Parent of a Sec 2 student",
   },
   {
-    quote: "What convinced me was the demo class. My daughter shipped a working app in her first session. I had been paying for a Python tutor for 6 months with nothing to show.",
+    quote: "What convinced me was the demo class. My daughter shipped a working app in 90 minutes. I had been paying for a Python tutor for 6 months with nothing to show.",
     role: "Parent of a Sec 3 student",
   },
   {
@@ -267,92 +261,56 @@ export default function Parents() {
 }`}</script>
       </Helmet>
 
-      {/* Hero — Personalised coaching headline + dual CTA + 1st-class-free sticker + workshop photo */}
+      {/* Hero */}
       <section className="bg-background pt-16 md:pt-24 pb-12 md:pb-16">
         <div className="mx-auto max-w-[1200px] px-6 md:px-14">
-          <div className="grid items-center gap-10 lg:grid-cols-12 lg:gap-12">
-            <div className="lg:col-span-7">
-              <Reveal variant="up">
-                <span className="vm-sticker mb-6" style={{ transform: 'rotate(-3deg)' }}>
-                  ● For Parents & Students
-                </span>
-                <h1 className="font-display font-bold tracking-display leading-[1.02] text-4xl sm:text-5xl md:text-6xl lg:text-7xl mb-6">
-                  Personalised coaching that turns{" "}
-                  <span className="relative inline-block">
-                    curiosity
-                    <svg
-                      className="absolute -bottom-0.5 left-0 h-2 w-full"
-                      viewBox="0 0 200 8"
-                      preserveAspectRatio="none"
-                      aria-hidden="true"
-                    >
-                      <path
-                        d="M0,4 Q15,1 30,4 T60,4 T90,4 T120,4 T150,4 T180,4 T200,4"
-                        fill="none"
-                        stroke="hsl(var(--primary))"
-                        strokeWidth="2"
-                        strokeLinecap="round"
-                      />
-                    </svg>
-                  </span>{" "}
-                  into real digital projects
-                </h1>
-                <p className="font-sans text-lg text-foreground max-w-xl leading-[1.55] mb-3">
-                  For students 13–18 in Singapore. Choose small-group classes for peer
-                  momentum or 1-to-1 coaching for the most tailored pace — your child
-                  leaves with a deployed app and a portfolio piece.
-                </p>
-                <p className="font-sans text-sm text-muted-foreground max-w-xl leading-[1.55] mb-8">
-                  Trusted by 40+ Singapore schools since 2018 · Part of Dialogic Academy
-                </p>
+          <Reveal variant="up">
+            <div className="max-w-3xl">
+              <span className="vm-sticker mb-6" style={{ transform: 'rotate(-3deg)' }}>
+                ● For Parents & Students
+              </span>
+              <h1 className="font-display font-bold tracking-display leading-[1.02] text-4xl sm:text-5xl md:text-6xl lg:text-7xl mb-6">
+                Your teen ships a real app{" "}
+                <span className="vm-sheen-text">in their first session.</span>
+              </h1>
+              <p className="font-sans text-lg text-foreground max-w-2xl leading-[1.55] mb-3">
+                AI-first coding for teens 13–18. 1-to-1 coaching or small-group classes outside school.
+                Trial class is 90 minutes, online or in-person, and free.
+              </p>
+              <p className="font-sans text-sm text-muted-foreground max-w-2xl leading-[1.55] mb-8">
+                Trusted by 40+ Singapore schools since 2018 · Part of Dialogic Academy
+              </p>
 
-                {/* Dual CTA: form anchor (primary) + WhatsApp (secondary) */}
-                <div className="flex flex-col gap-3 sm:flex-row sm:items-center sm:max-w-lg">
-                  <div className="relative flex-1">
-                    <BrutalButton variant="primary" size="lg" asChild className="w-full">
-                      <a href="#register">
-                        Book a free trial <span className="vm-arrow">→</span>
-                      </a>
-                    </BrutalButton>
-                    {/* "1st class free" wiggle sticker */}
-                    <BrutalSticker
-                      aria-hidden="true"
-                      tone="yellow"
-                      rotate={8}
-                      wiggle
-                      className="absolute -right-3 -top-4 z-10 hidden sm:inline-flex"
-                    >
-                      1st class free
-                    </BrutalSticker>
-                  </div>
-                  <BrutalButton variant="outline" size="lg" asChild className="flex-1">
-                    <a href={WHATSAPP_URL} target="_blank" rel="noopener noreferrer">
-                      <span aria-hidden>💬</span>
-                      WhatsApp us <span className="vm-arrow">→</span>
-                    </a>
-                  </BrutalButton>
-                </div>
-
-                <p className="font-mono text-xs text-muted-foreground mt-4 uppercase tracking-eyebrow">
-                  Most parents hear back within 24 hours · No commitment
-                </p>
-              </Reveal>
+              {/* Above-fold CTAs */}
+              <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 max-w-xl">
+                <Button
+                  asChild
+                  size="lg"
+                  className="rounded-full bg-primary text-primary-foreground font-semibold hover:bg-accent shadow-sticker"
+                >
+                  <a href="#register">Book my free trial →</a>
+                </Button>
+                <Button
+                  asChild
+                  size="lg"
+                  variant="outline"
+                  className="rounded-full font-medium border-2 border-foreground"
+                >
+                  <a
+                    href="https://wa.me/6588900368?text=Hi%20Vibe%20Makers%20%E2%80%94%20I%27m%20enquiring%20about%20coaching%20for%20my%20teen"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    <span className="mr-2" aria-hidden>💬</span>
+                    WhatsApp us +65 8890 0368
+                  </a>
+                </Button>
+              </div>
+              <p className="font-mono text-xs text-muted-foreground mt-4 uppercase tracking-eyebrow">
+                Most parents hear back within 24 hours · No commitment
+              </p>
             </div>
-
-            {/* Visual — real workshop photo */}
-            <div className="lg:col-span-5">
-              <Reveal variant="up" delayMs={120}>
-                <div className="relative overflow-hidden rounded-2xl border-[1.5px] border-foreground shadow-sticker-lg">
-                  <img
-                    src={instructorPresentation}
-                    alt="Vibe Makers instructor presenting student project examples"
-                    className="block h-full w-full object-cover aspect-[4/3] lg:aspect-auto lg:h-[480px]"
-                    loading="eager"
-                  />
-                </div>
-              </Reveal>
-            </div>
-          </div>
+          </Reveal>
         </div>
       </section>
 
