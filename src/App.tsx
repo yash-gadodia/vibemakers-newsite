@@ -16,6 +16,7 @@ import Index from "./pages/Index";
 const Hackathon = lazy(() => import("./pages/Hackathon"));
 const Schools = lazy(() => import("./pages/Schools"));
 const Parents = lazy(() => import("./pages/Parents"));
+const Adults = lazy(() => import("./pages/Adults"));
 const Programme = lazy(() => import("./pages/Programme"));
 const About = lazy(() => import("./pages/About"));
 const Contact = lazy(() => import("./pages/Contact"));
@@ -65,6 +66,7 @@ const App = () => (
               <Route path="/" element={<Index />} />
               <Route path="/schools" element={<Schools />} />
               <Route path="/parents" element={<Parents />} />
+              <Route path="/adults" element={<Adults />} />
               <Route path="/programme" element={<Programme />} />
               <Route path="/hackathon" element={<Hackathon />} />
               <Route path="/about" element={<About />} />

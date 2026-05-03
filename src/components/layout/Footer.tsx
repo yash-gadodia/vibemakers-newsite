@@ -10,6 +10,13 @@ const sections = [
     ],
   },
   {
+    title: "For Adults",
+    links: [
+      { href: "/adults", label: "AI classes for adults" },
+      { href: "/contact", label: "Enquire" },
+    ],
+  },
+  {
     title: "For Schools",
     links: [
       { href: "/schools", label: "School programmes" },
@@ -31,7 +38,7 @@ export function Footer() {
   return (
     <footer className="bg-background border-t border-border py-14 px-6">
       <div className="mx-auto max-w-[1200px]">
-        <div className="grid grid-cols-1 gap-12 md:grid-cols-2 lg:grid-cols-4">
+        <div className="grid grid-cols-1 gap-12 md:grid-cols-2 lg:grid-cols-5">
           <div>
             <div className="flex items-center gap-2 mb-4">
               <img src={logo} alt="Vibe Makers" className="h-9 w-9 object-cover" />

@@ -6,6 +6,7 @@ import { cn } from "@/lib/utils";
 
 const navLinks = [
   { href: "/parents", label: "For Parents" },
+  { href: "/adults", label: "For Adults" },
   { href: "/schools", label: "For Schools" },
   { href: "/programme", label: "Programme" },
   { href: "/hackathon", label: "Hackathon" },

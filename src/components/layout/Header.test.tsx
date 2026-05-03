@@ -12,9 +12,10 @@ const renderHeader = () =>
   );
 
 describe("Header", () => {
-  it("renders the primary nav links: For Parents, For Schools, Programme, Hackathon, About, Blog", () => {
+  it("renders the primary nav links: For Parents, For Adults, For Schools, Programme, Hackathon, About, Blog", () => {
     renderHeader();
     expect(screen.getAllByRole("link", { name: /for parents/i }).length).toBeGreaterThan(0);
+    expect(screen.getAllByRole("link", { name: /for adults/i }).length).toBeGreaterThan(0);
     expect(screen.getAllByRole("link", { name: /for schools/i }).length).toBeGreaterThan(0);
     expect(screen.getAllByRole("link", { name: /^programme$/i }).length).toBeGreaterThan(0);
     expect(screen.getAllByRole("link", { name: /^hackathon$/i }).length).toBeGreaterThan(0);

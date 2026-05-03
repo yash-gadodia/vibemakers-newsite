@@ -19,6 +19,7 @@ interface ParentInterestRow {
   student_age: string;
   programme_interest: string;
   message: string | null;
+  enquiry_type: string | null;
   created_at: string;
 }
 
@@ -110,10 +111,15 @@ const Admin = () => {
 
   const parentColumns = [
     { key: 'created_at', label: 'Date' },
-    { key: 'parent_name', label: 'Parent Name' },
+    {
+      key: 'enquiry_type',
+      label: 'Type',
+      render: (value: string | null) => (value === 'for_self' ? '👤 Adult' : '👨‍👩‍👧 Parent'),
+    },
+    { key: 'parent_name', label: 'Lead Name' },
     { key: 'parent_email', label: 'Email' },
     { key: 'student_name', label: 'Student Name' },
-    { key: 'student_age', label: 'Student Age' },
+    { key: 'student_age', label: 'Age' },
     { key: 'programme_interest', label: 'Programme' },
     { key: 'message', label: 'Message' },
   ];

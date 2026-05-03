@@ -52,13 +52,21 @@ export default function Contact() {
       }
       sendNotificationEmail("school_enquiry", data);
     } else {
+      const isAdultSelf = type === "adult-group" || type === "adult-1-to-1";
       const data = {
         parent_name: name,
         parent_email: email,
-        student_name: (formData.get("student_name") as string) || "Not provided",
-        student_age: (formData.get("student_age") as string) || "Not provided",
+        // For an adult self-enquiry the same person is the lead AND the
+        // "student" — DB requires student_name NOT NULL so we mirror it.
+        student_name: isAdultSelf
+          ? name
+          : (formData.get("student_name") as string) || "Not provided",
+        student_age: isAdultSelf
+          ? "adult"
+          : (formData.get("student_age") as string) || "Not provided",
         programme_interest: type,
         message: message || null,
+        enquiry_type: isAdultSelf ? ("for_self" as const) : ("for_teen" as const),
       };
       const result = await submitParentInterest(data);
       if (!result.ok) {
@@ -74,7 +82,9 @@ export default function Contact() {
     setLoading(false);
   };
 
-  const showStudentFields = enquiryType && !["school", "organisation"].includes(enquiryType);
+  const showStudentFields =
+    enquiryType &&
+    !["school", "organisation", "adult-group", "adult-1-to-1"].includes(enquiryType);
   const showOrgField = ["school", "organisation"].includes(enquiryType);
 
   return (
@@ -259,6 +269,8 @@ export default function Contact() {
                     <SelectContent>
                       <SelectItem value="group">Group Sessions (for my child)</SelectItem>
                       <SelectItem value="1-to-1">1-to-1 Coaching (for my child)</SelectItem>
+                      <SelectItem value="adult-group">Group Sessions (for myself, adult)</SelectItem>
+                      <SelectItem value="adult-1-to-1">1-to-1 Coaching (for myself, adult)</SelectItem>
                       <SelectItem value="hackathon">Hackathon</SelectItem>
                       <SelectItem value="school">School Partnership</SelectItem>
                       <SelectItem value="organisation">Organisation / Corporate</SelectItem>

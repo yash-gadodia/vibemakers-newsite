@@ -48,10 +48,17 @@ CREATE TABLE IF NOT EXISTS parent_interest (
   student_age        TEXT NOT NULL,
   programme_interest TEXT,
   message            TEXT,
+  enquiry_type       TEXT NOT NULL DEFAULT 'for_teen',
   created_at         TIMESTAMPTZ NOT NULL DEFAULT NOW()
 );
 
+-- Idempotent migration so existing Railway DBs (created pre-2026-05-03)
+-- pick up the enquiry_type column without a destructive re-create.
+ALTER TABLE parent_interest
+  ADD COLUMN IF NOT EXISTS enquiry_type TEXT NOT NULL DEFAULT 'for_teen';
+
 CREATE INDEX IF NOT EXISTS idx_parent_interest_created ON parent_interest(created_at DESC);
+CREATE INDEX IF NOT EXISTS idx_parent_interest_enquiry_type ON parent_interest(enquiry_type);
 
 -- =============================================================================
 -- school_enquiries — /schools form

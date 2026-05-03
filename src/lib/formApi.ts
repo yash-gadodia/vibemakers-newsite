@@ -44,6 +44,7 @@ export type ParentInterestPayload = {
   student_age: string;
   programme_interest?: string;
   message?: string | null;
+  enquiry_type?: "for_teen" | "for_self";
 };
 // Conversion value is the rough gross revenue we'd expect from a converted
 // trial booking (1 trial → ~25-35% paid → avg LTV ~$1500). Google Ads uses
