@@ -1938,18 +1938,18 @@ export default function Index() {
   return (
     <>
       <Helmet>
-        <title>Vibemakers Academy · AI Coding for Teens in Singapore (Ages 13–18)</title>
+        <title>Vibemakers Academy · AI Coding for Teens & Adults in Singapore</title>
         <meta
           name="description"
-          content="Singapore's AI coding academy for teens (13–18). Build real apps in one session with Lovable, Claude and Cursor. 1-to-1 and small-group programmes. Trusted by 40+ schools, 5,000+ students. Part of Dialogic Academy."
+          content="Singapore's AI coding academy for teens (13–18) and adults. Build real apps in one session with Lovable, Claude and Cursor. 1-to-1 and small-group programmes. Trusted by 40+ schools, 5,000+ students. Part of Dialogic Academy."
         />
         <meta
           name="keywords"
-          content="AI coding for teens Singapore, vibe coding for teens, school coding workshops Singapore, coding classes for teenagers Singapore, Lovable Cursor Claude classes Singapore, coding camp Singapore school holidays, build apps without coding teen"
+          content="AI coding Singapore, AI coding for teens Singapore, AI coding for adults Singapore, vibe coding Singapore, learn AI Singapore, Lovable Cursor Claude classes Singapore, coding camp Singapore school holidays, build apps without coding"
         />
         <link rel="canonical" href="https://vibemakers.dev/" />
-        <meta property="og:title" content="Vibemakers Academy · AI Coding for Teens in Singapore" />
-        <meta property="og:description" content="Build real apps in one session. Trusted by 40+ Singapore schools." />
+        <meta property="og:title" content="Vibemakers Academy · AI Coding for Teens & Adults in Singapore" />
+        <meta property="og:description" content="Build real apps in one session. For teens (13–18) and adults. Trusted by 40+ Singapore schools." />
         <meta property="og:type" content="website" />
         <meta property="og:url" content="https://vibemakers.dev/" />
         <meta name="twitter:card" content="summary_large_image" />
