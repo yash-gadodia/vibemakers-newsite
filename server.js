@@ -188,16 +188,36 @@ app.post("/api/parent-interest", async (c) => {
   if (!pool) return c.json({ ok: false, error: "DB unavailable" }, 503);
   const body = await readJson(c);
   if (!body) return c.json({ ok: false, error: "Invalid JSON" }, 400);
-  const { parent_name, parent_email, student_name, student_age, programme_interest, message } = body;
+  const {
+    parent_name,
+    parent_email,
+    student_name,
+    student_age,
+    programme_interest,
+    message,
+    enquiry_type,
+  } = body;
   if (!parent_name || !parent_email || !student_name || !student_age) {
     return c.json({ ok: false, error: "Missing required fields" }, 400);
   }
+  // enquiry_type is optional on the wire — older clients won't send it.
+  // Default to 'for_teen' to match historical /parents form behaviour.
+  const safeEnquiryType =
+    enquiry_type === "for_self" || enquiry_type === "for_teen" ? enquiry_type : "for_teen";
   try {
     const { rows } = await pool.query(
-      `INSERT INTO parent_interest (parent_name, parent_email, student_name, student_age, programme_interest, message)
-       VALUES ($1,$2,$3,$4,$5,$6)
+      `INSERT INTO parent_interest (parent_name, parent_email, student_name, student_age, programme_interest, message, enquiry_type)
+       VALUES ($1,$2,$3,$4,$5,$6,$7)
        RETURNING *`,
-      [parent_name, parent_email, student_name, student_age, programme_interest || null, message || null],
+      [
+        parent_name,
+        parent_email,
+        student_name,
+        student_age,
+        programme_interest || null,
+        message || null,
+        safeEnquiryType,
+      ],
     );
     pingTelegram("parent_interest", rows[0]);
     return c.json({ ok: true, row: rows[0] });

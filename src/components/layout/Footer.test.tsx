@@ -11,17 +11,19 @@ const renderFooter = () =>
   );
 
 describe("Footer", () => {
-  it("renders the three column headings (For Parents, For Schools, Company)", () => {
+  it("renders the four column headings (For Parents, For Adults, For Schools, Company)", () => {
     renderFooter();
     expect(screen.getByRole("heading", { name: /for parents/i })).toBeInTheDocument();
+    expect(screen.getByRole("heading", { name: /for adults/i })).toBeInTheDocument();
     expect(screen.getByRole("heading", { name: /for schools/i })).toBeInTheDocument();
     expect(screen.getByRole("heading", { name: /^company$/i })).toBeInTheDocument();
   });
 
-  it("links to the current IA pages (parents, schools, programme, about, blog, hackathon, contact)", () => {
+  it("links to the current IA pages (parents, adults, schools, programme, about, blog, hackathon, contact)", () => {
     renderFooter();
     const links = screen.getAllByRole("link").map((a) => a.getAttribute("href"));
     expect(links).toContain("/parents");
+    expect(links).toContain("/adults");
     expect(links).toContain("/schools");
     expect(links).toContain("/programme");
     expect(links).toContain("/about");
