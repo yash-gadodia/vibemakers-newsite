@@ -23,7 +23,7 @@ const VM_CONTENT = {
   heroEyebrow: "AI Coding Academy · Singapore",
   heroH1: "Singapore teens are shipping real apps. From session 1.",
   heroH1Alt: "AI coding for teens — built for Singapore schools.",
-  heroSub: "Vibemakers Academy teaches students aged 13–18 to design, build and ship real apps using the same AI tools founders use today. Small-group private classes and bespoke school workshops across Singapore. No prior coding experience needed.",
+  heroSub: "Vibe Makers teaches teens (13–18) and adults to design, build and ship real apps using the same AI tools founders use today. Small-group private classes, school workshops, and adult cohorts across Singapore. No prior coding experience needed.",
   heroPrimaryCta: "Book a free trial class",
   heroSecondaryCta: "Bring Vibemakers to your school",
 
@@ -826,7 +826,7 @@ function HHero({ tweaks }) {
             Live · Online · Singapore
           </HSticker>
         </span>
-        <span style={{ ...hStyles.mono, color: H.muted }}>Ages 13–18 · Trusted by 40+ schools</span>
+        <span style={{ ...hStyles.mono, color: H.muted }}>Teens 13–18 + Adults · Trusted by 40+ schools</span>
       </div>
 
       <h1 className="vm-hero-h1" style={{
