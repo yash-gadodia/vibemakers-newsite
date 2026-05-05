@@ -304,13 +304,6 @@ const VM_CONTENT = {
     ],
   },
 
-  // === SEO meta ===
-  // Description mirrors the official site's tone (vibemakerz/src/pages/Index.tsx).
-  seo: {
-    title: "Vibe Makers Academy · AI Coding for Teens & Adults in Singapore",
-    description: "Singapore's AI-first academy for teens (13–18) and adults. Build real apps with Lovable, Claude, Cursor, ChatGPT and Supabase. Small-group private classes, school workshops, and adult cohorts. Trusted by 40+ schools, 5,000+ students. Part of Dialogic Academy.",
-    keywords: "AI coding Singapore, AI coding for teens Singapore, AI coding for adults Singapore, vibe coding Singapore, school coding workshops Singapore, coding classes for teenagers Singapore, Lovable Cursor Claude classes Singapore, MOE EdTech Masterplan, build apps without coding",
-  },
 };
 
 
