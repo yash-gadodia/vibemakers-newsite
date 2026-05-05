@@ -32,7 +32,7 @@ const VM_CONTENT = {
   trustStat1: { num: "5,000+", label: "Students taught" },
   trustStat2: { num: "40+", label: "Schools partnered" },
   trustStat3: { num: "6+", label: "Years running (since 2018)" },
-  trustStat4: { num: "13–18", label: "Ages welcomed" },
+  trustStat4: { num: "13+", label: "Ages welcomed" },
 
   // === Programs ===
   // Source: vibemakerz/src/components/home/ProgramFormatsSection.tsx.
@@ -307,9 +307,9 @@ const VM_CONTENT = {
   // === SEO meta ===
   // Description mirrors the official site's tone (vibemakerz/src/pages/Index.tsx).
   seo: {
-    title: "Vibemakers Academy · AI Coding for Teens in Singapore (Ages 13–18)",
-    description: "Singapore's AI-first academy for teens (13–18). Build real apps with Lovable, Claude, Cursor, ChatGPT and Supabase. Small-group private classes and school workshops. Trusted by 40+ schools, 5,000+ students. Part of Dialogic Academy.",
-    keywords: "AI coding for teens Singapore, vibe coding for teens, school coding workshops Singapore, coding classes for teenagers Singapore, Lovable Cursor Claude classes Singapore, MOE EdTech Masterplan, build apps without coding teen",
+    title: "Vibe Makers Academy · AI Coding for Teens & Adults in Singapore",
+    description: "Singapore's AI-first academy for teens (13–18) and adults. Build real apps with Lovable, Claude, Cursor, ChatGPT and Supabase. Small-group private classes, school workshops, and adult cohorts. Trusted by 40+ schools, 5,000+ students. Part of Dialogic Academy.",
+    keywords: "AI coding Singapore, AI coding for teens Singapore, AI coding for adults Singapore, vibe coding Singapore, school coding workshops Singapore, coding classes for teenagers Singapore, Lovable Cursor Claude classes Singapore, MOE EdTech Masterplan, build apps without coding",
   },
 };
 
@@ -1963,10 +1963,10 @@ export default function Index() {
   "url": "https://vibemakers.dev",
   "logo": "https://vibemakers.dev/og-image.png",
   "image": "https://vibemakers.dev/og-image.png",
-  "description": "Singapore's AI-first academy for teens 13-18. Students learn to spot real problems, design solutions, and build working apps using Claude, Lovable, and Cursor.",
+  "description": "Singapore's AI-first academy for teens (13–18) and adults. Students learn to spot real problems, design solutions, and build working apps using Claude, Lovable, and Cursor.",
   "parentOrganization": { "@type": "EducationalOrganization", "name": "Dialogic Academy", "url": "https://dialogic.academy", "foundingDate": "2018" },
   "areaServed": { "@type": "Country", "name": "Singapore" },
-  "audience": { "@type": "EducationalAudience", "educationalRole": "student", "audienceType": "Teens aged 13-18" },
+  "audience": { "@type": "EducationalAudience", "educationalRole": "student", "audienceType": "Teens aged 13-18 and adults" },
   "contactPoint": {
     "@type": "ContactPoint",
     "contactType": "customer service",
@@ -1992,7 +1992,7 @@ export default function Index() {
       "name": "Who is Vibe Makers Academy for?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Teenagers aged 13–18 in Singapore. Students from international schools (UWCSEA, SAS, Tanglin Trust, Dover Court, Stamford American) and top local schools (RGS, RI, NJC, VJC, ACS, HCI). No prior coding experience needed."
+        "text": "Teenagers aged 13–18 and adults in Singapore. Teen students come from international schools (UWCSEA, SAS, Tanglin Trust, Dover Court, Stamford American) and top local schools (RGS, RI, NJC, VJC, ACS, HCI). Adults of any background are welcome — see /adults for adult-only formats. No prior coding experience needed."
       }
     },
     {
