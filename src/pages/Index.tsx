@@ -707,8 +707,9 @@ function HTopBar({ tweaks }) {
           Vibe Makers
         </span>
       </div>
-      <nav className="vm-topbar-nav" style={{ display: 'flex', alignItems: 'center', gap: 28, fontSize: 14, color: H.ink2 }}>
+      <nav className="vm-topbar-nav" style={{ display: 'flex', alignItems: 'center', gap: 24, fontSize: 14, color: H.ink2 }}>
         <a href="/parents" className="vm-nav-link" style={{ color: 'inherit', textDecoration: 'none' }}>Parents</a>
+        <a href="/adults" className="vm-nav-link" style={{ color: 'inherit', textDecoration: 'none' }}>Adults</a>
         <a href="/schools" className="vm-nav-link" style={{ color: 'inherit', textDecoration: 'none' }}>Schools</a>
         <a href="/programme" className="vm-nav-link" style={{ color: 'inherit', textDecoration: 'none' }}>Programme</a>
         <a href="/hackathon" className="vm-nav-link" style={{ color: 'inherit', textDecoration: 'none' }}>Hackathon</a>
@@ -776,6 +777,7 @@ function HTopBar({ tweaks }) {
           }}
         >
           <a href="/parents" style={{ color: H.ink, textDecoration: 'none', padding: '8px 4px' }}>Parents</a>
+          <a href="/adults" style={{ color: H.ink, textDecoration: 'none', padding: '8px 4px' }}>Adults</a>
           <a href="/schools" style={{ color: H.ink, textDecoration: 'none', padding: '8px 4px' }}>Schools</a>
           <a href="/programme" style={{ color: H.ink, textDecoration: 'none', padding: '8px 4px' }}>Programme</a>
           <a href="/hackathon" style={{ color: H.ink, textDecoration: 'none', padding: '8px 4px' }}>Hackathon</a>
