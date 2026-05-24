@@ -3,6 +3,7 @@ import { Helmet } from "react-helmet-async";
 import { Layout } from "@/components/layout/Layout";
 import { ArrowDown, Check, Eye, Lightbulb, Hammer, RotateCcw, Brain, MessageSquare, Monitor, Compass, BookOpen, Users, ShieldCheck } from "lucide-react";
 import { PartnershipForm } from "@/components/programmes/PartnershipForm";
+import { RGSCaseStudy } from "@/components/home/RGSCaseStudy";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 import { Reveal } from "@/components/ui/Reveal";
 import { RevealGroup } from "@/components/ui/RevealGroup";
@@ -442,6 +443,8 @@ export default function Schools() {
           </Reveal>
         </div>
       </section>
+
+      <RGSCaseStudy />
 
       {/* MOE 4 AI Learns alignment — the unique positioning per May 2026 research.
           Most enrichment providers cover Pillars 1-3; nobody covers Pillar 4.
