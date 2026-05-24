@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { ParallaxSection } from "@/components/ui/parallax-section";
 import { Reveal } from "@/components/ui/Reveal";
+import { BrutalSticker } from "@/components/ui/brutal-sticker";
 
 // Import school logos
 import vjcLogo from "@/assets/logos/vjc.png";
@@ -30,8 +31,8 @@ const schools = [
 ];
 
 const stats = [
-  { value: "5,000+", label: "Students taught across Singapore since 2018" },
-  { value: "40+", label: "School partners from primary to JC" },
+  { value: "15,000+", label: "Students taught across Singapore since 2018" },
+  { value: "50+", label: "School partners from primary to JC" },
   { value: "6+", label: "Years delivering enrichment programmes" },
 ];
 
@@ -117,6 +118,14 @@ export function TrustSection() {
                   ))}
                 </div>
               </div>
+            </div>
+          </Reveal>
+
+          <Reveal variant="up" delayMs={240}>
+            <div className="mt-8 md:mt-10 flex justify-center">
+              <BrutalSticker tone="yellow" rotate={-2}>
+                ● Just delivered · RGS · May 2026
+              </BrutalSticker>
             </div>
           </Reveal>
         </div>
