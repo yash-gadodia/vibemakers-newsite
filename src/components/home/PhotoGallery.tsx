@@ -6,6 +6,12 @@ import { Reveal } from "@/components/ui/Reveal";
 import { RevealGroup } from "@/components/ui/RevealGroup";
 
 // Import gallery images (real photos) - only unique images
+import rgsW101 from "@/assets/gallery/rgs-w1-01.jpg";
+import rgsW102 from "@/assets/gallery/rgs-w1-02.jpg";
+import rgsW103 from "@/assets/gallery/rgs-w1-03.jpg";
+import rgsW104 from "@/assets/gallery/rgs-w1-04.jpg";
+import rgsW105 from "@/assets/gallery/rgs-w1-05.jpg";
+import rgsW106 from "@/assets/gallery/rgs-w1-06.jpg";
 import auditorium1 from "@/assets/gallery/auditorium-event-01.jpg";
 import instructorPresentation1 from "@/assets/gallery/instructor-presentation-01.jpg";
 import workshop1 from "@/assets/gallery/workshop-students-01.jpg";
@@ -15,6 +21,12 @@ import team1 from "@/assets/gallery/team-collaboration-01.jpg";
 
 // Gallery images array - add more unique images here and they'll appear automatically
 const galleryImages = [
+  { src: rgsW101, alt: "40 RGS students raising peace signs at end of Vibe Makers W2 workshop", category: "RGS · May 2026", emoji: "🔬" },
+  { src: rgsW102, alt: "RGS students watching the V.I.B.E. cycle being taught", category: "RGS · May 2026", emoji: "🔬" },
+  { src: rgsW103, alt: "RGS students working on their HTML decks during W2", category: "RGS · May 2026", emoji: "🔬" },
+  { src: rgsW104, alt: "Yash teaching two RGS students at the lab bench with ChatGPT projected", category: "RGS · May 2026", emoji: "🔬" },
+  { src: rgsW105, alt: "RGS student presenting her vibe-coded HTML slide deck on Ferrari and McLaren", category: "RGS · May 2026", emoji: "🔬" },
+  { src: rgsW106, alt: "Yash instructing in front of the W2 title slide", category: "RGS · May 2026", emoji: "🔬" },
   { src: auditorium1, alt: "Large-scale workshop with students from multiple schools", category: "Event", emoji: "🎪" },
   { src: instructorPresentation1, alt: "Instructor presenting student project examples", category: "Teaching", emoji: "👨‍🏫" },
   { src: hackathon1, alt: "Hackathon event with excited participants", category: "Hackathon", emoji: "🚀" },
@@ -68,7 +80,7 @@ export function PhotoGallery() {
         <Reveal variant="up" delayMs={600}>
           <div className="mt-8 text-center">
             <p className="text-sm text-muted-foreground">
-              Photos from our workshops at <span className="font-medium text-foreground">40+ partner schools</span> across Singapore
+              Photos from our workshops at <span className="font-medium text-foreground">50+ partner schools</span> across Singapore · most recently Raffles Girls' School (May 2026)
             </p>
           </div>
         </Reveal>
