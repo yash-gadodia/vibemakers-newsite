@@ -30,3 +30,13 @@ class ResizeObserverStub {
 if (!(HTMLElement.prototype as unknown as { scrollIntoView?: () => void }).scrollIntoView) {
   (HTMLElement.prototype as unknown as { scrollIntoView: () => void }).scrollIntoView = () => {};
 }
+
+// Reveal component uses IntersectionObserver for scroll-based animations; jsdom
+// doesn't ship one, so stub a no-op observer similar to ResizeObserver.
+class IntersectionObserverStub {
+  observe() {}
+  unobserve() {}
+  disconnect() {}
+}
+(globalThis as unknown as { IntersectionObserver: typeof IntersectionObserverStub }).IntersectionObserver =
+  IntersectionObserverStub;
