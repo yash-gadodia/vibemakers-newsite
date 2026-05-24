@@ -14,7 +14,7 @@ describe("RGSCaseStudy", () => {
   it("renders the recent-delivery sticker and RGS heading", () => {
     renderIt();
     expect(screen.getByText(/Recent delivery/i)).toBeInTheDocument();
-    expect(screen.getByText(/Raffles Girls' School/i)).toBeInTheDocument();
+    expect(screen.getAllByText(/Raffles Girls' School/i).length).toBeGreaterThanOrEqual(1);
   });
 
   it("renders the three outcome stats with their numbers and labels", () => {
@@ -26,9 +26,9 @@ describe("RGSCaseStudy", () => {
     expect(screen.getByText(/Y1.{1,3}Y4/i)).toBeInTheDocument();
   });
 
-  it("includes the placeholder Dr Lim quote marker", () => {
+  it("includes the Dr Lim quote attribution", () => {
     renderIt();
-    expect(screen.getByText(/\[DR LIM QUOTE/i)).toBeInTheDocument();
+    expect(screen.getByText(/Dr Lim AK/i)).toBeInTheDocument();
   });
 
   it("links the CTA to the blog post", () => {

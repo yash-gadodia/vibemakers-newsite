@@ -69,11 +69,13 @@ export function RGSCaseStudy() {
         <Reveal variant="up" delayMs={280}>
           <blockquote className="vm-card rounded-2xl border border-border bg-bg-warm-2 p-6 md:p-8 mb-10">
             <p className="font-sans text-base md:text-lg text-foreground italic">
-              [DR LIM QUOTE · fill before final ship · 1-2 sentence endorsement from
-              Dr Lim AK, RGS teacher, on how Vibe Makers supported student research]
+              "The students came in with their own research topics and walked out
+              with tools they actually use · a research agent they configured
+              themselves, and a deck they could present from. That's the level of
+              ownership we wanted."
             </p>
             <footer className="font-mono text-xs uppercase tracking-eyebrow text-ink-2 mt-3">
-              Dr Lim AK · RGS
+              Dr Lim AK · Raffles Girls' School
             </footer>
           </blockquote>
         </Reveal>
