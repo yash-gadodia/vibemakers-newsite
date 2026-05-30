@@ -483,20 +483,6 @@ input, textarea, select {
     gap: 20px !important;
   }
 
-  /* Top nav (HTopBar) — hide desktop nav links, show hamburger menu */
-  .vm-topbar-nav { display: none !important; }
-  .vm-topbar-menu-btn { display: inline-flex !important; }
-  .vm-topbar-mobile-menu { display: flex !important; }
-  /* Hide the long "Enquire →" CTA on phones — Contact is in the menu */
-  .vm-topbar-cta { display: none !important; }
-  /* Top bar own padding compress */
-  [style*="padding: 16px 56px"] {
-    padding-left: 20px !important;
-    padding-right: 20px !important;
-    padding-top: 14px !important;
-    padding-bottom: 14px !important;
-  }
-
   /* CTA section — hardcoded padding 72px 56px, big copy */
   section[style*="padding: 72px 56px"] {
     padding: 56px 20px !important;

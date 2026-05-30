@@ -45,11 +45,8 @@ export function Layout({ children }: LayoutProps) {
         </script>
       </Helmet>
       <Header />
-      {/*
-        Header is fixed and taller in its "top-of-page" state (logo + padding).
-        Use a larger top padding so first-section backgrounds/content never sit behind it.
-      */}
-      <main className="flex-1 pt-24">
+      {/* Header is fixed; offset content by its height (~77px) so it isn't covered. */}
+      <main className="flex-1 pt-20">
         {children}
       </main>
       <Footer />

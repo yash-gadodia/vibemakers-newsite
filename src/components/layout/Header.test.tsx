@@ -12,22 +12,22 @@ const renderHeader = () =>
   );
 
 describe("Header", () => {
-  it("renders the primary nav links: For Parents, For Adults, For Schools, Programme, Hackathon, About, Blog", () => {
+  it("renders the primary nav links: Parents, Adults, Schools, Programme, Hackathon, About, Blog", () => {
     renderHeader();
-    expect(screen.getAllByRole("link", { name: /for parents/i }).length).toBeGreaterThan(0);
-    expect(screen.getAllByRole("link", { name: /for adults/i }).length).toBeGreaterThan(0);
-    expect(screen.getAllByRole("link", { name: /for schools/i }).length).toBeGreaterThan(0);
+    expect(screen.getAllByRole("link", { name: /^parents$/i }).length).toBeGreaterThan(0);
+    expect(screen.getAllByRole("link", { name: /^adults$/i }).length).toBeGreaterThan(0);
+    expect(screen.getAllByRole("link", { name: /^schools$/i }).length).toBeGreaterThan(0);
     expect(screen.getAllByRole("link", { name: /^programme$/i }).length).toBeGreaterThan(0);
     expect(screen.getAllByRole("link", { name: /^hackathon$/i }).length).toBeGreaterThan(0);
     expect(screen.getAllByRole("link", { name: /^about$/i }).length).toBeGreaterThan(0);
     expect(screen.getAllByRole("link", { name: /^blog$/i }).length).toBeGreaterThan(0);
   });
 
-  it("renders a Contact CTA pointing to /contact", () => {
+  it("renders an Enquire CTA pointing to /contact", () => {
     renderHeader();
-    const contactCtas = screen.getAllByRole("link", { name: /contact/i });
-    expect(contactCtas.length).toBeGreaterThan(0);
-    expect(contactCtas.find((el) => el.getAttribute("href") === "/contact")).toBeTruthy();
+    const ctas = screen.getAllByRole("link", { name: /enquire/i });
+    expect(ctas.length).toBeGreaterThan(0);
+    expect(ctas.find((el) => el.getAttribute("href") === "/contact")).toBeTruthy();
   });
 
   it("links the logo back to the homepage", () => {
@@ -42,7 +42,7 @@ describe("Header", () => {
     const toggle = screen.getByLabelText(/toggle menu/i);
     await user.click(toggle);
     // After opening, the same nav links exist twice (desktop + mobile menu)
-    const parentsLinks = screen.getAllByRole("link", { name: /for parents/i });
+    const parentsLinks = screen.getAllByRole("link", { name: /^parents$/i });
     expect(parentsLinks.length).toBeGreaterThanOrEqual(2);
   });
 });
