@@ -38,3 +38,6 @@ pnpm-debug.log*
 src/assets/_originals/
 yarn-debug.log*
 yarn-error.log*
+.gstack/
+
+*.tsbuildinfo
