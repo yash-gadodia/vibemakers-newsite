@@ -38,8 +38,8 @@ const singaporePathDs = extractPathDs(singaporeSvgRaw);
 
 export function SingaporeReachMap({
   sinceYear = "2018",
-  schoolsLabel = "40+",
-  studentsLabel = "5,000+",
+  schoolsLabel = "50+",
+  studentsLabel = "15,000+",
   pins = defaultPins,
 }: SingaporeReachMapProps) {
   const mapRef = useRef<SVGGElement | null>(null);

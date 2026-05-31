@@ -327,7 +327,7 @@ export function BuilderInput() {
           See What Our Students Have Built
         </h3>
         <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
-          From study planners to hawker food finders — students learn to build apps that solve real problems in Singapore
+          From study planners to hawker food finders, students learn to build apps that solve real problems in Singapore
         </p>
       </div>
 

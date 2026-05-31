@@ -22,7 +22,7 @@ export type BlogPost = {
   updated_at?: string | null;
 };
 
-const API_BASE = ""; // same-origin — Hono server serves both API + SPA
+const API_BASE = ""; // same-origin. Hono server serves both API + SPA
 
 export async function listBlogPosts(): Promise<BlogPost[]> {
   const res = await fetch(`${API_BASE}/api/blog`, {

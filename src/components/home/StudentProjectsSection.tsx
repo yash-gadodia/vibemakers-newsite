@@ -82,7 +82,7 @@ export function StudentProjectsSection() {
                 Projects you'll create.
               </h2>
               <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-                From portfolios to productivity tools—see the kinds of apps students build in our programmes.
+                From portfolios to productivity tools: see the kinds of apps students build in our programmes.
               </p>
             </div>
           </ParallaxSection>

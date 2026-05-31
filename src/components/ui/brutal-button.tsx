@@ -2,7 +2,7 @@ import * as React from "react";
 import { Slot } from "@radix-ui/react-slot";
 import { cn } from "@/lib/utils";
 
-// Source: .claude/design-system.md — the brutalist button pattern.
+// Source: .claude/design-system.md, the brutalist button pattern.
 // 4 variants: primary (orange + ink shadow), dark (ink + orange shadow),
 // outline (white + ink border), ghost (transparent + soft border).
 

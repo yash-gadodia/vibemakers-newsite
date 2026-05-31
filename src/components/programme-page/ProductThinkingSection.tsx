@@ -7,21 +7,21 @@ const pillars = [
   {
     icon: Users,
     title: "User-Centered",
-    description: "Start with real people and real needs—not abstract exercises",
+    description: "Start with real people and real needs: not abstract exercises",
     detail: "Students learn to ask: Who is this for? What do they struggle with? What would 'better' look like?",
     badge: "Empathise",
   },
   {
     icon: Target,
     title: "Constraint-Aware",
-    description: "Work within limits—time, scope, audience, and resources",
+    description: "Work within limits: time, scope, audience, and resources",
     detail: "Real problems have boundaries. Students learn to define scope and make trade-offs intentionally.",
     badge: "Define",
   },
   {
     icon: RefreshCw,
     title: "Feedback-Driven",
-    description: "Test, learn, improve—continuously",
+    description: "Test, learn, improve: continuously",
     detail: "No solution is perfect on the first try. Students iterate based on real feedback, not assumptions.",
     badge: "Iterate",
   },
@@ -76,7 +76,7 @@ export function ProductThinkingSection() {
         <Reveal variant="up" delayMs={300}>
           <div className="rounded-2xl bg-bg-warm-2 border border-border p-6 md:p-8 text-center">
             <p className="font-sans text-foreground max-w-2xl mx-auto">
-              Product thinking develops <strong>Critical, Adaptive and Inventive Thinking (CAIT)</strong> — one of three core 21CC domains. Our approach maps to MOE's <strong>Applied Learning Programme</strong> framework: authentic problems, real-world contexts, student-led iteration.
+              Product thinking develops <strong>Critical, Adaptive and Inventive Thinking (CAIT)</strong> · one of three core 21CC domains. Our approach maps to MOE's <strong>Applied Learning Programme</strong> framework: authentic problems, real-world contexts, student-led iteration.
             </p>
           </div>
         </Reveal>

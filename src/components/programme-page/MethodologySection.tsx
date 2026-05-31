@@ -40,8 +40,7 @@ export function MethodologySection() {
               How We Teach It: The V.I.B.E. Cycle
             </h2>
             <p className="font-sans text-ink-2 max-w-2xl mx-auto text-lg">
-              A student-friendly design thinking loop that brings product thinking to life with AI—
-              developing self-directed, collaborative, and digitally literate learners.
+              A student-friendly design thinking loop that brings product thinking to life with AI: developing self-directed, collaborative, and digitally literate learners.
             </p>
           </div>
         </Reveal>
@@ -125,7 +124,7 @@ export function MethodologySection() {
                 <span className="text-xl">🏆</span>
               </div>
               <div>
-                <p className="font-display font-bold text-foreground">Process over product—but students still ship</p>
+                <p className="font-display font-bold text-foreground">Process over product: but students still ship</p>
                 <p className="mt-2 font-sans text-foreground text-sm">
                   By the end, students have a working prototype AND can explain: the problem they chose,
                   how they designed it, what they built, and what they'd improve.

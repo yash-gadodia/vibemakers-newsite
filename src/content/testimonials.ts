@@ -16,7 +16,7 @@ export const testimonials: Record<TestimonialDemographic, Testimonial[]> = {
     },
     {
       quote:
-        "I spent the first hour just figuring out what problem to solve. That part was harder than the coding — but my study planner actually works and I use it every week now.",
+        "I spent the first hour just figuring out what problem to solve. That part was harder than the coding, but my study planner actually works and I use it every week now.",
       name: "Nur Aisyah M.",
       role: "Sec 4, CHIJ Katong Convent",
     },
@@ -30,13 +30,13 @@ export const testimonials: Record<TestimonialDemographic, Testimonial[]> = {
   parents: [
     {
       quote:
-        "He came home and opened his laptop to keep working on his project — unprompted. That never happens with enrichment classes. The instructors clearly knew when to step back.",
+        "He came home and opened his laptop to keep working on his project, unprompted. That never happens with enrichment classes. The instructors clearly knew when to step back.",
       name: "Mdm Tan",
       role: "Parent of Sec 2 student",
     },
     {
       quote:
-        "What convinced me was the demo at the end. She could explain why she made each design decision. It wasn’t just following instructions — she was thinking through it.",
+        "What convinced me was the demo at the end. She could explain why she made each design decision. It wasn’t just following instructions, she was thinking through it.",
       name: "Mr Lim",
       role: "Parent of Sec 3 student",
     },
@@ -56,13 +56,13 @@ export const testimonials: Record<TestimonialDemographic, Testimonial[]> = {
     },
     {
       quote:
-        "The facilitators differentiated naturally — gave extension prompts to stronger students and scaffolded weaker ones. Everyone shipped something by the end.",
+        "The facilitators differentiated naturally, gave extension prompts to stronger students and scaffolded weaker ones. Everyone shipped something by the end.",
       name: "Mr Hafiz Rahman",
       role: "ICT Coordinator",
     },
     {
       quote:
-        "It maps well to our ALP outcomes. The design thinking component was genuine — students were empathising with real users, not just going through the motions.",
+        "It maps well to our ALP outcomes. The design thinking component was genuine, students were empathising with real users, not just going through the motions.",
       name: "Dr Suresh Nair",
       role: "Head of Department, Infocomm",
     },

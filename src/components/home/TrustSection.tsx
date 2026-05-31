@@ -76,7 +76,7 @@ export function TrustSection() {
               Trusted by Singapore Schools
             </h2>
             <p className="text-muted-foreground text-base md:text-lg">
-              From primary schools to JCs — delivering enrichment programmes since 2018
+              From primary schools to JCs, delivering enrichment programmes since 2018
             </p>
           </Reveal>
 

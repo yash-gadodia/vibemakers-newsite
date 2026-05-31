@@ -45,7 +45,7 @@ export function PhotoGallery() {
           <SectionHeader
             badge="Behind the Scenes"
             title="Real students. Real learning."
-            description="See what happens in our workshops—collaboration, creativity, and lots of 'it works!' moments."
+            description="See what happens in our workshops: collaboration, creativity, and lots of 'it works!' moments."
           />
         </Reveal>
 

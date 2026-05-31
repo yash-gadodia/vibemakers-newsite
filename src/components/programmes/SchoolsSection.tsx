@@ -175,7 +175,7 @@ export function SchoolsSection() {
               Design Thinking Through Vibe Coding
             </h2>
             <p className="text-muted-foreground">
-              Our workshops integrate the 5-stage design thinking process. Students don't just build apps—they learn to empathise, define problems, ideate solutions, prototype rapidly, and iterate based on feedback.
+              Our workshops integrate the 5-stage design thinking process. Students don't just build apps: they learn to empathise, define problems, ideate solutions, prototype rapidly, and iterate based on feedback.
             </p>
           </div>
 
@@ -221,7 +221,7 @@ export function SchoolsSection() {
               <div>
                 <h4 className="font-semibold mb-1">21st Century Competencies Aligned</h4>
                 <p className="text-sm text-muted-foreground">
-                  Design thinking develops critical thinking, creativity, and adaptive problem-solving—core 21CC skills. Students learn to navigate ambiguity and collaborate effectively while building real solutions.
+                  Design thinking develops critical thinking, creativity, and adaptive problem-solving: core 21CC skills. Students learn to navigate ambiguity and collaborate effectively while building real solutions.
                 </p>
               </div>
             </div>
@@ -233,7 +233,7 @@ export function SchoolsSection() {
       <div className="section-padding bg-secondary/30">
         <div className="container mx-auto px-4">
           <h2 className="text-2xl font-display font-bold mb-3">Available Workshops</h2>
-          <p className="text-muted-foreground mb-8">Choose a starting point—we’ll tailor the pacing and outcomes to your cohort.</p>
+          <p className="text-muted-foreground mb-8">Choose a starting point: we’ll tailor the pacing and outcomes to your cohort.</p>
           <div className="grid md:grid-cols-2 gap-6">
             {workshops.map((workshop) => (
               <div key={workshop.title} className="bg-card border border-border rounded-2xl p-6 hover:border-primary/30 transition-colors">

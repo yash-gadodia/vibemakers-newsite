@@ -75,7 +75,7 @@ const MethodologySlide = () => {
         <div className="text-center">
           <p className="inline-flex items-center gap-3 text-xl text-muted-foreground bg-secondary px-6 py-3 rounded-full">
             <span className="text-primary text-2xl">✨</span>
-            Process over product — <span className="text-primary font-medium">but students still ship</span>
+            Process over product · <span className="text-primary font-medium">but students still ship</span>
           </p>
         </div>
       </div>

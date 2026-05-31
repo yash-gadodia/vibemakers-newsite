@@ -54,7 +54,7 @@ const vibeSteps = [
     label: "Build",
     subLabel: "Prototype",
     tooltipTitle: "Build",
-    tooltipBody: "Prototype quickly with AI-assisted creation—then refine through small iterations.",
+    tooltipBody: "Prototype quickly with AI-assisted creation: then refine through small iterations.",
   },
   {
     icon: Repeat,
@@ -94,13 +94,13 @@ const learnerProfiles = [
     icon: Hammer,
     title: "Learn best by doing, not memorising",
     description:
-      "Well suited for teens who learn through building, testing ideas, and iterating on prototypes—rather than memorising content or following step-by-step worksheets.",
+      "Well suited for teens who learn through building, testing ideas, and iterating on prototypes: rather than memorising content or following step-by-step worksheets.",
   },
   {
     icon: MessageSquareText,
     title: "Building confidence and communication",
     description:
-      "Designed for students developing confidence in sharing ideas, explaining their thinking, and presenting work—with supportive feedback.",
+      "Designed for students developing confidence in sharing ideas, explaining their thinking, and presenting work: with supportive feedback.",
   },
 ];
 
@@ -144,7 +144,7 @@ export function ProgrammeTabs() {
         <div className="max-w-4xl mx-auto text-center">
           <h2 className="text-2xl md:text-4xl font-display font-bold">What students actually learn</h2>
           <p className="mt-3 text-muted-foreground">
-            A clean, structured pathway—from problem framing to shipping and iteration.
+            A clean, structured pathway: from problem framing to shipping and iteration.
           </p>
         </div>
 
@@ -288,7 +288,7 @@ export function ProgrammeTabs() {
                 <div className="text-center max-w-2xl mx-auto">
                   <h3 className="text-xl md:text-2xl font-display font-bold">Skills students gain</h3>
                   <p className="mt-2 text-sm md:text-base text-muted-foreground">
-                    Choose the lens. Same skills—different outcomes.
+                    Choose the lens. Same skills: different outcomes.
                   </p>
                 </div>
 

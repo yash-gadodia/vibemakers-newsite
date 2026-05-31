@@ -20,11 +20,11 @@ const Blog = () => {
         <title>Blog · Vibemakers Academy</title>
         <meta
           name="description"
-          content="Stories, insights, and updates from Vibemakers Academy — Singapore's AI-first coding academy for teens."
+          content="Stories, insights, and updates from Vibemakers Academy. Singapore's AI-first coding academy for teens."
         />
         <link rel="canonical" href="https://vibemakers.dev/blog" />
         <meta property="og:title" content="Blog · Vibemakers Academy" />
-        <meta property="og:description" content="Stories, insights, and updates from Vibemakers Academy — Singapore's AI-first coding academy for teens." />
+        <meta property="og:description" content="Stories, insights, and updates from Vibemakers Academy. Singapore's AI-first coding academy for teens." />
         <meta property="og:type" content="website" />
         <meta property="og:image" content="https://vibemakers.dev/og-image.png" />
         <meta name="twitter:card" content="summary_large_image" />
@@ -35,7 +35,7 @@ const Blog = () => {
           <BrutalSectionHeading
             eyebrow="● Stories from the academy"
             title="Blog"
-            sub="Notes and stories from the studio — how we build, teach, and think about AI coding for teens."
+            sub="Notes and stories from the studio, how we build, teach, and think about AI coding for teens."
             size="lg"
             align="left"
           />
@@ -51,7 +51,7 @@ const Blog = () => {
           ) : !posts || posts.length === 0 ? (
             <BrutalCard className="p-12 text-center">
               <p className="text-muted-foreground text-lg">
-                No posts yet — check back soon.
+                No posts yet, check back soon.
               </p>
             </BrutalCard>
           ) : (
@@ -67,6 +67,7 @@ const Blog = () => {
                         src={post.cover_image}
                         alt={post.title}
                         className="w-full h-48 object-cover"
+                        loading="lazy"
                       />
                     )}
 

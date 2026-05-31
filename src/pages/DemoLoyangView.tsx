@@ -26,7 +26,7 @@ const modules = [
     number: 2,
     date: "3 June 2026",
     duration: "4 Hours (0800–1200)",
-    title: "Vision & Ideate — Empathise, Define and Generate Ideas",
+    title: "Vision & Ideate. Empathise, Define and Generate Ideas",
     highlights: [
       "Structured user research with empathy maps",
       "Problem statements & 'How Might We…?' framing",
@@ -40,7 +40,7 @@ const modules = [
     number: 3,
     date: "5 June 2026",
     duration: "4 Hours (0800–1200)",
-    title: "Build & Evolve — Prototype, Test, Pitch",
+    title: "Build & Evolve. Prototype, Test, Pitch",
     highlights: [
       "Build working prototypes with Lovable + AI visuals",
       "Structured peer user testing & iteration",
@@ -107,7 +107,7 @@ export default function DemoLoyangView() {
               <span className="text-primary">AI-Enhanced Design Skills</span>
             </h1>
             <p className="text-lg md:text-xl text-background/70 max-w-2xl mb-8">
-              A 3-module enrichment programme integrating Design Thinking with AI-powered prototyping tools. Students don't just learn — they <strong className="text-background">build, test, and ship</strong>.
+              A 3-module enrichment programme integrating Design Thinking with AI-powered prototyping tools. Students don't just learn, they <strong className="text-background">build, test, and ship</strong>.
             </p>
             <div className="flex flex-wrap gap-4">
               <div className="flex items-center gap-2 px-4 py-2 bg-background/10 rounded-xl text-sm">
@@ -133,7 +133,7 @@ export default function DemoLoyangView() {
           <SectionHeader
             badge="The Experience"
             title="What does this look like in practice?"
-            description="During Module 1, your facilitator will demonstrate how Lovable transforms a rough design brief into a working prototype — live, in minutes. Here's what that process looks like."
+            description="During Module 1, your facilitator will demonstrate how Lovable transforms a rough design brief into a working prototype, live, in minutes. Here's what that process looks like."
           />
           <div className="mt-12 grid md:grid-cols-3 gap-8">
             <div className="text-center p-6">
@@ -142,7 +142,7 @@ export default function DemoLoyangView() {
               </div>
               <h3 className="text-lg font-display font-bold mb-2">1. Describe the Problem</h3>
               <p className="text-sm text-muted-foreground">
-                Students articulate what they want to build in plain English — grounded in their user research and empathy interviews.
+                Students articulate what they want to build in plain English, grounded in their user research and empathy interviews.
               </p>
             </div>
             <div className="text-center p-6">
@@ -151,7 +151,7 @@ export default function DemoLoyangView() {
               </div>
               <h3 className="text-lg font-display font-bold mb-2">2. AI Generates a Prototype</h3>
               <p className="text-sm text-muted-foreground">
-                Lovable translates the prompt into a working app — layout, interactivity, and visuals — in seconds, not weeks.
+                Lovable translates the prompt into a working app, layout, interactivity, and visuals, in seconds, not weeks.
               </p>
             </div>
             <div className="text-center p-6">
@@ -160,7 +160,7 @@ export default function DemoLoyangView() {
               </div>
               <h3 className="text-lg font-display font-bold mb-2">3. Critique & Iterate</h3>
               <p className="text-sm text-muted-foreground">
-                Students evaluate the output as designers: What serves the user? What doesn't? Then they refine — the AI assists, humans decide.
+                Students evaluate the output as designers: What serves the user? What doesn't? Then they refine, the AI assists, humans decide.
               </p>
             </div>
           </div>
@@ -190,7 +190,7 @@ export default function DemoLoyangView() {
             ))}
           </div>
           <p className="text-center text-sm text-muted-foreground mt-8 italic">
-            Process over product — but students still ship.
+            Process over product, but students still ship.
           </p>
         </div>
       </section>
@@ -272,7 +272,7 @@ export default function DemoLoyangView() {
           <SectionHeader
             badge="Outcomes"
             title="What Students Will Achieve"
-            description="By the end of the programme, every student will have built, tested, and pitched a working prototype — grounded in real user research."
+            description="By the end of the programme, every student will have built, tested, and pitched a working prototype, grounded in real user research."
           />
           <div className="mt-10 max-w-3xl mx-auto">
             <div className="grid gap-4">
@@ -307,13 +307,13 @@ export default function DemoLoyangView() {
               </div>
               <div className="space-y-4 text-sm text-muted-foreground">
                 <p>
-                  We position artificial intelligence as a powerful creative collaborator — not a replacement for human judgement. Students learn to <strong className="text-foreground">direct, evaluate, and iterate</strong> on AI-generated outputs.
+                  We position artificial intelligence as a powerful creative collaborator, not a replacement for human judgement. Students learn to <strong className="text-foreground">direct, evaluate, and iterate</strong> on AI-generated outputs.
                 </p>
                 <p>
                   When students use Lovable to generate a prototype, facilitators intervene with questions like: <em>"Does this serve your user? Would the person you interviewed recognise their need in this?"</em>
                 </p>
                 <p className="font-medium text-foreground">
-                  AI draws on patterns, not empathy — your role as a designer is to make it useful.
+                  AI draws on patterns, not empathy, your role as a designer is to make it useful.
                 </p>
               </div>
             </div>

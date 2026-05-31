@@ -20,7 +20,7 @@ export function ProgrammeHero() {
 
             <p className="font-sans text-foreground text-lg leading-relaxed mb-8">
               An applied learning experience where students define problems, design solutions, and develop
-              21st Century Competencies—using AI as a tool, not a shortcut.
+              21st Century Competencies: using AI as a tool, not a shortcut.
             </p>
 
             <div className="flex flex-col sm:flex-row gap-4">

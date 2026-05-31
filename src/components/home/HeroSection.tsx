@@ -37,7 +37,7 @@ export function HeroSection() {
                   animationDelay: "0.15s",
                 }}
               >
-                Students learn to spot real problems, design solutions, and build working apps — developing Critical, Adaptive and Inventive Thinking through AI-first vibe coding.
+                Students learn to spot real problems, design solutions, and build working apps, developing Critical, Adaptive and Inventive Thinking through AI-first vibe coding.
               </p>
 
               {/* Description */}

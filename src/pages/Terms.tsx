@@ -44,7 +44,7 @@ const Terms = () => {
 
             <h2>4. Intellectual Property</h2>
             <p>
-              All content on this website — including text, graphics, logos, and design — is the property
+              All content on this website, including text, graphics, logos, and design, is the property
               of Dialogic Academy Pte Ltd or its licensors and is protected by intellectual property laws.
               You may not reproduce, distribute, or create derivative works without our written consent.
             </p>

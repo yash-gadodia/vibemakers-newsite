@@ -58,27 +58,27 @@ const parentFAQ = [
   },
   {
     q: "Does my child need any prior coding experience?",
-    a: "No. Most of our students have never coded before their free trial. The whole point of vibe coding is that students describe what they want in plain English and AI generates the code — they iterate from there. The learning is in the thinking, not the syntax.",
+    a: "No. Most of our students have never coded before their free trial. The whole point of vibe coding is that students describe what they want in plain English and AI generates the code, they iterate from there. The learning is in the thinking, not the syntax.",
   },
   {
     q: "What does my child need to bring or own?",
-    a: "A laptop (Mac or Windows, anything from 2019 onwards is fine). A free Lovable account and a free Claude account — we'll help you set those up before session 1. No software to install.",
+    a: "A laptop (Mac or Windows, anything from 2019 onwards is fine). A free Lovable account and a free Claude account, we'll help you set those up before session 1. No software to install.",
   },
   {
     q: "Is it online or in-person?",
-    a: "Both, your choice. Group classes run in-person at our partner space in Singapore. 1-to-1 coaching can be online (Zoom + screen share) or in-person depending on what suits your family. Trial classes are usually online — easier to schedule.",
+    a: "Both, your choice. Group classes run in-person at our partner space in Singapore. 1-to-1 coaching can be online (Zoom + screen share) or in-person depending on what suits your family. Trial classes are usually online, easier to schedule.",
   },
   {
     q: "How is this different from a Python course at Coding Lab / Saturday Kids / First Code?",
-    a: "Those programmes optimise for syntax mastery — students learn to write code character-by-character. We optimise for shipping real products — students leave with deployed apps used by real classmates. For DSA / EAE / JC interviews, a portfolio of working apps consistently outperforms a course-completion certificate. We're built for teens (13–18); they're mostly built for primary kids.",
+    a: "Those programmes optimise for syntax mastery, students learn to write code character-by-character. We optimise for shipping real products, students leave with deployed apps used by real classmates. For DSA / EAE / JC interviews, a portfolio of working apps consistently outperforms a course-completion certificate. We're built for teens (13–18); they're mostly built for primary kids.",
   },
   {
     q: "Will my child miss out on 'real' computer science?",
-    a: "Not if they stay curious. Most students who continue past month 2 naturally start asking 'what's actually in the code Lovable generated?' — and that's when traditional CS knowledge becomes meaningful and motivated. Order matters: ship first, theorise second.",
+    a: "Not if they stay curious. Most students who continue past month 2 naturally start asking 'what's actually in the code Lovable generated?' · and that's when traditional CS knowledge becomes meaningful and motivated. Order matters: ship first, theorise second.",
   },
   {
     q: "How fast will I hear back after enquiring?",
-    a: "Within 24 hours on weekdays, sooner on most weekends. We reply via WhatsApp by default — feel free to message +65 8890 0368 directly if you'd rather skip the form.",
+    a: "Within 24 hours on weekdays, sooner on most weekends. We reply via WhatsApp by default, feel free to message +65 8890 0368 directly if you'd rather skip the form.",
   },
   {
     q: "What if my child tries it once and doesn't enjoy it?",
@@ -86,11 +86,11 @@ const parentFAQ = [
   },
   {
     q: "Can I see what students have actually built?",
-    a: "Yes — the trial class ends with your teen showing you what they made. We're also building a public portfolio gallery for late 2026 with consenting students' work.",
+    a: "Yes, the trial class ends with your teen showing you what they made. We're also building a public portfolio gallery for late 2026 with consenting students' work.",
   },
   {
     q: "Are you MOE-aligned?",
-    a: "Yes. The V.I.B.E. methodology maps to all four MOE 4 AI Learns (Learn about / use / with / beyond AI) and develops the three core 21CC competencies — Critical, Adaptive & Inventive Thinking; Communication & Collaboration; Self-Directed Learning. We've delivered enrichment with 40+ Singapore schools since 2018 (as Dialogic Academy).",
+    a: "Yes. The V.I.B.E. methodology maps to all four MOE 4 AI Learns (Learn about / use / with / beyond AI) and develops the three core 21CC competencies. Critical, Adaptive & Inventive Thinking; Communication & Collaboration; Self-Directed Learning. We've delivered enrichment with 50+ Singapore schools since 2018 (as Dialogic Academy).",
   },
 ];
 
@@ -113,7 +113,7 @@ const outcomes = [
   {
     emoji: "🚀",
     title: "Real Projects (Not Worksheets)",
-    description: "Working apps deployed online — shareable via a link, not just screenshots",
+    description: "Working apps deployed online, shareable via a link, not just screenshots",
   },
   {
     emoji: "🧠",
@@ -123,7 +123,7 @@ const outcomes = [
   {
     emoji: "🎯",
     title: "DSA & Portfolio-Ready",
-    description: "A deployed app + reflection portfolio documenting their problem-solving process — strong evidence for DSA, EAE, and school applications",
+    description: "A deployed app + reflection portfolio documenting their problem-solving process, strong evidence for DSA, EAE, and school applications",
   },
   {
     emoji: "💬",
@@ -133,7 +133,7 @@ const outcomes = [
   {
     emoji: "✨",
     title: "Self-Directed Learning",
-    description: "Students set project goals, manage scope, and iterate independently — a core MOE 21CC competency",
+    description: "Students set project goals, manage scope, and iterate independently, a core MOE 21CC competency",
   },
 ];
 
@@ -175,22 +175,22 @@ const learnerProfiles = [
   {
     title: "\"My child has ideas but doesn't know where to start\"",
     description:
-      "They come home talking about app ideas or things they wish existed — but don't have the tools or guidance to actually build them. Our programme gives them a structured way to go from idea to working prototype, with an instructor who helps them scope realistically and ship something real.",
+      "They come home talking about app ideas or things they wish existed, but don't have the tools or guidance to actually build them. Our programme gives them a structured way to go from idea to working prototype, with an instructor who helps them scope realistically and ship something real.",
   },
   {
     title: "\"They're good at school but bored by worksheets\"",
     description:
-      "Strong academically, but disengaged by rote learning. These students come alive when they're solving real problems — figuring out why a feature isn't working, or deciding what to cut when time runs short. The programme channels that energy into tangible projects they own.",
+      "Strong academically, but disengaged by rote learning. These students come alive when they're solving real problems, figuring out why a feature isn't working, or deciding what to cut when time runs short. The programme channels that energy into tangible projects they own.",
   },
   {
-    title: "\"They spend hours on devices — I want that time to be productive\"",
+    title: "\"They spend hours on devices. I want that time to be productive\"",
     description:
       "Instead of passive consumption, your child learns to use AI tools purposefully: prompting with intent, verifying outputs, debugging when things break. They go from being a user of technology to someone who creates with it.",
   },
   {
     title: "\"They're quiet and need a safe space to build confidence\"",
     description:
-      "Not every student thrives in a debate or presentation setting — and that's fine. Here, the work speaks for itself first. Students build up to sharing by presenting their projects to small groups, explaining design decisions, and receiving constructive peer feedback at their own pace.",
+      "Not every student thrives in a debate or presentation setting, and that's fine. Here, the work speaks for itself first. Students build up to sharing by presenting their projects to small groups, explaining design decisions, and receiving constructive peer feedback at their own pace.",
   },
 ];
 
@@ -278,7 +278,7 @@ export default function Parents() {
                 Trial class is 60 minutes, online or in-person, and free.
               </p>
               <p className="font-sans text-sm text-muted-foreground max-w-2xl leading-[1.55] mb-8">
-                Trusted by 40+ Singapore schools since 2018 · Part of Dialogic Academy
+                Trusted by 50+ Singapore schools since 2018 · Part of Dialogic Academy
               </p>
 
               {/* Above-fold CTAs */}
@@ -314,7 +314,7 @@ export default function Parents() {
         </div>
       </section>
 
-      {/* Trust bar — partner schools + stats. Ported from home so /parents
+      {/* Trust bar, partner schools + stats. Ported from home so /parents
           starts with credibility before going into the longer pitch. */}
       <TrustSection />
 
@@ -359,7 +359,7 @@ export default function Parents() {
             <Reveal variant="left">
               <div className="vm-card rounded-2xl border border-border bg-card p-8">
                 <h2 className="font-display font-bold tracking-display leading-[1.02] text-3xl md:text-4xl mb-3">What You'll Get as a Parent</h2>
-                <p className="font-sans text-base text-ink-2 mb-6">No guesswork—just a clear plan and visible work products.</p>
+                <p className="font-sans text-base text-ink-2 mb-6">No guesswork: just a clear plan and visible work products.</p>
                 <ul className="space-y-4">
                   {[
                     "A simple learning plan based on your child's goals",
@@ -485,8 +485,8 @@ export default function Parents() {
         </div>
       </section>
 
-      {/* Pricing — transparent rates. Per competitor research, every other
-          SG provider hides pricing behind "contact us" — publishing ours
+      {/* Pricing, transparent rates. Per competitor research, every other
+          SG provider hides pricing behind "contact us" · publishing ours
           is our biggest single conversion wedge. */}
       <section id="pricing" className="bg-bg-warm py-20 md:py-28 border-t border-border scroll-mt-24">
         <div className="mx-auto max-w-[1200px] px-6 md:px-14">
@@ -547,7 +547,7 @@ export default function Parents() {
           </RevealGroup>
           <Reveal variant="up" delayMs={400}>
             <p className="text-center font-sans text-sm text-muted-foreground mt-8">
-              All prices in SGD. No GST surprises. We bill at the start of each month — pause or cancel anytime.
+              All prices in SGD. No GST surprises. We bill at the start of each month, pause or cancel anytime.
             </p>
           </Reveal>
         </div>
@@ -599,7 +599,7 @@ export default function Parents() {
               </div>
               <div>
                 <h3 className="font-semibold text-foreground mb-1">Guided AI Usage</h3>
-                <p className="font-sans text-base text-ink-2">Students use AI tools under instructor supervision, learning responsible prompting and output verification — aligned with MOE's AI literacy guidelines</p>
+                <p className="font-sans text-base text-ink-2">Students use AI tools under instructor supervision, learning responsible prompting and output verification, aligned with MOE's AI literacy guidelines</p>
               </div>
             </div>
             <div className="flex items-start gap-4">
@@ -617,7 +617,7 @@ export default function Parents() {
               </div>
               <div>
                 <h3 className="font-semibold text-foreground mb-1">Dialogic Academy Track Record</h3>
-                <p className="font-sans text-base text-ink-2">Part of <a href="https://dialogic.academy" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline font-medium">Dialogic Academy</a> (est. 2018) — 40+ school partnerships including RGS, VJC, ACS, and NJC</p>
+                <p className="font-sans text-base text-ink-2">Part of <a href="https://dialogic.academy" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline font-medium">Dialogic Academy</a> (est. 2018) · 50+ school partnerships including RGS, VJC, ACS, and NJC</p>
               </div>
             </div>
             <div className="flex items-start gap-4">
@@ -660,7 +660,7 @@ export default function Parents() {
                   {t.quote}
                 </blockquote>
                 <p className="font-mono text-xs uppercase tracking-eyebrow text-muted-foreground">
-                  — {t.role}
+                  · {t.role}
                 </p>
               </div>
             ))}
@@ -668,7 +668,7 @@ export default function Parents() {
         </div>
       </section>
 
-      {/* FAQ — pre-empt every common parent objection so they don't bounce */}
+      {/* FAQ, pre-empt every common parent objection so they don't bounce */}
       <section className="bg-background py-20 md:py-28 border-t border-border">
         <div className="mx-auto max-w-[900px] px-6 md:px-14">
           <Reveal variant="up">
@@ -680,7 +680,7 @@ export default function Parents() {
                 Things parents ask before booking
               </h2>
               <p className="font-sans text-base text-ink-2">
-                Still unsure? <a href="https://wa.me/6588900368?text=Hi%20Vibe%20Makers" target="_blank" rel="noopener noreferrer" className="text-primary font-medium hover:underline">WhatsApp us</a> — we usually reply same day.
+                Still unsure? <a href="https://wa.me/6588900368?text=Hi%20Vibe%20Makers" target="_blank" rel="noopener noreferrer" className="text-primary font-medium hover:underline">WhatsApp us</a> · we usually reply same day.
               </p>
             </div>
           </Reveal>
@@ -718,7 +718,7 @@ export default function Parents() {
                   Ready when you are
                 </h2>
                 <p className="font-sans text-base text-ink-2">
-                  Tell us about your teen — we'll reply within 24 hours (usually faster) with the next available trial slot. Or just{" "}
+                  Tell us about your teen, we'll reply within 24 hours (usually faster) with the next available trial slot. Or just{" "}
                   <a
                     href="https://wa.me/6588900368?text=Hi%20Vibe%20Makers%20%E2%80%94%20I%27d%20like%20to%20book%20a%20free%20trial%20class"
                     target="_blank"

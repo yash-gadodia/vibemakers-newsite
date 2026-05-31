@@ -2,7 +2,7 @@ import * as React from "react";
 import { cn } from "@/lib/utils";
 import { BrutalSticker } from "./brutal-sticker";
 
-// Source: .claude/design-system.md — the recurring "eyebrow sticker + h2 + sub"
+// Source: .claude/design-system.md, the recurring "eyebrow sticker + h2 + sub"
 // pattern at the top of homepage sections. Replaces inline copies.
 
 type BrutalSectionHeadingProps = {

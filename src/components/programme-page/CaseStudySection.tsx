@@ -19,7 +19,7 @@ const journeySteps = [
     phase: "Ideate",
     icon: Lightbulb,
     color: "bg-accent",
-    painPoint: "\"I wanted to build everything — a chatbot, a calendar, notifications. My instructor asked: what's the one thing that solves 80% of the problem?\"",
+    painPoint: "\"I wanted to build everything, a chatbot, a calendar, notifications. My instructor asked: what's the one thing that solves 80% of the problem?\"",
     actions: [
       "Brainstorms 5 ideas, evaluates each against time and user need",
       "Cuts scope: drops notifications and chatbot, keeps dashboard + add activity",
@@ -34,16 +34,16 @@ const journeySteps = [
     painPoint: "\"The AI generated a whole page but the form didn't save anything. I had to figure out what went wrong and re-prompt with more detail.\"",
     actions: [
       "Prompts AI with specific requirements from wireframe, not just 'build a tracker'",
-      "First version has a bug — form submits but data doesn't persist. Debugs by reading the error",
+      "First version has a bug, form submits but data doesn't persist. Debugs by reading the error",
       "Learns to verify AI output: 'Does this actually do what I asked? Let me test the flow.'",
     ],
-    artifact: "Working prototype — messy but functional",
+    artifact: "Working prototype, messy but functional",
   },
   {
     phase: "Evolve",
     icon: Repeat,
     color: "bg-accent",
-    painPoint: "\"My friend said the colours were confusing — green meant 'done' to me but 'not started' to her. I had to rethink the whole colour system.\"",
+    painPoint: "\"My friend said the colours were confusing, green meant 'done' to me but 'not started' to her. I had to rethink the whole colour system.\"",
     actions: [
       "3 classmates test the app; 2 out of 3 misread the status colours",
       "Redesigns status indicators based on feedback, adds text labels alongside colours",
@@ -83,8 +83,7 @@ export function CaseStudySection() {
               <div>
                 <h3 className="font-display font-bold text-foreground text-lg mb-2">The Starting Point</h3>
                 <p className="font-sans text-foreground">
-                  A Sec 3 student notices her classmates struggling with the same thing she is —
-                  nobody knows their CCA points balance until it's too late. She decides to build something about it.
+                  A Sec 3 student notices her classmates struggling with the same thing she is: nobody knows their CCA points balance until it's too late. She decides to build something about it.
                 </p>
                 <p className="font-sans font-medium text-foreground mt-3">
                   "My class Google Sheet keeps breaking. I think I can make something better."
@@ -168,11 +167,11 @@ export function CaseStudySection() {
                 <h3 className="font-display font-bold text-foreground text-lg mb-2">The Outcome</h3>
                 <p className="font-sans text-foreground">
                   The student has a <strong>working CCA Tracker</strong> her classmates
-                  actually use — but the real outcome is what she can now do: identify a problem worth solving,
+                  actually use, but the real outcome is what she can now do: identify a problem worth solving,
                   make scope trade-offs, verify AI output, and present her reasoning to others.
                 </p>
                 <p className="font-sans text-sm font-medium text-primary mt-3">
-                  CAIT, CCI, and self-directed learning — demonstrated through authentic work.
+                  CAIT, CCI, and self-directed learning, demonstrated through authentic work.
                 </p>
               </div>
             </div>

@@ -19,27 +19,27 @@ const fourLearns = [
     icon: Compass,
     pillar: "Learn About AI",
     moe: "Pillar 1",
-    blurb: "Students understand AI fundamentals — capabilities, limitations, bias, and ethical use.",
+    blurb: "Students understand AI fundamentals, capabilities, limitations, bias, and ethical use.",
     weDo: "We open every programme with a hands-on look at where AI is wrong. Students audit Lovable / Claude outputs and catalogue failure modes before building anything.",
   },
   {
     icon: BookOpen,
     pillar: "Learn to Use AI",
     moe: "Pillar 2",
-    blurb: "Students wield AI tools effectively and responsibly — prompt engineering, output verification.",
+    blurb: "Students wield AI tools effectively and responsibly, prompt engineering, output verification.",
     weDo: "We teach the craft: structured prompts, iteration cycles, output evaluation. Every student ships a working app using Claude + Lovable + Cursor as exoskeletons, not crutches.",
   },
   {
     icon: Users,
     pillar: "Learn With AI",
     moe: "Pillar 3",
-    blurb: "AI as pedagogical partner — students collaborate with AI to deepen understanding.",
+    blurb: "AI as pedagogical partner, students collaborate with AI to deepen understanding.",
     weDo: "Students use Claude to explore unfamiliar problems, debug their own code, and stress-test their assumptions. AI becomes the always-available teaching assistant.",
   },
   {
     icon: ShieldCheck,
     pillar: "Learn Beyond AI",
-    moe: "Pillar 4 — the unique one",
+    moe: "Pillar 4, the unique one",
     blurb: "Critical evaluation, human judgment, knowing when to reject AI suggestions.",
     weDo: "This is the gap most enrichment misses. Our V.I.B.E. cycle's Evolve phase explicitly trains students to user-test, critique AI outputs, defend non-AI decisions, and document when they pushed back.",
     highlight: true,
@@ -74,11 +74,11 @@ const schoolPricing = [
 const schoolFAQ = [
   {
     q: "How is this different from a generic 'AI literacy' workshop?",
-    a: "We don't lecture about AI. Students build with it. Every programme produces tangible artefacts (deployed apps, reflection portfolios, demo decks) that map directly to MOE's 4 AI Learns and 21CC competencies — auditable evidence schools can show to inspectorates and parents, not just a slide deck.",
+    a: "We don't lecture about AI. Students build with it. Every programme produces tangible artefacts (deployed apps, reflection portfolios, demo decks) that map directly to MOE's 4 AI Learns and 21CC competencies, auditable evidence schools can show to inspectorates and parents, not just a slide deck.",
   },
   {
     q: "Are you on any MOE-approved vendor list?",
-    a: "Vibe Makers is delivered by Dialogic Academy Pte Ltd (UEN 202040782G), an MOE-experienced enrichment provider serving 40+ schools since 2018 (RGS, Tanglin Trust, NJC, VJC, ACS, Maris Stella, CHIJ Katong Convent and others). Dialogic is registered on GeBIZ and recognised across our existing partner schools' procurement systems.",
+    a: "Vibe Makers is delivered by Dialogic Academy Pte Ltd (UEN 202040782G), an MOE-experienced enrichment provider serving 50+ schools since 2018 (RGS, Tanglin Trust, NJC, VJC, ACS, Maris Stella, CHIJ Katong Convent and others). Dialogic is registered on GeBIZ and recognised across our existing partner schools' procurement systems.",
   },
   {
     q: "What's the typical timeline from enquiry to delivery?",
@@ -94,15 +94,15 @@ const schoolFAQ = [
   },
   {
     q: "Can you handle a teacher who's not yet AI-confident?",
-    a: "Yes — and we recommend it. Every Build Sprint and Studio Programme includes a 90-minute teacher prep session before student day 1, plus a teacher-version of the lesson plan with debug notes. Several of our partner schools' computing teachers have joined as co-facilitators after one cohort.",
+    a: "Yes, and we recommend it. Every Build Sprint and Studio Programme includes a 90-minute teacher prep session before student day 1, plus a teacher-version of the lesson plan with debug notes. Several of our partner schools' computing teachers have joined as co-facilitators after one cohort.",
   },
   {
     q: "What outcomes can I show my Principal / VP?",
-    a: "Each cohort produces: (1) every student's deployed app + portfolio link, (2) a reflection log mapped to the 21CC framework's CAIT levels, (3) anonymised feedback metrics, and (4) a 1-page after-action report ready for your annual ALP / MOE submission. We've built this format with our partner Vice Principals — it's already what schools need to file.",
+    a: "Each cohort produces: (1) every student's deployed app + portfolio link, (2) a reflection log mapped to the 21CC framework's CAIT levels, (3) anonymised feedback metrics, and (4) a 1-page after-action report ready for your annual ALP / MOE submission. We've built this format with our partner Vice Principals, it's already what schools need to file.",
   },
   {
     q: "How big is too big? How small is too small?",
-    a: "Sweet spot is 20–30 students per cohort. We've successfully run Introductory Lab sessions for 40 in a hall, and intensive 1:1 mentoring for groups of 8. Anything outside that range, talk to us — we'll be honest about whether the format works.",
+    a: "Sweet spot is 20–30 students per cohort. We've successfully run Introductory Lab sessions for 40 in a hall, and intensive 1:1 mentoring for groups of 8. Anything outside that range, talk to us, we'll be honest about whether the format works.",
   },
   {
     q: "Can we tailor the build track to a specific subject (Geography, Bio, Lit)?",
@@ -294,12 +294,12 @@ export default function Schools() {
 
   return <Layout>
       <Helmet>
-        <title>School AI Workshops Singapore — MOE 4 AI Learns Aligned | Vibe Makers</title>
-        <meta name="description" content="MOE 4 AI Learns and 21CC-aligned AI workshops for Singapore schools. From $80/student. 1-day Lab to 2-week Studio. Delivered by Dialogic Academy (40+ school partners since 2018)." />
+        <title>School AI Workshops Singapore. MOE 4 AI Learns Aligned | Vibe Makers</title>
+        <meta name="description" content="MOE 4 AI Learns and 21CC-aligned AI workshops for Singapore schools. From $80/student. 1-day Lab to 2-week Studio. Delivered by Dialogic Academy (50+ school partners since 2018)." />
         <meta name="keywords" content="school AI workshop Singapore, MOE 4 AI Learns, MOE EdTech Masterplan 2030, 21CC enrichment Singapore, ALP AI partner, applied learning programme AI, holiday coding workshop schools, CAIT enrichment, secondary school AI curriculum" />
         <link rel="canonical" href="https://vibemakers.dev/schools" />
-        <meta property="og:title" content="School AI Workshops — MOE 4 AI Learns Aligned | Vibe Makers" />
-        <meta property="og:description" content="From $80/student. 1-day to 2-week formats. We hit all four MOE AI Learns — including the one most providers miss." />
+        <meta property="og:title" content="School AI Workshops. MOE 4 AI Learns Aligned | Vibe Makers" />
+        <meta property="og:description" content="From $80/student. 1-day to 2-week formats. We hit all four MOE AI Learns, including the one most providers miss." />
         <meta property="og:type" content="website" />
         <meta property="og:image" content="https://vibemakers.dev/og-image.png" />
         <meta name="twitter:card" content="summary_large_image" />
@@ -345,14 +345,14 @@ export default function Schools() {
               <h1 className="font-display font-bold tracking-display leading-[1.02] text-4xl sm:text-5xl md:text-6xl lg:text-7xl mb-6">
                 Where students{" "}
                 <span className="vm-sheen-text">build with AI</span>
-                {" "}— and learn when to push back.
+                {" "}and learn when to push back.
               </h1>
 
               <p className="font-sans text-lg text-foreground max-w-2xl leading-[1.55] mb-3">
-                Enrichment workshops that hit all four MOE AI Learns — including the one most providers miss: <em>Learn Beyond AI</em> (critical evaluation, human judgment). From 1-day labs to 2-week Studio programmes, $80/student.
+                Enrichment workshops that hit all four MOE AI Learns, including the one most providers miss: <em>Learn Beyond AI</em> (critical evaluation, human judgment). From 1-day labs to 2-week Studio programmes, $80/student.
               </p>
               <p className="font-sans text-sm text-muted-foreground max-w-2xl leading-[1.55] mb-8">
-                Delivered by Dialogic Academy · 40+ Singapore school partners since 2018 · Auditable 21CC outcomes
+                Delivered by Dialogic Academy · 50+ Singapore school partners since 2018 · Auditable 21CC outcomes
               </p>
 
               <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 max-w-xl">
@@ -430,11 +430,11 @@ export default function Schools() {
           <Reveal variant="up" delayMs={200}>
             <div className="grid grid-cols-3 gap-6 max-w-xl mx-auto mt-10">
               <div className="text-center">
-                <p className="text-primary font-display font-bold text-2xl md:text-3xl">5,000+</p>
+                <p className="text-primary font-display font-bold text-2xl md:text-3xl">15,000+</p>
                 <p className="text-foreground text-xs mt-1">Students taught</p>
               </div>
               <div className="text-center border-x border-border">
-                <p className="text-primary font-display font-bold text-2xl md:text-3xl">40+</p>
+                <p className="text-primary font-display font-bold text-2xl md:text-3xl">50+</p>
                 <p className="text-foreground text-xs mt-1">School partners</p>
               </div>
               <div className="text-center">
@@ -453,7 +453,7 @@ export default function Schools() {
         <RGSStudentProjects />
       </section>
 
-      {/* MOE 4 AI Learns alignment — the unique positioning per May 2026 research.
+      {/* MOE 4 AI Learns alignment, the unique positioning per May 2026 research.
           Most enrichment providers cover Pillars 1-3; nobody covers Pillar 4.
           Schools are actively looking for partners who can demonstrate this gap. */}
       <section className="bg-background py-20 md:py-28 border-t border-border">
@@ -464,10 +464,10 @@ export default function Schools() {
                 ● MOE 4 AI Learns alignment
               </BrutalSticker>
               <h2 className="font-display font-bold tracking-display leading-[1.02] text-3xl md:text-5xl mb-3">
-                We hit all four 'Learns' — including the one most providers skip
+                We hit all four 'Learns' · including the one most providers skip
               </h2>
               <p className="font-sans text-base text-foreground max-w-2xl">
-                MOE's AI in Education framework defines four pillars schools must demonstrate. Most enrichment vendors cover the first three. The fourth — <em>Learn Beyond AI</em> — has no standard curriculum, and it's exactly what we built our V.I.B.E. cycle's Evolve phase around.
+                MOE's AI in Education framework defines four pillars schools must demonstrate. Most enrichment vendors cover the first three. The fourth · <em>Learn Beyond AI</em> · has no standard curriculum, and it's exactly what we built our V.I.B.E. cycle's Evolve phase around.
               </p>
             </div>
           </Reveal>
@@ -503,7 +503,7 @@ export default function Schools() {
           </RevealGroup>
           <Reveal variant="up" delayMs={400}>
             <p className="font-sans text-center text-sm text-muted-foreground mt-8 max-w-2xl mx-auto">
-              All outcomes mapped to MOE's <a href="https://www.moe.gov.sg/education-in-sg/21st-century-competencies" target="_blank" rel="noopener noreferrer" className="text-primary font-medium hover:underline">21CC Navigator</a> — auditable evidence of CAIT, CCI, and Self-Directed Learning progression at Levels 3–4.
+              All outcomes mapped to MOE's <a href="https://www.moe.gov.sg/education-in-sg/21st-century-competencies" target="_blank" rel="noopener noreferrer" className="text-primary font-medium hover:underline">21CC Navigator</a> · auditable evidence of CAIT, CCI, and Self-Directed Learning progression at Levels 3–4.
             </p>
           </Reveal>
         </div>
@@ -523,14 +523,13 @@ export default function Schools() {
               <div className="space-y-4 font-sans text-foreground">
                 <p>
                   <a href="https://dialogic.academy" target="_blank" rel="noopener noreferrer" className="text-primary font-medium hover:underline">Dialogic Academy</a> has
-                  been Singapore's trusted partner for school enrichment since 2018 — delivering debate coaching,
+                  been Singapore's trusted partner for school enrichment since 2018, delivering debate coaching,
                   public speaking, and communication programmes across leading institutions including Raffles Girls' School,
                   Tanglin Trust School, National Junior College, Victoria Junior College, and Anglo-Chinese School.
                 </p>
                 <p>
                   Vibe Makers extends Dialogic's pedagogical approach into AI and creative technology.
-                  Where Dialogic develops thinkers and speakers, Vibe Makers develops builders and problem-solvers —
-                  students who can translate ideas into working digital products using AI. Every lesson is designed
+                  Where Dialogic develops thinkers and speakers, Vibe Makers develops builders and problem-solvers: students who can translate ideas into working digital products using AI. Every lesson is designed
                   for engagement, scaffolded learning, and real outcomes.
                 </p>
               </div>
@@ -584,7 +583,7 @@ export default function Schools() {
                 Programme Formats
               </h2>
               <p className="font-sans text-foreground max-w-2xl">
-All formats run the same V.I.B.E. methodology — Vision, Ideate, Build, Evolve. Students develop CAIT competencies through authentic problem-solving with AI tools. Choose based on depth and time available.
+All formats run the same V.I.B.E. methodology. Vision, Ideate, Build, Evolve. Students develop CAIT competencies through authentic problem-solving with AI tools. Choose based on depth and time available.
               </p>
             </div>
           </Reveal>
@@ -715,7 +714,7 @@ All formats run the same V.I.B.E. methodology — Vision, Ideate, Build, Evolve.
 
           <Reveal variant="up" delayMs={300}>
             <p className="font-sans text-center text-base text-foreground mt-8 max-w-xl mx-auto">
-              Process over product — but students still ship. By the end, every student has a working prototype AND can explain their problem, design, build, and improvement process.
+              Process over product, but students still ship. By the end, every student has a working prototype AND can explain their problem, design, build, and improvement process.
             </p>
           </Reveal>
         </div>
@@ -901,7 +900,7 @@ All formats run the same V.I.B.E. methodology — Vision, Ideate, Build, Evolve.
         </div>
       </section>
 
-      {/* Transparent pricing — most SG enrichment vendors hide pricing.
+      {/* Transparent pricing, most SG enrichment vendors hide pricing.
           Publishing ours is a deliberate trust signal for HoDs running
           internal procurement. */}
       <section className="bg-bg-warm py-20 md:py-28 border-t border-border">
@@ -957,7 +956,7 @@ All formats run the same V.I.B.E. methodology — Vision, Ideate, Build, Evolve.
           </RevealGroup>
           <Reveal variant="up" delayMs={400}>
             <p className="text-center font-sans text-sm text-muted-foreground mt-8">
-              All prices in SGD. ALP-eligible. We work within MOE / SchoolsCare / GeBIZ procurement processes — invoice routing, vendor onboarding, and W-9 equivalents handled.
+              All prices in SGD. ALP-eligible. We work within MOE / SchoolsCare / GeBIZ procurement processes, invoice routing, vendor onboarding, and W-9 equivalents handled.
             </p>
           </Reveal>
         </div>
@@ -984,7 +983,7 @@ All formats run the same V.I.B.E. methodology — Vision, Ideate, Build, Evolve.
                 >
                   WhatsApp us
                 </a>{" "}
-                — usually same-day reply.
+                · usually same-day reply.
               </p>
             </div>
           </Reveal>
@@ -1019,7 +1018,7 @@ All formats run the same V.I.B.E. methodology — Vision, Ideate, Build, Evolve.
                   Request a tailored proposal
                 </h2>
                 <p className="font-sans text-background/80 mb-3">
-                  Tell us about your school, term schedule, and ALP / enrichment slot. We'll send a one-page tailored proposal — usually within 1 working day, often same-day.
+                  Tell us about your school, term schedule, and ALP / enrichment slot. We'll send a one-page tailored proposal, usually within 1 working day, often same-day.
                 </p>
                 <p className="font-sans text-background/60 text-sm">
                   Or just{" "}
@@ -1031,7 +1030,7 @@ All formats run the same V.I.B.E. methodology — Vision, Ideate, Build, Evolve.
                   >
                     WhatsApp +65 8890 0368
                   </a>{" "}
-                  — Pei or Claire usually picks up the same day.
+                  · Pei or Claire usually picks up the same day.
                 </p>
               </div>
               <PartnershipForm />

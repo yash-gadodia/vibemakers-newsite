@@ -72,7 +72,7 @@ export function PartnershipForm() {
   const onSubmit = async (data: PartnershipData) => {
     setIsLoading(true);
     try {
-      // Phone column doesn't exist in school_enquiries — surface it via the
+      // Phone column doesn't exist in school_enquiries, surface it via the
       // existing message field so it lands in email + Telegram cleanly.
       const phone = (data.contact_phone || "").trim();
       const composedMessage = phone

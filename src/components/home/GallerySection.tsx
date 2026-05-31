@@ -5,7 +5,7 @@ import { cn } from "@/lib/utils";
 const moments = [
   {
     title: "Build Sprints",
-    description: "Students pick a real problem, scope it down, and ship a working feature in a single session — learning to make trade-offs under time pressure.",
+    description: "Students pick a real problem, scope it down, and ship a working feature in a single session, learning to make trade-offs under time pressure.",
     emoji: "⏱️",
     iconClassName: "bg-primary/15",
     activeClassName: "border-primary shadow-[0_0_40px_hsl(24_95%_53%/0.18)]",
@@ -86,7 +86,7 @@ const moments = [
   },
   {
     title: "Show & Tell",
-    description: "Students present their builds to a small group — explaining the problem they chose, what they built, and what they'd improve next.",
+    description: "Students present their builds to a small group, explaining the problem they chose, what they built, and what they'd improve next.",
     emoji: "🎤",
     iconClassName: "bg-primary/15",
     activeClassName: "border-primary shadow-[0_0_40px_hsl(24_95%_53%/0.18)]",
@@ -135,7 +135,7 @@ export function GallerySection() {
         <SectionHeader
           badge="Our Community"
           title="Learning in Action"
-          description="What it feels like inside a Vibemakers session—build sprints, prompt-craft, peer feedback, and demo moments."
+          description="What it feels like inside a Vibemakers session: build sprints, prompt-craft, peer feedback, and demo moments."
         />
 
         <div className="relative mt-10 md:mt-14 max-w-7xl mx-auto grid gap-8 lg:grid-cols-12 items-start">

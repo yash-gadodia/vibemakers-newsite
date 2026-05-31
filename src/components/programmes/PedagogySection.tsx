@@ -15,7 +15,7 @@ const anchorOutcomes = [
   {
     emoji: "🔄",
     title: "Skilfully leverage AI tools",
-    description: "Use Generative AI effectively—write prompts, evaluate outputs, and iterate"
+    description: "Use Generative AI effectively: write prompts, evaluate outputs, and iterate"
   }
 ];
 
@@ -39,7 +39,7 @@ const vibeSteps = [
     label: "Build",
     subLabel: "Prototype",
     tooltipTitle: "Build",
-    tooltipBody: "Prototype quickly with AI-assisted creation—then refine through small iterations."
+    tooltipBody: "Prototype quickly with AI-assisted creation: then refine through small iterations."
   },
   {
     emoji: "🔄",
@@ -63,7 +63,7 @@ export function PedagogySection() {
               <span className="text-primary">Build Real Solutions.</span>
             </h2>
             <p className="text-lg text-background/70 max-w-xl">
-              Students apply knowledge in authentic settings—from understanding real users to designing, building, and improving digital solutions with AI.
+              Students apply knowledge in authentic settings: from understanding real users to designing, building, and improving digital solutions with AI.
             </p>
           </div>
 
@@ -115,7 +115,7 @@ export function PedagogySection() {
               How Learning Works Here
             </h3>
             <p className="text-muted-foreground max-w-2xl mx-auto">
-              Our VIBE cycle uses <strong>human-centered methodologies</strong> to help students <strong>discover</strong> real-world needs and <strong>develop</strong> practical solutions — developing self-directed, collaborative, and digitally literate learners.
+              Our VIBE cycle uses <strong>human-centered methodologies</strong> to help students <strong>discover</strong> real-world needs and <strong>develop</strong> practical solutions, developing self-directed, collaborative, and digitally literate learners.
             </p>
           </div>
 

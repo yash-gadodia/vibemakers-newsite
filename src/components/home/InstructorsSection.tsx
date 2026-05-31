@@ -7,11 +7,11 @@ const instructors = [
   {
     name: "Seah Pei Song",
     role: "CEO & Founder, Dialogic Academy",
-    bio: "Founded Dialogic Academy in 2018 and built it to 40+ school partnerships — from ACS Primary and Pei Chun to RGS, VJC, and NJC. Former national debating coach (7× Grand Finals, RGS Div 1 championship). Designs every Vibe Makers programme around MOE's 21CC framework.",
+    bio: "Founded Dialogic Academy in 2018 and built it to 50+ school partnerships, from ACS Primary and Pei Chun to RGS, VJC, and NJC. Former national debating coach (7× Grand Finals, RGS Div 1 championship). Designs every Vibe Makers programme around MOE's 21CC framework.",
     image: peiSongPhoto,
     highlights: [
       { emoji: "🏢", text: "Founded Dialogic Academy (2018)" },
-      { emoji: "🎓", text: "40+ School Partners Across Singapore" },
+      { emoji: "🎓", text: "50+ School Partners Across Singapore" },
       { emoji: "🏆", text: "7× National Debating Grand Finals" },
       { emoji: "🎯", text: "21CC Programme Design" },
     ],
@@ -23,7 +23,7 @@ const instructors = [
   {
     name: "Yash Gadodia",
     role: "Head of Curriculum & Product",
-    bio: "Founding PM at Voltade — shipped AI-powered products to 10,000+ users from zero. Designs the Vibe Makers curriculum around MOE's EdTech Masterplan 2030 (Find, Think, Apply, Create) and the V.I.B.E. methodology. Ensures students learn to prompt with intent, verify critically, and iterate on feedback.",
+    bio: "Founding PM at Voltade, shipped AI-powered products to 10,000+ users from zero. Designs the Vibe Makers curriculum around MOE's EdTech Masterplan 2030 (Find, Think, Apply, Create) and the V.I.B.E. methodology. Ensures students learn to prompt with intent, verify critically, and iterate on feedback.",
     image: yashGadodiaPhoto,
     highlights: [
       { emoji: "🚀", text: "Founding PM @ Voltade (AI Products)" },
@@ -67,6 +67,7 @@ export function InstructorsSection() {
                       src={instructor.image}
                       alt={`${instructor.name} headshot`}
                       className="relative w-20 h-20 rounded-full object-cover ring-4 ring-background"
+                      loading="lazy"
                     />
                   </div>
                   <div className="flex-1">
@@ -120,7 +121,7 @@ export function InstructorsSection() {
             rel="noopener noreferrer"
             className="inline-flex items-center gap-2 px-5 py-2.5 bg-primary/10 hover:bg-primary/20 border border-primary/30 rounded-full transition-all text-sm font-medium"
           >
-            Part of <span className="font-semibold text-primary">Dialogic Academy</span> — 40+ school partners since 2018
+            Part of <span className="font-semibold text-primary">Dialogic Academy</span> · 50+ school partners since 2018
             <span className="text-muted-foreground">→</span>
           </a>
         </div>

@@ -59,7 +59,7 @@ export function ParentsSection() {
             <div className="p-8 bg-card border border-border rounded-2xl">
               <h3 className="text-xl font-display font-bold mb-3">What You’ll Get as a Parent</h3>
               <p className="text-muted-foreground mb-6">
-                No guesswork—just a clear plan and visible work products.
+                No guesswork: just a clear plan and visible work products.
               </p>
               <ul className="space-y-3">
                 {[
@@ -79,7 +79,7 @@ export function ParentsSection() {
             <div className="p-8 bg-secondary/30 border border-border rounded-2xl">
               <h3 className="text-xl font-display font-bold mb-3">A Typical Coaching Focus</h3>
               <p className="text-muted-foreground mb-6">
-                We keep it hands-on and practical—students learn by building.
+                We keep it hands-on and practical: students learn by building.
               </p>
               <div className="grid sm:grid-cols-2 gap-4">
                 {[

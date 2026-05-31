@@ -20,7 +20,7 @@ export const parentsFAQs = [
   },
   {
     question: "What will they produce?",
-    answer: "Students complete real projects they can showcase—websites, apps, games, or AI tools. Each programme culminates in a portfolio piece they can share with friends, family, or future schools.",
+    answer: "Students complete real projects they can showcase: websites, apps, games, or AI tools. Each programme culminates in a portfolio piece they can share with friends, family, or future schools.",
   },
   {
     question: "How do you ensure safety and supervision?",
@@ -31,11 +31,11 @@ export const parentsFAQs = [
 export const schoolsFAQs = [
   {
     question: "How customisable is the curriculum?",
-    answer: "Very! We adapt content to your school's specific needs—whether that's aligning with existing subjects, focusing on particular skills, or adjusting difficulty levels. We'll work with your team to tailor the programme.",
+    answer: "Very! We adapt content to your school's specific needs: whether that's aligning with existing subjects, focusing on particular skills, or adjusting difficulty levels. We'll work with your team to tailor the programme.",
   },
   {
     question: "What teacher involvement is required?",
-    answer: "Minimal to none during delivery—we handle instruction. However, we encourage teachers to observe sessions and offer optional CPD training so they can continue supporting students afterwards.",
+    answer: "Minimal to none during delivery: we handle instruction. However, we encourage teachers to observe sessions and offer optional CPD training so they can continue supporting students afterwards.",
   },
   {
     question: "What's the maximum class size?",

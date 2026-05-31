@@ -4,7 +4,7 @@ const steps = [
   {
     step: "01",
     title: "Share Your Goals",
-    description: "Tell us what you're looking to achieve—whether for your child or your school.",
+    description: "Tell us what you're looking to achieve: whether for your child or your school.",
   },
   {
     step: "02",

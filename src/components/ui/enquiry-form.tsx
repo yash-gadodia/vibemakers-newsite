@@ -59,7 +59,7 @@ function ParentForm({ className }: { className?: string }) {
 
   const onSubmit = async (data: z.infer<typeof parentSchema>) => {
     setSubmitting(true);
-    // Phone column doesn't exist in parent_interest schema — surface it via
+    // Phone column doesn't exist in parent_interest schema, surface it via
     // the message field so it lands in email + Telegram cleanly.
     const phone = (data.parent_phone || "").trim();
     const composedMessage = phone

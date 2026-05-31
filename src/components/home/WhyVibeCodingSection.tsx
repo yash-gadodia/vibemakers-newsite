@@ -4,7 +4,7 @@ const reasons = [
   {
     emoji: "🧠",
     title: "AI is the New Literacy",
-    description: "Just as reading and writing became essential, understanding AI will be fundamental to success in every field—from medicine to art to business.",
+    description: "Just as reading and writing became essential, understanding AI will be fundamental to success in every field: from medicine to art to business.",
   },
   {
     emoji: "🚀",
@@ -14,7 +14,7 @@ const reasons = [
   {
     emoji: "🛡️",
     title: "Future-Proof Careers",
-    description: "Jobs are changing rapidly. Those who can work alongside AI—not be replaced by it—will thrive in the new economy.",
+    description: "Jobs are changing rapidly. Those who can work alongside AI: not be replaced by it: will thrive in the new economy.",
   },
   {
     emoji: "📈",
@@ -40,7 +40,7 @@ export function WhyVibeCodingSection() {
         <SectionHeader
           badge="The Future is Here"
           title="Why Every Student Needs Vibe Coding"
-          description="In an AI-powered world, the ability to build with AI isn't optional—it's essential. Here's why this skill matters more than ever."
+          description="In an AI-powered world, the ability to build with AI isn't optional: it's essential. Here's why this skill matters more than ever."
         />
 
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 mt-16">
@@ -75,7 +75,7 @@ export function WhyVibeCodingSection() {
               </h4>
               <p className="text-muted-foreground text-sm leading-relaxed">
                 By 2030, 85% of jobs will require AI literacy. Students who start learning today will have a massive head start. 
-                Don't let your child be left behind—equip them with the skills that will define the next decade.
+                Don't let your child be left behind: equip them with the skills that will define the next decade.
               </p>
             </div>
           </div>

@@ -126,6 +126,7 @@ const BlogPost = () => {
                 src={post.cover_image}
                 alt={post.title}
                 className="w-full rounded-2xl mb-12 object-cover"
+                loading="lazy"
               />
             )}
           </div>

@@ -40,7 +40,7 @@ export function ForSchoolsSection() {
             </h2>
             <p className="text-lg text-background/70 leading-relaxed mb-8">
               Your students need AI skills, but building a curriculum takes time you don't have. 
-              Let us handle it—customised workshops, trained instructors, and measurable outcomes.
+              Let us handle it: customised workshops, trained instructors, and measurable outcomes.
             </p>
 
             <div className="space-y-4">
@@ -76,7 +76,7 @@ export function ForSchoolsSection() {
           {/* Stats/Visual */}
           <div className="grid grid-cols-2 gap-4">
             <div className="bg-background/5 border border-background/10 rounded-2xl p-6 text-center">
-              <div className="text-4xl font-display font-bold text-primary mb-2">40+</div>
+              <div className="text-4xl font-display font-bold text-primary mb-2">50+</div>
               <p className="text-background/70 text-sm">School Partners</p>
             </div>
             <div className="bg-background/5 border border-background/10 rounded-2xl p-6 text-center">

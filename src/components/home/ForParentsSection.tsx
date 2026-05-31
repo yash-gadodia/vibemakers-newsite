@@ -81,7 +81,7 @@ export function ForParentsSection() {
             <SectionHeader
               badge="For Parents & Students"
               title="Invest in Your Child's Future"
-              description="In an AI-driven world, creative technology skills aren't optional—they're essential. Give your child the head start they deserve."
+              description="In an AI-driven world, creative technology skills aren't optional: they're essential. Give your child the head start they deserve."
               align="left"
             />
 

@@ -36,7 +36,7 @@ export default function Programme() {
         <script type="application/ld+json">{`{
   "@context": "https://schema.org",
   "@type": "Course",
-  "name": "Vibe Coding Programme — Product Thinking + AI Coding for Teens",
+  "name": "Vibe Coding Programme. Product Thinking + AI Coding for Teens",
   "description": "Singapore's AI-first coding programme for teens 13-18. Students learn the V.I.B.E. Cycle (Vision, Ideate, Build, Evolve) and ship real deployed apps using Claude, Lovable, and Cursor. MOE-aligned to EdTech Masterplan 2030 and the 4 AI Learns framework.",
   "provider": {
     "@type": "EducationalOrganization",
@@ -85,21 +85,21 @@ export default function Programme() {
     },
     {
       "@type": "CourseInstance",
-      "name": "School Workshop — Introductory Lab",
+      "name": "School Workshop. Introductory Lab",
       "description": "1-day post-exam enrichment / assembly programme for up to 40 students.",
       "courseMode": "Onsite",
       "courseWorkload": "PT6H"
     },
     {
       "@type": "CourseInstance",
-      "name": "School Workshop — Build Sprint",
+      "name": "School Workshop. Build Sprint",
       "description": "3-day holiday programme / enrichment week for 20-30 students.",
       "courseMode": "Onsite",
       "courseWorkload": "P3D"
     },
     {
       "@type": "CourseInstance",
-      "name": "School Workshop — Studio Programme",
+      "name": "School Workshop. Studio Programme",
       "description": "1-2 week semester break / extended enrichment for 15-25 students.",
       "courseMode": "Onsite",
       "courseWorkload": "P2W"

@@ -1,7 +1,7 @@
 import * as React from "react";
 import { cn } from "@/lib/utils";
 
-// Source: .claude/design-system.md — yellow rotated underline-bar behind a word.
+// Source: .claude/design-system.md, yellow rotated underline-bar behind a word.
 // Used inside large display headlines (e.g. "real apps", "products").
 //
 // Usage:

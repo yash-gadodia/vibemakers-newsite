@@ -17,7 +17,7 @@ export function WhatIsVibeCodingSection() {
               What is Vibe Coding?
             </h2>
             <p className="font-sans text-ink-2 max-w-2xl mx-auto text-lg">
-              A new way to build software—describing what you want in plain language,
+              A new way to build software: describing what you want in plain language,
               then using AI to generate, test, and refine working code.
             </p>
           </div>
@@ -35,7 +35,7 @@ export function WhatIsVibeCodingSection() {
                 <p className="font-sans text-foreground leading-relaxed">
                   Traditional coding requires memorising syntax and debugging cryptic errors.
                   Vibe coding shifts the focus to <strong>defining problems
-                  and designing solutions</strong>—the skills that actually matter.
+                  and designing solutions</strong>. These are the skills that actually matter.
                 </p>
               </div>
 
@@ -44,7 +44,7 @@ export function WhatIsVibeCodingSection() {
                   How <span className="text-primary">professionals</span> work today
                 </h3>
                 <p className="font-sans text-foreground leading-relaxed">
-                  This isn't a shortcut—it's how software is increasingly built in the real world.
+                  This isn't a shortcut: it's how software is increasingly built in the real world.
                   Students learn to collaborate with AI: prompting, evaluating outputs, and iterating
                   until the solution works.
                 </p>
@@ -59,7 +59,7 @@ export function WhatIsVibeCodingSection() {
                   <div>
                     <p className="font-display font-bold text-foreground">This is future-ready learning</p>
                     <p className="text-sm font-sans text-ink-2 mt-1">
-                      Students gain skills aligned with MOE's EdTech Masterplan 2030—using
+                      Students gain skills aligned with MOE's EdTech Masterplan 2030: using
                       Generative AI as a tool for discovery and creation.
                     </p>
                   </div>

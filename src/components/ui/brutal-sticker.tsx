@@ -1,7 +1,7 @@
 import * as React from "react";
 import { cn } from "@/lib/utils";
 
-// Source: .claude/design-system.md — the signature sticker primitive.
+// Source: .claude/design-system.md, the signature sticker primitive.
 // React wrapper around the .vm-sticker CSS pattern, with tone variants
 // and an optional vm-wiggle animation. Use for section eyebrows, audience
 // tags, and accent badges (e.g. "1st class free", "free trial").

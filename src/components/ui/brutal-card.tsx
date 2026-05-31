@@ -1,9 +1,9 @@
 import * as React from "react";
 import { cn } from "@/lib/utils";
 
-// Source: .claude/design-system.md — the brutalist card pattern.
+// Source: .claude/design-system.md, the brutalist card pattern.
 // Black-bordered card with a hard offset drop shadow. Caller controls
-// background/text via className — the component supplies border, shadow,
+// background/text via className, the component supplies border, shadow,
 // radius, and optional hover lift.
 
 type ShadowSize = "sm" | "md" | "lg" | "xl" | "none";

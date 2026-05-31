@@ -34,7 +34,7 @@ export function ComparisonSection() {
           <SectionHeader
             badge="Why Vibe Makers"
             title="Not Another Coding Class"
-            description="We teach students to solve problems with AI — not memorise syntax."
+            description="We teach students to solve problems with AI, not memorise syntax."
           />
         </Reveal>
 

@@ -88,7 +88,7 @@ const Admin = () => {
       if (schoolRes.data) setSchoolEnquiries(schoolRes.data);
       if (hackathonRes.data) setHackathonWaitlist(hackathonRes.data);
     } catch {
-      // Fetch error — data will remain empty
+      // Fetch error, data will remain empty
     }
     setIsLoadingData(false);
   };

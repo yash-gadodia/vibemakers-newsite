@@ -46,7 +46,7 @@ const PrintSlides = () => {
   return (
     <>
       <Helmet>
-        <title>Print — Teacher Slide Deck</title>
+        <title>Print. Teacher Slide Deck</title>
         <meta name="robots" content="noindex,nofollow" />
       </Helmet>
 

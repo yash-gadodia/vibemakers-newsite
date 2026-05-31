@@ -19,11 +19,11 @@ const PrintFlyer = () => {
   return (
     <>
       <Helmet>
-        <title>Print — School Outreach Flyer</title>
+        <title>Print. School Outreach Flyer</title>
         <meta name="robots" content="noindex,nofollow" />
       </Helmet>
 
-      {/* Minimal print CSS — override any global hide rules */}
+      {/* Minimal print CSS, override any global hide rules */}
       <style>{`
         /* Screen: show print button and flyer preview */
         @media screen {

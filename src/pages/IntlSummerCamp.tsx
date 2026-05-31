@@ -10,14 +10,14 @@ import { cn } from "@/lib/utils";
 
 const cohorts = [
   {
-    label: "Cohort A · Jun 30 — Jul 18",
+    label: "Cohort A · Jun 30 to Jul 18",
     sub: "3 weeks · Mon to Fri · 9:30am – 12:30pm",
     spots: "12 of 16 spots",
     spotState: "open" as const,
     badge: "Most popular",
   },
   {
-    label: "Cohort B · Jul 21 — Aug 8",
+    label: "Cohort B · Jul 21 to Aug 8",
     sub: "3 weeks · Mon to Fri · 9:30am – 12:30pm",
     spots: "16 of 16 spots open",
     spotState: "open" as const,
@@ -33,7 +33,7 @@ const cohorts = [
 ];
 
 const week1 = [
-  { day: "Day 1", title: "Find a real problem", body: "Each student picks a problem they actually have — homework workflow, family chore tracker, study group tool. We coach them on scoping it down so it ships." },
+  { day: "Day 1", title: "Find a real problem", body: "Each student picks a problem they actually have, homework workflow, family chore tracker, study group tool. We coach them on scoping it down so it ships." },
   { day: "Day 2", title: "Design the user flow", body: "Sketch every screen on paper. Decide what a user can and can't do. Define what 'done' means for v1." },
   { day: "Day 3", title: "First Lovable build", body: "From plain-English brief to deployed app in 90 minutes. Students see their idea on a real URL." },
   { day: "Day 4", title: "First user test", body: "Each student tests another student's app. Real friction surfaces. Students give specific, actionable feedback." },
@@ -41,7 +41,7 @@ const week1 = [
 ];
 const week2 = [
   { day: "Day 6", title: "Going deeper with Cursor", body: "Move from Lovable's web UI into Cursor (an AI code editor). Read the actual code your AI generated. Spot when it's wrong." },
-  { day: "Day 7", title: "Add a second feature", body: "AI integration, payment, auth, file upload — pick one stretch goal. Coach pairs with each student." },
+  { day: "Day 7", title: "Add a second feature", body: "AI integration, payment, auth, file upload, pick one stretch goal. Coach pairs with each student." },
   { day: "Day 8", title: "Second round of users", body: "Test with friends or family. Capture quotes + screenshots for the portfolio." },
   { day: "Day 9", title: "Edge cases + safety", body: "What happens when the AI is wrong? When a user enters bad data? When the API fails? Build defences." },
   { day: "Day 10", title: "Polish for portfolio", body: "Logo, copy, deployed URL, GitHub readme. Students walk away with a real artifact." },
@@ -57,7 +57,7 @@ const week3 = [
 const outcomesIntl = [
   { emoji: "🚀", title: "1 deployed real app", description: "Live URL + portfolio screenshot. Not a tutorial project." },
   { emoji: "🎬", title: "Demo Day + 60-sec walkthrough video", description: "Public demo with parents + recorded walkthrough they can send to a school admissions officer." },
-  { emoji: "📂", title: "Portfolio kit", description: "GitHub repo, README, deployment URL, problem brief, user feedback log — everything universities + DSA panels actually look at." },
+  { emoji: "📂", title: "Portfolio kit", description: "GitHub repo, README, deployment URL, problem brief, user feedback log, everything universities + DSA panels actually look at." },
   { emoji: "🧠", title: "AI fluency they keep", description: "Real Claude + Lovable + Cursor habits. Students leave knowing how to start their next build solo." },
   { emoji: "🤝", title: "Peer cohort", description: "Friends in the cohort become collaborators for school year projects. Students stay in touch via a private Discord." },
 ];
@@ -68,7 +68,7 @@ const faqIntl = [
     a: "Students aged 13–18 from any Singapore international or local school. Most cohort families come from UWCSEA, SAS, Tanglin Trust, Stamford American, CIS, GIIS, or top SG secondary schools. No prior coding experience required.",
   },
   {
-    q: "What's the format — online or in-person?",
+    q: "What's the format, online or in-person?",
     a: "Hybrid. Mornings (3 hours) are in-person at our studio in Singapore. Optional afternoon studio time (12:30–4pm) is unstructured build/help-yourself time with a coach on standby. Out-of-Singapore families can do the full programme online with a dedicated coach.",
   },
   {
@@ -109,7 +109,7 @@ export default function IntlSummerCamp() {
   return (
     <Layout>
       <Helmet>
-        <title>Summer 2026 AI Coding Camp Singapore — Vibe Makers</title>
+        <title>Summer 2026 AI Coding Camp Singapore. Vibe Makers</title>
         <meta
           name="description"
           content="3-week intensive AI coding camp for teens 13–18 in Singapore. Build a real deployed app with Claude + Lovable. Demo Day for parents. Jun 30 or Jul 21. SGD $1,800."
@@ -119,7 +119,7 @@ export default function IntlSummerCamp() {
           content="summer camp Singapore coding, AI summer camp Singapore, school holiday coding camp teens, UWCSEA AI camp, SAS Stamford coding camp, intensive teen coding Singapore"
         />
         <link rel="canonical" href="https://vibemakers.dev/intl-summer-camp" />
-        <meta property="og:title" content="Summer 2026 AI Coding Camp — Vibe Makers Singapore" />
+        <meta property="og:title" content="Summer 2026 AI Coding Camp. Vibe Makers Singapore" />
         <meta property="og:description" content="3 weeks. Real app shipped. Demo Day for parents. Jun 30 or Jul 21 cohorts. Limited to 16 students/cohort." />
         <meta property="og:type" content="website" />
         <meta property="og:image" content="https://vibemakers.dev/og-image.png" />
@@ -128,7 +128,7 @@ export default function IntlSummerCamp() {
         <script type="application/ld+json">{`{
   "@context": "https://schema.org",
   "@type": "Course",
-  "name": "Summer 2026 AI Coding Camp — Vibe Makers Singapore",
+  "name": "Summer 2026 AI Coding Camp. Vibe Makers Singapore",
   "description": "3-week intensive AI coding camp for teens 13-18 in Singapore. Students build a real deployed app using Claude + Lovable + Cursor and present at a public Demo Day.",
   "provider": {
     "@type": "EducationalOrganization",
@@ -174,7 +174,7 @@ export default function IntlSummerCamp() {
                 <span className="vm-sheen-text">in 3 weeks.</span>
               </h1>
               <p className="font-sans text-lg text-foreground max-w-2xl leading-[1.55] mb-3">
-                A 3-week intensive AI coding camp for teens 13–18. Each student ships a deployed app and presents at a public Demo Day. Built with Claude, Lovable, and Cursor — the same tools real product teams use.
+                A 3-week intensive AI coding camp for teens 13–18. Each student ships a deployed app and presents at a public Demo Day. Built with Claude, Lovable, and Cursor, the same tools real product teams use.
               </p>
               <p className="font-sans text-sm text-muted-foreground max-w-2xl leading-[1.55] mb-8">
                 Designed for international school summer breaks · MOE 4 AI Learns aligned · DSA / EAE portfolio-ready
@@ -298,9 +298,9 @@ export default function IntlSummerCamp() {
           </Reveal>
 
           {[
-            { label: "Week 1 — Find, design, ship", days: week1 },
-            { label: "Week 2 — Go deeper, harden, polish", days: week2 },
-            { label: "Week 3 — Pitch + Demo Day", days: week3 },
+            { label: "Week 1: Find, design, ship", days: week1 },
+            { label: "Week 2: Go deeper, harden, polish", days: week2 },
+            { label: "Week 3: Pitch + Demo Day", days: week3 },
           ].map((week, wi) => (
             <Reveal variant="up" delayMs={wi * 100} key={week.label}>
               <div className="mb-10">
@@ -332,7 +332,7 @@ export default function IntlSummerCamp() {
                 Things parents ask before booking
               </h2>
               <p className="font-sans text-base text-ink-2">
-                Still unsure? <a href="https://wa.me/6588900368?text=Hi%20Vibe%20Makers%20%E2%80%94%20a%20question%20about%20the%20Summer%20Camp" target="_blank" rel="noopener noreferrer" className="text-primary font-medium hover:underline">WhatsApp us</a> — usually same-day reply.
+                Still unsure? <a href="https://wa.me/6588900368?text=Hi%20Vibe%20Makers%20%E2%80%94%20a%20question%20about%20the%20Summer%20Camp" target="_blank" rel="noopener noreferrer" className="text-primary font-medium hover:underline">WhatsApp us</a> · usually same-day reply.
               </p>
             </div>
           </Reveal>
@@ -366,7 +366,7 @@ export default function IntlSummerCamp() {
                   Lock in a cohort
                 </h2>
                 <p className="font-sans text-base text-ink-2">
-                  Tell us about your teen — we'll confirm spot availability within 24 hours and send a one-page agreement + deposit link.
+                  Tell us about your teen, we'll confirm spot availability within 24 hours and send a one-page agreement + deposit link.
                   Or just{" "}
                   <a
                     href="https://wa.me/6588900368?text=Hi%20Vibe%20Makers%20%E2%80%94%20I%27d%20like%20to%20reserve%20a%20spot%20in%20the%20Summer%20Camp"

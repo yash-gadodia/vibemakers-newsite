@@ -18,7 +18,7 @@ const PrintPrivateClasses = () => {
   return (
     <>
       <Helmet>
-        <title>Print — Private Classes Letter</title>
+        <title>Print. Private Classes Letter</title>
         <meta name="robots" content="noindex,nofollow" />
       </Helmet>
 

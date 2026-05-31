@@ -5,15 +5,15 @@ import { Reveal } from "@/components/ui/Reveal";
 const faqs = [
   {
     q: "Does my child need any coding experience?",
-    a: "No. Students use AI tools to generate code from plain English descriptions. The focus is on problem-solving, design thinking, and verification — not memorising syntax. Complete beginners are welcome.",
+    a: "No. Students use AI tools to generate code from plain English descriptions. The focus is on problem-solving, design thinking, and verification, not memorising syntax. Complete beginners are welcome.",
   },
   {
     q: "What will my child actually take home?",
-    a: "A working web app they built themselves, hosted online and shareable via a link. They also get a reflection portfolio documenting their design decisions, iterations, and what they learned — useful for school portfolios and DSA applications.",
+    a: "A working web app they built themselves, hosted online and shareable via a link. They also get a reflection portfolio documenting their design decisions, iterations, and what they learned, useful for school portfolios and DSA applications.",
   },
   {
     q: "How is this different from Scratch or Python classes?",
-    a: "Traditional coding classes teach syntax (loops, variables, functions). We teach product thinking — students identify a real problem, design a solution, build it with AI, test with users, and iterate. The output is a real app, not a coding exercise.",
+    a: "Traditional coding classes teach syntax (loops, variables, functions). We teach product thinking, students identify a real problem, design a solution, build it with AI, test with users, and iterate. The output is a real app, not a coding exercise.",
   },
   {
     q: "Is it safe for my child to use AI tools?",
@@ -33,7 +33,7 @@ const faqs = [
   },
   {
     q: "Can my child use their project for DSA or school portfolio?",
-    a: "Absolutely. Students finish with a deployed web app and a reflection portfolio that documents their problem-solving process — strong evidence of self-directed learning and digital literacy for DSA, EAE, or school applications.",
+    a: "Absolutely. Students finish with a deployed web app and a reflection portfolio that documents their problem-solving process, strong evidence of self-directed learning and digital literacy for DSA, EAE, or school applications.",
   },
 ];
 

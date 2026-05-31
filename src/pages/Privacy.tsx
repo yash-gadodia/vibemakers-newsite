@@ -6,7 +6,7 @@ const Privacy = () => {
     <Layout>
       <Helmet>
         <title>Privacy Policy | Vibe Makers Academy</title>
-        <meta name="description" content="Privacy Policy for Vibe Makers Academy — how we collect, use, and protect your data." />
+        <meta name="description" content="Privacy Policy for Vibe Makers Academy, how we collect, use, and protect your data." />
         <link rel="canonical" href="https://vibemakers.dev/privacy" />
       </Helmet>
 
@@ -30,11 +30,11 @@ const Privacy = () => {
             <h2>2. Information We Collect</h2>
             <p>We may collect the following types of information:</p>
             <ul>
-              <li><strong>Contact information</strong> — name, email address, phone number provided through our enquiry forms</li>
-              <li><strong>Student information</strong> — student name, age, school, and programme interest submitted by parents or guardians</li>
-              <li><strong>School information</strong> — school name, contact person details, and programme requirements</li>
-              <li><strong>Event registrations</strong> — name, email, school, and age group for hackathon and event sign-ups</li>
-              <li><strong>Usage data</strong> — pages visited, browser type, and device information collected automatically</li>
+              <li><strong>Contact information</strong> · name, email address, phone number provided through our enquiry forms</li>
+              <li><strong>Student information</strong> · student name, age, school, and programme interest submitted by parents or guardians</li>
+              <li><strong>School information</strong> · school name, contact person details, and programme requirements</li>
+              <li><strong>Event registrations</strong> · name, email, school, and age group for hackathon and event sign-ups</li>
+              <li><strong>Usage data</strong> · pages visited, browser type, and device information collected automatically</li>
             </ul>
 
             <h2>3. How We Use Your Information</h2>

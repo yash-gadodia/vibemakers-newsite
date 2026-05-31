@@ -129,7 +129,7 @@ export function RegistrationForm({
             value={enquiryType}
             onValueChange={(value) => {
               setValue("enquiry_type", value as "for_teen" | "for_self");
-              // Clear age — teen and adult ranges don't overlap.
+              // Clear age, teen and adult ranges don't overlap.
               setValue("student_age", "");
             }}
             className="flex flex-wrap gap-4"

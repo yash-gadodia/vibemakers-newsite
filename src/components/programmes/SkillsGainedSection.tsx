@@ -53,7 +53,7 @@ const bottomRowSkills: Skill[] = [
 const responsibleAI = {
   emoji: "🤖",
   title: "Digital Literacy & Responsible AI",
-  subtitle: "Understand AI bias, societal implications, and Cyber Wellness — use AI as a power tool, not a crutch",
+  subtitle: "Understand AI bias, societal implications, and Cyber Wellness, use AI as a power tool, not a crutch",
 };
 
 export function SkillsGainedSection() {

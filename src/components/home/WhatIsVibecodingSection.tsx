@@ -224,7 +224,7 @@ export function WhatIsVibecodingSection() {
               badge="Product Thinking"
               title="The V.I.B.E. Cycle"
               subtitle="V = Vision • I = Ideate • B = Build • E = Evolve"
-              description="Our design thinking methodology adapted for AI-first building. Each phase develops specific 21CC competencies — from empathising with users to presenting and defending solutions."
+              description="Our design thinking methodology adapted for AI-first building. Each phase develops specific 21CC competencies, from empathising with users to presenting and defending solutions."
               className="max-w-none"
             />
 

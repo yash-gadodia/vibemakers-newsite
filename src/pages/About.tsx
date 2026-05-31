@@ -8,10 +8,10 @@ import peiSongPhoto from "@/assets/faculty/pei-song.jpg";
 import yashGadodiaPhoto from "@/assets/faculty/yash-gadodia.jpg";
 
 const values = [
-  { emoji: "🧠", title: "Thinking Over Syntax", description: "We teach problem-solving and product thinking — AI handles the code generation so students focus on what matters." },
-  { emoji: "🔍", title: "Verify, Don't Trust", description: "Students learn to check AI outputs, debug when things break, and understand why their solution works — not just that it works." },
+  { emoji: "🧠", title: "Thinking Over Syntax", description: "We teach problem-solving and product thinking. AI handles the code generation so students focus on what matters." },
+  { emoji: "🔍", title: "Verify, Don't Trust", description: "Students learn to check AI outputs, debug when things break, and understand why their solution works, not just that it works." },
   { emoji: "🔄", title: "Build → Test → Improve", description: "Real learning happens through iteration. Every session follows the V.I.B.E. cycle: Vision, Ideate, Build, Evolve." },
-  { emoji: "🤝", title: "Dialogic DNA", description: "Built on Dialogic Academy's 6+ years of enrichment delivery across 40+ Singapore schools. Same pedagogy, new medium." },
+  { emoji: "🤝", title: "Dialogic DNA", description: "Built on Dialogic Academy's 6+ years of enrichment delivery across 50+ Singapore schools. Same pedagogy, new medium." },
 ];
 
 const faculty = [
@@ -19,13 +19,13 @@ const faculty = [
     name: "Seah Pei Song",
     role: "CEO & Founder, Dialogic Academy",
     credentials:
-      "Founded Dialogic Academy in 2018 and grew it to 40+ school partnerships across Singapore — from Anglo-Chinese School and Pei Chun Public School at the primary level to Raffles Girls' School, Victoria Junior College, and National Junior College. Former national debating coach who led VJC to 7 Grand Finals and RGS to a Division 1 championship. Pei Song designs every Vibe Makers programme to develop 21st Century Competencies through hands-on, student-led problem solving.",
+      "Founded Dialogic Academy in 2018 and grew it to 50+ school partnerships across Singapore, from Anglo-Chinese School and Pei Chun Public School at the primary level to Raffles Girls' School, Victoria Junior College, and National Junior College. Former national debating coach who led VJC to 7 Grand Finals and RGS to a Division 1 championship. Pei Song designs every Vibe Makers programme to develop 21st Century Competencies through hands-on, student-led problem solving.",
     image: peiSongPhoto,
   },
   {
     name: "Yash Gadodia",
     role: "Head of Curriculum & Product",
-    credentials: "Product builder and founding PM at Voltade, where he shipped AI-powered tools to 10,000+ users from zero. Yash designs the Vibe Makers curriculum — structuring each session around MOE's EdTech Masterplan 2030 principles (Find, Think, Apply, Create) and the V.I.B.E. methodology. He ensures students don't just use AI tools, but learn to prompt with intent, verify outputs critically, and iterate based on real user feedback.",
+    credentials: "Product builder and founding PM at Voltade, where he shipped AI-powered tools to 10,000+ users from zero. Yash designs the Vibe Makers curriculum, structuring each session around MOE's EdTech Masterplan 2030 principles (Find, Think, Apply, Create) and the V.I.B.E. methodology. He ensures students don't just use AI tools, but learn to prompt with intent, verify outputs critically, and iterate based on real user feedback.",
     image: yashGadodiaPhoto,
   },
 ];
@@ -36,7 +36,7 @@ export default function About() {
     <Layout>
       <Helmet>
         <title>About Us | Vibemakers Academy - Singapore's Vibe Coding Pioneers</title>
-        <meta name="description" content="Meet the team behind Vibemakers Academy. Powered by Dialogic Academy with 6+ years of excellence, 5000+ students impacted, and 40+ school partnerships." />
+        <meta name="description" content="Meet the team behind Vibemakers Academy. Powered by Dialogic Academy with 6+ years of excellence, 15000+ students impacted, and 50+ school partnerships." />
         <link rel="canonical" href="https://vibemakers.dev/about" />
         <meta property="og:title" content="About Vibemakers Academy" />
         <meta property="og:description" content="Singapore's trusted educators bringing AI-powered learning to students." />
@@ -61,7 +61,7 @@ export default function About() {
           <Reveal variant="up">
             <div>
               <h1 className="font-display font-bold tracking-display leading-[1.02] text-5xl md:text-6xl lg:text-7xl mb-6">
-                Problem-Solving With AI — Not Just Coding
+                Problem-Solving With AI. Not Just Coding
               </h1>
               <p className="max-w-2xl text-lg text-ink-2">
                 Vibe Makers Academy teaches students to identify real problems, design solutions, and build working apps using AI tools. Aligned with MOE's 21st Century Competencies framework and EdTech Masterplan 2030.
@@ -82,7 +82,7 @@ export default function About() {
                 <p>
                   Vibe Makers Academy is a programme by{" "}
                   <a href="https://dialogic.academy" target="_blank" rel="noopener noreferrer" className="text-primary font-semibold hover:underline">Dialogic Academy</a>{" "}
-                  (est. 2018) — Singapore's trusted provider of debate, public speaking, and enrichment programmes for schools. Dialogic works with 40+ schools from primary to JC level, including Raffles Girls' School, Victoria Junior College, Anglo-Chinese School, and National Junior College.
+                  (est. 2018) · Singapore's trusted provider of debate, public speaking, and enrichment programmes for schools. Dialogic works with 50+ schools from primary to JC level, including Raffles Girls' School, Victoria Junior College, Anglo-Chinese School, and National Junior College.
                 </p>
                 <p>
                   MOE's{" "}
@@ -92,7 +92,7 @@ export default function About() {
                   emphasises Critical, Adaptive and Inventive Thinking (CAIT), Communication, Collaboration and Information Skills (CCI), and self-directed learning. Traditional coding classes teach syntax. We teach the thinking.
                 </p>
                 <p>
-                  Vibe Makers was created to bridge this gap. Students use AI tools to build real, working apps — but the learning isn't about the tools. It's about defining problems worth solving, making scope trade-offs, verifying AI outputs, testing with real users, and presenting their reasoning. The same skills Dialogic has been developing through debate and public speaking, now applied through product building.
+                  Vibe Makers was created to bridge this gap. Students use AI tools to build real, working apps, but the learning isn't about the tools. It's about defining problems worth solving, making scope trade-offs, verifying AI outputs, testing with real users, and presenting their reasoning. The same skills Dialogic has been developing through debate and public speaking, now applied through product building.
                 </p>
               </div>
             </div>
@@ -130,7 +130,7 @@ export default function About() {
             <div className="mb-12">
               <BrutalSticker rotate={-1}>● Meet the Team</BrutalSticker>
               <h2 id="our-faculty" className="font-display font-bold tracking-display leading-[1.02] text-3xl md:text-4xl mt-4 mb-4">Meet the Team</h2>
-              <p className="text-ink-2 max-w-2xl">Enrichment educators and product builders — combining Dialogic Academy's 6-year track record with hands-on AI product experience.</p>
+              <p className="text-ink-2 max-w-2xl">Enrichment educators and product builders, combining Dialogic Academy's 6-year track record with hands-on AI product experience.</p>
             </div>
           </Reveal>
           <RevealGroup staggerMs={120} variant="up" className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-3xl mx-auto">
@@ -150,7 +150,7 @@ export default function About() {
           </RevealGroup>
           <Reveal variant="up" delayMs={300}>
             <p className="text-center text-sm text-muted-foreground mt-8">
-              More coaches joining soon—stay tuned!
+              More coaches joining soon: stay tuned!
             </p>
           </Reveal>
         </div>
@@ -166,7 +166,7 @@ export default function About() {
                 Aligned With Singapore's Education Direction
               </h2>
               <p className="text-ink-2 text-center max-w-2xl mx-auto">
-                Every programme is designed around MOE's frameworks — not as a marketing claim, but as the foundation for how we structure learning outcomes.
+                Every programme is designed around MOE's frameworks, not as a marketing claim, but as the foundation for how we structure learning outcomes.
               </p>
             </div>
           </Reveal>
@@ -187,15 +187,15 @@ export default function About() {
               <ul className="space-y-2 text-sm">
                 <li className="flex items-start gap-2">
                   <span className="w-1.5 h-1.5 rounded-full bg-primary mt-1.5 flex-shrink-0" />
-                  <span><strong className="text-foreground">CAIT</strong> — Students evaluate trade-offs, debug AI outputs, and make design decisions under constraints</span>
+                  <span><strong className="text-foreground">CAIT</strong> · Students evaluate trade-offs, debug AI outputs, and make design decisions under constraints</span>
                 </li>
                 <li className="flex items-start gap-2">
                   <span className="w-1.5 h-1.5 rounded-full bg-primary mt-1.5 flex-shrink-0" />
-                  <span><strong className="text-foreground">CCI</strong> — Students present builds, give peer feedback, and collaborate on shared projects</span>
+                  <span><strong className="text-foreground">CCI</strong> · Students present builds, give peer feedback, and collaborate on shared projects</span>
                 </li>
                 <li className="flex items-start gap-2">
                   <span className="w-1.5 h-1.5 rounded-full bg-primary mt-1.5 flex-shrink-0" />
-                  <span><strong className="text-foreground">Self-Directed Learning</strong> — Students set project goals, manage scope, and iterate independently</span>
+                  <span><strong className="text-foreground">Self-Directed Learning</strong> · Students set project goals, manage scope, and iterate independently</span>
                 </li>
               </ul>
             </div>
@@ -210,24 +210,24 @@ export default function About() {
                 </a>
               </h3>
               <p className="text-sm text-ink-2 mb-3">
-                MOE's digital literacy framework — Find, Think, Apply, Create — maps directly to how our sessions work:
+                MOE's digital literacy framework. Find, Think, Apply, Create, maps directly to how our sessions work:
               </p>
               <ul className="space-y-2 text-sm">
                 <li className="flex items-start gap-2">
                   <span className="w-1.5 h-1.5 rounded-full bg-primary mt-1.5 flex-shrink-0" />
-                  <span><strong className="text-foreground">Find</strong> — Research user needs, interview stakeholders</span>
+                  <span><strong className="text-foreground">Find</strong> · Research user needs, interview stakeholders</span>
                 </li>
                 <li className="flex items-start gap-2">
                   <span className="w-1.5 h-1.5 rounded-full bg-primary mt-1.5 flex-shrink-0" />
-                  <span><strong className="text-foreground">Think</strong> — Evaluate options, choose an approach, scope realistically</span>
+                  <span><strong className="text-foreground">Think</strong> · Evaluate options, choose an approach, scope realistically</span>
                 </li>
                 <li className="flex items-start gap-2">
                   <span className="w-1.5 h-1.5 rounded-full bg-primary mt-1.5 flex-shrink-0" />
-                  <span><strong className="text-foreground">Apply</strong> — Prompt AI tools with intent, verify outputs, debug</span>
+                  <span><strong className="text-foreground">Apply</strong> · Prompt AI tools with intent, verify outputs, debug</span>
                 </li>
                 <li className="flex items-start gap-2">
                   <span className="w-1.5 h-1.5 rounded-full bg-primary mt-1.5 flex-shrink-0" />
-                  <span><strong className="text-foreground">Create</strong> — Ship a working prototype, present reasoning</span>
+                  <span><strong className="text-foreground">Create</strong> · Ship a working prototype, present reasoning</span>
                 </li>
               </ul>
             </div>
@@ -245,11 +245,11 @@ export default function About() {
               <ul className="space-y-2 text-sm">
                 <li className="flex items-start gap-2">
                   <span className="w-1.5 h-1.5 rounded-full bg-primary mt-1.5 flex-shrink-0" />
-                  <span>Students use AI under instructor supervision with educational accounts — no personal data collected</span>
+                  <span>Students use AI under instructor supervision with educational accounts, no personal data collected</span>
                 </li>
                 <li className="flex items-start gap-2">
                   <span className="w-1.5 h-1.5 rounded-full bg-primary mt-1.5 flex-shrink-0" />
-                  <span>Output verification is a core skill — students learn to check, not blindly accept AI suggestions</span>
+                  <span>Output verification is a core skill, students learn to check, not blindly accept AI suggestions</span>
                 </li>
                 <li className="flex items-start gap-2">
                   <span className="w-1.5 h-1.5 rounded-full bg-primary mt-1.5 flex-shrink-0" />
@@ -269,11 +269,11 @@ export default function About() {
               <h2 id="track-record" className="font-display font-bold tracking-display leading-[1.02] text-3xl md:text-4xl mb-12">Our Track Record</h2>
               <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
                 <div>
-                  <div className="text-3xl md:text-4xl font-display font-bold mb-2">5,000+</div>
+                  <div className="text-3xl md:text-4xl font-display font-bold mb-2">15,000+</div>
                   <p className="text-sm opacity-80">Students taught since 2018</p>
                 </div>
                 <div>
-                  <div className="text-3xl md:text-4xl font-display font-bold mb-2">40+</div>
+                  <div className="text-3xl md:text-4xl font-display font-bold mb-2">50+</div>
                   <p className="text-sm opacity-80">School partners (primary to JC)</p>
                 </div>
                 <div>

@@ -503,7 +503,7 @@ const PrivateClassesFlyer = forwardRef<HTMLDivElement>((_, ref) => {
           <p className="lede">
             Vibe Makers is a leading AI Problem Solving &amp; Vibe Making
             academy for teens aged 13 to 18 in Singapore. We take the same
-            curriculum trusted by 40+ schools and 5,000+ students and bring it
+            curriculum trusted by 50+ schools and 15,000+ students and bring it
             home: live, online, and tailored to one student (or a small circle
             of friends). We focus on <em>building real things</em>; code is part
             of the process, not the goal. By the end of their first class, your
@@ -519,7 +519,7 @@ const PrivateClassesFlyer = forwardRef<HTMLDivElement>((_, ref) => {
           </div>
           <div className="row">
             <div className="num">
-              5,000<span className="plus">+</span>
+              15,000<span className="plus">+</span>
             </div>
             <div className="label">Students coached</div>
           </div>

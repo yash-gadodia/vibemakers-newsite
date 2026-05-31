@@ -16,7 +16,7 @@ const ToolsWeUseSlide = () => {
           From <span className="text-primary">Idea</span> to <span className="text-primary">App</span> in One Prompt
         </h2>
         <p className="text-2xl text-muted-foreground mb-10 max-w-4xl">
-          Using tools like <span className="font-semibold text-foreground">Lovable</span>, students describe what they want to build in plain English — and watch their ideas come to life instantly.
+          Using tools like <span className="font-semibold text-foreground">Lovable</span>, students describe what they want to build in plain English, and watch their ideas come to life instantly.
         </p>
 
         {/* Features Grid */}
@@ -52,7 +52,7 @@ const ToolsWeUseSlide = () => {
             <div>
               <h3 className="text-2xl font-bold text-foreground mb-2">Deploy Instantly</h3>
               <p className="text-muted-foreground text-lg">
-                Publish real, shareable web apps with one click — show work to anyone, anywhere.
+                Publish real, shareable web apps with one click, show work to anyone, anywhere.
               </p>
             </div>
           </div>

@@ -7,7 +7,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { AuthProvider } from "@/contexts/AuthContext";
 import { ScrollToTop } from "@/components/ScrollToTop";
 
-// Index loads eagerly — it's the homepage and the most-likely-first-paint route.
+// Index loads eagerly, it's the homepage and the most-likely-first-paint route.
 import Index from "./pages/Index";
 
 // Every other page is lazy-loaded so each route ships its own JS chunk.

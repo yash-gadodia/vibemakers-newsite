@@ -23,7 +23,7 @@ export function FinalCTASection() {
                 Real problems. Real apps. Real learning.
               </h2>
               <p className="text-lg text-muted-foreground mb-10 max-w-xl mx-auto">
-                Whether you're a school looking for enrichment programmes or a parent seeking personalised coaching — we'll help students build something they're proud of.
+                Whether you're a school looking for enrichment programmes or a parent seeking personalised coaching, we'll help students build something they're proud of.
               </p>
 
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
@@ -49,10 +49,10 @@ export function FinalCTASection() {
                   >
                     Dialogic Academy
                   </a>{" "}
-                  — Singapore's trusted enrichment provider since 2018
+                  · Singapore's trusted enrichment provider since 2018
                 </p>
                 <p className="text-xs text-muted-foreground">
-                  40+ school partners • Aligned with{" "}
+                  50+ school partners • Aligned with{" "}
                   <a
                     href="https://www.moe.gov.sg/education-in-sg/21st-century-competencies"
                     target="_blank"

@@ -53,26 +53,26 @@ const pricingTiers = [
 const adultFAQ = [
   {
     q: "Do I need any coding experience?",
-    a: "No. Most of our adult students have never written a line of code. Vibe coding is about describing what you want in plain English and iterating with AI. The skill we teach is thinking — clear problem framing, prompt design, and verifying that the output actually works.",
+    a: "No. Most of our adult students have never written a line of code. Vibe coding is about describing what you want in plain English and iterating with AI. The skill we teach is thinking, clear problem framing, prompt design, and verifying that the output actually works.",
   },
   {
     q: "What will I actually leave with?",
-    a: "A real, deployed app you can show or share — built around something you genuinely care about. Past adult students have shipped: an inbox triage agent, a personal portfolio site, a small internal CRM for their business, a Telegram bot for their team, and a daily journaling app. You leave with the build and with the workflow you used to make it.",
+    a: "A real, deployed app you can show or share, built around something you genuinely care about. Past adult students have shipped: an inbox triage agent, a personal portfolio site, a small internal CRM for their business, a Telegram bot for their team, and a daily journaling app. You leave with the build and with the workflow you used to make it.",
   },
   {
     q: "What do I need to bring?",
-    a: "A laptop (Mac or Windows, anything from 2019 onwards). A free Lovable account and a free Claude account — we'll help you set those up before session 1. No software to install.",
+    a: "A laptop (Mac or Windows, anything from 2019 onwards). A free Lovable account and a free Claude account, we'll help you set those up before session 1. No software to install.",
   },
   {
     q: "Is it online or in person?",
-    a: "Online by default — most adults book over Zoom because it's the lowest-friction way to fit a session into a real workweek. We can also meet in person in Singapore for 1-to-1 if that's your preference.",
+    a: "Online by default, most adults book over Zoom because it's the lowest-friction way to fit a session into a real workweek. We can also meet in person in Singapore for 1-to-1 if that's your preference.",
   },
   {
     q: "How long does it take to get good?",
-    a: "First session: a deployed app you actually use. First month: a workflow you can repeat without us. Past month 3, most students stop needing structured coaching and start booking ad-hoc sessions when they hit a hard problem. There's no fixed curriculum length — you stop when the loop is internalised.",
+    a: "First session: a deployed app you actually use. First month: a workflow you can repeat without us. Past month 3, most students stop needing structured coaching and start booking ad-hoc sessions when they hit a hard problem. There's no fixed curriculum length, you stop when the loop is internalised.",
   },
   {
-    q: "I'm not in tech — will this be over my head?",
+    q: "I'm not in tech, will this be over my head?",
     a: "No. Half our adult students don't work in tech. Lawyers, teachers, founders, marketers, ops people. The build patterns are the same, just pointed at your problems. You don't need to understand frameworks; you need to understand what you want and how to verify you got it.",
   },
   {
@@ -81,7 +81,7 @@ const adultFAQ = [
   },
   {
     q: "How fast will I hear back?",
-    a: "Within 24 hours on weekdays, sooner on most weekends. We reply via WhatsApp by default — you can also message +65 8890 0368 directly if you'd rather skip the form.",
+    a: "Within 24 hours on weekdays, sooner on most weekends. We reply via WhatsApp by default, you can also message +65 8890 0368 directly if you'd rather skip the form.",
   },
 ];
 
@@ -89,17 +89,17 @@ const outcomes = [
   {
     emoji: "🚀",
     title: "Real Builds, Not Tutorials",
-    description: "Deployed apps you actually use — shareable via a link, not a screencap of someone else's project",
+    description: "Deployed apps you actually use, shareable via a link, not a screencap of someone else's project",
   },
   {
     emoji: "🧠",
     title: "AI Fluency With Good Habits",
-    description: "Prompting with intent, verifying outputs, debugging when things break — the workflow, not just the tools",
+    description: "Prompting with intent, verifying outputs, debugging when things break, the workflow, not just the tools",
   },
   {
     emoji: "🛠️",
     title: "A Workflow You Can Repeat",
-    description: "Walk away with a build process you can apply solo — no permanent dependency on us or any single tool",
+    description: "Walk away with a build process you can apply solo, no permanent dependency on us or any single tool",
   },
   {
     emoji: "💼",
@@ -116,7 +116,7 @@ const programmeFormats = [
     features: [
       "Mentor-guided planning around your goals",
       "Online (Zoom) or in person",
-      "Flexible scheduling — evenings and weekends",
+      "Flexible scheduling, evenings and weekends",
       "Fastest path to a workflow you can repeat solo",
     ],
     whoFor: "Best for adults who want maximum leverage from each session",
@@ -137,26 +137,26 @@ const programmeFormats = [
 
 const projectExamples = [
   { emoji: "🤖", title: "AI Agent", description: "Drafts work emails, tags by priority, runs while you sleep" },
-  { emoji: "🌐", title: "Personal Site", description: "Your story, your link — no website builder, no template" },
+  { emoji: "🌐", title: "Personal Site", description: "Your story, your link, no website builder, no template" },
   { emoji: "🛠️", title: "Internal Work Tool", description: "A small app your team actually uses, built in a weekend" },
-  { emoji: "📊", title: "Custom Dashboard", description: "Pull data you care about into one view — finance, fitness, ops" },
+  { emoji: "📊", title: "Custom Dashboard", description: "Pull data you care about into one view, finance, fitness, ops" },
 ];
 
 const learnerProfiles = [
   {
     title: "\"I'm AI-curious but I keep watching, not doing\"",
     description:
-      "You've read every newsletter. You've watched the demos. You've tried ChatGPT for emails. But you haven't actually shipped anything — and the gap between 'I see what's possible' and 'I built this thing' feels enormous. Our trial collapses that gap in 60 minutes.",
+      "You've read every newsletter. You've watched the demos. You've tried ChatGPT for emails. But you haven't actually shipped anything, and the gap between 'I see what's possible' and 'I built this thing' feels enormous. Our trial collapses that gap in 60 minutes.",
   },
   {
     title: "\"I'm in a non-tech role and want to stop being dependent on devs\"",
     description:
-      "PMs, ops leads, marketers, founders, teachers, lawyers — you have ideas for tools that would help you do your job better, but every one of them dies in a backlog or a quote from an agency. Vibe coding lets you ship a working v1 yourself, then decide whether it's worth handing off.",
+      "PMs, ops leads, marketers, founders, teachers, lawyers, you have ideas for tools that would help you do your job better, but every one of them dies in a backlog or a quote from an agency. Vibe coding lets you ship a working v1 yourself, then decide whether it's worth handing off.",
   },
   {
     title: "\"I want to build a side project but don't know where to start\"",
     description:
-      "You've been kicking around the same idea for two years. The barrier isn't motivation — it's that 'learn to code first' is a 6-month detour. We'll help you skip that and start building the actual thing in week one.",
+      "You've been kicking around the same idea for two years. The barrier isn't motivation, it's that 'learn to code first' is a 6-month detour. We'll help you skip that and start building the actual thing in week one.",
   },
   {
     title: "\"I'm a founder and need to prototype faster than my team can\"",
@@ -169,7 +169,7 @@ export default function Adults() {
   return (
     <Layout>
       <Helmet>
-        <title>For Adults | Vibemakers Academy — AI Coding Classes for Singapore Adults</title>
+        <title>For Adults | Vibemakers Academy. AI Coding Classes for Singapore Adults</title>
         <meta
           name="description"
           content="From AI-curious to AI-confident. 1-to-1 and small-group AI coding classes for adults in Singapore. Build real apps in your first session. No experience needed."
@@ -249,7 +249,7 @@ export default function Adults() {
                 (90 min) sessions, weekly, over Zoom. Ship a real app in your first session.
               </p>
               <p className="font-sans text-sm text-muted-foreground max-w-2xl leading-[1.55] mb-8">
-                Trusted by 40+ Singapore schools since 2018 · Part of Dialogic Academy
+                Trusted by 50+ Singapore schools since 2018 · Part of Dialogic Academy
               </p>
 
               <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 max-w-xl">
@@ -296,7 +296,7 @@ export default function Adults() {
               </span>
               <h2 className="font-display font-bold tracking-display leading-[1.02] text-3xl md:text-4xl mb-2">You might recognise yourself here</h2>
               <p className="font-sans text-base text-ink-2 mb-8">
-                Anyone who wants to learn AI — non-tech professionals, founders, side-project
+                Anyone who wants to learn AI, non-tech professionals, founders, side-project
                 builders, career switchers. No prior coding experience required.
               </p>
 
@@ -448,7 +448,7 @@ export default function Adults() {
           </RevealGroup>
           <Reveal variant="up" delayMs={400}>
             <p className="text-center font-sans text-sm text-muted-foreground mt-8">
-              All prices in SGD. No GST surprises. We bill at the start of each month — pause or cancel anytime.
+              All prices in SGD. No GST surprises. We bill at the start of each month, pause or cancel anytime.
             </p>
           </Reveal>
         </div>
@@ -462,7 +462,7 @@ export default function Adults() {
               ● What You'll Build
             </span>
             <h2 className="font-display font-bold tracking-display leading-[1.02] text-3xl md:text-4xl mb-3">Real builds, not tutorials</h2>
-            <p className="font-sans text-base text-ink-2 mb-8">Pick something you actually care about — we'll help you scope and ship it</p>
+            <p className="font-sans text-base text-ink-2 mb-8">Pick something you actually care about, we'll help you scope and ship it</p>
           </Reveal>
           <RevealGroup staggerMs={80} variant="up" className="grid grid-cols-2 md:grid-cols-4 gap-4">
             {projectExamples.map((project) => (
@@ -491,7 +491,7 @@ export default function Adults() {
                 Things adults ask before booking
               </h2>
               <p className="font-sans text-base text-ink-2">
-                Still unsure? <a href="https://wa.me/6588900368?text=Hi%20Vibe%20Makers" target="_blank" rel="noopener noreferrer" className="text-primary font-medium hover:underline">WhatsApp us</a> — we usually reply same day.
+                Still unsure? <a href="https://wa.me/6588900368?text=Hi%20Vibe%20Makers" target="_blank" rel="noopener noreferrer" className="text-primary font-medium hover:underline">WhatsApp us</a> · we usually reply same day.
               </p>
             </div>
           </Reveal>
@@ -529,7 +529,7 @@ export default function Adults() {
                   Ready when you are
                 </h2>
                 <p className="font-sans text-base text-ink-2">
-                  Tell us a bit about yourself — we'll reply within 24 hours (usually faster) with the next available trial slot. Or just{" "}
+                  Tell us a bit about yourself, we'll reply within 24 hours (usually faster) with the next available trial slot. Or just{" "}
                   <a
                     href="https://wa.me/6588900368?text=Hi%20Vibe%20Makers%20%E2%80%94%20I%27d%20like%20to%20book%20a%20free%20trial%20class"
                     target="_blank"

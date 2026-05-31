@@ -35,7 +35,7 @@ const OpportunitySlide = () => {
             Seeing my app update instantly made it click.
           </blockquote>
           <div className="mt-4 pl-8 text-muted-foreground text-lg">
-            — <span className="text-foreground">Arjun S.</span>, JC1 student
+            · <span className="text-foreground">Arjun S.</span>, JC1 student
           </div>
         </div>
       </div>

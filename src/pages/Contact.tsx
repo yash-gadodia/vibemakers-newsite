@@ -28,7 +28,7 @@ export default function Contact() {
     const phone = (formData.get("phone") as string || "").trim();
     const type = formData.get("enquiry_type") as string;
     const rawMessage = formData.get("message") as string;
-    // Prepend phone (optional) to message — current Supabase schema has no
+    // Prepend phone (optional) to message, current Supabase schema has no
     // phone column so we surface it via the existing message field, which
     // also makes it visible in email + Telegram notifications.
     const message = phone
@@ -57,7 +57,7 @@ export default function Contact() {
         parent_name: name,
         parent_email: email,
         // For an adult self-enquiry the same person is the lead AND the
-        // "student" — DB requires student_name NOT NULL so we mirror it.
+        // "student" · DB requires student_name NOT NULL so we mirror it.
         student_name: isAdultSelf
           ? name
           : (formData.get("student_name") as string) || "Not provided",
