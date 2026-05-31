@@ -85,6 +85,6 @@ Disallow: /print
 Disallow: /print-slides
 Disallow: /print-flyer
 Disallow: /print-private-classes
-Disallow: /demo-loyang-view
+Disallow: /demo/loyang-view
 
 Sitemap: https://vibemakers.dev/sitemap.xml

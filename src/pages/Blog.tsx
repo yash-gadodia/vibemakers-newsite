@@ -23,6 +23,11 @@ const Blog = () => {
           content="Stories, insights, and updates from Vibemakers Academy — Singapore's AI-first coding academy for teens."
         />
         <link rel="canonical" href="https://vibemakers.dev/blog" />
+        <meta property="og:title" content="Blog · Vibemakers Academy" />
+        <meta property="og:description" content="Stories, insights, and updates from Vibemakers Academy — Singapore's AI-first coding academy for teens." />
+        <meta property="og:type" content="website" />
+        <meta property="og:image" content="https://vibemakers.dev/og-image.png" />
+        <meta name="twitter:card" content="summary_large_image" />
       </Helmet>
 
       <section className="bg-background py-20 md:py-28">

@@ -8,6 +8,7 @@
 // Internal nav links are still <a href="/...">; replace with react-router <Link> in a follow-up.
 import React, { useState, useRef, useEffect, useLayoutEffect } from "react";
 import { Helmet } from "react-helmet-async";
+import { Link } from "react-router-dom";
 import { Header } from "@/components/layout/Header";
 
 // =============================================================================
@@ -29,9 +30,9 @@ const VM_CONTENT = {
   heroSecondaryCta: "Bring Vibemakers to your school",
 
   // === Trust strip ===
-  // Source: site copy and CLAUDE.md ("5,000+ students, 40+ school partners, since 2018").
-  trustStat1: { num: "5,000+", label: "Students taught" },
-  trustStat2: { num: "40+", label: "Schools partnered" },
+  // Source: site copy and CLAUDE.md ("15,000+ students, 50+ school partners, since 2018").
+  trustStat1: { num: "15,000+", label: "Students taught" },
+  trustStat2: { num: "50+", label: "Partner schools" },
   trustStat3: { num: "6+", label: "Years running (since 2018)" },
   trustStat4: { num: "13+", label: "Ages welcomed" },
 
@@ -746,7 +747,7 @@ function HHero({ tweaks }) {
         <div className="vm-hero-spacer" style={{ flex: 1 }} />
         <div className="vm-hero-ctas" style={{ display: 'flex', flexDirection: 'column', gap: 10, alignItems: 'stretch', minWidth: 280 }}>
           <div style={{ position: 'relative' }}>
-            <a href="/parents" className="vm-btn" style={{
+            <Link to="/parents" className="vm-btn" style={{
                 background: H.orange,
                 color: '#fff',
                 border: 'none',
@@ -761,13 +762,13 @@ function HHero({ tweaks }) {
                 boxSizing: 'border-box',
                 display: 'inline-block',
                 boxShadow: `0 1px 0 rgba(0,0,0,0.04), 0 8px 24px rgba(255,107,26,0.25), 3px 3px 0 ${H.ink}`,
-              }}>For parents <span className="vm-arrow">→</span></a>
+              }}>For parents <span className="vm-arrow">→</span></Link>
             <span className="vm-wiggle" style={{ '--rot': '8deg', position: 'absolute', top: -14, right: -10, zIndex: 2 }}>
               <HSticker color={H.yellow} rotate={0}>1st class free</HSticker>
             </span>
           </div>
           <div style={{ position: 'relative' }}>
-            <a href="/adults" className="vm-btn" style={{
+            <Link to="/adults" className="vm-btn" style={{
                 background: H.orange,
                 color: '#fff',
                 border: 'none',
@@ -782,12 +783,12 @@ function HHero({ tweaks }) {
                 boxSizing: 'border-box',
                 display: 'inline-block',
                 boxShadow: `0 1px 0 rgba(0,0,0,0.04), 0 8px 24px rgba(255,107,26,0.25), 3px 3px 0 ${H.ink}`,
-              }}>For adults <span className="vm-arrow">→</span></a>
+              }}>For adults <span className="vm-arrow">→</span></Link>
             <span className="vm-wiggle" style={{ '--rot': '-6deg', position: 'absolute', top: -14, right: -10, zIndex: 2 }}>
               <HSticker color={H.yellow} rotate={0}>1st class free</HSticker>
             </span>
           </div>
-          <a href="/schools" className="vm-btn" style={{
+          <Link to="/schools" className="vm-btn" style={{
             background: '#fff',
             color: H.ink,
             border: `1.5px solid ${H.ink}`,
@@ -801,7 +802,7 @@ function HHero({ tweaks }) {
             textDecoration: 'none',
             boxSizing: 'border-box',
             marginTop: 8,
-          }}>For schools <span className="vm-arrow">→</span></a>
+          }}>For schools <span className="vm-arrow">→</span></Link>
         </div>
       </div>
       </Reveal>
@@ -1731,18 +1732,18 @@ function HCta() {
           <p style={{ fontSize: 18, marginTop: 16, opacity: 0.95, maxWidth: 480 }}>{c.ctaSub}</p>
         </div>
         <div style={{ display: 'flex', flexDirection: 'column', gap: 10, alignItems: 'stretch', position: 'relative', zIndex: 1 }}>
-          <a href="/parents" className="vm-btn" style={{
+          <Link to="/parents" className="vm-btn" style={{
               background: H.ink, color: '#fff', border: 'none',
               padding: '18px 24px', borderRadius: 12, fontSize: 16, fontWeight: 600, cursor: 'pointer',
               boxShadow: `3px 3px 0 ${H.bg}`,
               width: '100%',
               textDecoration: 'none', textAlign: 'center', boxSizing: 'border-box',
-            }}>{c.ctaPrimary} <span className="vm-arrow">→</span></a>
-          <a href="/schools" className="vm-btn" style={{
+            }}>{c.ctaPrimary} <span className="vm-arrow">→</span></Link>
+          <Link to="/schools" className="vm-btn" style={{
             background: 'transparent', color: '#fff', border: '1.5px solid rgba(255,255,255,0.7)',
             padding: '17px 24px', borderRadius: 12, fontSize: 16, fontWeight: 500, cursor: 'pointer',
             textDecoration: 'none', textAlign: 'center', boxSizing: 'border-box',
-          }}>{c.ctaSecondary}</a>
+          }}>{c.ctaSecondary}</Link>
         </div>
       </div>
       </Reveal>

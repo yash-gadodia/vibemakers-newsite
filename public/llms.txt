@@ -1,6 +1,6 @@
 # Vibe Makers Academy
 
-> Singapore's AI-first academy for teens aged 13–18. Students learn to spot real problems, design solutions, and build working apps using AI tools like Claude, Lovable, and Cursor — developing Critical, Adaptive and Inventive Thinking (CAIT) through AI-first vibe coding. Part of Dialogic Academy (est. 2018, 5,000+ students, 40+ school partners).
+> Singapore's AI-first academy for teens aged 13–18. Students learn to spot real problems, design solutions, and build working apps using AI tools like Claude, Lovable, and Cursor, developing Critical, Adaptive and Inventive Thinking (CAIT) through AI-first vibe coding. Part of Dialogic Academy (est. 2018, 15,000+ students, 50+ school partners).
 
 ## What we do
 
