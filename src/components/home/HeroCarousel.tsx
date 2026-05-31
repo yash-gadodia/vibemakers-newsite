@@ -10,10 +10,10 @@ import heroImage3 from "@/assets/gallery/ai-hero-03.jpg";
 const images = [heroImage1, heroImage2, heroImage3];
 
 const stats = [
-  { value: 500, suffix: "+", label: "Students Impacted" },
-  { value: 10, suffix: "+", label: "Partner Schools" },
+  { value: 15000, suffix: "+", label: "Students Impacted" },
+  { value: 50, suffix: "+", label: "Partner Schools" },
   { value: 4.9, suffix: "★", label: "Parent Rating", decimals: 1 },
-  { value: 3, suffix: "+", label: "Years Experience" },
+  { value: 6, suffix: "+", label: "Years Experience" },
 ];
 
 function CountUp({ 
@@ -48,7 +48,7 @@ function CountUp({
 
   return (
     <span>
-      {decimals > 0 ? count.toFixed(decimals) : Math.floor(count)}
+      {decimals > 0 ? count.toFixed(decimals) : Math.floor(count).toLocaleString()}
       {suffix}
     </span>
   );

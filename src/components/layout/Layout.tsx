@@ -18,7 +18,7 @@ const ORG_JSON_LD = {
   description:
     "Singapore's AI coding academy for teens 13-18. Part of Dialogic Academy. Build real apps with AI through 1-on-1 coaching, small group classes, and holiday intensives.",
   areaServed: { "@type": "Country", name: "Singapore" },
-  foundingDate: "2026",
+  foundingDate: "2018",
   parentOrganization: {
     "@type": "EducationalOrganization",
     name: "Dialogic Academy",

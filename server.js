@@ -114,6 +114,31 @@ async function pingTelegram(formType, data) {
   }
 }
 
+// Simple in-memory per-IP rate limiter for the public form endpoints. Fixed
+// 1-minute window, resets on redeploy. Fine for a single Railway instance at
+// marketing-site traffic; keeps form spam out of Postgres + the Telegram group.
+const RATE_LIMIT_WINDOW_MS = 60_000;
+const RATE_LIMIT_MAX = 5;
+const rateBuckets = new Map();
+
+function rateLimited(c) {
+  const ip =
+    (c.req.header("x-forwarded-for") || "").split(",")[0].trim() ||
+    c.req.header("x-real-ip") ||
+    "unknown";
+  const now = Date.now();
+  const bucket = rateBuckets.get(ip);
+  if (!bucket || now > bucket.reset) {
+    if (rateBuckets.size > 5000) {
+      for (const [k, v] of rateBuckets) if (now > v.reset) rateBuckets.delete(k);
+    }
+    rateBuckets.set(ip, { count: 1, reset: now + RATE_LIMIT_WINDOW_MS });
+    return false;
+  }
+  bucket.count += 1;
+  return bucket.count > RATE_LIMIT_MAX;
+}
+
 const app = new Hono();
 
 app.use("/api/*", async (c, next) => {
@@ -186,6 +211,7 @@ async function readJson(c) {
 
 app.post("/api/parent-interest", async (c) => {
   if (!pool) return c.json({ ok: false, error: "DB unavailable" }, 503);
+  if (rateLimited(c)) return c.json({ ok: false, error: "Too many requests. Please try again in a minute." }, 429);
   const body = await readJson(c);
   if (!body) return c.json({ ok: false, error: "Invalid JSON" }, 400);
   const {
@@ -229,6 +255,7 @@ app.post("/api/parent-interest", async (c) => {
 
 app.post("/api/school-enquiries", async (c) => {
   if (!pool) return c.json({ ok: false, error: "DB unavailable" }, 503);
+  if (rateLimited(c)) return c.json({ ok: false, error: "Too many requests. Please try again in a minute." }, 429);
   const body = await readJson(c);
   if (!body) return c.json({ ok: false, error: "Invalid JSON" }, 400);
   const {
@@ -261,6 +288,7 @@ app.post("/api/school-enquiries", async (c) => {
 
 app.post("/api/hackathon-waitlist", async (c) => {
   if (!pool) return c.json({ ok: false, error: "DB unavailable" }, 503);
+  if (rateLimited(c)) return c.json({ ok: false, error: "Too many requests. Please try again in a minute." }, 429);
   const body = await readJson(c);
   if (!body) return c.json({ ok: false, error: "Invalid JSON" }, 400);
   const { name, email, school, age_group, parental_consent } = body;
