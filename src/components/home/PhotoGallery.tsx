@@ -12,6 +12,10 @@ import rgsW103 from "@/assets/gallery/rgs-w1-03.jpg";
 import rgsW104 from "@/assets/gallery/rgs-w1-04.jpg";
 import rgsW105 from "@/assets/gallery/rgs-w1-05.jpg";
 import rgsW106 from "@/assets/gallery/rgs-w1-06.jpg";
+import lvssW105 from "@/assets/gallery/lvss-w1-05.jpg";
+import lvssW106 from "@/assets/gallery/lvss-w1-06.jpg";
+import lvssW107 from "@/assets/gallery/lvss-w1-07.jpg";
+import lvssW108 from "@/assets/gallery/lvss-w1-08.jpg";
 import auditorium1 from "@/assets/gallery/auditorium-event-01.jpg";
 import instructorPresentation1 from "@/assets/gallery/instructor-presentation-01.jpg";
 import workshop1 from "@/assets/gallery/workshop-students-01.jpg";
@@ -27,6 +31,10 @@ const galleryImages = [
   { src: rgsW104, alt: "Yash teaching two RGS students at the lab bench with ChatGPT projected", category: "RGS · May 2026", emoji: "🔬" },
   { src: rgsW105, alt: "RGS student presenting her vibe-coded HTML slide deck on Ferrari and McLaren", category: "RGS · May 2026", emoji: "🔬" },
   { src: rgsW106, alt: "Yash instructing in front of the W2 title slide", category: "RGS · May 2026", emoji: "🔬" },
+  { src: lvssW107, alt: "Wide view of a full Loyang View Secondary class working through the Vibe Makers workshop", category: "Loyang View · May 2026", emoji: "🛠️" },
+  { src: lvssW108, alt: "'Welcome to Vibe Makers' opening slide on a laptop with the Loyang View Secondary class in the background", category: "Loyang View · May 2026", emoji: "🛠️" },
+  { src: lvssW106, alt: "Laptop showing the 'Observe a product in 3 lenses' framework slide in the Loyang View classroom", category: "Loyang View · May 2026", emoji: "🛠️" },
+  { src: lvssW105, alt: "Loyang View student capturing an AI-generated water-bottle redesign on an iPad", category: "Loyang View · May 2026", emoji: "🛠️" },
   { src: auditorium1, alt: "Large-scale workshop with students from multiple schools", category: "Event", emoji: "🎪" },
   { src: instructorPresentation1, alt: "Instructor presenting student project examples", category: "Teaching", emoji: "👨‍🏫" },
   { src: hackathon1, alt: "Hackathon event with excited participants", category: "Hackathon", emoji: "🚀" },
@@ -80,7 +88,7 @@ export function PhotoGallery() {
         <Reveal variant="up" delayMs={600}>
           <div className="mt-8 text-center">
             <p className="text-sm text-muted-foreground">
-              Photos from our workshops at <span className="font-medium text-foreground">50+ partner schools</span> across Singapore · most recently Raffles Girls' School (May 2026)
+              Photos from our workshops at <span className="font-medium text-foreground">50+ partner schools</span> across Singapore · most recently Raffles Girls' School and Loyang View Secondary (May 2026)
             </p>
           </div>
         </Reveal>
