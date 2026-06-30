@@ -186,7 +186,7 @@ export default function Adults() {
           content="From AI-curious to AI-confident. 1-to-1 and small-group AI coding classes for adults in Singapore."
         />
         <meta property="og:type" content="website" />
-        <meta property="og:image" content="https://vibemakers.dev/og-image.png" />
+        <meta property="og:image" content="https://vibemakers.dev/og-adults.png" />
         <meta name="twitter:card" content="summary_large_image" />
 
         <script type="application/ld+json">{`{

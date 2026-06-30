@@ -301,7 +301,7 @@ export default function Schools() {
         <meta property="og:title" content="School AI Workshops. MOE 4 AI Learns Aligned | Vibe Makers" />
         <meta property="og:description" content="From $80/student. 1-day to 2-week formats. We hit all four MOE AI Learns, including the one most providers miss." />
         <meta property="og:type" content="website" />
-        <meta property="og:image" content="https://vibemakers.dev/og-image.png" />
+        <meta property="og:image" content="https://vibemakers.dev/og-brand.png" />
         <meta name="twitter:card" content="summary_large_image" />
 
         <script type="application/ld+json">{`{

@@ -41,7 +41,7 @@ export default function About() {
         <meta property="og:title" content="About Vibemakers Academy" />
         <meta property="og:description" content="Singapore's trusted educators bringing AI-powered learning to students." />
         <meta property="og:type" content="website" />
-        <meta property="og:image" content="https://vibemakers.dev/og-image.png" />
+        <meta property="og:image" content="https://vibemakers.dev/og-brand.png" />
         <meta name="twitter:card" content="summary_large_image" />
       </Helmet>
 

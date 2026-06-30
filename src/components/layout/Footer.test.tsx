@@ -19,7 +19,7 @@ describe("Footer", () => {
     expect(screen.getByRole("heading", { name: /^company$/i })).toBeInTheDocument();
   });
 
-  it("links to the current IA pages (parents, adults, schools, programme, about, blog, hackathon, contact)", () => {
+  it("links to the current IA pages (parents, adults, schools, programme, about, blog, contact)", () => {
     renderFooter();
     const links = screen.getAllByRole("link").map((a) => a.getAttribute("href"));
     expect(links).toContain("/parents");
@@ -28,8 +28,13 @@ describe("Footer", () => {
     expect(links).toContain("/programme");
     expect(links).toContain("/about");
     expect(links).toContain("/blog");
-    expect(links).toContain("/hackathon");
     expect(links).toContain("/contact");
+  });
+
+  it("does not link to the hidden Hackathon page", () => {
+    renderFooter();
+    const links = screen.getAllByRole("link").map((a) => a.getAttribute("href"));
+    expect(links).not.toContain("/hackathon");
   });
 
   it("renders privacy + terms in the legal row", () => {

@@ -97,7 +97,7 @@ export default function Contact() {
         <meta property="og:title" content="Contact Vibemakers Academy" />
         <meta property="og:description" content="Have questions? We'd love to hear from you." />
         <meta property="og:type" content="website" />
-        <meta property="og:image" content="https://vibemakers.dev/og-image.png" />
+        <meta property="og:image" content="https://vibemakers.dev/og-brand.png" />
         <meta name="twitter:card" content="summary_large_image" />
 
         <script type="application/ld+json">

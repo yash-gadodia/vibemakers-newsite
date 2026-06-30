@@ -327,6 +327,63 @@ app.post("/api/notify-telegram", async (c) => {
   return c.json({ ok: true });
 });
 
+// Per-route social preview meta. Social crawlers (Telegram, WhatsApp, Slack,
+// Facebook) don't run the SPA's JS, so the per-page <Helmet> og tags never
+// reach them — they only see dist/index.html. For routes that need a different
+// preview than the site default, rewrite the static HTML meta on the way out.
+const SITE = "https://vibemakers.dev";
+const escapeAttr = (s) =>
+  String(s).replace(/&/g, "&amp;").replace(/"/g, "&quot;").replace(/</g, "&lt;").replace(/>/g, "&gt;");
+
+const OG_BY_PATH = {
+  "/adults": {
+    title: "AI Coding Classes for Adults in Singapore | Vibe Makers Academy",
+    description:
+      "From AI-curious to AI-confident. 1-to-1 and small-group AI coding classes for adults in Singapore. Build a real app in your first session. No experience needed.",
+    image: `${SITE}/og-adults.png`,
+    url: `${SITE}/adults`,
+  },
+};
+
+function injectMeta(html, path) {
+  const m = OG_BY_PATH[path];
+  if (!m) return html;
+  let out = html;
+  const set = (re, value) => {
+    out = out.replace(re, (_full, p1, _old, p3) => `${p1}${escapeAttr(value)}${p3}`);
+  };
+  if (m.title) {
+    out = out.replace(/<title>[^<]*<\/title>/, `<title>${escapeAttr(m.title)}</title>`);
+    set(/(<meta property="og:title" content=")([^"]*)(")/, m.title);
+    set(/(<meta name="twitter:title" content=")([^"]*)(")/, m.title);
+  }
+  if (m.description) {
+    set(/(<meta name="description" content=")([^"]*)(")/, m.description);
+    set(/(<meta property="og:description" content=")([^"]*)(")/, m.description);
+    set(/(<meta name="twitter:description" content=")([^"]*)(")/, m.description);
+  }
+  if (m.image) {
+    set(/(<meta property="og:image" content=")([^"]*)(")/, m.image);
+    set(/(<meta name="twitter:image" content=")([^"]*)(")/, m.image);
+  }
+  if (m.url) {
+    set(/(<link rel="canonical" href=")([^"]*)(")/, m.url);
+    set(/(<meta property="og:url" content=")([^"]*)(")/, m.url);
+  }
+  return out;
+}
+
+const ogRoutes = new Set(Object.keys(OG_BY_PATH));
+app.get("*", async (c, next) => {
+  if (!ogRoutes.has(c.req.path)) return next();
+  try {
+    const html = await readFile("./dist/index.html", "utf8");
+    return c.html(injectMeta(html, c.req.path));
+  } catch {
+    return next();
+  }
+});
+
 // Static SPA — serve dist/, fall back to index.html for client-side routes
 app.use("/*", serveStatic({ root: "./dist" }));
 app.notFound(async (c) => {

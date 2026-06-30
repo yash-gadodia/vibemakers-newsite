@@ -26,7 +26,7 @@ export default function Hackathon() {
         <meta property="og:title" content="National Vibe Makers Hackathon | Singapore Student AI Hackathon" />
         <meta property="og:description" content="Singapore's first 2-day AI hackathon for students. Learn vibe coding, build projects, demo to judges. No coding required. Register interest now!" />
         <meta property="og:type" content="event" />
-        <meta property="og:image" content="https://vibemakers.dev/og-hackathon.png" />
+        <meta property="og:image" content="https://vibemakers.dev/og-brand.png" />
         <meta name="twitter:card" content="summary_large_image" />
 
         <script type="application/ld+json">

@@ -29,7 +29,6 @@ const sections = [
       { href: "/about", label: "About us" },
       { href: "/blog", label: "Blog" },
       { href: "/contact", label: "Contact" },
-      { href: "/hackathon", label: "Hackathon" },
     ],
   },
 ];

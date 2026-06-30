@@ -122,7 +122,7 @@ export default function IntlSummerCamp() {
         <meta property="og:title" content="Summer 2026 AI Coding Camp. Vibe Makers Singapore" />
         <meta property="og:description" content="3 weeks. Real app shipped. Demo Day for parents. Jun 30 or Jul 21 cohorts. Limited to 16 students/cohort." />
         <meta property="og:type" content="website" />
-        <meta property="og:image" content="https://vibemakers.dev/og-image.png" />
+        <meta property="og:image" content="https://vibemakers.dev/og-brand.png" />
         <meta name="twitter:card" content="summary_large_image" />
 
         <script type="application/ld+json">{`{

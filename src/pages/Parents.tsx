@@ -215,7 +215,7 @@ export default function Parents() {
           content="1-to-1 coaching and group classes. Real projects, AI fluency, portfolio outcomes."
         />
         <meta property="og:type" content="website" />
-        <meta property="og:image" content="https://vibemakers.dev/og-image.png" />
+        <meta property="og:image" content="https://vibemakers.dev/og-brand.png" />
         <meta name="twitter:card" content="summary_large_image" />
 
         <script type="application/ld+json">{`{

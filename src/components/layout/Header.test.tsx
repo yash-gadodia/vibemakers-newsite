@@ -12,15 +12,19 @@ const renderHeader = () =>
   );
 
 describe("Header", () => {
-  it("renders the primary nav links: Parents, Adults, Schools, Programme, Hackathon, About, Blog", () => {
+  it("renders the primary nav links: Parents, Adults, Schools, Programme, About, Blog", () => {
     renderHeader();
     expect(screen.getAllByRole("link", { name: /^parents$/i }).length).toBeGreaterThan(0);
     expect(screen.getAllByRole("link", { name: /^adults$/i }).length).toBeGreaterThan(0);
     expect(screen.getAllByRole("link", { name: /^schools$/i }).length).toBeGreaterThan(0);
     expect(screen.getAllByRole("link", { name: /^programme$/i }).length).toBeGreaterThan(0);
-    expect(screen.getAllByRole("link", { name: /^hackathon$/i }).length).toBeGreaterThan(0);
     expect(screen.getAllByRole("link", { name: /^about$/i }).length).toBeGreaterThan(0);
     expect(screen.getAllByRole("link", { name: /^blog$/i }).length).toBeGreaterThan(0);
+  });
+
+  it("does not render a Hackathon nav link", () => {
+    renderHeader();
+    expect(screen.queryAllByRole("link", { name: /^hackathon$/i }).length).toBe(0);
   });
 
   it("renders an Enquire CTA pointing to /contact", () => {

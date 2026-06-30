@@ -14,7 +14,7 @@ const ORG_JSON_LD = {
   name: "Vibe Makers Academy",
   alternateName: "Vibe Makers",
   url: "https://vibemakers.dev",
-  logo: "https://vibemakers.dev/og-image.png",
+  logo: "https://vibemakers.dev/og-brand.png",
   description:
     "Singapore's AI coding academy for teens 13-18. Part of Dialogic Academy. Build real apps with AI through 1-on-1 coaching, small group classes, and holiday intensives.",
   areaServed: { "@type": "Country", name: "Singapore" },

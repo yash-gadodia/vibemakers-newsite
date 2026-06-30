@@ -26,7 +26,7 @@ const Blog = () => {
         <meta property="og:title" content="Blog · Vibemakers Academy" />
         <meta property="og:description" content="Stories, insights, and updates from Vibemakers Academy. Singapore's AI-first coding academy for teens." />
         <meta property="og:type" content="website" />
-        <meta property="og:image" content="https://vibemakers.dev/og-image.png" />
+        <meta property="og:image" content="https://vibemakers.dev/og-brand.png" />
         <meta name="twitter:card" content="summary_large_image" />
       </Helmet>
 
