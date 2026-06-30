@@ -29,7 +29,7 @@ const VM_CONTENT = {
   heroEyebrow: "AI Coding Academy · Singapore",
   heroH1: "Singapore teens are shipping real apps. From session 1.",
   heroH1Alt: "AI coding for teens, built for Singapore schools.",
-  heroSub: "Vibe Makers teaches teens (13–18) and adults to design, build and ship real apps using the same AI tools founders use today. Small-group private classes, school workshops, and adult cohorts across Singapore. No prior coding experience needed.",
+  heroSub: "Vibe Makers takes adults from AI-curious to AI-confident, and teens (13–18) too. Build and ship real apps with the same AI tools founders use today: Claude, Lovable and Cursor. 1-to-1 and small-group classes across Singapore. No coding experience needed.",
   heroPrimaryCta: "Book a free trial class",
   heroSecondaryCta: "Bring Vibemakers to your school",
 
@@ -45,8 +45,23 @@ const VM_CONTENT = {
   // Two cards = parents + schools (matches the official homepage exactly).
   programsEyebrow: "Programs",
   programsH2: "Two formats. Same outcome, a shipped app.",
-  programsSub: "Two ways in: small-group private classes for families, or workshops we run inside Singapore schools. Same V.I.B.E. methodology, both routes.",
+  programsSub: "Three ways in: adult classes, small-group private classes for teens, or workshops inside Singapore schools. Same V.I.B.E. methodology, every route.",
   programs: [
+    {
+      tag: "For adults",
+      name: "Adult Classes",
+      duration: "Online or in person",
+      cadence: "1-to-1 or small group",
+      price: "Free trial",
+      blurb: "From AI-curious to AI-confident. Adults of any background build and ship a real app, then walk away with a workflow they can repeat solo. No coding experience needed.",
+      bullets: [
+        "Free 60-minute trial, ship a real app",
+        "1-to-1 or small-group cohorts",
+        "Evenings and weekends, online or in person",
+        "Career leverage: ship tools at work",
+      ],
+      cta: "Explore adult classes",
+    },
     {
       tag: "For parents",
       name: "Private Classes",
@@ -714,7 +729,7 @@ function HHero({ tweaks }) {
             Live · Online · Singapore
           </HSticker>
         </span>
-        <span style={{ ...hStyles.mono, color: H.muted }}>Teens 13–18 + Adults · Trusted by 50+ schools</span>
+        <span style={{ ...hStyles.mono, color: H.muted }}>Adults + teens 13–18 · Trusted by 50+ schools</span>
       </div>
 
       <h1 className="vm-hero-h1" style={{
@@ -755,27 +770,6 @@ function HHero({ tweaks }) {
         <div className="vm-hero-spacer" style={{ flex: 1 }} />
         <div className="vm-hero-ctas" style={{ display: 'flex', flexDirection: 'column', gap: 10, alignItems: 'stretch', minWidth: 280 }}>
           <div style={{ position: 'relative' }}>
-            <Link to="/parents" className="vm-btn" style={{
-                background: H.orange,
-                color: '#fff',
-                border: 'none',
-                padding: '16px 24px',
-                borderRadius: 10,
-                fontSize: 15,
-                fontWeight: 600,
-                cursor: 'pointer',
-                width: '100%',
-                textAlign: 'center',
-                textDecoration: 'none',
-                boxSizing: 'border-box',
-                display: 'inline-block',
-                boxShadow: `0 1px 0 rgba(0,0,0,0.04), 0 8px 24px rgba(255,107,26,0.25), 3px 3px 0 ${H.ink}`,
-              }}>For parents <span className="vm-arrow">→</span></Link>
-            <span className="vm-wiggle" style={{ '--rot': '8deg', position: 'absolute', top: -14, right: -10, zIndex: 2 }}>
-              <HSticker color={H.yellow} rotate={0}>1st class free</HSticker>
-            </span>
-          </div>
-          <div style={{ position: 'relative' }}>
             <Link to="/adults" className="vm-btn" style={{
                 background: H.orange,
                 color: '#fff',
@@ -793,6 +787,27 @@ function HHero({ tweaks }) {
                 boxShadow: `0 1px 0 rgba(0,0,0,0.04), 0 8px 24px rgba(255,107,26,0.25), 3px 3px 0 ${H.ink}`,
               }}>For adults <span className="vm-arrow">→</span></Link>
             <span className="vm-wiggle" style={{ '--rot': '-6deg', position: 'absolute', top: -14, right: -10, zIndex: 2 }}>
+              <HSticker color={H.yellow} rotate={0}>1st class free</HSticker>
+            </span>
+          </div>
+          <div style={{ position: 'relative' }}>
+            <Link to="/parents" className="vm-btn" style={{
+                background: H.orange,
+                color: '#fff',
+                border: 'none',
+                padding: '16px 24px',
+                borderRadius: 10,
+                fontSize: 15,
+                fontWeight: 600,
+                cursor: 'pointer',
+                width: '100%',
+                textAlign: 'center',
+                textDecoration: 'none',
+                boxSizing: 'border-box',
+                display: 'inline-block',
+                boxShadow: `0 1px 0 rgba(0,0,0,0.04), 0 8px 24px rgba(255,107,26,0.25), 3px 3px 0 ${H.ink}`,
+              }}>For parents <span className="vm-arrow">→</span></Link>
+            <span className="vm-wiggle" style={{ '--rot': '8deg', position: 'absolute', top: -14, right: -10, zIndex: 2 }}>
               <HSticker color={H.yellow} rotate={0}>1st class free</HSticker>
             </span>
           </div>
@@ -906,7 +921,7 @@ function HPrograms() {
         <div>
           <HSticker color={H.yellow} rotate={-3} style={{ marginBottom: 16 }}>● Programs</HSticker>
           <h2 style={{ ...hStyles.display, fontSize: 56, margin: '8px 0 0', maxWidth: 800 }}>
-            Two formats. <span style={hStyles.serif}>Same outcome.</span><br />
+            Adults and teens. <span style={hStyles.serif}>Same outcome.</span><br />
             A shipped app.
           </h2>
         </div>
@@ -915,7 +930,7 @@ function HPrograms() {
           <p style={{ fontSize: 15, color: H.muted, maxWidth: 320, margin: 0 }}>{c.programsSub}</p>
         </Reveal>
       </div>
-      <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 16 }}>
+      <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: 16 }}>
         {c.programs.map((p, i) => (
           <Reveal key={i} delay={i * 120} y={26} duration={750}>
           <div className="vm-card" style={{
